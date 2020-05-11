@@ -1,0 +1,3 @@
+com\zkl\taishou\dao\user\PermissionMapper.class
+com\zkl\taishou\dao\user\UserMapper.class
+com\zkl\taishou\dao\user\RoleMapper.class

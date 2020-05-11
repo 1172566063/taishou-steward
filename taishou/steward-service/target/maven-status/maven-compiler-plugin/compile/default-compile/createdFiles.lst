@@ -1,0 +1,7 @@
+com\zkl\taishou\service\shiro\MyShiroRealm.class
+com\zkl\taishou\service\user\UserService.class
+com\zkl\taishou\service\shiro\ShiroConfig.class
+com\zkl\taishou\service\BaseService.class
+com\zkl\taishou\service\redis\Impl\RedisServiceImpl.class
+com\zkl\taishou\service\user\Impl\UserServiceImpl.class
+com\zkl\taishou\service\redis\RedisService.class

@@ -36,7 +36,7 @@
     </appender>
 
 	<!--Myibatis Log Config -->
-	<logger name="com.zkl.steward" level="${logMybatisLevel}" />
+	<logger name="com.zkl.taishou.dao" level="${logMybatisLevel}" />
 
 	<!-- 日志输出级别 -->
 	<root level="${logLevel}">

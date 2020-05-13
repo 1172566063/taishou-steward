@@ -1,8 +1,7 @@
 package com.zkl.taishou.controller;
 
-import com.zkl.taishou.common.result.ResultBean;
+import com.zkl.taishou.common.constants.ResultBean;
 import com.zkl.taishou.common.VO.CalculateStepOne;
-import com.zkl.taishou.common.result.ResultConstants;
 import com.zkl.taishou.service.CalculateService;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiOperation;
@@ -34,6 +33,21 @@ public class CalculateController extends BaseController {
         if(bindingResult.hasErrors()){
             return getParameterFailResult(bindingResult);
         }
+        calculateStepOne.setUser_id(getCurrLoginUser().getId());
        return calculateService.calculate(calculateStepOne);
     }
+
+
+    /*@PostMapping("/record")
+    @ApiOperation(value = "记录",notes = "添加测算记录")
+    @ApiImplicitParam(name = "from",value = "测算数据表单",paramType = "CalculateStepOne")
+    public ResultBean record(@Validated @RequestBody CalculateStepOne calculateStepOne,BindingResult bindingResult){
+        if(bindingResult.hasErrors()){
+            return getParameterFailResult(bindingResult);
+        }
+        calculateStepOne.setUser_id(getCurrLoginUser().getId());
+        calculateService.recordResult(calculateStepOne);
+        return new ResultBean();
+    }*/
+
 }

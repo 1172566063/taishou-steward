@@ -1,4 +1,4 @@
-package com.zkl.taishou.common.result;
+package com.zkl.taishou.common.constants;
 
 /**
  * 结果常量类
@@ -12,7 +12,10 @@ public enum ResultConstants {
      */
     SUCCESS(200, "成功"),
 
-
+    /**
+     * 失败
+     */
+    FAIL(201,"失败"),
     /**
      * 未登录
      */

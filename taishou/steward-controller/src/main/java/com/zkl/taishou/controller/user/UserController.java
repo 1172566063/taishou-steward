@@ -1,9 +1,10 @@
 package com.zkl.taishou.controller.user;
 
+import com.zkl.taishou.common.PO.UserInfo;
 import com.zkl.taishou.common.entity.User;
-import com.zkl.taishou.common.result.ResultBean;
+import com.zkl.taishou.common.constants.ResultBean;
 import com.zkl.taishou.controller.BaseController;
-import com.zkl.taishou.service.user.UserService;
+import com.zkl.taishou.service.UserService;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiModelProperty;
@@ -32,7 +33,7 @@ public class UserController extends BaseController {
             @ApiImplicitParam(name = "password", value = "用户密码"),
     })
     @PostMapping("/login")
-    public ResultBean login(String phone, String password){
+    public ResultBean<UserInfo> login(String phone, String password){
         return userService.login(phone,password);
     }
 

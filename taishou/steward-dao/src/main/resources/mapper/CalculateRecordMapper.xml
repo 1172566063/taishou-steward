@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zkl.taishou.dao.calculate.CalculateRecordMapper">
+  <resultMap id="BaseResultMap" type="com.zkl.taishou.common.entity.CalculateRecord">
+    <constructor>
+      <idArg column="id" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="user_id" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="area" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="room_num" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="bed_num" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="staff_num" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="client_num" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="create_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+      <arg column="reserved" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="generate_report" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="report_address" javaType="java.lang.String" jdbcType="VARCHAR" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, user_id, area, room_num, bed_num, staff_num, client_num, create_time, reserved,
+    generate_report, report_address
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from calculate_record
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from calculate_record
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.zkl.taishou.common.entity.CalculateRecord">
+    insert into calculate_record (id, user_id, area, 
+      room_num, bed_num, staff_num, 
+      client_num, create_time, reserved,
+      generate_report, report_address)
+    values (#{id,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, #{area,jdbcType=INTEGER}, 
+      #{roomNum,jdbcType=INTEGER}, #{bedNum,jdbcType=INTEGER}, #{staffNum,jdbcType=INTEGER}, 
+      #{clientNum,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, #{reserved,jdbcType=VARCHAR},
+      #{generateReport,jdbcType=VARCHAR}, #{reportAddress,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.zkl.taishou.common.entity.CalculateRecord">
+    insert into calculate_record
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="area != null">
+        area,
+      </if>
+      <if test="roomNum != null">
+        room_num,
+      </if>
+      <if test="bedNum != null">
+        bed_num,
+      </if>
+      <if test="staffNum != null">
+        staff_num,
+      </if>
+      <if test="clientNum != null">
+        client_num,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="reserved != null">
+        reserved,
+      </if>
+      <if test="generateReport != null">
+        generate_report,
+      </if>
+      <if test="reportAddress != null">
+        report_address,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="area != null">
+        #{area,jdbcType=INTEGER},
+      </if>
+      <if test="roomNum != null">
+        #{roomNum,jdbcType=INTEGER},
+      </if>
+      <if test="bedNum != null">
+        #{bedNum,jdbcType=INTEGER},
+      </if>
+      <if test="staffNum != null">
+        #{staffNum,jdbcType=INTEGER},
+      </if>
+      <if test="clientNum != null">
+        #{clientNum,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="reserved != null">
+        #{reserved,jdbcType=VARCHAR},
+      </if>
+      <if test="generateReport != null">
+        #{generateReport,jdbcType=VARCHAR},
+      </if>
+      <if test="reportAddress != null">
+        #{reportAddress,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zkl.taishou.common.entity.CalculateRecord">
+    update calculate_record
+    <set>
+      <if test="userId != null">
+        user_id = #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="area != null">
+        area = #{area,jdbcType=INTEGER},
+      </if>
+      <if test="roomNum != null">
+        room_num = #{roomNum,jdbcType=INTEGER},
+      </if>
+      <if test="bedNum != null">
+        bed_num = #{bedNum,jdbcType=INTEGER},
+      </if>
+      <if test="staffNum != null">
+        staff_num = #{staffNum,jdbcType=INTEGER},
+      </if>
+      <if test="clientNum != null">
+        client_num = #{clientNum,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="reserved != null">
+        reserved = #{reserved,jdbcType=VARCHAR},
+      </if>
+      <if test="generateReport != null">
+        generate_report = #{generateReport,jdbcType=VARCHAR},
+      </if>
+      <if test="reportAddress != null">
+        report_address = #{reportAddress,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zkl.taishou.common.entity.CalculateRecord">
+    update calculate_record
+    set user_id = #{userId,jdbcType=INTEGER},
+      area = #{area,jdbcType=INTEGER},
+      room_num = #{roomNum,jdbcType=INTEGER},
+      bed_num = #{bedNum,jdbcType=INTEGER},
+      staff_num = #{staffNum,jdbcType=INTEGER},
+      client_num = #{clientNum,jdbcType=INTEGER},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      reserved = #{reserved,jdbcType=VARCHAR},
+      generate_report = #{generateReport,jdbcType=VARCHAR},
+      report_address = #{reportAddress,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

@@ -2,8 +2,8 @@ package com.zkl.taishou.interceptor;
 
 import com.alibaba.fastjson.JSON;
 import com.zkl.taishou.common.constants.RedisKeyConstants;
-import com.zkl.taishou.common.result.ResultBean;
-import com.zkl.taishou.common.result.ResultConstants;
+import com.zkl.taishou.common.constants.ResultBean;
+import com.zkl.taishou.common.constants.ResultConstants;
 import com.zkl.taishou.service.redis.RedisService;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;

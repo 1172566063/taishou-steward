@@ -1,4 +1,4 @@
-package com.zkl.taishou.common.result;
+package com.zkl.taishou.common.constants;
 
 
 import io.swagger.annotations.ApiModelProperty;

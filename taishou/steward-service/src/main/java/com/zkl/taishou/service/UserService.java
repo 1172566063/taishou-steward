@@ -1,7 +1,8 @@
-package com.zkl.taishou.service.user;
+package com.zkl.taishou.service;
 
+import com.zkl.taishou.common.PO.UserInfo;
 import com.zkl.taishou.common.entity.User;
-import com.zkl.taishou.common.result.ResultBean;
+import com.zkl.taishou.common.constants.ResultBean;
 
 public interface UserService {
 
@@ -15,7 +16,7 @@ public interface UserService {
 
     boolean removeUserById(Integer id);
 
-    ResultBean login(String phone,String password);
+    ResultBean<UserInfo> login(String phone, String password);
 
-    ResultBean register(User user);
+    ResultBean<UserInfo> register(User user);
 }

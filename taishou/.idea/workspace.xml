@@ -1,7 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1b130b6d-0d7f-4319-ba20-ec506109f21d" name="Default Changelist" comment="" />
+    <list default="true" id="1b130b6d-0d7f-4319-ba20-ec506109f21d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/steward-common/src/main/java/com/zkl/taishou/common/constants/CalculateRule.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/steward-common/src/main/java/com/zkl/taishou/common/constants/CommonalityProperty.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/steward-common/src/main/java/com/zkl/taishou/common/utils/CalculateUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/steward-common/src/main/java/com/zkl/taishou/common/utils/CommonUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/steward-common/src/main/java/com/zkl/taishou/common/utils/PropsUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/steward-common/src/main/resource/application-attribute.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9517ab63-ca41-4b9f-bb64-52803db695bc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/9517ab63-ca41-4b9f-bb64-52803db695bc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/steward-common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/steward-common/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/steward-common/src/main/java/com/zkl/taishou/common/VO/CalculateStepOne.java" beforeDir="false" afterPath="$PROJECT_DIR$/steward-common/src/main/java/com/zkl/taishou/common/VO/CalculateStepOne.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/steward-common/src/main/java/com/zkl/taishou/common/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/steward-common/src/main/java/com/zkl/taishou/common/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/steward-common/src/main/java/com/zkl/taishou/common/result/ResultBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/steward-common/src/main/java/com/zkl/taishou/common/constants/ResultBean.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/steward-common/src/main/java/com/zkl/taishou/common/result/ResultConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/steward-common/src/main/java/com/zkl/taishou/common/constants/ResultConstants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/steward-common/target/classes/com/zkl/taishou/common/VO/CalculateStepOne.class" beforeDir="false" afterPath="$PROJECT_DIR$/steward-common/target/classes/com/zkl/taishou/common/VO/CalculateStepOne.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/steward-common/target/classes/com/zkl/taishou/common/entity/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/steward-common/target/classes/com/zkl/taishou/common/entity/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/steward-common/target/classes/com/zkl/taishou/common/result/ResultBean.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/steward-common/target/classes/com/zkl/taishou/common/result/ResultConstants.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/steward-common/target/classes/com/zkl/taishou/common/utils/EncryptUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/steward-common/target/classes/com/zkl/taishou/common/utils/EncryptUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/steward-controller/src/main/java/com/zkl/taishou/controller/BaseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/steward-controller/src/main/java/com/zkl/taishou/controller/BaseController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/steward-controller/src/main/java/com/zkl/taishou/controller/CalculateController.java" beforeDir="false" afterPath="$PROJECT_DIR$/steward-controller/src/main/java/com/zkl/taishou/controller/CalculateController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/steward-controller/src/main/java/com/zkl/taishou/controller/user/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/steward-controller/src/main/java/com/zkl/taishou/controller/user/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/steward-controller/src/main/java/com/zkl/taishou/interceptor/UserConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/steward-controller/src/main/java/com/zkl/taishou/interceptor/UserConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/steward-controller/src/main/java/com/zkl/taishou/shiro/MyShiroRealm.java" beforeDir="false" afterPath="$PROJECT_DIR$/steward-controller/src/main/java/com/zkl/taishou/shiro/MyShiroRealm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/steward-controller/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/steward-controller/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/steward-controller/src/main/resources/logback.xml" beforeDir="false" afterPath="$PROJECT_DIR$/steward-controller/src/main/resources/logback.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/steward-controller/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/steward-controller/target/classes/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/steward-controller/target/classes/com/zkl/taishou/controller/CalculateController.class" beforeDir="false" afterPath="$PROJECT_DIR$/steward-controller/target/classes/com/zkl/taishou/controller/CalculateController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/steward-controller/target/classes/com/zkl/taishou/controller/user/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/steward-controller/target/classes/com/zkl/taishou/controller/user/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/steward-controller/target/classes/logback.xml" beforeDir="false" afterPath="$PROJECT_DIR$/steward-controller/target/classes/logback.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/steward-dao/src/main/resources/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/steward-dao/src/main/resources/mapper/UserMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/steward-dao/src/main/resources/mybatis-generator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/steward-dao/src/main/resources/mybatis-generator.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/steward-dao/target/classes/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/steward-dao/target/classes/mapper/UserMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/steward-dao/target/classes/mybatis-generator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/steward-dao/target/classes/mybatis-generator.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/steward-service/src/main/java/com/zkl/taishou/service/CalculateService.java" beforeDir="false" afterPath="$PROJECT_DIR$/steward-service/src/main/java/com/zkl/taishou/service/CalculateService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/steward-service/src/main/java/com/zkl/taishou/service/Impl/CalculateServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/steward-service/src/main/java/com/zkl/taishou/service/Impl/CalculateServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/steward-service/src/main/java/com/zkl/taishou/service/user/Impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/steward-service/src/main/java/com/zkl/taishou/service/Impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/steward-service/src/main/java/com/zkl/taishou/service/user/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/steward-service/src/main/java/com/zkl/taishou/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/steward-service/steward-service.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/steward-service/target/classes/META-INF/steward-service.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/steward-service/target/classes/com/zkl/taishou/service/CalculateService.class" beforeDir="false" afterPath="$PROJECT_DIR$/steward-service/target/classes/com/zkl/taishou/service/CalculateService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/steward-service/target/classes/com/zkl/taishou/service/Impl/CalculateServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/steward-service/target/classes/com/zkl/taishou/service/Impl/CalculateServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/steward-service/target/classes/com/zkl/taishou/service/user/Impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/steward-service/target/classes/com/zkl/taishou/service/user/Impl/UserServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/steward-service/target/classes/com/zkl/taishou/service/user/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/steward-service/target/classes/com/zkl/taishou/service/user/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/taishou.iml" beforeDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/calculate/target/" />
@@ -44,53 +89,25 @@
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="taishou_steward: schema" type="76f4a085:MysqlImplModel$Schema" />
       </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="taishou_steward@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="taishou_steward: schema" type="76f4a085:MysqlImplModel$Schema" />
-        <item name="permission: table" type="285a2a93:MysqlImplModel$Table" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="taishou_steward@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="taishou_steward: schema" type="76f4a085:MysqlImplModel$Schema" />
-        <item name="role: table" type="285a2a93:MysqlImplModel$Table" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="taishou_steward@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="taishou_steward: schema" type="76f4a085:MysqlImplModel$Schema" />
-        <item name="role_permission: table" type="285a2a93:MysqlImplModel$Table" />
-      </path>
     </expand>
     <select />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/steward-controller/src/main/java/com/zkl/taishou/controller/user/UserController.java">
+        <entry file="file://$PROJECT_DIR$/steward-common/src/main/java/com/zkl/taishou/common/constants/CommonalityProperty.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="532">
-              <caret line="37" lean-forward="true" selection-start-line="37" selection-end-line="37" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1180#1181#0" expanded="true" />
-                <element signature="e#1236#1237#0" expanded="true" />
-                <element signature="e#1337#1338#0" expanded="true" />
-                <element signature="e#1381#1382#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="228">
+              <caret line="12" column="38" lean-forward="true" selection-start-line="12" selection-start-column="38" selection-end-line="12" selection-end-column="38" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/steward-service/src/main/java/com/zkl/taishou/service/user/UserService.java">
+        <entry file="file://$PROJECT_DIR$/steward-service/src/main/java/com/zkl/taishou/service/UserService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="17" column="15" selection-start-line="17" selection-start-column="15" selection-end-line="17" selection-end-column="15" />
+            <state relative-caret-position="380">
+              <caret line="20" column="24" selection-start-line="20" selection-start-column="24" selection-end-line="20" selection-end-column="24" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -99,10 +116,22 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/steward-service/src/main/java/com/zkl/taishou/service/user/Impl/UserServiceImpl.java">
+        <entry file="file://$PROJECT_DIR$/steward-service/src/main/java/com/zkl/taishou/service/CalculateService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="296">
-              <caret line="77" column="36" lean-forward="true" selection-start-line="77" selection-start-column="36" selection-end-line="77" selection-end-column="36" />
+            <state relative-caret-position="266">
+              <caret line="14" column="57" lean-forward="true" selection-start-line="14" selection-start-column="57" selection-end-line="14" selection-end-column="57" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/steward-service/src/main/java/com/zkl/taishou/service/Impl/CalculateServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="483">
+              <caret line="40" selection-start-line="40" selection-end-line="40" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -111,19 +140,28 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/steward-common/src/main/java/com/zkl/taishou/common/result/ResultConstants.java">
+        <entry file="file://$PROJECT_DIR$/steward-common/src/main/java/com/zkl/taishou/common/utils/CalculateUtil.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="277">
-              <caret line="33" column="36" selection-start-line="33" selection-start-column="36" selection-end-line="33" selection-end-column="36" />
+            <state relative-caret-position="209">
+              <caret line="11" column="4" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="4" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/steward-controller/src/main/java/com/zkl/taishou/controller/CalculateController.java">
+        <entry file="file://$PROJECT_DIR$/steward-common/src/main/java/com/zkl/taishou/common/constants/RedisKeyConstants.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="31" column="4" selection-start-line="31" selection-start-column="4" selection-end-line="31" selection-end-column="83" />
+            <state relative-caret-position="19">
+              <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/steward-service/src/main/java/com/zkl/taishou/service/Impl/UserServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="583">
+              <caret line="91" column="5" lean-forward="true" selection-start-line="91" selection-start-column="5" selection-end-line="91" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -132,58 +170,28 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/steward-controller/src/main/resources/application.yml">
+        <entry file="file://$PROJECT_DIR$/steward-common/src/main/java/com/zkl/taishou/common/constants/ResultConstants.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="282">
-              <caret line="22" column="14" selection-start-line="22" selection-start-column="14" selection-end-line="22" selection-end-column="14" />
+            <state relative-caret-position="1647">
+              <caret line="98" column="5" lean-forward="true" selection-start-line="69" selection-start-column="4" selection-end-line="98" selection-end-column="5" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/steward-controller/src/main/java/com/zkl/taishou/shiro/MyShiroRealm.java">
+        <entry file="file://$PROJECT_DIR$/steward-common/src/main/java/com/zkl/taishou/common/constants/CalculateRule.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="68" selection-start-line="68" selection-end-line="68" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="285">
+              <caret line="15" column="47" selection-start-line="15" selection-start-column="47" selection-end-line="15" selection-end-column="47" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/steward-controller/src/main/java/com/zkl/taishou/shiro/ShiroConfig.java">
+        <entry file="file://$PROJECT_DIR$/steward-common/src/main/java/com/zkl/taishou/common/constants/ResultBean.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="125">
-              <caret line="60" column="10" selection-start-line="60" selection-start-column="10" selection-end-line="60" selection-end-column="10" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/steward-controller/src/main/java/com/zkl/taishou/controller/BaseController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="277">
-              <caret line="35" column="29" selection-start-line="35" selection-start-column="19" selection-end-line="35" selection-end-column="29" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/steward-common/src/main/java/com/zkl/taishou/common/utils/EncryptUtil.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="219">
-              <caret line="24" column="25" selection-start-line="24" selection-start-column="25" selection-end-line="24" selection-end-column="25" />
-              <folding>
-                <element signature="e#1869#1870#0" expanded="true" />
-              </folding>
+              <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -212,55 +220,33 @@
       <find>登出</find>
       <find>400</find>
       <find>NOT_LOGIN</find>
+      <find>calculateRecord</find>
+      <find>clienNum</find>
+      <find>clien_num</find>
     </findStrings>
     <replaceStrings>
       <replace>LiShiXiang</replace>
       <replace>role_id</replace>
+      <replace>clientNum</replace>
+      <replace>client_num</replace>
     </replaceStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/steward-controller/src/main/java/com/zkl/taishou/controller/test/UserController.java" />
-        <option value="$PROJECT_DIR$/steward-service/src/main/java/com/zkl/taishou/service/RedisService.java" />
-        <option value="$PROJECT_DIR$/steward-common/src/main/java/com/zkl/taishou/common/constants/RedisKeyConstants.java" />
-        <option value="$PROJECT_DIR$/steward-service/pom.xml" />
-        <option value="$PROJECT_DIR$/steward-service/src/main/java/com/zkl/taishou/service/impl/RedisServiceImpl.java" />
-        <option value="$PROJECT_DIR$/steward-controller/src/main/java/com/zkl/taishou/controller/test/BaseController.java" />
-        <option value="$PROJECT_DIR$/steward-common/src/main/java/com/zkl/taishou/common/config/ShiroConfig.java" />
-        <option value="$PROJECT_DIR$/steward-dao/src/main/resources/mybatis-generator.xml" />
-        <option value="$PROJECT_DIR$/steward-common/src/main/java/com/zkl/taishou/common/entity/Permission.java" />
-        <option value="$PROJECT_DIR$/steward-common/src/main/java/com/zkl/taishou/common/entity/Role.java" />
-        <option value="$PROJECT_DIR$/steward-dao/src/main/java/com/zkl/taishou/dao/user/PermissionMapper.java" />
-        <option value="$PROJECT_DIR$/steward-common/src/main/java/com/zkl/taishou/common/config/MyShiroRealm.java" />
-        <option value="$PROJECT_DIR$/steward-controller/src/main/java/com/zkl/taishou/controller/user/test.java" />
-        <option value="$PROJECT_DIR$/steward-service/src/main/java/com/zkl/taishou/service/UserService.java" />
-        <option value="$PROJECT_DIR$/steward-service/src/main/java/com/zkl/taishou/service/impl/UserServiceImpl.java" />
-        <option value="$PROJECT_DIR$/steward-common/pom.xml" />
-        <option value="$PROJECT_DIR$/steward-service/src/main/java/com/zkl/taishou/service/user/UserServiceImpl.java" />
-        <option value="$PROJECT_DIR$/steward-controller/src/main/java/com/zkl/taishou/Taishou_Steward_App.java" />
-        <option value="$PROJECT_DIR$/steward-service/src/main/java/com/zkl/taishou/service/shiro/MyShiroRealm.java" />
-        <option value="$PROJECT_DIR$/steward-dao/src/main/resources/mybatis.cfg.xml" />
-        <option value="$PROJECT_DIR$/steward-dao/src/main/resources/mapper/PermissionMapper.xml" />
-        <option value="$PROJECT_DIR$/steward-dao/src/main/java/com/zkl/taishou/dao/user/UserMapper.java" />
-        <option value="$PROJECT_DIR$/steward-dao/src/main/resources/mapper/UserMapper.xml" />
-        <option value="$PROJECT_DIR$/steward-controller/src/main/java/com/zkl/taishou/controller/VO/CalculateStepTwo.java" />
         <option value="$PROJECT_DIR$/steward-controller/src/main/java/com/zkl/taishou/controller/VO/CalculateStepOne.java" />
         <option value="$PROJECT_DIR$/steward-controller/pom.xml" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/steward-service/src/main/java/com/zkl/taishou/service/CalculateService.java" />
         <option value="$PROJECT_DIR$/steward-common/src/main/java/com/zkl/taishou/common/shiro/MyShiroRealm.java" />
         <option value="$PROJECT_DIR$/steward-common/src/main/java/com/zkl/taishou/common/config/Swagger.java" />
         <option value="$PROJECT_DIR$/steward-common/src/main/java/com/zkl/taishou/common/result/ResultBean.java" />
-        <option value="$PROJECT_DIR$/steward-service/src/main/java/com/zkl/taishou/service/Impl/CalculateServiceImpl.java" />
-        <option value="$PROJECT_DIR$/steward-controller/src/main/java/com/zkl/taishou/controller/CalculateController.java" />
-        <option value="$PROJECT_DIR$/steward-common/src/main/java/com/zkl/taishou/common/entity/User.java" />
         <option value="$PROJECT_DIR$/steward-service/src/main/java/com/zkl/taishou/service/redis/RedisService.java" />
         <option value="$PROJECT_DIR$/steward-service/src/main/java/com/zkl/taishou/service/redis/Impl/RedisServiceImpl.java" />
         <option value="$PROJECT_DIR$/steward-controller/src/main/java/com/zkl/taishou/controller/shiro/ShiroConfig.java" />
         <option value="$PROJECT_DIR$/steward-controller/src/main/java/com/zkl/taishou/controller/shiro/MyShiroRealm.java" />
-        <option value="$PROJECT_DIR$/steward-service/src/main/java/com/zkl/taishou/service/BaseService.java" />
-        <option value="$PROJECT_DIR$/steward-controller/src/main/resources/application.yml" />
         <option value="$PROJECT_DIR$/steward-controller/src/main/java/com/zkl/taishou/interceptor/UserConfig.java" />
         <option value="$PROJECT_DIR$/steward-common/src/main/java/com/zkl/taishou/common/utils/ServletUtil.java" />
         <option value="$PROJECT_DIR$/steward-controller/src/main/java/com/zkl/taishou/interceptor/LoginInterceptor.java" />
@@ -268,10 +254,40 @@
         <option value="$PROJECT_DIR$/steward-controller/src/main/java/com/zkl/taishou/controller/BaseController.java" />
         <option value="$PROJECT_DIR$/steward-controller/src/main/java/com/zkl/taishou/shiro/MyShiroRealm.java" />
         <option value="$PROJECT_DIR$/steward-common/src/main/java/com/zkl/taishou/common/utils/EncryptUtil.java" />
+        <option value="$PROJECT_DIR$/steward-service/src/main/java/com/zkl/taishou/service/BaseService.java" />
         <option value="$PROJECT_DIR$/steward-common/src/main/java/com/zkl/taishou/common/result/ResultConstants.java" />
-        <option value="$PROJECT_DIR$/steward-service/src/main/java/com/zkl/taishou/service/user/Impl/UserServiceImpl.java" />
-        <option value="$PROJECT_DIR$/steward-service/src/main/java/com/zkl/taishou/service/user/UserService.java" />
+        <option value="$PROJECT_DIR$/steward-common/src/main/java/com/zkl/taishou/common/entity/User.java" />
+        <option value="$PROJECT_DIR$/steward-dao/src/main/resources/mapper/UserMapper.xml" />
         <option value="$PROJECT_DIR$/steward-controller/src/main/java/com/zkl/taishou/controller/user/UserController.java" />
+        <option value="$PROJECT_DIR$/steward-service/src/main/java/com/zkl/taishou/service/user/UserService.java" />
+        <option value="$PROJECT_DIR$/steward-common/src/main/java/com/zkl/taishou/common/PO/UserInfo.java" />
+        <option value="$PROJECT_DIR$/steward-service/src/main/java/com/zkl/taishou/service/user/Impl/UserServiceImpl.java" />
+        <option value="$PROJECT_DIR$/steward-controller/src/main/java/com/zkl/taishou/PropsUtil.java" />
+        <option value="$PROJECT_DIR$/steward-controller/src/main/resources/application.yml" />
+        <option value="$PROJECT_DIR$/steward-common/src/main/resource/application-attribute.yml" />
+        <option value="$PROJECT_DIR$/steward-common/src/main/java/com/zkl/taishou/common/utils/PropsUtil.java" />
+        <option value="$PROJECT_DIR$/steward-controller/src/main/resources/logback.xml" />
+        <option value="$PROJECT_DIR$/steward-common/src/main/java/com/zkl/taishou/common/entity/calculateRecord.java" />
+        <option value="$PROJECT_DIR$/steward-dao/src/main/resources/mapper/calculateRecordMapper.xml" />
+        <option value="$PROJECT_DIR$/steward-dao/src/main/java/com/zkl/taishou/dao/user/CalculateRecordMapper.java" />
+        <option value="$PROJECT_DIR$/steward-dao/src/main/resources/mapper/CalculateRecordMapper.xml" />
+        <option value="$PROJECT_DIR$/steward-dao/src/main/java/com/zkl/taishou/dao/calculate/CalculateRecordMapper.java" />
+        <option value="$PROJECT_DIR$/steward-controller/src/main/java/com/zkl/taishou/controller/CalculateController.java" />
+        <option value="$PROJECT_DIR$/steward-dao/src/main/resources/mybatis-generator.xml" />
+        <option value="$PROJECT_DIR$/steward-common/src/main/java/com/zkl/taishou/common/entity/CalculateRecord.java" />
+        <option value="$PROJECT_DIR$/steward-common/src/main/java/com/zkl/taishou/common/VO/CalculateStepOne.java" />
+        <option value="$PROJECT_DIR$/steward-service/src/main/java/com/zkl/taishou/service/CalculateService.java" />
+        <option value="$PROJECT_DIR$/steward-common/src/main/java/com/zkl/taishou/common/constants/ResultBean.java" />
+        <option value="$PROJECT_DIR$/steward-service/src/test/java/Springboot.java" />
+        <option value="$PROJECT_DIR$/steward-common/src/main/java/com/zkl/taishou/common/utils/CommonUtils.java" />
+        <option value="$PROJECT_DIR$/steward-service/pom.xml" />
+        <option value="$PROJECT_DIR$/steward-common/pom.xml" />
+        <option value="$PROJECT_DIR$/steward-common/src/main/java/com/zkl/taishou/common/constants/CommonalityProperty.java" />
+        <option value="$PROJECT_DIR$/steward-common/src/main/java/com/zkl/taishou/common/constants/CalculateRule.java" />
+        <option value="$PROJECT_DIR$/steward-service/src/main/java/com/zkl/taishou/service/Impl/UserServiceImpl.java" />
+        <option value="$PROJECT_DIR$/steward-service/src/main/java/com/zkl/taishou/service/UserService.java" />
+        <option value="$PROJECT_DIR$/steward-service/src/main/java/com/zkl/taishou/service/Impl/CalculateServiceImpl.java" />
+        <option value="$PROJECT_DIR$/steward-common/src/main/java/com/zkl/taishou/common/utils/CalculateUtil.java" />
       </list>
     </option>
   </component>
@@ -287,12 +303,12 @@
       <expand>
         <path>
           <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="steward-controller" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="steward-service" type="9519ce18:MavenProjectsStructure$ProjectNode" />
         </path>
         <path>
           <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="steward-controller" type="9519ce18:MavenProjectsStructure$ProjectNode" />
-          <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
+          <item name="steward-service" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Plugins" type="7aea1407:MavenProjectsStructure$PluginsNode" />
         </path>
       </expand>
       <select />
@@ -303,14 +319,16 @@
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-10" />
-    <option name="width" value="1555" />
+    <option name="width" value="918" />
     <option name="height" value="840" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -352,6 +370,36 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="common" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="taishou" type="b2602c69:ProjectViewProjectNode" />
+              <item name="taishou" type="462c0819:PsiDirectoryNode" />
+              <item name="steward-common" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
+              <item name="constants" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="taishou" type="b2602c69:ProjectViewProjectNode" />
+              <item name="taishou" type="462c0819:PsiDirectoryNode" />
+              <item name="steward-common" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
+              <item name="entity" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="taishou" type="b2602c69:ProjectViewProjectNode" />
+              <item name="taishou" type="462c0819:PsiDirectoryNode" />
+              <item name="steward-common" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="taishou" type="b2602c69:ProjectViewProjectNode" />
@@ -398,11 +446,141 @@
               <item name="taishou" type="462c0819:PsiDirectoryNode" />
               <item name="controller" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="taishou" type="b2602c69:ProjectViewProjectNode" />
+              <item name="taishou" type="462c0819:PsiDirectoryNode" />
+              <item name="steward-controller" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="taishou" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+              <item name="user" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="taishou" type="b2602c69:ProjectViewProjectNode" />
+              <item name="taishou" type="462c0819:PsiDirectoryNode" />
+              <item name="steward-controller" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="taishou" type="b2602c69:ProjectViewProjectNode" />
+              <item name="taishou" type="462c0819:PsiDirectoryNode" />
+              <item name="steward-dao" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="taishou" type="b2602c69:ProjectViewProjectNode" />
+              <item name="taishou" type="462c0819:PsiDirectoryNode" />
+              <item name="steward-dao" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="taishou" type="b2602c69:ProjectViewProjectNode" />
+              <item name="taishou" type="462c0819:PsiDirectoryNode" />
+              <item name="steward-dao" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="taishou" type="b2602c69:ProjectViewProjectNode" />
+              <item name="taishou" type="462c0819:PsiDirectoryNode" />
+              <item name="steward-dao" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="taishou" type="b2602c69:ProjectViewProjectNode" />
+              <item name="taishou" type="462c0819:PsiDirectoryNode" />
+              <item name="steward-dao" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="taishou" type="b2602c69:ProjectViewProjectNode" />
+              <item name="taishou" type="462c0819:PsiDirectoryNode" />
+              <item name="steward-dao" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="taishou" type="b2602c69:ProjectViewProjectNode" />
+              <item name="taishou" type="462c0819:PsiDirectoryNode" />
+              <item name="steward-dao" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="mapper" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="taishou" type="b2602c69:ProjectViewProjectNode" />
+              <item name="taishou" type="462c0819:PsiDirectoryNode" />
+              <item name="steward-service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="taishou" type="b2602c69:ProjectViewProjectNode" />
+              <item name="taishou" type="462c0819:PsiDirectoryNode" />
+              <item name="steward-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="taishou" type="b2602c69:ProjectViewProjectNode" />
+              <item name="taishou" type="462c0819:PsiDirectoryNode" />
+              <item name="steward-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="taishou" type="b2602c69:ProjectViewProjectNode" />
+              <item name="taishou" type="462c0819:PsiDirectoryNode" />
+              <item name="steward-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="taishou" type="b2602c69:ProjectViewProjectNode" />
+              <item name="taishou" type="462c0819:PsiDirectoryNode" />
+              <item name="steward-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="taishou" type="b2602c69:ProjectViewProjectNode" />
+              <item name="taishou" type="462c0819:PsiDirectoryNode" />
+              <item name="steward-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="Impl" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="taishou" type="b2602c69:ProjectViewProjectNode" />
+              <item name="taishou" type="462c0819:PsiDirectoryNode" />
+              <item name="steward-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="taishou" type="b2602c69:ProjectViewProjectNode" />
+              <item name="taishou" type="462c0819:PsiDirectoryNode" />
+              <item name="steward-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -416,22 +594,19 @@
     <property name="RequestMappingsPanelWidth2" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1589160344775" />
-    <property name="last_opened_file_path" value="E:/05李石祥/学习/com.xshl.pskc.esp" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1589333211015" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="editing.templates" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\work\zkl\taishou\steward-controller\src\main\java\com\zkl\taishou" />
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\work\zkl\taishou\steward-dao\src\main\resources" />
-      <recent name="E:\work\zkl\taishou\steward-service\src\main\java\com\zkl\taishou\service" />
-      <recent name="E:\work\zkl\taishou\steward-dao\src\main\java\com\zkl\taishou\dao" />
-      <recent name="E:\work\zkl\taishou\steward-controller\src\main\java\com\zkl\taishou\controller" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.zkl.taishou.common.utils" />
@@ -439,8 +614,12 @@
       <recent name="com.zkl.taishou.service.impl" />
       <recent name="com.zkl.taishou.service" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\work\zkl\taishou\steward-controller\src\main\java\com\zkl\taishou" />
       <recent name="E:\work\zkl\taishou\steward-dao\src\main\resources" />
+      <recent name="E:\work\zkl\taishou\steward-service\src\main\java\com\zkl\taishou\service" />
+      <recent name="E:\work\zkl\taishou\steward-dao\src\main\java\com\zkl\taishou\dao" />
+      <recent name="E:\work\zkl\taishou\steward-controller\src\main\java\com\zkl\taishou\controller" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -479,16 +658,32 @@
       <updated>1588814395759</updated>
       <workItem from="1588814484044" duration="22387000" />
       <workItem from="1588899622145" duration="42529000" />
+      <workItem from="1589163047598" duration="26700000" />
     </task>
     <servers />
   </component>
+  <component name="TestHistory">
+    <history-entry file="Springboot_getYml - 2020.05.11 at 17h 20m 24s.xml">
+      <configuration name="Springboot.getYml" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="Springboot_main - 2020.05.11 at 17h 21m 07s.xml">
+      <configuration name="Springboot.main" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="Springboot_main - 2020.05.11 at 17h 22m 16s.xml">
+      <configuration name="Springboot.main" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="Springboot_test - 2020.05.11 at 17h 22m 41s.xml">
+      <configuration name="Springboot.test" configurationId="JUnit" />
+    </history-entry>
+  </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="64916000" />
+    <option name="totallyTimeSpent" value="91616000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24597855" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24128686" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -497,8 +692,8 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32956153" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.291372" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3286119" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.08356941" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39886847" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -510,14 +705,14 @@
       <window_info anchor="bottom" id="Messages" order="11" weight="0.32956153" />
       <window_info anchor="bottom" id="Java Enterprise" order="12" weight="0.32956153" />
       <window_info anchor="bottom" id="Database Changes" order="13" />
-      <window_info anchor="bottom" id="Version Control" order="14" />
+      <window_info anchor="bottom" id="Version Control" order="14" weight="0.08356941" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Maven" order="3" weight="0.230563" />
       <window_info anchor="right" id="Palette" order="4" />
       <window_info anchor="right" id="Capture Analysis" order="5" />
-      <window_info anchor="right" id="Database" order="6" weight="0.50672644" />
+      <window_info anchor="right" id="Database" order="6" visible="true" weight="0.028820375" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Theme Preview" order="8" />
       <window_info anchor="right" id="Bean Validation" order="9" />
@@ -527,150 +722,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/steward-common/src/main/java/com/zkl/taishou/common/entity/RoleUser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="141">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/steward-controller/src/main/java/com/zkl/taishou/controller/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/steward-common/src/main/java/com/zkl/taishou/common/entity/Role.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/9517ab63-ca41-4b9f-bb64-52803db695bc/console.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/steward-dao/src/main/java/com/zkl/taishou/dao/LombokPlugin.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="16" column="47" lean-forward="true" selection-start-line="16" selection-start-column="47" selection-end-line="16" selection-end-column="47" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/steward-dao/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="14" column="8" selection-start-line="14" selection-start-column="8" selection-end-line="18" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/steward-controller/src/main/java/com/zkl/taishou/controller/user/test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/steward-controller/src/main/java/com/zkl/taishou/controller/user/v.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="8" column="14" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/steward-controller/src/main/java/com/zkl/taishou/controller/user/a.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="2" selection-start-line="2" selection-end-line="7" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/steward-common/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="27" column="21" selection-start-line="27" selection-start-column="21" selection-end-line="27" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/steward-service/src/main/java/com/zkl/taishou/service/shiro.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="8" column="18" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/steward-common/src/main/java/com/zkl/taishou/common/constants/RedisKeyConstants.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-722">
-          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/steward-common/src/main/java/com/zkl/taishou/common/entity/Role.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/steward-common/src/main/java/com/zkl/taishou/common/entity/Permission.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/steward-dao/src/main/java/com/zkl/taishou/dao/user/PermissionMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="13" column="15" selection-start-line="13" selection-start-column="15" selection-end-line="13" selection-end-column="15" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-autoconfigure/1.5.9.RELEASE/spring-boot-autoconfigure-1.5.9.RELEASE.jar!/org/springframework/boot/autoconfigure/validation/ValidationAutoConfiguration.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="45" column="48" selection-start-line="45" selection-start-column="48" selection-end-line="45" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/steward-dao/src/main/resources/mybatis-generator.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="429">
-          <caret line="42" column="27" selection-start-line="42" selection-start-column="9" selection-end-line="42" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/steward-dao/src/main/resources/mybatis.cfg.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="12" column="21" lean-forward="true" selection-start-line="10" selection-start-column="4" selection-end-line="12" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/steward-dao/src/main/java/com/zkl/taishou/dao/user/RoleMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/steward-dao/src/main/resources/mapper/RoleMapper.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/steward-dao/src/main/resources/mapper/PermissionMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
@@ -688,13 +739,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/steward-dao/src/main/resources/mapper/UserMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="137">
-          <caret line="141" column="36" selection-start-line="141" selection-start-column="36" selection-end-line="141" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/steward-common/src/main/java/com/zkl/taishou/common/VO/CalculateStepTwo.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="296">
@@ -702,23 +746,6 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/steward-common/src/main/java/com/zkl/taishou/common/VO/CalculateStepOne.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="82">
-          <caret line="17" column="25" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="329">
-          <caret line="68" selection-start-line="68" selection-end-line="68" />
         </state>
       </provider>
     </entry>
@@ -743,74 +770,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/steward-service/src/main/java/com/zkl/taishou/service/Impl/CalculateServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="18" column="21" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/steward-service/src/main/java/com/zkl/taishou/service/CalculateService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="12" column="26" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/steward-common/src/main/java/com/zkl/taishou/common/entity/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="15" column="46" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="46" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/apache/shiro/shiro-core/1.3.2/shiro-core-1.3.2.jar!/org/apache/shiro/authc/SimpleAuthenticationInfo.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="139">
           <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/steward-service/src/main/java/com/zkl/taishou/service/BaseService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="131">
-          <caret line="15" column="11" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="11" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/steward-controller/src/main/java/com/zkl/taishou/Taishou_Steward_App.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="8" column="34" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/steward-common/src/main/java/com/zkl/taishou/common/result/ResultBean.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/steward-common/src/main/java/com/zkl/taishou/common/utils/ServletUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="29" column="42" selection-start-line="29" selection-start-column="42" selection-end-line="29" selection-end-column="42" />
         </state>
       </provider>
     </entry>
@@ -831,16 +794,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/steward-service/src/main/java/com/zkl/taishou/service/redis/Impl/RedisServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/steward-service/src/main/java/com/zkl/taishou/service/redis/RedisService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-152">
@@ -851,20 +804,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/steward-controller/src/main/java/com/zkl/taishou/controller/BaseController.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-test/4.3.13.RELEASE/spring-test-4.3.13.RELEASE.jar!/org/springframework/test/context/junit4/SpringRunner.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="277">
-          <caret line="35" column="29" selection-start-line="35" selection-start-column="19" selection-end-line="35" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="114">
+          <caret line="9" column="19" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/steward-controller/src/main/java/com/zkl/taishou/shiro/MyShiroRealm.java">
+    <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
+        <state relative-caret-position="-1206">
           <caret line="68" selection-start-line="68" selection-end-line="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/steward-service/src/main/java/com/zkl/taishou/service/BaseService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="314">
+          <caret line="30" selection-start-line="30" selection-end-line="30" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -873,8 +830,48 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/steward-controller/src/main/java/com/zkl/taishou/shiro/ShiroConfig.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
+        <state relative-caret-position="526">
           <caret line="60" column="10" selection-start-line="60" selection-start-column="10" selection-end-line="60" selection-end-column="10" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/steward-controller/src/main/java/com/zkl/taishou/controller/BaseController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="87">
+          <caret line="121" column="50" selection-start-line="121" selection-start-column="46" selection-end-line="121" selection-end-column="50" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/steward-controller/src/main/java/com/zkl/taishou/shiro/MyShiroRealm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="57" column="17" selection-start-line="57" selection-start-column="13" selection-end-line="57" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/steward-service/src/main/java/com/zkl/taishou/service/redis/Impl/RedisServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="33" column="41" selection-start-line="33" selection-start-column="41" selection-end-line="33" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/steward-common/src/main/java/com/zkl/taishou/common/PO/UserInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="274">
+          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -883,28 +880,91 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/steward-common/src/main/java/com/zkl/taishou/common/utils/EncryptUtil.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="219">
-          <caret line="24" column="25" selection-start-line="24" selection-start-column="25" selection-end-line="24" selection-end-column="25" />
+        <state relative-caret-position="76">
+          <caret line="8" selection-start-line="8" selection-end-line="13" selection-end-column="3" />
           <folding>
+            <element signature="e#1821#1822#0" expanded="true" />
             <element signature="e#1869#1870#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/steward-service/src/main/java/com/zkl/taishou/service/user/UserService.java">
+    <entry file="file://$PROJECT_DIR$/steward-common/src/main/java/com/zkl/taishou/common/utils/PropsUtil.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="17" column="15" selection-start-line="17" selection-start-column="15" selection-end-line="17" selection-end-column="15" />
+        <state relative-caret-position="218">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/steward-service/src/main/java/com/zkl/taishou/service/user/Impl/UserServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/steward-common/src/main/resource/application-attribute.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
-          <caret line="77" column="36" lean-forward="true" selection-start-line="77" selection-start-column="36" selection-end-line="77" selection-end-column="36" />
+        <state relative-caret-position="38">
+          <caret line="2" column="21" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/steward-dao/src/main/resources/mapper/CalculateRecordMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="3" column="78" lean-forward="true" selection-start-line="3" selection-start-column="78" selection-end-line="3" selection-end-column="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/steward-controller/src/main/java/com/zkl/taishou/controller/user/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-576">
+          <caret line="2" column="35" selection-start-line="2" selection-start-column="35" selection-end-line="2" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/steward-dao/src/main/resources/mybatis.cfg.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="12" column="21" selection-start-line="10" selection-start-column="4" selection-end-line="12" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/steward-controller/src/main/resources/logback.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="341">
+          <caret line="38" column="37" lean-forward="true" selection-start-line="38" selection-start-column="37" selection-end-line="38" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/steward-controller/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="532">
+          <caret line="28" selection-start-line="28" selection-end-line="28" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/steward-common/src/main/java/com/zkl/taishou/common/entity/Role.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/steward-common/src/main/java/com/zkl/taishou/common/entity/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/steward-common/src/main/java/com/zkl/taishou/common/entity/Permission.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="11" column="25" lean-forward="true" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -913,39 +973,181 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/steward-controller/src/main/java/com/zkl/taishou/controller/CalculateController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="31" column="4" selection-start-line="31" selection-start-column="4" selection-end-line="31" selection-end-column="83" />
+        <state relative-caret-position="132">
+          <caret line="36" column="37" selection-start-line="36" selection-start-column="37" selection-end-line="36" selection-end-column="37" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/steward-controller/src/main/java/com/zkl/taishou/controller/user/UserController.java">
+    <entry file="file://$PROJECT_DIR$/steward-dao/src/main/resources/mybatis-generator.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="532">
-          <caret line="37" lean-forward="true" selection-start-line="37" selection-end-line="37" />
+        <state relative-caret-position="265">
+          <caret line="21" column="26" lean-forward="true" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/steward-dao/src/main/java/com/zkl/taishou/dao/calculate/CalculateRecordMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="146">
+          <caret line="8" column="22" lean-forward="true" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/steward-common/src/main/java/com/zkl/taishou/common/entity/CalculateRecord.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-158">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1180#1181#0" expanded="true" />
-            <element signature="e#1236#1237#0" expanded="true" />
-            <element signature="e#1337#1338#0" expanded="true" />
-            <element signature="e#1381#1382#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/steward-controller/src/main/resources/application.yml">
+    <entry file="file://$PROJECT_DIR$/steward-common/src/main/java/com/zkl/taishou/common/VO/CalculateStepOne.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="282">
-          <caret line="22" column="14" selection-start-line="22" selection-start-column="14" selection-end-line="22" selection-end-column="14" />
+        <state relative-caret-position="298">
+          <caret line="55" column="1" selection-start-line="55" selection-start-column="1" selection-end-line="55" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/steward-common/src/main/java/com/zkl/taishou/common/result/ResultConstants.java">
+    <entry file="file://$PROJECT_DIR$/steward-common/src/main/java/com/zkl/taishou/common/utils/ServletUtil.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="277">
-          <caret line="33" column="36" selection-start-line="33" selection-start-column="36" selection-end-line="33" selection-end-column="36" />
+        <state relative-caret-position="-533">
+          <caret line="29" column="42" selection-start-line="29" selection-start-column="42" selection-end-line="29" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/steward-controller/src/main/java/com/zkl/taishou/Taishou_Steward_App.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="8" column="34" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/steward-service/src/test/java/Springboot.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/steward-service/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="12" column="18" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/steward-common/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="393">
+          <caret line="31" selection-start-line="31" selection-end-line="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/steward-common/src/main/java/com/zkl/taishou/common/utils/CommonUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-533">
+          <caret line="9" column="33" selection-start-line="9" selection-start-column="33" selection-end-line="9" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/steward-common/src/main/java/com/zkl/taishou/common/constants/CommonalityProperty.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="12" column="38" lean-forward="true" selection-start-line="12" selection-start-column="38" selection-end-line="12" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/steward-common/src/main/java/com/zkl/taishou/common/constants/RedisKeyConstants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/steward-common/src/main/java/com/zkl/taishou/common/constants/ResultBean.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/steward-common/src/main/java/com/zkl/taishou/common/constants/ResultConstants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1647">
+          <caret line="98" column="5" lean-forward="true" selection-start-line="69" selection-start-column="4" selection-end-line="98" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/steward-common/src/main/java/com/zkl/taishou/common/constants/CalculateRule.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="15" column="47" selection-start-line="15" selection-start-column="47" selection-end-line="15" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/steward-service/src/main/java/com/zkl/taishou/service/Impl/UserServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="583">
+          <caret line="91" column="5" lean-forward="true" selection-start-line="91" selection-start-column="5" selection-end-line="91" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/steward-dao/src/main/resources/mapper/UserMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="513">
+          <caret line="27" column="14" selection-start-line="27" selection-start-column="14" selection-end-line="27" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/steward-service/src/main/java/com/zkl/taishou/service/UserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="20" column="24" selection-start-line="20" selection-start-column="24" selection-end-line="20" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/steward-service/src/main/java/com/zkl/taishou/service/CalculateService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="14" column="57" lean-forward="true" selection-start-line="14" selection-start-column="57" selection-end-line="14" selection-end-column="57" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/steward-service/src/main/java/com/zkl/taishou/service/Impl/CalculateServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="483">
+          <caret line="40" selection-start-line="40" selection-end-line="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/steward-common/src/main/java/com/zkl/taishou/common/utils/CalculateUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="11" column="4" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="4" />
         </state>
       </provider>
     </entry>

@@ -15,7 +15,7 @@ public class User implements Serializable {
 
     private static final long serialVersionUid = 1L;
 
-    private Integer id;
+    private Long id;
 
     private String name;
 
@@ -30,6 +30,8 @@ public class User implements Serializable {
     private String phone;
 
     private String password;
+
+    private String headPortraitImg;
 
     private Role role;
 

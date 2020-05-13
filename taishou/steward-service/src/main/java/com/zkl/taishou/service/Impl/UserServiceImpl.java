@@ -1,15 +1,15 @@
-package com.zkl.taishou.service.user.Impl;
+package com.zkl.taishou.service.Impl;
 
+import com.zkl.taishou.common.PO.UserInfo;
 import com.zkl.taishou.common.constants.RedisKeyConstants;
 import com.zkl.taishou.common.entity.User;
-import com.zkl.taishou.common.result.ResultBean;
-import com.zkl.taishou.common.result.ResultConstants;
+import com.zkl.taishou.common.constants.ResultBean;
+import com.zkl.taishou.common.constants.ResultConstants;
 import com.zkl.taishou.common.utils.EncryptUtil;
 import com.zkl.taishou.dao.user.PermissionMapper;
 import com.zkl.taishou.dao.user.UserMapper;
 import com.zkl.taishou.service.BaseService;
-import com.zkl.taishou.service.user.UserService;
-import jdk.nashorn.internal.parser.Token;
+import com.zkl.taishou.service.UserService;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.UsernamePasswordToken;
@@ -55,15 +55,16 @@ public class UserServiceImpl extends BaseService implements UserService {
     }
 
     @Override
-    public ResultBean login(String phone, String password) {
+    public ResultBean<UserInfo> login(String phone, String password) {
         Subject subject = SecurityUtils.getSubject();
         UsernamePasswordToken usernamePasswordToken = new UsernamePasswordToken(phone, password);
         String token=null;
+        User user;
         try {
             subject.login(usernamePasswordToken);
-            User userInfo=(User)subject.getPrincipal();
+            user=(User)subject.getPrincipal();
             //登录  redis存储token
-            token = redisService.userLogin(userInfo, RedisKeyConstants.ONE_DAY);
+            token = redisService.userLogin(user, RedisKeyConstants.ONE_DAY);
         }catch (AuthenticationException e) {
             e.printStackTrace();
             return new ResultBean(ResultConstants.LOGIN_FAlL);
@@ -71,11 +72,13 @@ public class UserServiceImpl extends BaseService implements UserService {
             e.printStackTrace();
             return new ResultBean(ResultConstants.PERMISSION_DENIED);
         }
-        return new ResultBean(token);
+        UserInfo userInfo=new UserInfo(user);
+        userInfo.setToken(token);
+        return new ResultBean(userInfo);
     }
 
     @Override
-    public ResultBean register(User user) {
+    public ResultBean<UserInfo> register(User user) {
         String account= user.getPhone();
         String password = user.getPassword();
         User userByRegisterId = getUserByRegisterId(account);

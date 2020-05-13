@@ -1,11 +1,13 @@
 package com.zkl.taishou.common.VO;
 
+import com.zkl.taishou.common.entity.CalculateRecord;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
 import javax.validation.constraints.Min;
 import java.io.Serializable;
+import java.util.Date;
 
 /**
  * @ClassName: 测算第一步页面数据接收类
@@ -38,5 +40,17 @@ public class CalculateStepOne implements Serializable {
     @ApiModelProperty(value = "预估客户数",required = true,example = "0")
     @Min(value = 0)
     private Long clientNum;//预估客户数
+
+    private Long user_id;//用户id
+
+    public CalculateRecord toCalculateRecord(){
+        return new CalculateRecord()
+                .setArea(this.area)
+                .setBedNum(this.bedNum)
+                .setClientNum(this.clientNum)
+                .setRoomNum(this.roomNum)
+                .setStaffNum(this.staffNum)
+                .setUserId(this.user_id);
+    }
 
 }

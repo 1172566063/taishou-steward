@@ -3,7 +3,7 @@ package com.zkl.taishou.shiro;
 
 import com.zkl.taishou.common.entity.Permission;
 import com.zkl.taishou.common.entity.User;
-import com.zkl.taishou.service.user.UserService;
+import com.zkl.taishou.service.UserService;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.AuthenticationInfo;
 import org.apache.shiro.authc.AuthenticationToken;

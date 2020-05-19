@@ -1,11 +1,8 @@
 package com.zkl.taishou.dao.user;
 
-import com.zkl.taishou.common.entity.Permission;
 import com.zkl.taishou.common.entity.User;
 
-import java.util.List;
-
-public interface UserMapper {
+public interface UserDAO {
     int deleteByPrimaryKey(Integer id);
 
     int insert(User record);

@@ -2,7 +2,7 @@ package com.zkl.taishou.dao.calculate;
 
 import com.zkl.taishou.common.entity.CalculateRecord;
 
-public interface CalculateRecordMapper {
+public interface CalculateRecordDAO {
 
     int deleteByPrimaryKey(Integer id);
 

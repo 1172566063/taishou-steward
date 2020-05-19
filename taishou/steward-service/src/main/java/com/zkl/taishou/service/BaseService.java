@@ -30,7 +30,6 @@ public class BaseService {
         LOGGER.info("*************loggerInfo:" + errorMessage);
     }
 
-
     /**
      * 日志
      *

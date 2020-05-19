@@ -6,8 +6,8 @@ import com.zkl.taishou.common.constants.*;
 import com.zkl.taishou.common.entity.CalculateCardinal;
 import com.zkl.taishou.common.entity.CalculateRecord;
 import com.zkl.taishou.common.utils.CommonUtils;
-import com.zkl.taishou.dao.calculate.CalculateCardinalMapper;
-import com.zkl.taishou.dao.calculate.CalculateRecordMapper;
+import com.zkl.taishou.dao.calculate.CalculateCardinalDAO;
+import com.zkl.taishou.dao.calculate.CalculateRecordDAO;
 import com.zkl.taishou.service.CalculateService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -27,10 +27,10 @@ public class CalculateServiceImpl implements CalculateService {
 
 
     @Autowired
-    CalculateRecordMapper calculateRecordMapper;
+    CalculateRecordDAO calculateRecordMapper;
 
     @Autowired
-    CalculateCardinalMapper calculateCardinalMapper;
+    CalculateCardinalDAO calculateCardinalMapper;
 
     @Override
     public void recordResult(CalculateStepOneVO calculateStepOne) {

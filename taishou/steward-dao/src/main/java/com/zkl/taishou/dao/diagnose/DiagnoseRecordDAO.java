@@ -2,7 +2,8 @@ package com.zkl.taishou.dao.diagnose;
 
 import com.zkl.taishou.common.entity.DiagnoseRecord;
 
-public interface DiagnoseRecordMapper {
+public interface DiagnoseRecordDAO {
+
     int deleteByPrimaryKey(Integer id);
 
     int insert(DiagnoseRecord record);

@@ -6,8 +6,8 @@ import com.zkl.taishou.common.entity.User;
 import com.zkl.taishou.common.constants.ResultBean;
 import com.zkl.taishou.common.constants.ResultConstants;
 import com.zkl.taishou.common.utils.EncryptUtil;
-import com.zkl.taishou.dao.user.PermissionMapper;
-import com.zkl.taishou.dao.user.UserMapper;
+import com.zkl.taishou.dao.user.PermissionDAO;
+import com.zkl.taishou.dao.user.UserDAO;
 import com.zkl.taishou.service.BaseService;
 import com.zkl.taishou.service.UserService;
 import org.apache.shiro.SecurityUtils;
@@ -22,10 +22,10 @@ import org.springframework.stereotype.Service;
 public class UserServiceImpl extends BaseService implements UserService {
 
     @Autowired
-    UserMapper userMapper;
+    UserDAO userMapper;
 
     @Autowired
-    PermissionMapper permissionMapper;
+    PermissionDAO permissionMapper;
 
     @Override
     public User getUsers() {

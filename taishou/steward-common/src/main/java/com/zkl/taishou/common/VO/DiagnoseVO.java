@@ -1,6 +1,7 @@
 package com.zkl.taishou.common.VO;
 
 import com.zkl.taishou.common.entity.DiagnoseRecord;
+import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -25,17 +26,22 @@ public class DiagnoseVO implements Serializable {
 
     @NotNull
     @Min(value = 0, message = "basicItem值不能能小于0")
+    @ApiModelProperty(value = "基本品项每月业绩",required = true,example = "0")
     private Double basicItem;
     @NotNull
     @Min(value = 0, message = "featuresItem值不能能小于0")
+    @ApiModelProperty(value = "特色品项每月业绩",required = true,example = "0")
     private Double featuresItem;
     @NotNull
     @Min(value = 0, message = "bigItem值不能能小于0")
+    @ApiModelProperty(value = "大项目每月业绩",required = true,example = "0")
     private Double bigItem;
     @NotNull
     @Min(value = 0, message = "homeAndOutside值不能能小于0")
+    @ApiModelProperty(value = "居家外带每月业绩",required = true,example = "0")
     private Double homeAndOutside;
     @Min(value = 0, message = "type值不能能小于0")
+    @ApiModelProperty(value = "诊断类型 1运营环境检测  2营销业绩诊断" ,required = true,example = "0")
     private Long type;
 
     private Long userId;

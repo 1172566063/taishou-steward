@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zkl.taishou.dao.diagnose.StoreCostStructureRecordDAO">
+  <resultMap id="BaseResultMap" type="com.zkl.taishou.common.entity.StoreCostStructureRecord">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="purchase_cost" jdbcType="DOUBLE" property="purchaseCost" />
+    <result column="instrument_cost" jdbcType="DOUBLE" property="instrumentCost" />
+    <result column="wage_cost" jdbcType="DOUBLE" property="wageCost" />
+    <result column="rent and utilities" jdbcType="DOUBLE" property="rentAndUtilities" />
+    <result column="marketing_cost" jdbcType="DOUBLE" property="marketingCost" />
+    <result column="management_cost" jdbcType="DOUBLE" property="managementCost" />
+    <result column="other_cost" jdbcType="DOUBLE" property="otherCost" />
+    <result column="result_id" jdbcType="INTEGER" property="resultId" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, user_id, purchase_cost, instrument_cost, wage_cost, `rent and utilities`, marketing_cost, 
+    management_cost, other_cost, result_id, create_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from store_cost_structure_record
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from store_cost_structure_record
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.zkl.taishou.common.entity.StoreCostStructureRecord">
+    insert into store_cost_structure_record (id, user_id, purchase_cost, 
+      instrument_cost, wage_cost, `rent and utilities`, 
+      marketing_cost, management_cost, other_cost, 
+      result_id, create_time)
+    values (#{id,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, #{purchaseCost,jdbcType=DOUBLE}, 
+      #{instrumentCost,jdbcType=DOUBLE}, #{wageCost,jdbcType=DOUBLE}, #{rentAndUtilities,jdbcType=DOUBLE}, 
+      #{marketingCost,jdbcType=DOUBLE}, #{managementCost,jdbcType=DOUBLE}, #{otherCost,jdbcType=DOUBLE}, 
+      #{resultId,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.zkl.taishou.common.entity.StoreCostStructureRecord">
+    insert into store_cost_structure_record
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="purchaseCost != null">
+        purchase_cost,
+      </if>
+      <if test="instrumentCost != null">
+        instrument_cost,
+      </if>
+      <if test="wageCost != null">
+        wage_cost,
+      </if>
+      <if test="rentAndUtilities != null">
+        `rent and utilities`,
+      </if>
+      <if test="marketingCost != null">
+        marketing_cost,
+      </if>
+      <if test="managementCost != null">
+        management_cost,
+      </if>
+      <if test="otherCost != null">
+        other_cost,
+      </if>
+      <if test="resultId != null">
+        result_id,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="purchaseCost != null">
+        #{purchaseCost,jdbcType=DOUBLE},
+      </if>
+      <if test="instrumentCost != null">
+        #{instrumentCost,jdbcType=DOUBLE},
+      </if>
+      <if test="wageCost != null">
+        #{wageCost,jdbcType=DOUBLE},
+      </if>
+      <if test="rentAndUtilities != null">
+        #{rentAndUtilities,jdbcType=DOUBLE},
+      </if>
+      <if test="marketingCost != null">
+        #{marketingCost,jdbcType=DOUBLE},
+      </if>
+      <if test="managementCost != null">
+        #{managementCost,jdbcType=DOUBLE},
+      </if>
+      <if test="otherCost != null">
+        #{otherCost,jdbcType=DOUBLE},
+      </if>
+      <if test="resultId != null">
+        #{resultId,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zkl.taishou.common.entity.StoreCostStructureRecord">
+    update store_cost_structure_record
+    <set>
+      <if test="userId != null">
+        user_id = #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="purchaseCost != null">
+        purchase_cost = #{purchaseCost,jdbcType=DOUBLE},
+      </if>
+      <if test="instrumentCost != null">
+        instrument_cost = #{instrumentCost,jdbcType=DOUBLE},
+      </if>
+      <if test="wageCost != null">
+        wage_cost = #{wageCost,jdbcType=DOUBLE},
+      </if>
+      <if test="rentAndUtilities != null">
+        `rent and utilities` = #{rentAndUtilities,jdbcType=DOUBLE},
+      </if>
+      <if test="marketingCost != null">
+        marketing_cost = #{marketingCost,jdbcType=DOUBLE},
+      </if>
+      <if test="managementCost != null">
+        management_cost = #{managementCost,jdbcType=DOUBLE},
+      </if>
+      <if test="otherCost != null">
+        other_cost = #{otherCost,jdbcType=DOUBLE},
+      </if>
+      <if test="resultId != null">
+        result_id = #{resultId,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zkl.taishou.common.entity.StoreCostStructureRecord">
+    update store_cost_structure_record
+    set user_id = #{userId,jdbcType=INTEGER},
+      purchase_cost = #{purchaseCost,jdbcType=DOUBLE},
+      instrument_cost = #{instrumentCost,jdbcType=DOUBLE},
+      wage_cost = #{wageCost,jdbcType=DOUBLE},
+      `rent and utilities` = #{rentAndUtilities,jdbcType=DOUBLE},
+      marketing_cost = #{marketingCost,jdbcType=DOUBLE},
+      management_cost = #{managementCost,jdbcType=DOUBLE},
+      other_cost = #{otherCost,jdbcType=DOUBLE},
+      result_id = #{resultId,jdbcType=INTEGER},
+      create_time = #{createTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

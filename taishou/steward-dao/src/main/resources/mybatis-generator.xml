@@ -5,6 +5,7 @@
 
 <!-- 使用 mvn mybatis-generator:generate -->
 <generatorConfiguration>
+    <classPathEntry location="C:\Users\1\.m2\repository\mysql\mysql-connector-java\5.1.46\mysql-connector-java-5.1.46.jar"/>
     <!-- 配置文件 -->
     <!-- <properties resource="application.properties" /> -->
     <context id="runmanTables" targetRuntime="MyBatis3" defaultModelType="flat">
@@ -21,8 +22,16 @@
 
         <!-- 取消生成的代码注释 -->
         <commentGenerator>
-            <property name="suppressAllComments" value="true"/>
+            <property name="suppressAllComments" value="false"/>
+            <property name="addRemarkComments" value="true"/>
+
         </commentGenerator>
+
+        <javaTypeResolver>
+            <!-- 默认false，把JDBC DECIMAL 和 NUMERIC 类型解析为 Integer，为 true时把JDBC DECIMAL 和
+                NUMERIC 类型解析为java.math.BigDecimal -->
+            <property name="forceBigDecimals" value="true"/>
+        </javaTypeResolver>
 
         <!-- 连接配置 -->
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
@@ -35,6 +44,7 @@
         <javaModelGenerator targetPackage="com.zkl.taishou.common.entity"
                             targetProject="../steward-common/src/main/java">
             <property name="trimStrings" value="true"/>
+            <property name="addRemarkComments" value="true"/>
         </javaModelGenerator>
 
         <!-- 生成Mapper 配置文件 -->
@@ -52,7 +62,7 @@
         <!-- oracle 使用 schema 对应 用户名称空间 mysql 使用 catalog 对应 数据库 -->
 
         <!--<table schema="zhjf" tableName="表名" domainObjectName="实体类名" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>-->
-        <table schema="taishou_steward" tableName="diagnose_record" domainObjectName="DiagnoseRecord" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"/>
+        <table schema="taishou_steward" tableName="profit_diagnosis_record" domainObjectName="ProfitDiagnosisRecord" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"/>
 
 
     </context>

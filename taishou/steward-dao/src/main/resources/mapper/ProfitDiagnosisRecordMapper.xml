@@ -1,0 +1,995 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zkl.taishou.dao.diagnose.ProfitDiagnosisRecordDAO">
+  <resultMap id="BaseResultMap" type="com.zkl.taishou.common.VO.ProfitDiagnosisVO">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="sales_january" jdbcType="DOUBLE" property="salesJanuary" />
+    <result column="sales_february" jdbcType="DOUBLE" property="salesFebruary" />
+    <result column="sales_march" jdbcType="DOUBLE" property="salesMarch" />
+    <result column="sales_april" jdbcType="DOUBLE" property="salesApril" />
+    <result column="sales_may" jdbcType="DOUBLE" property="salesMay" />
+    <result column="sales_june" jdbcType="DOUBLE" property="salesJune" />
+    <result column="sales_july" jdbcType="DOUBLE" property="salesJuly" />
+    <result column="sales_august" jdbcType="DOUBLE" property="salesAugust" />
+    <result column="sales_september" jdbcType="DOUBLE" property="salesSeptember" />
+    <result column="sales_october" jdbcType="DOUBLE" property="salesOctober" />
+    <result column="sales_november" jdbcType="DOUBLE" property="salesNovember" />
+    <result column="sales_december" jdbcType="DOUBLE" property="salesDecember" />
+    <result column="cost_january" jdbcType="DOUBLE" property="costJanuary" />
+    <result column="cost_february" jdbcType="DOUBLE" property="costFebruary" />
+    <result column="cost_march" jdbcType="DOUBLE" property="costMarch" />
+    <result column="cost_april" jdbcType="DOUBLE" property="costApril" />
+    <result column="cost_may" jdbcType="DOUBLE" property="costMay" />
+    <result column="cost_june" jdbcType="DOUBLE" property="costJune" />
+    <result column="cost_july" jdbcType="DOUBLE" property="costJuly" />
+    <result column="cost_august" jdbcType="DOUBLE" property="costAugust" />
+    <result column="cost_september" jdbcType="DOUBLE" property="costSeptember" />
+    <result column="cost_october" jdbcType="DOUBLE" property="costOctober" />
+    <result column="cost_november" jdbcType="DOUBLE" property="costNovember" />
+    <result column="cost_december" jdbcType="DOUBLE" property="costDecember" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="result_id" jdbcType="INTEGER" property="resultId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, user_id, sales_january, sales_february, sales_march, sales_april, sales_may, 
+    sales_june, sales_july, sales_august, sales_september, sales_october, sales_november, 
+    sales_december, cost_january, cost_february, cost_march, cost_april, cost_may, cost_june, 
+    cost_july, cost_august, cost_september, cost_october, cost_november, cost_december, 
+    create_time, result_id
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from profit_diagnosis_record
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from profit_diagnosis_record
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.zkl.taishou.common.VO.ProfitDiagnosisVO">
+    insert into profit_diagnosis_record (id, user_id, sales_january, 
+      sales_february, sales_march, sales_april, 
+      sales_may, sales_june, sales_july, 
+      sales_august, sales_september, sales_october, 
+      sales_november, sales_december, cost_january, 
+      cost_february, cost_march, cost_april, 
+      cost_may, cost_june, cost_july, 
+      cost_august, cost_september, cost_october, 
+      cost_november, cost_december, create_time, 
+      result_id)
+    values (#{id,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, #{salesJanuary,jdbcType=DOUBLE}, 
+      #{salesFebruary,jdbcType=DOUBLE}, #{salesMarch,jdbcType=DOUBLE}, #{salesApril,jdbcType=DOUBLE}, 
+      #{salesMay,jdbcType=DOUBLE}, #{salesJune,jdbcType=DOUBLE}, #{salesJuly,jdbcType=DOUBLE}, 
+      #{salesAugust,jdbcType=DOUBLE}, #{salesSeptember,jdbcType=DOUBLE}, #{salesOctober,jdbcType=DOUBLE}, 
+      #{salesNovember,jdbcType=DOUBLE}, #{salesDecember,jdbcType=DOUBLE}, #{costJanuary,jdbcType=DOUBLE}, 
+      #{costFebruary,jdbcType=DOUBLE}, #{costMarch,jdbcType=DOUBLE}, #{costApril,jdbcType=DOUBLE}, 
+      #{costMay,jdbcType=DOUBLE}, #{costJune,jdbcType=DOUBLE}, #{costJuly,jdbcType=DOUBLE}, 
+      #{costAugust,jdbcType=DOUBLE}, #{costSeptember,jdbcType=DOUBLE}, #{costOctober,jdbcType=DOUBLE}, 
+      #{costNovember,jdbcType=DOUBLE}, #{costDecember,jdbcType=DOUBLE}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{resultId,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.zkl.taishou.common.VO.ProfitDiagnosisVO">
+    insert into profit_diagnosis_record
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="salesJanuary != null">
+        sales_january,
+      </if>
+      <if test="salesFebruary != null">
+        sales_february,
+      </if>
+      <if test="salesMarch != null">
+        sales_march,
+      </if>
+      <if test="salesApril != null">
+        sales_april,
+      </if>
+      <if test="salesMay != null">
+        sales_may,
+      </if>
+      <if test="salesJune != null">
+        sales_june,
+      </if>
+      <if test="salesJuly != null">
+        sales_july,
+      </if>
+      <if test="salesAugust != null">
+        sales_august,
+      </if>
+      <if test="salesSeptember != null">
+        sales_september,
+      </if>
+      <if test="salesOctober != null">
+        sales_october,
+      </if>
+      <if test="salesNovember != null">
+        sales_november,
+      </if>
+      <if test="salesDecember != null">
+        sales_december,
+      </if>
+      <if test="costJanuary != null">
+        cost_january,
+      </if>
+      <if test="costFebruary != null">
+        cost_february,
+      </if>
+      <if test="costMarch != null">
+        cost_march,
+      </if>
+      <if test="costApril != null">
+        cost_april,
+      </if>
+      <if test="costMay != null">
+        cost_may,
+      </if>
+      <if test="costJune != null">
+        cost_june,
+      </if>
+      <if test="costJuly != null">
+        cost_july,
+      </if>
+      <if test="costAugust != null">
+        cost_august,
+      </if>
+      <if test="costSeptember != null">
+        cost_september,
+      </if>
+      <if test="costOctober != null">
+        cost_october,
+      </if>
+      <if test="costNovember != null">
+        cost_november,
+      </if>
+      <if test="costDecember != null">
+        cost_december,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="resultId != null">
+        result_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="salesJanuary != null">
+        #{salesJanuary,jdbcType=DOUBLE},
+      </if>
+      <if test="salesFebruary != null">
+        #{salesFebruary,jdbcType=DOUBLE},
+      </if>
+      <if test="salesMarch != null">
+        #{salesMarch,jdbcType=DOUBLE},
+      </if>
+      <if test="salesApril != null">
+        #{salesApril,jdbcType=DOUBLE},
+      </if>
+      <if test="salesMay != null">
+        #{salesMay,jdbcType=DOUBLE},
+      </if>
+      <if test="salesJune != null">
+        #{salesJune,jdbcType=DOUBLE},
+      </if>
+      <if test="salesJuly != null">
+        #{salesJuly,jdbcType=DOUBLE},
+      </if>
+      <if test="salesAugust != null">
+        #{salesAugust,jdbcType=DOUBLE},
+      </if>
+      <if test="salesSeptember != null">
+        #{salesSeptember,jdbcType=DOUBLE},
+      </if>
+      <if test="salesOctober != null">
+        #{salesOctober,jdbcType=DOUBLE},
+      </if>
+      <if test="salesNovember != null">
+        #{salesNovember,jdbcType=DOUBLE},
+      </if>
+      <if test="salesDecember != null">
+        #{salesDecember,jdbcType=DOUBLE},
+      </if>
+      <if test="costJanuary != null">
+        #{costJanuary,jdbcType=DOUBLE},
+      </if>
+      <if test="costFebruary != null">
+        #{costFebruary,jdbcType=DOUBLE},
+      </if>
+      <if test="costMarch != null">
+        #{costMarch,jdbcType=DOUBLE},
+      </if>
+      <if test="costApril != null">
+        #{costApril,jdbcType=DOUBLE},
+      </if>
+      <if test="costMay != null">
+        #{costMay,jdbcType=DOUBLE},
+      </if>
+      <if test="costJune != null">
+        #{costJune,jdbcType=DOUBLE},
+      </if>
+      <if test="costJuly != null">
+        #{costJuly,jdbcType=DOUBLE},
+      </if>
+      <if test="costAugust != null">
+        #{costAugust,jdbcType=DOUBLE},
+      </if>
+      <if test="costSeptember != null">
+        #{costSeptember,jdbcType=DOUBLE},
+      </if>
+      <if test="costOctober != null">
+        #{costOctober,jdbcType=DOUBLE},
+      </if>
+      <if test="costNovember != null">
+        #{costNovember,jdbcType=DOUBLE},
+      </if>
+      <if test="costDecember != null">
+        #{costDecember,jdbcType=DOUBLE},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="resultId != null">
+        #{resultId,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <insert id="insertBatch" parameterType="java.util.List">
+    insert into profit_diagnosis_record (id, user_id, sales_january, 
+      sales_february, sales_march, sales_april, 
+      sales_may, sales_june, sales_july, 
+      sales_august, sales_september, sales_october, 
+      sales_november, sales_december, cost_january, 
+      cost_february, cost_march, cost_april, 
+      cost_may, cost_june, cost_july, 
+      cost_august, cost_september, cost_october, 
+      cost_november, cost_december, create_time, 
+      result_id)
+    values 
+    <foreach collection="list" index="index" item="item" separator=",">
+      (#{item.id,jdbcType=INTEGER}, #{item.userId,jdbcType=INTEGER}, #{item.salesJanuary,jdbcType=DOUBLE}, 
+        #{item.salesFebruary,jdbcType=DOUBLE}, #{item.salesMarch,jdbcType=DOUBLE}, #{item.salesApril,jdbcType=DOUBLE}, 
+        #{item.salesMay,jdbcType=DOUBLE}, #{item.salesJune,jdbcType=DOUBLE}, #{item.salesJuly,jdbcType=DOUBLE}, 
+        #{item.salesAugust,jdbcType=DOUBLE}, #{item.salesSeptember,jdbcType=DOUBLE}, #{item.salesOctober,jdbcType=DOUBLE}, 
+        #{item.salesNovember,jdbcType=DOUBLE}, #{item.salesDecember,jdbcType=DOUBLE}, #{item.costJanuary,jdbcType=DOUBLE}, 
+        #{item.costFebruary,jdbcType=DOUBLE}, #{item.costMarch,jdbcType=DOUBLE}, #{item.costApril,jdbcType=DOUBLE}, 
+        #{item.costMay,jdbcType=DOUBLE}, #{item.costJune,jdbcType=DOUBLE}, #{item.costJuly,jdbcType=DOUBLE}, 
+        #{item.costAugust,jdbcType=DOUBLE}, #{item.costSeptember,jdbcType=DOUBLE}, #{item.costOctober,jdbcType=DOUBLE}, 
+        #{item.costNovember,jdbcType=DOUBLE}, #{item.costDecember,jdbcType=DOUBLE}, #{item.createTime,jdbcType=TIMESTAMP}, 
+        #{item.resultId,jdbcType=INTEGER})
+    </foreach>
+  </insert>
+  <insert id="insertBatchSelective" parameterType="java.util.List">
+    insert into profit_diagnosis_record
+    (id, user_id, sales_january, sales_february, sales_march, sales_april, sales_may, 
+      sales_june, sales_july, sales_august, sales_september, sales_october, sales_november, 
+      sales_december, cost_january, cost_february, cost_march, cost_april, cost_may, 
+      cost_june, cost_july, cost_august, cost_september, cost_october, cost_november, 
+      cost_december, create_time, result_id)
+    values 
+    <foreach collection="list" index="index" item="item" separator=",">
+      <trim prefix="(" suffix=")" suffixOverrides=",">
+        <if test="item.id != null">
+          #{item.id,jdbcType=INTEGER},
+        </if>
+        <if test="item.id == null">
+          NULL,
+        </if>
+        <if test="item.userId != null">
+          #{item.userId,jdbcType=INTEGER},
+        </if>
+        <if test="item.userId == null">
+          NULL,
+        </if>
+        <if test="item.salesJanuary != null">
+          #{item.salesJanuary,jdbcType=DOUBLE},
+        </if>
+        <if test="item.salesJanuary == null">
+          NULL,
+        </if>
+        <if test="item.salesFebruary != null">
+          #{item.salesFebruary,jdbcType=DOUBLE},
+        </if>
+        <if test="item.salesFebruary == null">
+          NULL,
+        </if>
+        <if test="item.salesMarch != null">
+          #{item.salesMarch,jdbcType=DOUBLE},
+        </if>
+        <if test="item.salesMarch == null">
+          NULL,
+        </if>
+        <if test="item.salesApril != null">
+          #{item.salesApril,jdbcType=DOUBLE},
+        </if>
+        <if test="item.salesApril == null">
+          NULL,
+        </if>
+        <if test="item.salesMay != null">
+          #{item.salesMay,jdbcType=DOUBLE},
+        </if>
+        <if test="item.salesMay == null">
+          NULL,
+        </if>
+        <if test="item.salesJune != null">
+          #{item.salesJune,jdbcType=DOUBLE},
+        </if>
+        <if test="item.salesJune == null">
+          NULL,
+        </if>
+        <if test="item.salesJuly != null">
+          #{item.salesJuly,jdbcType=DOUBLE},
+        </if>
+        <if test="item.salesJuly == null">
+          NULL,
+        </if>
+        <if test="item.salesAugust != null">
+          #{item.salesAugust,jdbcType=DOUBLE},
+        </if>
+        <if test="item.salesAugust == null">
+          NULL,
+        </if>
+        <if test="item.salesSeptember != null">
+          #{item.salesSeptember,jdbcType=DOUBLE},
+        </if>
+        <if test="item.salesSeptember == null">
+          NULL,
+        </if>
+        <if test="item.salesOctober != null">
+          #{item.salesOctober,jdbcType=DOUBLE},
+        </if>
+        <if test="item.salesOctober == null">
+          NULL,
+        </if>
+        <if test="item.salesNovember != null">
+          #{item.salesNovember,jdbcType=DOUBLE},
+        </if>
+        <if test="item.salesNovember == null">
+          NULL,
+        </if>
+        <if test="item.salesDecember != null">
+          #{item.salesDecember,jdbcType=DOUBLE},
+        </if>
+        <if test="item.salesDecember == null">
+          NULL,
+        </if>
+        <if test="item.costJanuary != null">
+          #{item.costJanuary,jdbcType=DOUBLE},
+        </if>
+        <if test="item.costJanuary == null">
+          NULL,
+        </if>
+        <if test="item.costFebruary != null">
+          #{item.costFebruary,jdbcType=DOUBLE},
+        </if>
+        <if test="item.costFebruary == null">
+          NULL,
+        </if>
+        <if test="item.costMarch != null">
+          #{item.costMarch,jdbcType=DOUBLE},
+        </if>
+        <if test="item.costMarch == null">
+          NULL,
+        </if>
+        <if test="item.costApril != null">
+          #{item.costApril,jdbcType=DOUBLE},
+        </if>
+        <if test="item.costApril == null">
+          NULL,
+        </if>
+        <if test="item.costMay != null">
+          #{item.costMay,jdbcType=DOUBLE},
+        </if>
+        <if test="item.costMay == null">
+          NULL,
+        </if>
+        <if test="item.costJune != null">
+          #{item.costJune,jdbcType=DOUBLE},
+        </if>
+        <if test="item.costJune == null">
+          NULL,
+        </if>
+        <if test="item.costJuly != null">
+          #{item.costJuly,jdbcType=DOUBLE},
+        </if>
+        <if test="item.costJuly == null">
+          NULL,
+        </if>
+        <if test="item.costAugust != null">
+          #{item.costAugust,jdbcType=DOUBLE},
+        </if>
+        <if test="item.costAugust == null">
+          NULL,
+        </if>
+        <if test="item.costSeptember != null">
+          #{item.costSeptember,jdbcType=DOUBLE},
+        </if>
+        <if test="item.costSeptember == null">
+          NULL,
+        </if>
+        <if test="item.costOctober != null">
+          #{item.costOctober,jdbcType=DOUBLE},
+        </if>
+        <if test="item.costOctober == null">
+          NULL,
+        </if>
+        <if test="item.costNovember != null">
+          #{item.costNovember,jdbcType=DOUBLE},
+        </if>
+        <if test="item.costNovember == null">
+          NULL,
+        </if>
+        <if test="item.costDecember != null">
+          #{item.costDecember,jdbcType=DOUBLE},
+        </if>
+        <if test="item.costDecember == null">
+          NULL,
+        </if>
+        <if test="item.createTime != null">
+          #{item.createTime,jdbcType=TIMESTAMP},
+        </if>
+        <if test="item.createTime == null">
+          NULL,
+        </if>
+        <if test="item.resultId != null">
+          #{item.resultId,jdbcType=INTEGER},
+        </if>
+        <if test="item.resultId == null">
+          NULL,
+        </if>
+      </trim>
+    </foreach>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zkl.taishou.common.VO.ProfitDiagnosisVO">
+    update profit_diagnosis_record
+    <set>
+      <if test="userId != null">
+        user_id = #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="salesJanuary != null">
+        sales_january = #{salesJanuary,jdbcType=DOUBLE},
+      </if>
+      <if test="salesFebruary != null">
+        sales_february = #{salesFebruary,jdbcType=DOUBLE},
+      </if>
+      <if test="salesMarch != null">
+        sales_march = #{salesMarch,jdbcType=DOUBLE},
+      </if>
+      <if test="salesApril != null">
+        sales_april = #{salesApril,jdbcType=DOUBLE},
+      </if>
+      <if test="salesMay != null">
+        sales_may = #{salesMay,jdbcType=DOUBLE},
+      </if>
+      <if test="salesJune != null">
+        sales_june = #{salesJune,jdbcType=DOUBLE},
+      </if>
+      <if test="salesJuly != null">
+        sales_july = #{salesJuly,jdbcType=DOUBLE},
+      </if>
+      <if test="salesAugust != null">
+        sales_august = #{salesAugust,jdbcType=DOUBLE},
+      </if>
+      <if test="salesSeptember != null">
+        sales_september = #{salesSeptember,jdbcType=DOUBLE},
+      </if>
+      <if test="salesOctober != null">
+        sales_october = #{salesOctober,jdbcType=DOUBLE},
+      </if>
+      <if test="salesNovember != null">
+        sales_november = #{salesNovember,jdbcType=DOUBLE},
+      </if>
+      <if test="salesDecember != null">
+        sales_december = #{salesDecember,jdbcType=DOUBLE},
+      </if>
+      <if test="costJanuary != null">
+        cost_january = #{costJanuary,jdbcType=DOUBLE},
+      </if>
+      <if test="costFebruary != null">
+        cost_february = #{costFebruary,jdbcType=DOUBLE},
+      </if>
+      <if test="costMarch != null">
+        cost_march = #{costMarch,jdbcType=DOUBLE},
+      </if>
+      <if test="costApril != null">
+        cost_april = #{costApril,jdbcType=DOUBLE},
+      </if>
+      <if test="costMay != null">
+        cost_may = #{costMay,jdbcType=DOUBLE},
+      </if>
+      <if test="costJune != null">
+        cost_june = #{costJune,jdbcType=DOUBLE},
+      </if>
+      <if test="costJuly != null">
+        cost_july = #{costJuly,jdbcType=DOUBLE},
+      </if>
+      <if test="costAugust != null">
+        cost_august = #{costAugust,jdbcType=DOUBLE},
+      </if>
+      <if test="costSeptember != null">
+        cost_september = #{costSeptember,jdbcType=DOUBLE},
+      </if>
+      <if test="costOctober != null">
+        cost_october = #{costOctober,jdbcType=DOUBLE},
+      </if>
+      <if test="costNovember != null">
+        cost_november = #{costNovember,jdbcType=DOUBLE},
+      </if>
+      <if test="costDecember != null">
+        cost_december = #{costDecember,jdbcType=DOUBLE},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="resultId != null">
+        result_id = #{resultId,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zkl.taishou.common.VO.ProfitDiagnosisVO">
+    update profit_diagnosis_record
+    set user_id = #{userId,jdbcType=INTEGER},
+      sales_january = #{salesJanuary,jdbcType=DOUBLE},
+      sales_february = #{salesFebruary,jdbcType=DOUBLE},
+      sales_march = #{salesMarch,jdbcType=DOUBLE},
+      sales_april = #{salesApril,jdbcType=DOUBLE},
+      sales_may = #{salesMay,jdbcType=DOUBLE},
+      sales_june = #{salesJune,jdbcType=DOUBLE},
+      sales_july = #{salesJuly,jdbcType=DOUBLE},
+      sales_august = #{salesAugust,jdbcType=DOUBLE},
+      sales_september = #{salesSeptember,jdbcType=DOUBLE},
+      sales_october = #{salesOctober,jdbcType=DOUBLE},
+      sales_november = #{salesNovember,jdbcType=DOUBLE},
+      sales_december = #{salesDecember,jdbcType=DOUBLE},
+      cost_january = #{costJanuary,jdbcType=DOUBLE},
+      cost_february = #{costFebruary,jdbcType=DOUBLE},
+      cost_march = #{costMarch,jdbcType=DOUBLE},
+      cost_april = #{costApril,jdbcType=DOUBLE},
+      cost_may = #{costMay,jdbcType=DOUBLE},
+      cost_june = #{costJune,jdbcType=DOUBLE},
+      cost_july = #{costJuly,jdbcType=DOUBLE},
+      cost_august = #{costAugust,jdbcType=DOUBLE},
+      cost_september = #{costSeptember,jdbcType=DOUBLE},
+      cost_october = #{costOctober,jdbcType=DOUBLE},
+      cost_november = #{costNovember,jdbcType=DOUBLE},
+      cost_december = #{costDecember,jdbcType=DOUBLE},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      result_id = #{resultId,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateBatchByPrimaryKey" parameterType="java.util.List">
+    update profit_diagnosis_record
+    <trim prefix="set" suffixOverrides=",">
+      <trim prefix="user_id =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.userId}
+        </foreach>
+      </trim>
+      <trim prefix="sales_january =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.salesJanuary}
+        </foreach>
+      </trim>
+      <trim prefix="sales_february =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.salesFebruary}
+        </foreach>
+      </trim>
+      <trim prefix="sales_march =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.salesMarch}
+        </foreach>
+      </trim>
+      <trim prefix="sales_april =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.salesApril}
+        </foreach>
+      </trim>
+      <trim prefix="sales_may =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.salesMay}
+        </foreach>
+      </trim>
+      <trim prefix="sales_june =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.salesJune}
+        </foreach>
+      </trim>
+      <trim prefix="sales_july =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.salesJuly}
+        </foreach>
+      </trim>
+      <trim prefix="sales_august =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.salesAugust}
+        </foreach>
+      </trim>
+      <trim prefix="sales_september =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.salesSeptember}
+        </foreach>
+      </trim>
+      <trim prefix="sales_october =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.salesOctober}
+        </foreach>
+      </trim>
+      <trim prefix="sales_november =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.salesNovember}
+        </foreach>
+      </trim>
+      <trim prefix="sales_december =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.salesDecember}
+        </foreach>
+      </trim>
+      <trim prefix="cost_january =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.costJanuary}
+        </foreach>
+      </trim>
+      <trim prefix="cost_february =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.costFebruary}
+        </foreach>
+      </trim>
+      <trim prefix="cost_march =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.costMarch}
+        </foreach>
+      </trim>
+      <trim prefix="cost_april =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.costApril}
+        </foreach>
+      </trim>
+      <trim prefix="cost_may =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.costMay}
+        </foreach>
+      </trim>
+      <trim prefix="cost_june =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.costJune}
+        </foreach>
+      </trim>
+      <trim prefix="cost_july =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.costJuly}
+        </foreach>
+      </trim>
+      <trim prefix="cost_august =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.costAugust}
+        </foreach>
+      </trim>
+      <trim prefix="cost_september =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.costSeptember}
+        </foreach>
+      </trim>
+      <trim prefix="cost_october =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.costOctober}
+        </foreach>
+      </trim>
+      <trim prefix="cost_november =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.costNovember}
+        </foreach>
+      </trim>
+      <trim prefix="cost_december =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.costDecember}
+        </foreach>
+      </trim>
+      <trim prefix="create_time =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.createTime}
+        </foreach>
+      </trim>
+      <trim prefix="result_id =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.resultId}
+        </foreach>
+      </trim>
+    </trim>
+    where id in 
+    <foreach close=")" collection="list" index="index" item="item" open="(" separator=",">
+       #{item.id} 
+    </foreach>
+  </update>
+  <update id="updateBatchByPrimaryKeySelective" parameterType="java.util.List">
+    update profit_diagnosis_record
+    <trim prefix="set" suffixOverrides=",">
+      <trim prefix="user_id =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.userId != null ">
+            when  #{item.id} then #{item.userId}
+          </if>
+          <if test="item.userId == null ">
+            when  #{item.id} then profit_diagnosis_record.user_id
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="sales_january =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.salesJanuary != null ">
+            when  #{item.id} then #{item.salesJanuary}
+          </if>
+          <if test="item.salesJanuary == null ">
+            when  #{item.id} then profit_diagnosis_record.sales_january
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="sales_february =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.salesFebruary != null ">
+            when  #{item.id} then #{item.salesFebruary}
+          </if>
+          <if test="item.salesFebruary == null ">
+            when  #{item.id} then profit_diagnosis_record.sales_february
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="sales_march =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.salesMarch != null ">
+            when  #{item.id} then #{item.salesMarch}
+          </if>
+          <if test="item.salesMarch == null ">
+            when  #{item.id} then profit_diagnosis_record.sales_march
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="sales_april =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.salesApril != null ">
+            when  #{item.id} then #{item.salesApril}
+          </if>
+          <if test="item.salesApril == null ">
+            when  #{item.id} then profit_diagnosis_record.sales_april
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="sales_may =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.salesMay != null ">
+            when  #{item.id} then #{item.salesMay}
+          </if>
+          <if test="item.salesMay == null ">
+            when  #{item.id} then profit_diagnosis_record.sales_may
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="sales_june =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.salesJune != null ">
+            when  #{item.id} then #{item.salesJune}
+          </if>
+          <if test="item.salesJune == null ">
+            when  #{item.id} then profit_diagnosis_record.sales_june
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="sales_july =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.salesJuly != null ">
+            when  #{item.id} then #{item.salesJuly}
+          </if>
+          <if test="item.salesJuly == null ">
+            when  #{item.id} then profit_diagnosis_record.sales_july
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="sales_august =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.salesAugust != null ">
+            when  #{item.id} then #{item.salesAugust}
+          </if>
+          <if test="item.salesAugust == null ">
+            when  #{item.id} then profit_diagnosis_record.sales_august
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="sales_september =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.salesSeptember != null ">
+            when  #{item.id} then #{item.salesSeptember}
+          </if>
+          <if test="item.salesSeptember == null ">
+            when  #{item.id} then profit_diagnosis_record.sales_september
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="sales_october =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.salesOctober != null ">
+            when  #{item.id} then #{item.salesOctober}
+          </if>
+          <if test="item.salesOctober == null ">
+            when  #{item.id} then profit_diagnosis_record.sales_october
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="sales_november =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.salesNovember != null ">
+            when  #{item.id} then #{item.salesNovember}
+          </if>
+          <if test="item.salesNovember == null ">
+            when  #{item.id} then profit_diagnosis_record.sales_november
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="sales_december =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.salesDecember != null ">
+            when  #{item.id} then #{item.salesDecember}
+          </if>
+          <if test="item.salesDecember == null ">
+            when  #{item.id} then profit_diagnosis_record.sales_december
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="cost_january =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.costJanuary != null ">
+            when  #{item.id} then #{item.costJanuary}
+          </if>
+          <if test="item.costJanuary == null ">
+            when  #{item.id} then profit_diagnosis_record.cost_january
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="cost_february =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.costFebruary != null ">
+            when  #{item.id} then #{item.costFebruary}
+          </if>
+          <if test="item.costFebruary == null ">
+            when  #{item.id} then profit_diagnosis_record.cost_february
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="cost_march =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.costMarch != null ">
+            when  #{item.id} then #{item.costMarch}
+          </if>
+          <if test="item.costMarch == null ">
+            when  #{item.id} then profit_diagnosis_record.cost_march
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="cost_april =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.costApril != null ">
+            when  #{item.id} then #{item.costApril}
+          </if>
+          <if test="item.costApril == null ">
+            when  #{item.id} then profit_diagnosis_record.cost_april
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="cost_may =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.costMay != null ">
+            when  #{item.id} then #{item.costMay}
+          </if>
+          <if test="item.costMay == null ">
+            when  #{item.id} then profit_diagnosis_record.cost_may
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="cost_june =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.costJune != null ">
+            when  #{item.id} then #{item.costJune}
+          </if>
+          <if test="item.costJune == null ">
+            when  #{item.id} then profit_diagnosis_record.cost_june
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="cost_july =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.costJuly != null ">
+            when  #{item.id} then #{item.costJuly}
+          </if>
+          <if test="item.costJuly == null ">
+            when  #{item.id} then profit_diagnosis_record.cost_july
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="cost_august =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.costAugust != null ">
+            when  #{item.id} then #{item.costAugust}
+          </if>
+          <if test="item.costAugust == null ">
+            when  #{item.id} then profit_diagnosis_record.cost_august
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="cost_september =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.costSeptember != null ">
+            when  #{item.id} then #{item.costSeptember}
+          </if>
+          <if test="item.costSeptember == null ">
+            when  #{item.id} then profit_diagnosis_record.cost_september
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="cost_october =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.costOctober != null ">
+            when  #{item.id} then #{item.costOctober}
+          </if>
+          <if test="item.costOctober == null ">
+            when  #{item.id} then profit_diagnosis_record.cost_october
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="cost_november =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.costNovember != null ">
+            when  #{item.id} then #{item.costNovember}
+          </if>
+          <if test="item.costNovember == null ">
+            when  #{item.id} then profit_diagnosis_record.cost_november
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="cost_december =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.costDecember != null ">
+            when  #{item.id} then #{item.costDecember}
+          </if>
+          <if test="item.costDecember == null ">
+            when  #{item.id} then profit_diagnosis_record.cost_december
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="create_time =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.createTime != null ">
+            when  #{item.id} then #{item.createTime}
+          </if>
+          <if test="item.createTime == null ">
+            when  #{item.id} then profit_diagnosis_record.create_time
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="result_id =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.resultId != null ">
+            when  #{item.id} then #{item.resultId}
+          </if>
+          <if test="item.resultId == null ">
+            when  #{item.id} then profit_diagnosis_record.result_id
+          </if>
+        </foreach>
+      </trim>
+    </trim>
+    where id in 
+    <foreach close=")" collection="list" index="index" item="item" open="(" separator=",">
+       #{item.id} 
+    </foreach>
+  </update>
+</mapper>

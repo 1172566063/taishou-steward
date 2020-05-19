@@ -33,6 +33,8 @@
             <artifactId>commons-lang3</artifactId>
             <version>3.8.1</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/io.github.itfinally/mybatis-generator -->
+
 
         <dependency>
             <groupId>com.alibaba</groupId>
@@ -88,7 +90,11 @@
 
     <dependencyManagement>
         <dependencies>
-
+            <dependency>
+                <groupId>io.github.orange1438</groupId>
+                <artifactId>mybatis-generator-core</artifactId>
+                <version>1.3.5</version>
+            </dependency>
             <dependency>
                 <groupId>com.zkl.taishou</groupId>
                 <artifactId>steward-controller</artifactId>

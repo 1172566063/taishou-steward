@@ -2,7 +2,8 @@ package com.zkl.taishou.dao.user;
 
 import com.zkl.taishou.common.entity.Role;
 
-public interface RoleMapper {
+public interface RoleDAO {
+
     int deleteByPrimaryKey(Integer id);
 
     int insert(Role record);

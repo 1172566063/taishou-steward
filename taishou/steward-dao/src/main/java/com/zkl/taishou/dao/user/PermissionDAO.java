@@ -4,7 +4,8 @@ import com.zkl.taishou.common.entity.Permission;
 
 import java.util.List;
 
-public interface PermissionMapper {
+public interface PermissionDAO {
+
     int deleteByPrimaryKey(Integer id);
 
     int insert(Permission record);

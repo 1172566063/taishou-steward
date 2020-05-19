@@ -1,141 +1,40 @@
-package packageModel;
+package com.zkl.taishou.common.entity;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.experimental.Accessors;
+
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.List;
-/**
-*
-*  @author author
-*/
+import java.util.Date;
+@AllArgsConstructor
+@NoArgsConstructor
+@Data
+@Accessors(chain = true)
 public class StoreCostStructureRecord implements Serializable {
+    private Integer id;
 
-    private static final long serialVersionUID = 1589871036598L;
+    private Integer userId;
 
+    private Double purchaseCost;
 
-    @Override
-    public String toString() {
-        return "StoreCostStructureRecord{" +
-            '}';
-    }
+    private Double instrumentCost;
 
-    public static Builder Build(){return new Builder();}
+    private Double wageCost;
 
-    public static ConditionBuilder ConditionBuild(){return new ConditionBuilder();}
+    private Double rentAndUtilities;
 
-    public static UpdateBuilder UpdateBuild(){return new UpdateBuilder();}
+    private Double marketingCost;
 
-    public static QueryBuilder QueryBuild(){return new QueryBuilder();}
+    private Double managementCost;
 
-    public static class UpdateBuilder {
+    private Double otherCost;
 
-        private StoreCostStructureRecord set;
+    private Integer resultId;
 
-        private ConditionBuilder where;
+    private Date createTime;
 
-        public UpdateBuilder set(StoreCostStructureRecord set){
-            this.set = set;
-            return this;
-        }
+    private static final long serialVersionUID = 1L;
 
-        public StoreCostStructureRecord getSet(){
-            return this.set;
-        }
-
-        public UpdateBuilder where(ConditionBuilder where){
-            this.where = where;
-            return this;
-        }
-
-        public ConditionBuilder getWhere(){
-            return this.where;
-        }
-
-        public UpdateBuilder build(){
-            return this;
-        }
-    }
-
-    public static class QueryBuilder extends StoreCostStructureRecord{
-        /**
-        * 需要返回的列
-        */
-        private Map<String,Object> fetchFields;
-
-        public Map<String,Object> getFetchFields(){return this.fetchFields;}
-
-        private QueryBuilder (){
-            this.fetchFields = new HashMap<>();
-        }
-        private <T>List<T> solveNullList(T ... objs){
-            if (objs != null){
-            List<T> list = new ArrayList<>();
-                for (T item : objs){
-                    if (item != null){
-                        list.add(item);
-                    }
-                }
-                return list;
-            }
-            return null;
-        }
-
-        public QueryBuilder fetchAll(){
-            this.fetchFields.put("AllFields",true);
-            return this;
-        }
-
-        public QueryBuilder addField(String ... fields){
-            List<String> list = new ArrayList<>();
-            if (fields != null){
-                for (String field : fields){
-                    list.add(field);
-                }
-            }
-            this.fetchFields.put("otherFields",list);
-            return this;
-        }
-        @SuppressWarnings("unchecked")
-        private void setFetchFields(String key,String val){
-            Map<String,Boolean> fields= (Map<String, Boolean>) this.fetchFields.get(key);
-            if (fields == null){
-                fields = new HashMap<>();
-            }
-            fields.put(val,true);
-            this.fetchFields.put(key,fields);
-        }
-
-        public StoreCostStructureRecord build(){return this;}
-    }
-
-
-    public static class ConditionBuilder{
-
-        private <T>List<T> solveNullList(T ... objs){
-            if (objs != null){
-            List<T> list = new ArrayList<>();
-                for (T item : objs){
-                    if (item != null){
-                        list.add(item);
-                    }
-                }
-                return list;
-            }
-            return null;
-        }
-
-        public ConditionBuilder build(){return this;}
-    }
-
-    public static class Builder {
-
-        private StoreCostStructureRecord obj;
-
-        public Builder(){
-            this.obj = new StoreCostStructureRecord();
-        }
-
-        public StoreCostStructureRecord build(){return obj;}
-    }
 
 }

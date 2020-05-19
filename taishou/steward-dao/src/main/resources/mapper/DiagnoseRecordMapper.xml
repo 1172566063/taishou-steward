@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zkl.taishou.dao.diagnose.DiagnoseRecordMapper">
+  <resultMap id="BaseResultMap" type="com.zkl.taishou.common.entity.DiagnoseRecord">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="basic_item" jdbcType="DOUBLE" property="basicItem" />
+    <result column="features_item" jdbcType="DOUBLE" property="featuresItem" />
+    <result column="big_item" jdbcType="DOUBLE" property="bigItem" />
+    <result column="home_and_outside" jdbcType="DOUBLE" property="homeAndOutside" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="result_id" jdbcType="INTEGER" property="resultId" />
+    <result column="type" jdbcType="INTEGER" property="type" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, user_id, basic_item, features_item, big_item, home_and_outside, create_time, 
+    result_id, `type`
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from diagnose_record
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from diagnose_record
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.zkl.taishou.common.entity.DiagnoseRecord">
+    insert into diagnose_record (id, user_id, basic_item, 
+      features_item, big_item, home_and_outside, 
+      create_time, result_id, `type`
+      )
+    values (#{id,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, #{basicItem,jdbcType=DOUBLE}, 
+      #{featuresItem,jdbcType=DOUBLE}, #{bigItem,jdbcType=DOUBLE}, #{homeAndOutside,jdbcType=DOUBLE}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{resultId,jdbcType=INTEGER}, #{type,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.zkl.taishou.common.entity.DiagnoseRecord">
+    insert into diagnose_record
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="basicItem != null">
+        basic_item,
+      </if>
+      <if test="featuresItem != null">
+        features_item,
+      </if>
+      <if test="bigItem != null">
+        big_item,
+      </if>
+      <if test="homeAndOutside != null">
+        home_and_outside,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="resultId != null">
+        result_id,
+      </if>
+      <if test="type != null">
+        `type`,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="basicItem != null">
+        #{basicItem,jdbcType=DOUBLE},
+      </if>
+      <if test="featuresItem != null">
+        #{featuresItem,jdbcType=DOUBLE},
+      </if>
+      <if test="bigItem != null">
+        #{bigItem,jdbcType=DOUBLE},
+      </if>
+      <if test="homeAndOutside != null">
+        #{homeAndOutside,jdbcType=DOUBLE},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="resultId != null">
+        #{resultId,jdbcType=INTEGER},
+      </if>
+      <if test="type != null">
+        #{type,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zkl.taishou.common.entity.DiagnoseRecord">
+    update diagnose_record
+    <set>
+      <if test="userId != null">
+        user_id = #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="basicItem != null">
+        basic_item = #{basicItem,jdbcType=DOUBLE},
+      </if>
+      <if test="featuresItem != null">
+        features_item = #{featuresItem,jdbcType=DOUBLE},
+      </if>
+      <if test="bigItem != null">
+        big_item = #{bigItem,jdbcType=DOUBLE},
+      </if>
+      <if test="homeAndOutside != null">
+        home_and_outside = #{homeAndOutside,jdbcType=DOUBLE},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="resultId != null">
+        result_id = #{resultId,jdbcType=INTEGER},
+      </if>
+      <if test="type != null">
+        `type` = #{type,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zkl.taishou.common.entity.DiagnoseRecord">
+    update diagnose_record
+    set user_id = #{userId,jdbcType=INTEGER},
+      basic_item = #{basicItem,jdbcType=DOUBLE},
+      features_item = #{featuresItem,jdbcType=DOUBLE},
+      big_item = #{bigItem,jdbcType=DOUBLE},
+      home_and_outside = #{homeAndOutside,jdbcType=DOUBLE},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      result_id = #{resultId,jdbcType=INTEGER},
+      `type` = #{type,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

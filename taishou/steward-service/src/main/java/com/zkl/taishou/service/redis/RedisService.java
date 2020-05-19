@@ -2,7 +2,6 @@ package com.zkl.taishou.service.redis;
 
 
 import com.zkl.taishou.common.entity.User;
-import org.apache.shiro.authc.UsernamePasswordToken;
 import org.springframework.stereotype.Service;
 
 /**

@@ -72,6 +72,17 @@ public class CommonUtils {
         }
 
         return new ResultBean();
+    }
 
+
+
+    /**
+     * 判断double是否是整数
+     * @param dob
+     * @return
+     */
+    public static boolean isIntegerForDouble(double dob) {
+        double eps = 1e-10;  // 精度范围
+        return dob-Math.floor(dob) < eps;
     }
 }

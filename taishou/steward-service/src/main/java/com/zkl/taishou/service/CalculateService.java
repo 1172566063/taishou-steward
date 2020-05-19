@@ -1,7 +1,7 @@
 package com.zkl.taishou.service;
 
 import com.zkl.taishou.common.constants.ResultBean;
-import com.zkl.taishou.common.VO.CalculateStepOne;
+import com.zkl.taishou.common.VO.CalculateStepOneVO;
 /**
  * @ClassName:
  * @Author ：lishixiang
@@ -10,7 +10,9 @@ import com.zkl.taishou.common.VO.CalculateStepOne;
  */
 public interface CalculateService {
 
-    ResultBean calculate(CalculateStepOne calculateStepOne);
+    ResultBean calculate(CalculateStepOneVO calculateStepOne);
 
-    void recordResult(CalculateStepOne calculateStepOne);
+    void recordResult(CalculateStepOneVO calculateStepOne);
+
+
 }

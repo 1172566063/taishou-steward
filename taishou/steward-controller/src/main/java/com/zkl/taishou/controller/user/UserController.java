@@ -5,10 +5,7 @@ import com.zkl.taishou.common.entity.User;
 import com.zkl.taishou.common.constants.ResultBean;
 import com.zkl.taishou.controller.BaseController;
 import com.zkl.taishou.service.UserService;
-import io.swagger.annotations.ApiImplicitParam;
-import io.swagger.annotations.ApiImplicitParams;
-import io.swagger.annotations.ApiModelProperty;
-import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
@@ -29,8 +26,8 @@ public class UserController extends BaseController {
 
     @ApiModelProperty(value = "登录",notes = "登录")
     @ApiImplicitParams({
-            @ApiImplicitParam(name = "phone", value = "用户手机号"),
-            @ApiImplicitParam(name = "password", value = "用户密码"),
+            @ApiImplicitParam(name = "phone",paramType = "query",value = "用户手机号"),
+            @ApiImplicitParam(name = "password",paramType = "query", value = "用户密码"),
     })
     @PostMapping("/login")
     public ResultBean<UserInfo> login(String phone, String password){
@@ -38,13 +35,14 @@ public class UserController extends BaseController {
     }
 
     @ApiOperation(value = "用户注册",notes = "注册")
-    @ApiImplicitParam(name="form",value = "用户注册表单",paramType = "User")
+    @ApiImplicitParam(name="form" ,value = "用户注册表单",dataType = "User",paramType = "body")
     @GetMapping("/register")
     public ResultBean getUserRol(@Validated @RequestBody User user){
         return userService.register(user);
     }
 
     @ApiModelProperty(value = "登出用户",notes = "用户退出登录")
+    @ApiImplicitParam(name = "token",value = "用户token",paramType = "header")
     @GetMapping("/logout")
     public ResultBean logout(){
         LogoutUser();

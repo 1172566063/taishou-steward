@@ -5,13 +5,11 @@ import com.alibaba.fastjson.JSON;
 import com.zkl.taishou.common.constants.RedisKeyConstants;
 import com.zkl.taishou.common.entity.User;
 import com.zkl.taishou.common.utils.EncryptUtil;
-import com.zkl.taishou.service.redis.RedisService;
-import org.apache.shiro.authc.UsernamePasswordToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;
-
+import com.zkl.taishou.service.redis.RedisService;
 import java.util.Random;
 import java.util.UUID;
 import java.util.concurrent.TimeUnit;

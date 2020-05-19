@@ -7,11 +7,10 @@ package com.zkl.taishou.common.constants;
  * @Version:
  */
 public enum  CalculateRule {
-
     CUSTOMER_CONTRIBUTIONS("customer_contributions","客户贡献基值"),
     MAJOR_PROJECT_PROPORTION("major_project_proportion","大项目业绩占比 %值"),
     GENERAL_PROJECT_PROPORTION("general_project_proportion","常规项目业绩占比 %值"),
-    FURNITURE_PROJECT_PROPORTION("furniture_project_proportion","家居项目现金额 %值"),
+    FURNITURE_PROJECT_PROPORTION("furniture_project_proportion","家居项目金额 %值"),
     OTHER_PROJECT_PROPORTION("other_project_proportion","其他类（含光电类、纹绣类）%值"),
     JANUARY_CUSTOMER_SHARE("january_customer_share","一月份客户占比 %值"),
     FEBRUARY_CUSTOMER_SHARE("february_customer_share","二月份客户占比 %值"),
@@ -73,7 +72,7 @@ public enum  CalculateRule {
     OCTOBER_OTHER_PROPORTION("october_other_proportion","十月份其他项目占比 %值"),
     NOVEMBER_OTHER_PROPORTION("november_other_proportion","十一月份其他项目占比 %值"),
     DECEMBER_OTHER_PROPORTION("december_other_proportion","十二月份其他项目占比 %值"),
-    BIG_CUSTOMERS_CONSUME("big_customers","大客户消费占比 %值 %值"),
+    BIG_CUSTOMERS_CONSUME("big_customers_consume","大客户消费占比 %值 %值"),
     A_CUSTOMERS_CONSUME("A_customers_consume","A客户消费占比 %值"),
     B_CUSTOMERS_CONSUME("B_customers_consume","B客户消费占比 %值"),
     C_CUSTOMERS_CONSUME("C_customers_consume","C客户消费占比 %值"),
@@ -84,7 +83,33 @@ public enum  CalculateRule {
     B_CUSTOMERS_NUMBER("B_customers_number","B客户类型人数占比 %值"),
     C_CUSTOMERS_NUMBER("C_customers_number","C客户类型人数占比 %值"),
     D_CUSTOMERS_NUMBER("D_customers_number","D客户类型人数占比 %值"),
-    E_CUSTOMERS_NUMBER("E_customers_number","E客户类型人数占比 %值");
+    E_CUSTOMERS_NUMBER("E_customers_number","E客户类型人数占比 %值"),
+    NO_ACCOUNT_CONSUMPTION("no_account_consumption","非账户划卡消费"),
+    ACCOUNT_CONSUMPTION("account_consumption","账户划卡消费"),
+    A_ACCOUNT_CONSUMPTION("A_account_consumption","A账户划卡消费"),
+    E_ACCOUNT_CONSUMPTION("E_account_consumption","E账户划卡消费"),
+    D_ACCOUNT_CONSUMPTION("D_account_consumption","D账户划卡消费"),
+    C_ACCOUNT_CONSUMPTION("C_account_consumption","C账户划卡消费"),
+    B_ACCOUNT_CONSUMPTION("B_account_consumption","B账户划卡消费"),
+    BIG_ACCOUNT_CONSUMPTION("big_account_consumption","大客账户划卡消费"),
+    BIG_NO_ACCOUNT_CONSUMPTION("big_no_account_consumption","大客非账户划卡消费"),
+    E_NO_ACCOUNT_CONSUMPTION("E_no_account_consumption","E非账户划卡消费"),
+    A_NO_ACCOUNT_CONSUMPTION("A_no_account_consumption","A非账户划卡消费"),
+    B_NO_ACCOUNT_CONSUMPTION("B_no_account_consumption","B非账户划卡消费"),
+    D_NO_ACCOUNT_CONSUMPTION("D_no_account_consumption","D非账户划卡消费"),
+    C_NO_ACCOUNT_CONSUMPTION("C_no_account_consumption","C非账户划卡消费"),
+    D_PER_CAPITA_TOP_UP("D_per_capita_top_up","D客人均充值"),
+    A_PER_CAPITA_TOP_UP("A_per_capita_top_up","A客人均充值"),
+    C_PER_CAPITA_TOP_UP("C_per_capita_top_up","C客人均充值"),
+    B_PER_CAPITA_TOP_UP("B_per_capita_top_up","B客人均充值"),
+    BIG_PER_CAPITA_TOP_UP("big_per_capita_top_up","大客人均充值"),
+    E_PER_CAPITA_TOP_UP("E_per_capita_top_up","E客人均充值"),
+    C_BALANCE__TOP_UP_RATIO("C_balance_top_up_ratio	","C客卡余额与充值比例"),
+    D_BALANCE_TOP_UP_RATIO("D_balance_top_up_ratio","D客卡余额与充值比例"),
+    B_BALANCE_TOP_UP_RATIO("B_balance_top_up_ratio","B客卡余额与充值比例"),
+    BIG_BALANCE_TOP_UP_RATIO("big_balance_top_up_ratio","大客卡余额与充值比例"),
+    E_BALANCE_TOP_UP_RATIO("E_balance_top_up_ratio","E客卡余额与充值比例"),
+    ;
 
     /**
      * 结果值

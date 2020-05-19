@@ -5,13 +5,15 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 
+import java.io.Serializable;
 import java.util.Date;
 
 @Accessors(chain = true)
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class CalculateRecord {
+public class CalculateRecord implements Serializable {
+    private final static long serialVersionUid = -1L;
 
     private Long id;
 

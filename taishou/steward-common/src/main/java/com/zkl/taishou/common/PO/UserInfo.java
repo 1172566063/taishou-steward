@@ -7,6 +7,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 
+import java.io.Serializable;
+
 /**
  * @ClassName: 用户展示数据
  * @Author ：lishixiang
@@ -17,7 +19,9 @@ import lombok.experimental.Accessors;
 @AllArgsConstructor
 @NoArgsConstructor
 @Accessors(chain = true)
-public class UserInfo {
+public class UserInfo implements Serializable {
+
+    private static final long serialVersionUid = 1L;
 
     @ApiModelProperty("头像图片地址")
     private String headPortraitImg;

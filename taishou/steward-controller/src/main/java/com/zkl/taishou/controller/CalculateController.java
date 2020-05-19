@@ -1,9 +1,10 @@
 package com.zkl.taishou.controller;
 
 import com.zkl.taishou.common.constants.ResultBean;
-import com.zkl.taishou.common.VO.CalculateStepOne;
+import com.zkl.taishou.common.VO.CalculateStepOneVO;
 import com.zkl.taishou.service.CalculateService;
 import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.BindingResult;
@@ -28,12 +29,15 @@ public class CalculateController extends BaseController {
 
     @PostMapping("/")
     @ApiOperation(value = "测算",notes = "测算系统第一步")
-    @ApiImplicitParam(name="form",value = "测算系统第一步",paramType = "CalculateStepOne")
-    public ResultBean<CalculateStepOne> calculate(@Validated @RequestBody CalculateStepOne calculateStepOne, BindingResult bindingResult){
+    @ApiImplicitParams ({
+            @ApiImplicitParam(name="calculateStepOne",value = "测算系统第一步",paramType = "body",dataType = "CalculateStepOne"),
+            @ApiImplicitParam(name="token",value = "用户token",paramType = "header")
+    })
+    public ResultBean<CalculateStepOneVO> calculate(@Validated @RequestBody CalculateStepOneVO calculateStepOne, BindingResult bindingResult){
         if(bindingResult.hasErrors()){
             return getParameterFailResult(bindingResult);
         }
-        calculateStepOne.setUser_id(getCurrLoginUser().getId());
+        calculateStepOne.setUserId(getCurrLoginUser().getId());
        return calculateService.calculate(calculateStepOne);
     }
 
@@ -45,8 +49,7 @@ public class CalculateController extends BaseController {
         if(bindingResult.hasErrors()){
             return getParameterFailResult(bindingResult);
         }
-        calculateStepOne.setUser_id(getCurrLoginUser().getId());
-        calculateService.recordResult(calculateStepOne);
+
         return new ResultBean();
     }*/
 

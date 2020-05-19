@@ -12,4 +12,6 @@ public class CommonalityProperty {
 
     public final static String NO="N";
 
+    public final static Integer month = 12;
+
 }

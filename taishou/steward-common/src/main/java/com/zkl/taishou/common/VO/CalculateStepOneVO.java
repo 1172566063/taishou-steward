@@ -1,6 +1,6 @@
 package com.zkl.taishou.common.VO;
 
-import com.zkl.taishou.common.entity.CalculateRecord;
+import com.zkl.taishou.common.entity.calculate.CalculateRecord;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
@@ -20,7 +20,7 @@ import java.io.Serializable;
 @Accessors(chain = true)
 public class CalculateStepOneVO implements Serializable {
 
-    private static final long serialVersionUid = -1L;
+    private static final long serialVersionUID = -1L;
 
     @ApiModelProperty(value = "单店营业面积",required = true,example = "0")
     @Min(value = 0)

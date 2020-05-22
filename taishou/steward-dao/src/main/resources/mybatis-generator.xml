@@ -27,12 +27,6 @@
 
         </commentGenerator>
 
-        <javaTypeResolver>
-            <!-- 默认false，把JDBC DECIMAL 和 NUMERIC 类型解析为 Integer，为 true时把JDBC DECIMAL 和
-                NUMERIC 类型解析为java.math.BigDecimal -->
-            <property name="forceBigDecimals" value="true"/>
-        </javaTypeResolver>
-
         <!-- 连接配置 -->
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
                         connectionURL="jdbc:mysql://localhost:3306/taishou_steward"
@@ -41,7 +35,7 @@
         </jdbcConnection>
 
         <!-- javaModelGenerator是模型的生成信息，这里将指定这些Java model类的生成路径 -->
-        <javaModelGenerator targetPackage="com.zkl.taishou.common.entity"
+        <javaModelGenerator targetPackage="com.zkl.taishou.common.entity.user"
                             targetProject="../steward-common/src/main/java">
             <property name="trimStrings" value="true"/>
             <property name="addRemarkComments" value="true"/>
@@ -53,7 +47,7 @@
         </sqlMapGenerator>
 
         <!-- javaClientGenerator是应用接口的生成信息 -->
-        <javaClientGenerator type="XMLMAPPER" targetPackage="com.zkl.taishou.dao.diagnose" targetProject="src/main/java">
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.zkl.taishou.dao.user" targetProject="src/main/java">
             <!-- 在targetPackage的基础上，根据数据库的schema再生成一层package，最终生成的类放在这个package下，默认为false -->
             <property name="enableSubPackages" value="true"/>
             <!-- 可以为所有生成的接口添加一个父接口 -->
@@ -62,8 +56,7 @@
         <!-- oracle 使用 schema 对应 用户名称空间 mysql 使用 catalog 对应 数据库 -->
 
         <!--<table schema="zhjf" tableName="表名" domainObjectName="实体类名" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>-->
-        <table schema="taishou_steward" tableName="profit_diagnosis_record" domainObjectName="ProfitDiagnosisRecord" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"/>
-
+        <table schema="taishou_steward" tableName="store" domainObjectName="Store" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"/>
 
     </context>
 </generatorConfiguration>

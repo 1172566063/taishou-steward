@@ -1,0 +1,623 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zkl.taishou.dao.diagnose.ConsumptionAbilityRecordDAO">
+  <resultMap id="BaseResultMap" type="com.zkl.taishou.common.entity.diagnose.ConsumptionAbilityRecord">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="big_count" jdbcType="INTEGER" property="bigCount" />
+    <result column="A_count" jdbcType="INTEGER" property="aCount" />
+    <result column="B_count" jdbcType="INTEGER" property="bCount" />
+    <result column="C_count" jdbcType="INTEGER" property="cCount" />
+    <result column="D_count" jdbcType="INTEGER" property="dCount" />
+    <result column="E_count" jdbcType="INTEGER" property="eCount" />
+    <result column="zero_count" jdbcType="INTEGER" property="zeroCount" />
+    <result column="big_consumption" jdbcType="DOUBLE" property="bigConsumption" />
+    <result column="A_consumption" jdbcType="DOUBLE" property="aConsumption" />
+    <result column="B_consumption" jdbcType="DOUBLE" property="bConsumption" />
+    <result column="C_consumption" jdbcType="DOUBLE" property="cConsumption" />
+    <result column="D_consumption" jdbcType="DOUBLE" property="dConsumption" />
+    <result column="E_consumption" jdbcType="DOUBLE" property="eConsumption" />
+    <result column="result_id" jdbcType="INTEGER" property="resultId" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, user_id, big_count, A_count, B_count, C_count, D_count, E_count, zero_count, 
+    big_consumption, A_consumption, B_consumption, C_consumption, D_consumption, E_consumption, 
+    result_id, create_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from consumption_ability_record
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from consumption_ability_record
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.zkl.taishou.common.entity.diagnose.ConsumptionAbilityRecord">
+    insert into consumption_ability_record (id, user_id, big_count, 
+      A_count, B_count, C_count, 
+      D_count, E_count, zero_count, 
+      big_consumption, A_consumption, B_consumption, 
+      C_consumption, D_consumption, E_consumption, 
+      result_id, create_time)
+    values (#{id,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, #{bigCount,jdbcType=INTEGER}, 
+      #{aCount,jdbcType=INTEGER}, #{bCount,jdbcType=INTEGER}, #{cCount,jdbcType=INTEGER}, 
+      #{dCount,jdbcType=INTEGER}, #{eCount,jdbcType=INTEGER}, #{zeroCount,jdbcType=INTEGER}, 
+      #{bigConsumption,jdbcType=DOUBLE}, #{aConsumption,jdbcType=DOUBLE}, #{bConsumption,jdbcType=DOUBLE}, 
+      #{cConsumption,jdbcType=DOUBLE}, #{dConsumption,jdbcType=DOUBLE}, #{eConsumption,jdbcType=DOUBLE}, 
+      #{resultId,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.zkl.taishou.common.entity.diagnose.ConsumptionAbilityRecord">
+    insert into consumption_ability_record
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="bigCount != null">
+        big_count,
+      </if>
+      <if test="aCount != null">
+        A_count,
+      </if>
+      <if test="bCount != null">
+        B_count,
+      </if>
+      <if test="cCount != null">
+        C_count,
+      </if>
+      <if test="dCount != null">
+        D_count,
+      </if>
+      <if test="eCount != null">
+        E_count,
+      </if>
+      <if test="zeroCount != null">
+        zero_count,
+      </if>
+      <if test="bigConsumption != null">
+        big_consumption,
+      </if>
+      <if test="aConsumption != null">
+        A_consumption,
+      </if>
+      <if test="bConsumption != null">
+        B_consumption,
+      </if>
+      <if test="cConsumption != null">
+        C_consumption,
+      </if>
+      <if test="dConsumption != null">
+        D_consumption,
+      </if>
+      <if test="eConsumption != null">
+        E_consumption,
+      </if>
+      <if test="resultId != null">
+        result_id,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="bigCount != null">
+        #{bigCount,jdbcType=INTEGER},
+      </if>
+      <if test="aCount != null">
+        #{aCount,jdbcType=INTEGER},
+      </if>
+      <if test="bCount != null">
+        #{bCount,jdbcType=INTEGER},
+      </if>
+      <if test="cCount != null">
+        #{cCount,jdbcType=INTEGER},
+      </if>
+      <if test="dCount != null">
+        #{dCount,jdbcType=INTEGER},
+      </if>
+      <if test="eCount != null">
+        #{eCount,jdbcType=INTEGER},
+      </if>
+      <if test="zeroCount != null">
+        #{zeroCount,jdbcType=INTEGER},
+      </if>
+      <if test="bigConsumption != null">
+        #{bigConsumption,jdbcType=DOUBLE},
+      </if>
+      <if test="aConsumption != null">
+        #{aConsumption,jdbcType=DOUBLE},
+      </if>
+      <if test="bConsumption != null">
+        #{bConsumption,jdbcType=DOUBLE},
+      </if>
+      <if test="cConsumption != null">
+        #{cConsumption,jdbcType=DOUBLE},
+      </if>
+      <if test="dConsumption != null">
+        #{dConsumption,jdbcType=DOUBLE},
+      </if>
+      <if test="eConsumption != null">
+        #{eConsumption,jdbcType=DOUBLE},
+      </if>
+      <if test="resultId != null">
+        #{resultId,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <insert id="insertBatch" parameterType="java.util.List">
+    insert into consumption_ability_record (id, user_id, big_count, 
+      A_count, B_count, C_count, 
+      D_count, E_count, zero_count, 
+      big_consumption, A_consumption, B_consumption, 
+      C_consumption, D_consumption, E_consumption, 
+      result_id, create_time)
+    values 
+    <foreach collection="list" index="index" item="item" separator=",">
+      (#{item.id,jdbcType=INTEGER}, #{item.userId,jdbcType=INTEGER}, #{item.bigCount,jdbcType=INTEGER}, 
+        #{item.aCount,jdbcType=INTEGER}, #{item.bCount,jdbcType=INTEGER}, #{item.cCount,jdbcType=INTEGER}, 
+        #{item.dCount,jdbcType=INTEGER}, #{item.eCount,jdbcType=INTEGER}, #{item.zeroCount,jdbcType=INTEGER}, 
+        #{item.bigConsumption,jdbcType=DOUBLE}, #{item.aConsumption,jdbcType=DOUBLE}, #{item.bConsumption,jdbcType=DOUBLE}, 
+        #{item.cConsumption,jdbcType=DOUBLE}, #{item.dConsumption,jdbcType=DOUBLE}, #{item.eConsumption,jdbcType=DOUBLE}, 
+        #{item.resultId,jdbcType=INTEGER}, #{item.createTime,jdbcType=TIMESTAMP})
+    </foreach>
+  </insert>
+  <insert id="insertBatchSelective" parameterType="java.util.List">
+    insert into consumption_ability_record
+    (id, user_id, big_count, A_count, B_count, C_count, D_count, E_count, zero_count, 
+      big_consumption, A_consumption, B_consumption, C_consumption, D_consumption, E_consumption, 
+      result_id, create_time)
+    values 
+    <foreach collection="list" index="index" item="item" separator=",">
+      <trim prefix="(" suffix=")" suffixOverrides=",">
+        <if test="item.id != null">
+          #{item.id,jdbcType=INTEGER},
+        </if>
+        <if test="item.id == null">
+          NULL,
+        </if>
+        <if test="item.userId != null">
+          #{item.userId,jdbcType=INTEGER},
+        </if>
+        <if test="item.userId == null">
+          NULL,
+        </if>
+        <if test="item.bigCount != null">
+          #{item.bigCount,jdbcType=INTEGER},
+        </if>
+        <if test="item.bigCount == null">
+          NULL,
+        </if>
+        <if test="item.aCount != null">
+          #{item.aCount,jdbcType=INTEGER},
+        </if>
+        <if test="item.aCount == null">
+          NULL,
+        </if>
+        <if test="item.bCount != null">
+          #{item.bCount,jdbcType=INTEGER},
+        </if>
+        <if test="item.bCount == null">
+          NULL,
+        </if>
+        <if test="item.cCount != null">
+          #{item.cCount,jdbcType=INTEGER},
+        </if>
+        <if test="item.cCount == null">
+          NULL,
+        </if>
+        <if test="item.dCount != null">
+          #{item.dCount,jdbcType=INTEGER},
+        </if>
+        <if test="item.dCount == null">
+          NULL,
+        </if>
+        <if test="item.eCount != null">
+          #{item.eCount,jdbcType=INTEGER},
+        </if>
+        <if test="item.eCount == null">
+          NULL,
+        </if>
+        <if test="item.zeroCount != null">
+          #{item.zeroCount,jdbcType=INTEGER},
+        </if>
+        <if test="item.zeroCount == null">
+          NULL,
+        </if>
+        <if test="item.bigConsumption != null">
+          #{item.bigConsumption,jdbcType=DOUBLE},
+        </if>
+        <if test="item.bigConsumption == null">
+          NULL,
+        </if>
+        <if test="item.aConsumption != null">
+          #{item.aConsumption,jdbcType=DOUBLE},
+        </if>
+        <if test="item.aConsumption == null">
+          NULL,
+        </if>
+        <if test="item.bConsumption != null">
+          #{item.bConsumption,jdbcType=DOUBLE},
+        </if>
+        <if test="item.bConsumption == null">
+          NULL,
+        </if>
+        <if test="item.cConsumption != null">
+          #{item.cConsumption,jdbcType=DOUBLE},
+        </if>
+        <if test="item.cConsumption == null">
+          NULL,
+        </if>
+        <if test="item.dConsumption != null">
+          #{item.dConsumption,jdbcType=DOUBLE},
+        </if>
+        <if test="item.dConsumption == null">
+          NULL,
+        </if>
+        <if test="item.eConsumption != null">
+          #{item.eConsumption,jdbcType=DOUBLE},
+        </if>
+        <if test="item.eConsumption == null">
+          NULL,
+        </if>
+        <if test="item.resultId != null">
+          #{item.resultId,jdbcType=INTEGER},
+        </if>
+        <if test="item.resultId == null">
+          NULL,
+        </if>
+        <if test="item.createTime != null">
+          #{item.createTime,jdbcType=TIMESTAMP},
+        </if>
+        <if test="item.createTime == null">
+          NULL,
+        </if>
+      </trim>
+    </foreach>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zkl.taishou.common.entity.diagnose.ConsumptionAbilityRecord">
+    update consumption_ability_record
+    <set>
+      <if test="userId != null">
+        user_id = #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="bigCount != null">
+        big_count = #{bigCount,jdbcType=INTEGER},
+      </if>
+      <if test="aCount != null">
+        A_count = #{aCount,jdbcType=INTEGER},
+      </if>
+      <if test="bCount != null">
+        B_count = #{bCount,jdbcType=INTEGER},
+      </if>
+      <if test="cCount != null">
+        C_count = #{cCount,jdbcType=INTEGER},
+      </if>
+      <if test="dCount != null">
+        D_count = #{dCount,jdbcType=INTEGER},
+      </if>
+      <if test="eCount != null">
+        E_count = #{eCount,jdbcType=INTEGER},
+      </if>
+      <if test="zeroCount != null">
+        zero_count = #{zeroCount,jdbcType=INTEGER},
+      </if>
+      <if test="bigConsumption != null">
+        big_consumption = #{bigConsumption,jdbcType=DOUBLE},
+      </if>
+      <if test="aConsumption != null">
+        A_consumption = #{aConsumption,jdbcType=DOUBLE},
+      </if>
+      <if test="bConsumption != null">
+        B_consumption = #{bConsumption,jdbcType=DOUBLE},
+      </if>
+      <if test="cConsumption != null">
+        C_consumption = #{cConsumption,jdbcType=DOUBLE},
+      </if>
+      <if test="dConsumption != null">
+        D_consumption = #{dConsumption,jdbcType=DOUBLE},
+      </if>
+      <if test="eConsumption != null">
+        E_consumption = #{eConsumption,jdbcType=DOUBLE},
+      </if>
+      <if test="resultId != null">
+        result_id = #{resultId,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zkl.taishou.common.entity.diagnose.ConsumptionAbilityRecord">
+    update consumption_ability_record
+    set user_id = #{userId,jdbcType=INTEGER},
+      big_count = #{bigCount,jdbcType=INTEGER},
+      A_count = #{aCount,jdbcType=INTEGER},
+      B_count = #{bCount,jdbcType=INTEGER},
+      C_count = #{cCount,jdbcType=INTEGER},
+      D_count = #{dCount,jdbcType=INTEGER},
+      E_count = #{eCount,jdbcType=INTEGER},
+      zero_count = #{zeroCount,jdbcType=INTEGER},
+      big_consumption = #{bigConsumption,jdbcType=DOUBLE},
+      A_consumption = #{aConsumption,jdbcType=DOUBLE},
+      B_consumption = #{bConsumption,jdbcType=DOUBLE},
+      C_consumption = #{cConsumption,jdbcType=DOUBLE},
+      D_consumption = #{dConsumption,jdbcType=DOUBLE},
+      E_consumption = #{eConsumption,jdbcType=DOUBLE},
+      result_id = #{resultId,jdbcType=INTEGER},
+      create_time = #{createTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateBatchByPrimaryKey" parameterType="java.util.List">
+    update consumption_ability_record
+    <trim prefix="set" suffixOverrides=",">
+      <trim prefix="user_id =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.userId}
+        </foreach>
+      </trim>
+      <trim prefix="big_count =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.bigCount}
+        </foreach>
+      </trim>
+      <trim prefix="A_count =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.aCount}
+        </foreach>
+      </trim>
+      <trim prefix="B_count =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.bCount}
+        </foreach>
+      </trim>
+      <trim prefix="C_count =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.cCount}
+        </foreach>
+      </trim>
+      <trim prefix="D_count =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.dCount}
+        </foreach>
+      </trim>
+      <trim prefix="E_count =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.eCount}
+        </foreach>
+      </trim>
+      <trim prefix="zero_count =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.zeroCount}
+        </foreach>
+      </trim>
+      <trim prefix="big_consumption =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.bigConsumption}
+        </foreach>
+      </trim>
+      <trim prefix="A_consumption =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.aConsumption}
+        </foreach>
+      </trim>
+      <trim prefix="B_consumption =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.bConsumption}
+        </foreach>
+      </trim>
+      <trim prefix="C_consumption =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.cConsumption}
+        </foreach>
+      </trim>
+      <trim prefix="D_consumption =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.dConsumption}
+        </foreach>
+      </trim>
+      <trim prefix="E_consumption =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.eConsumption}
+        </foreach>
+      </trim>
+      <trim prefix="result_id =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.resultId}
+        </foreach>
+      </trim>
+      <trim prefix="create_time =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.createTime}
+        </foreach>
+      </trim>
+    </trim>
+    where id in 
+    <foreach close=")" collection="list" index="index" item="item" open="(" separator=",">
+       #{item.id} 
+    </foreach>
+  </update>
+  <update id="updateBatchByPrimaryKeySelective" parameterType="java.util.List">
+    update consumption_ability_record
+    <trim prefix="set" suffixOverrides=",">
+      <trim prefix="user_id =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.userId != null ">
+            when  #{item.id} then #{item.userId}
+          </if>
+          <if test="item.userId == null ">
+            when  #{item.id} then consumption_ability_record.user_id
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="big_count =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.bigCount != null ">
+            when  #{item.id} then #{item.bigCount}
+          </if>
+          <if test="item.bigCount == null ">
+            when  #{item.id} then consumption_ability_record.big_count
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="A_count =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.aCount != null ">
+            when  #{item.id} then #{item.aCount}
+          </if>
+          <if test="item.aCount == null ">
+            when  #{item.id} then consumption_ability_record.A_count
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="B_count =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.bCount != null ">
+            when  #{item.id} then #{item.bCount}
+          </if>
+          <if test="item.bCount == null ">
+            when  #{item.id} then consumption_ability_record.B_count
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="C_count =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.cCount != null ">
+            when  #{item.id} then #{item.cCount}
+          </if>
+          <if test="item.cCount == null ">
+            when  #{item.id} then consumption_ability_record.C_count
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="D_count =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.dCount != null ">
+            when  #{item.id} then #{item.dCount}
+          </if>
+          <if test="item.dCount == null ">
+            when  #{item.id} then consumption_ability_record.D_count
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="E_count =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.eCount != null ">
+            when  #{item.id} then #{item.eCount}
+          </if>
+          <if test="item.eCount == null ">
+            when  #{item.id} then consumption_ability_record.E_count
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="zero_count =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.zeroCount != null ">
+            when  #{item.id} then #{item.zeroCount}
+          </if>
+          <if test="item.zeroCount == null ">
+            when  #{item.id} then consumption_ability_record.zero_count
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="big_consumption =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.bigConsumption != null ">
+            when  #{item.id} then #{item.bigConsumption}
+          </if>
+          <if test="item.bigConsumption == null ">
+            when  #{item.id} then consumption_ability_record.big_consumption
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="A_consumption =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.aConsumption != null ">
+            when  #{item.id} then #{item.aConsumption}
+          </if>
+          <if test="item.aConsumption == null ">
+            when  #{item.id} then consumption_ability_record.A_consumption
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="B_consumption =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.bConsumption != null ">
+            when  #{item.id} then #{item.bConsumption}
+          </if>
+          <if test="item.bConsumption == null ">
+            when  #{item.id} then consumption_ability_record.B_consumption
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="C_consumption =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.cConsumption != null ">
+            when  #{item.id} then #{item.cConsumption}
+          </if>
+          <if test="item.cConsumption == null ">
+            when  #{item.id} then consumption_ability_record.C_consumption
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="D_consumption =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.dConsumption != null ">
+            when  #{item.id} then #{item.dConsumption}
+          </if>
+          <if test="item.dConsumption == null ">
+            when  #{item.id} then consumption_ability_record.D_consumption
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="E_consumption =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.eConsumption != null ">
+            when  #{item.id} then #{item.eConsumption}
+          </if>
+          <if test="item.eConsumption == null ">
+            when  #{item.id} then consumption_ability_record.E_consumption
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="result_id =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.resultId != null ">
+            when  #{item.id} then #{item.resultId}
+          </if>
+          <if test="item.resultId == null ">
+            when  #{item.id} then consumption_ability_record.result_id
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="create_time =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.createTime != null ">
+            when  #{item.id} then #{item.createTime}
+          </if>
+          <if test="item.createTime == null ">
+            when  #{item.id} then consumption_ability_record.create_time
+          </if>
+        </foreach>
+      </trim>
+    </trim>
+    where id in 
+    <foreach close=")" collection="list" index="index" item="item" open="(" separator=",">
+       #{item.id} 
+    </foreach>
+  </update>
+</mapper>

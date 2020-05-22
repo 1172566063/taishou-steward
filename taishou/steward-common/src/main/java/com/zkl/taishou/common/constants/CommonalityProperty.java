@@ -6,12 +6,12 @@ package com.zkl.taishou.common.constants;
  * @Date：2020/5/12-10:23
  * @Version:
  */
-public class CommonalityProperty {
+public interface CommonalityProperty {
 
-    public final static String YES="Y";
+    String YES="Y";
 
-    public final static String NO="N";
+    String NO="N";
 
-    public final static Integer month = 12;
+    Integer month = 12;
 
 }

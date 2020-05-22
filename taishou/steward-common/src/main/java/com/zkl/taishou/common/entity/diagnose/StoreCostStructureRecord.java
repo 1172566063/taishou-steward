@@ -1,4 +1,4 @@
-package com.zkl.taishou.common.entity;
+package com.zkl.taishou.common.entity.diagnose;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

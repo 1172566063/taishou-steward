@@ -1,6 +1,6 @@
 package com.zkl.taishou.dao.diagnose;
 
-import com.zkl.taishou.common.entity.DiagnoseRecord;
+import com.zkl.taishou.common.entity.diagnose.DiagnoseRecord;
 
 public interface DiagnoseRecordDAO {
 

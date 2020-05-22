@@ -1,7 +1,8 @@
 package com.zkl.taishou.service;
 
 import com.zkl.taishou.common.PO.UserInfo;
-import com.zkl.taishou.common.entity.User;
+import com.zkl.taishou.common.VO.RegisterVO;
+import com.zkl.taishou.common.entity.user.User;
 import com.zkl.taishou.common.constants.ResultBean;
 
 public interface UserService {
@@ -18,5 +19,5 @@ public interface UserService {
 
     ResultBean<UserInfo> login(String phone, String password);
 
-    ResultBean<UserInfo> register(User user);
+    ResultBean<UserInfo> register(RegisterVO registerVO);
 }

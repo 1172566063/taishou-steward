@@ -1,6 +1,6 @@
 package com.zkl.taishou.dao.user;
 
-import com.zkl.taishou.common.entity.User;
+import com.zkl.taishou.common.entity.user.User;
 
 public interface UserDAO {
     int deleteByPrimaryKey(Integer id);

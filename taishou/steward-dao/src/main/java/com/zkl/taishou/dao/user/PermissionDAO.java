@@ -1,6 +1,6 @@
 package com.zkl.taishou.dao.user;
 
-import com.zkl.taishou.common.entity.Permission;
+import com.zkl.taishou.common.entity.user.Permission;
 
 import java.util.List;
 

@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zkl.taishou.dao.diagnose.YearCashflowRecordDAO">
+  <resultMap id="BaseResultMap" type="com.zkl.taishou.common.entity.diagnose.YearCashFlowRecord">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="NP_market" jdbcType="INTEGER" property="npMarket" />
+    <result column="NP_refund" jdbcType="INTEGER" property="npRefund" />
+    <result column="NP_topUp_increase" jdbcType="INTEGER" property="npTopUpIncrease" />
+    <result column="NP_topUp_reduce" jdbcType="INTEGER" property="npTopUpReduce" />
+    <result column="NP_order_increase" jdbcType="INTEGER" property="npOrderIncrease" />
+    <result column="NP_order_reduce" jdbcType="INTEGER" property="npOrderReduce" />
+    <result column="money_market" jdbcType="DOUBLE" property="moneyMarket" />
+    <result column="money_refund" jdbcType="DOUBLE" property="moneyRefund" />
+    <result column="money_topUp_increase" jdbcType="DOUBLE" property="moneyTopUpIncrease" />
+    <result column="money_topUp_reduce" jdbcType="DOUBLE" property="moneyTopUpReduce" />
+    <result column="money_order_increase" jdbcType="DOUBLE" property="moneyOrderIncrease" />
+    <result column="money_order_reduce" jdbcType="DOUBLE" property="moneyOrderReduce" />
+    <result column="result_id" jdbcType="INTEGER" property="resultId" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, user_id, NP_market, NP_refund, NP_topUp_increase, NP_topUp_reduce, NP_order_increase, 
+    NP_order_reduce, money_market, money_refund, money_topUp_increase, money_topUp_reduce, 
+    money_order_increase, money_order_reduce, result_id, create_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from year_cashflow_record
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from year_cashflow_record
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.zkl.taishou.common.entity.diagnose.YearCashFlowRecord">
+    insert into year_cashflow_record (id, user_id, NP_market, 
+      NP_refund, NP_topUp_increase, NP_topUp_reduce, 
+      NP_order_increase, NP_order_reduce, money_market, 
+      money_refund, money_topUp_increase, money_topUp_reduce, 
+      money_order_increase, money_order_reduce, result_id, 
+      create_time)
+    values (#{id,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, #{npMarket,jdbcType=INTEGER}, 
+      #{npRefund,jdbcType=INTEGER}, #{npTopUpIncrease,jdbcType=INTEGER}, #{npTopUpReduce,jdbcType=INTEGER},
+      #{npOrderIncrease,jdbcType=INTEGER}, #{npOrderReduce,jdbcType=INTEGER}, #{moneyMarket,jdbcType=DOUBLE}, 
+      #{moneyRefund,jdbcType=DOUBLE}, #{moneyTopUpIncrease,jdbcType=DOUBLE}, #{moneyTopUpReduce,jdbcType=DOUBLE},
+      #{moneyOrderIncrease,jdbcType=DOUBLE}, #{moneyOrderReduce,jdbcType=DOUBLE}, #{resultId,jdbcType=INTEGER}, 
+      #{createTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.zkl.taishou.common.entity.diagnose.YearCashFlowRecord">
+    insert into year_cashflow_record
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="npMarket != null">
+        NP_market,
+      </if>
+      <if test="npRefund != null">
+        NP_refund,
+      </if>
+      <if test="npTopUpIncrease != null">
+        NP_topUp_increase,
+      </if>
+      <if test="npTopUpReduce != null">
+        NP_topUp_reduce,
+      </if>
+      <if test="npOrderIncrease != null">
+        NP_order_increase,
+      </if>
+      <if test="npOrderReduce != null">
+        NP_order_reduce,
+      </if>
+      <if test="moneyMarket != null">
+        money_market,
+      </if>
+      <if test="moneyRefund != null">
+        money_refund,
+      </if>
+      <if test="moneyTopUpIncrease != null">
+        money_topUp_increase,
+      </if>
+      <if test="moneyTopUpReduce != null">
+        money_topUp_reduce,
+      </if>
+      <if test="moneyOrderIncrease != null">
+        money_order_increase,
+      </if>
+      <if test="moneyOrderReduce != null">
+        money_order_reduce,
+      </if>
+      <if test="resultId != null">
+        result_id,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="npMarket != null">
+        #{npMarket,jdbcType=INTEGER},
+      </if>
+      <if test="npRefund != null">
+        #{npRefund,jdbcType=INTEGER},
+      </if>
+      <if test="npTopUpIncrease != null">
+        #{npTopUpIncrease,jdbcType=INTEGER},
+      </if>
+      <if test="npTopUpReduce != null">
+        #{npTopUpReduce,jdbcType=INTEGER},
+      </if>
+      <if test="npOrderIncrease != null">
+        #{npOrderIncrease,jdbcType=INTEGER},
+      </if>
+      <if test="npOrderReduce != null">
+        #{npOrderReduce,jdbcType=INTEGER},
+      </if>
+      <if test="moneyMarket != null">
+        #{moneyMarket,jdbcType=DOUBLE},
+      </if>
+      <if test="moneyRefund != null">
+        #{moneyRefund,jdbcType=DOUBLE},
+      </if>
+      <if test="moneyTopUpIncrease != null">
+        #{moneyTopUpIncrease,jdbcType=DOUBLE},
+      </if>
+      <if test="moneyTopUpReduce != null">
+        #{moneyTopUpReduce,jdbcType=DOUBLE},
+      </if>
+      <if test="moneyOrderIncrease != null">
+        #{moneyOrderIncrease,jdbcType=DOUBLE},
+      </if>
+      <if test="moneyOrderReduce != null">
+        #{moneyOrderReduce,jdbcType=DOUBLE},
+      </if>
+      <if test="resultId != null">
+        #{resultId,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+
+
+  <update id="updateByPrimaryKeySelective" parameterType="com.zkl.taishou.common.entity.diagnose.YearCashFlowRecord">
+    update year_cashflow_record
+    <set>
+      <if test="userId != null">
+        user_id = #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="npMarket != null">
+        NP_market = #{npMarket,jdbcType=INTEGER},
+      </if>
+      <if test="npRefund != null">
+        NP_refund = #{npRefund,jdbcType=INTEGER},
+      </if>
+      <if test="npTopUpIncrease != null">
+        NP_topUp_increase = #{npTopUpIncrease,jdbcType=INTEGER},
+      </if>
+      <if test="npTopUpReduce != null">
+        NP_topUp_reduce = #{npTopUpReduce,jdbcType=INTEGER},
+      </if>
+      <if test="npOrderIncrease != null">
+        NP_order_increase = #{npOrderIncrease,jdbcType=INTEGER},
+      </if>
+      <if test="npOrderReduce != null">
+        NP_order_reduce = #{npOrderReduce,jdbcType=INTEGER},
+      </if>
+      <if test="moneyMarket != null">
+        money_market = #{moneyMarket,jdbcType=DOUBLE},
+      </if>
+      <if test="moneyRefund != null">
+        money_refund = #{moneyRefund,jdbcType=DOUBLE},
+      </if>
+      <if test="moneyTopUpIncrease != null">
+        money_topUp_increase = #{moneyTopUpIncrease,jdbcType=DOUBLE},
+      </if>
+      <if test="moneyTopUpReduce != null">
+        money_topUp_reduce = #{moneyTopUpReduce,jdbcType=DOUBLE},
+      </if>
+      <if test="moneyOrderIncrease != null">
+        money_order_increase = #{moneyOrderIncrease,jdbcType=DOUBLE},
+      </if>
+      <if test="moneyOrderReduce != null">
+        money_order_reduce = #{moneyOrderReduce,jdbcType=DOUBLE},
+      </if>
+      <if test="resultId != null">
+        result_id = #{resultId,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zkl.taishou.common.entity.diagnose.YearCashFlowRecord">
+    update year_cashflow_record
+    set user_id = #{userId,jdbcType=INTEGER},
+      NP_market = #{npMarket,jdbcType=INTEGER},
+      NP_refund = #{npRefund,jdbcType=INTEGER},
+      NP_topUp_increase = #{npTopUpIncrease,jdbcType=INTEGER},
+      NP_topUp_reduce = #{npTopUpReduce,jdbcType=INTEGER},
+      NP_order_increase = #{npOrderIncrease,jdbcType=INTEGER},
+      NP_order_reduce = #{npOrderReduce,jdbcType=INTEGER},
+      money_market = #{moneyMarket,jdbcType=DOUBLE},
+      money_refund = #{moneyRefund,jdbcType=DOUBLE},
+      money_topUp_increase = #{moneyTopUpIncrease,jdbcType=DOUBLE},
+      money_topUp_reduce = #{moneyTopUpReduce,jdbcType=DOUBLE},
+      money_order_increase = #{moneyOrderIncrease,jdbcType=DOUBLE},
+      money_order_reduce = #{moneyOrderReduce,jdbcType=DOUBLE},
+      result_id = #{resultId,jdbcType=INTEGER},
+      create_time = #{createTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+
+</mapper>

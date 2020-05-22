@@ -1,0 +1,495 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zkl.taishou.dao.diagnose.AgeGroupRecordDAO">
+  <resultMap id="BaseResultMap" type="com.zkl.taishou.common.entity.diagnose.AgeGroupRecord">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="lessThan_nineteen" jdbcType="INTEGER" property="lessthanNineteen" />
+    <result column="twenty-twentyFour" jdbcType="INTEGER" property="twentyTwentyfour" />
+    <result column="twentyFive-twentyNine" jdbcType="INTEGER" property="twentyfiveTwentynine" />
+    <result column="thirty-thirtyFour" jdbcType="INTEGER" property="thirtyThirtyfour" />
+    <result column="thirtyFive-thirtyNine" jdbcType="INTEGER" property="thirtyfiveThirtynine" />
+    <result column="forty-fortyFour" jdbcType="INTEGER" property="fortyFortyfour" />
+    <result column="fortyFive-fortyNine" jdbcType="INTEGER" property="fortyfiveFortynine" />
+    <result column="fifty-fiftyFour" jdbcType="INTEGER" property="fiftyFiftyfour" />
+    <result column="greaterThan-fiftyFive" jdbcType="INTEGER" property="greaterthanFiftyfive" />
+    <result column="result_id" jdbcType="INTEGER" property="resultId" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, user_id, lessThan_nineteen, twenty-twentyFour, twentyFive-twentyNine, thirty-thirtyFour, 
+    thirtyFive-thirtyNine, forty-fortyFour, fortyFive-fortyNine, fifty-fiftyFour, greaterThan-fiftyFive, 
+    result_id, create_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from age_group_record
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from age_group_record
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.zkl.taishou.common.entity.diagnose.AgeGroupRecord">
+    insert into age_group_record (id, user_id, lessThan_nineteen, 
+      twenty-twentyFour, twentyFive-twentyNine, 
+      thirty-thirtyFour, thirtyFive-thirtyNine, 
+      forty-fortyFour, fortyFive-fortyNine, fifty-fiftyFour, 
+      greaterThan-fiftyFive, result_id, create_time
+      )
+    values (#{id,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, #{lessthanNineteen,jdbcType=INTEGER}, 
+      #{twentyTwentyfour,jdbcType=INTEGER}, #{twentyfiveTwentynine,jdbcType=INTEGER}, 
+      #{thirtyThirtyfour,jdbcType=INTEGER}, #{thirtyfiveThirtynine,jdbcType=INTEGER}, 
+      #{fortyFortyfour,jdbcType=INTEGER}, #{fortyfiveFortynine,jdbcType=INTEGER}, #{fiftyFiftyfour,jdbcType=INTEGER}, 
+      #{greaterthanFiftyfive,jdbcType=INTEGER}, #{resultId,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.zkl.taishou.common.entity.diagnose.AgeGroupRecord">
+    insert into age_group_record
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="lessthanNineteen != null">
+        lessThan_nineteen,
+      </if>
+      <if test="twentyTwentyfour != null">
+        twenty-twentyFour,
+      </if>
+      <if test="twentyfiveTwentynine != null">
+        twentyFive-twentyNine,
+      </if>
+      <if test="thirtyThirtyfour != null">
+        thirty-thirtyFour,
+      </if>
+      <if test="thirtyfiveThirtynine != null">
+        thirtyFive-thirtyNine,
+      </if>
+      <if test="fortyFortyfour != null">
+        forty-fortyFour,
+      </if>
+      <if test="fortyfiveFortynine != null">
+        fortyFive-fortyNine,
+      </if>
+      <if test="fiftyFiftyfour != null">
+        fifty-fiftyFour,
+      </if>
+      <if test="greaterthanFiftyfive != null">
+        greaterThan-fiftyFive,
+      </if>
+      <if test="resultId != null">
+        result_id,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="lessthanNineteen != null">
+        #{lessthanNineteen,jdbcType=INTEGER},
+      </if>
+      <if test="twentyTwentyfour != null">
+        #{twentyTwentyfour,jdbcType=INTEGER},
+      </if>
+      <if test="twentyfiveTwentynine != null">
+        #{twentyfiveTwentynine,jdbcType=INTEGER},
+      </if>
+      <if test="thirtyThirtyfour != null">
+        #{thirtyThirtyfour,jdbcType=INTEGER},
+      </if>
+      <if test="thirtyfiveThirtynine != null">
+        #{thirtyfiveThirtynine,jdbcType=INTEGER},
+      </if>
+      <if test="fortyFortyfour != null">
+        #{fortyFortyfour,jdbcType=INTEGER},
+      </if>
+      <if test="fortyfiveFortynine != null">
+        #{fortyfiveFortynine,jdbcType=INTEGER},
+      </if>
+      <if test="fiftyFiftyfour != null">
+        #{fiftyFiftyfour,jdbcType=INTEGER},
+      </if>
+      <if test="greaterthanFiftyfive != null">
+        #{greaterthanFiftyfive,jdbcType=INTEGER},
+      </if>
+      <if test="resultId != null">
+        #{resultId,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <insert id="insertBatch" parameterType="java.util.List">
+    insert into age_group_record (id, user_id, lessThan_nineteen, 
+      twenty-twentyFour, twentyFive-twentyNine, 
+      thirty-thirtyFour, thirtyFive-thirtyNine, 
+      forty-fortyFour, fortyFive-fortyNine, 
+      fifty-fiftyFour, greaterThan-fiftyFive, 
+      result_id, create_time)
+    values 
+    <foreach collection="list" index="index" item="item" separator=",">
+      (#{item.id,jdbcType=INTEGER}, #{item.userId,jdbcType=INTEGER}, #{item.lessthanNineteen,jdbcType=INTEGER}, 
+        #{item.twentyTwentyfour,jdbcType=INTEGER}, #{item.twentyfiveTwentynine,jdbcType=INTEGER}, 
+        #{item.thirtyThirtyfour,jdbcType=INTEGER}, #{item.thirtyfiveThirtynine,jdbcType=INTEGER}, 
+        #{item.fortyFortyfour,jdbcType=INTEGER}, #{item.fortyfiveFortynine,jdbcType=INTEGER}, 
+        #{item.fiftyFiftyfour,jdbcType=INTEGER}, #{item.greaterthanFiftyfive,jdbcType=INTEGER}, 
+        #{item.resultId,jdbcType=INTEGER}, #{item.createTime,jdbcType=TIMESTAMP})
+    </foreach>
+  </insert>
+  <insert id="insertBatchSelective" parameterType="java.util.List">
+    insert into age_group_record
+    (id, user_id, lessThan_nineteen, twenty-twentyFour, twentyFive-twentyNine, thirty-thirtyFour, 
+      thirtyFive-thirtyNine, forty-fortyFour, fortyFive-fortyNine, fifty-fiftyFour, greaterThan-fiftyFive, 
+      result_id, create_time)
+    values 
+    <foreach collection="list" index="index" item="item" separator=",">
+      <trim prefix="(" suffix=")" suffixOverrides=",">
+        <if test="item.id != null">
+          #{item.id,jdbcType=INTEGER},
+        </if>
+        <if test="item.id == null">
+          NULL,
+        </if>
+        <if test="item.userId != null">
+          #{item.userId,jdbcType=INTEGER},
+        </if>
+        <if test="item.userId == null">
+          NULL,
+        </if>
+        <if test="item.lessthanNineteen != null">
+          #{item.lessthanNineteen,jdbcType=INTEGER},
+        </if>
+        <if test="item.lessthanNineteen == null">
+          NULL,
+        </if>
+        <if test="item.twentyTwentyfour != null">
+          #{item.twentyTwentyfour,jdbcType=INTEGER},
+        </if>
+        <if test="item.twentyTwentyfour == null">
+          NULL,
+        </if>
+        <if test="item.twentyfiveTwentynine != null">
+          #{item.twentyfiveTwentynine,jdbcType=INTEGER},
+        </if>
+        <if test="item.twentyfiveTwentynine == null">
+          NULL,
+        </if>
+        <if test="item.thirtyThirtyfour != null">
+          #{item.thirtyThirtyfour,jdbcType=INTEGER},
+        </if>
+        <if test="item.thirtyThirtyfour == null">
+          NULL,
+        </if>
+        <if test="item.thirtyfiveThirtynine != null">
+          #{item.thirtyfiveThirtynine,jdbcType=INTEGER},
+        </if>
+        <if test="item.thirtyfiveThirtynine == null">
+          NULL,
+        </if>
+        <if test="item.fortyFortyfour != null">
+          #{item.fortyFortyfour,jdbcType=INTEGER},
+        </if>
+        <if test="item.fortyFortyfour == null">
+          NULL,
+        </if>
+        <if test="item.fortyfiveFortynine != null">
+          #{item.fortyfiveFortynine,jdbcType=INTEGER},
+        </if>
+        <if test="item.fortyfiveFortynine == null">
+          NULL,
+        </if>
+        <if test="item.fiftyFiftyfour != null">
+          #{item.fiftyFiftyfour,jdbcType=INTEGER},
+        </if>
+        <if test="item.fiftyFiftyfour == null">
+          NULL,
+        </if>
+        <if test="item.greaterthanFiftyfive != null">
+          #{item.greaterthanFiftyfive,jdbcType=INTEGER},
+        </if>
+        <if test="item.greaterthanFiftyfive == null">
+          NULL,
+        </if>
+        <if test="item.resultId != null">
+          #{item.resultId,jdbcType=INTEGER},
+        </if>
+        <if test="item.resultId == null">
+          NULL,
+        </if>
+        <if test="item.createTime != null">
+          #{item.createTime,jdbcType=TIMESTAMP},
+        </if>
+        <if test="item.createTime == null">
+          NULL,
+        </if>
+      </trim>
+    </foreach>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zkl.taishou.common.entity.diagnose.AgeGroupRecord">
+    update age_group_record
+    <set>
+      <if test="userId != null">
+        user_id = #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="lessthanNineteen != null">
+        lessThan_nineteen = #{lessthanNineteen,jdbcType=INTEGER},
+      </if>
+      <if test="twentyTwentyfour != null">
+        twenty-twentyFour = #{twentyTwentyfour,jdbcType=INTEGER},
+      </if>
+      <if test="twentyfiveTwentynine != null">
+        twentyFive-twentyNine = #{twentyfiveTwentynine,jdbcType=INTEGER},
+      </if>
+      <if test="thirtyThirtyfour != null">
+        thirty-thirtyFour = #{thirtyThirtyfour,jdbcType=INTEGER},
+      </if>
+      <if test="thirtyfiveThirtynine != null">
+        thirtyFive-thirtyNine = #{thirtyfiveThirtynine,jdbcType=INTEGER},
+      </if>
+      <if test="fortyFortyfour != null">
+        forty-fortyFour = #{fortyFortyfour,jdbcType=INTEGER},
+      </if>
+      <if test="fortyfiveFortynine != null">
+        fortyFive-fortyNine = #{fortyfiveFortynine,jdbcType=INTEGER},
+      </if>
+      <if test="fiftyFiftyfour != null">
+        fifty-fiftyFour = #{fiftyFiftyfour,jdbcType=INTEGER},
+      </if>
+      <if test="greaterthanFiftyfive != null">
+        greaterThan-fiftyFive = #{greaterthanFiftyfive,jdbcType=INTEGER},
+      </if>
+      <if test="resultId != null">
+        result_id = #{resultId,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zkl.taishou.common.entity.diagnose.AgeGroupRecord">
+    update age_group_record
+    set user_id = #{userId,jdbcType=INTEGER},
+      lessThan_nineteen = #{lessthanNineteen,jdbcType=INTEGER},
+      twenty-twentyFour = #{twentyTwentyfour,jdbcType=INTEGER},
+      twentyFive-twentyNine = #{twentyfiveTwentynine,jdbcType=INTEGER},
+      thirty-thirtyFour = #{thirtyThirtyfour,jdbcType=INTEGER},
+      thirtyFive-thirtyNine = #{thirtyfiveThirtynine,jdbcType=INTEGER},
+      forty-fortyFour = #{fortyFortyfour,jdbcType=INTEGER},
+      fortyFive-fortyNine = #{fortyfiveFortynine,jdbcType=INTEGER},
+      fifty-fiftyFour = #{fiftyFiftyfour,jdbcType=INTEGER},
+      greaterThan-fiftyFive = #{greaterthanFiftyfive,jdbcType=INTEGER},
+      result_id = #{resultId,jdbcType=INTEGER},
+      create_time = #{createTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateBatchByPrimaryKey" parameterType="java.util.List">
+    update age_group_record
+    <trim prefix="set" suffixOverrides=",">
+      <trim prefix="user_id =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.userId}
+        </foreach>
+      </trim>
+      <trim prefix="lessThan_nineteen =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.lessthanNineteen}
+        </foreach>
+      </trim>
+      <trim prefix="twenty-twentyFour =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.twentyTwentyfour}
+        </foreach>
+      </trim>
+      <trim prefix="twentyFive-twentyNine =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.twentyfiveTwentynine}
+        </foreach>
+      </trim>
+      <trim prefix="thirty-thirtyFour =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.thirtyThirtyfour}
+        </foreach>
+      </trim>
+      <trim prefix="thirtyFive-thirtyNine =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.thirtyfiveThirtynine}
+        </foreach>
+      </trim>
+      <trim prefix="forty-fortyFour =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.fortyFortyfour}
+        </foreach>
+      </trim>
+      <trim prefix="fortyFive-fortyNine =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.fortyfiveFortynine}
+        </foreach>
+      </trim>
+      <trim prefix="fifty-fiftyFour =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.fiftyFiftyfour}
+        </foreach>
+      </trim>
+      <trim prefix="greaterThan-fiftyFive =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.greaterthanFiftyfive}
+        </foreach>
+      </trim>
+      <trim prefix="result_id =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.resultId}
+        </foreach>
+      </trim>
+      <trim prefix="create_time =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.createTime}
+        </foreach>
+      </trim>
+    </trim>
+    where id in 
+    <foreach close=")" collection="list" index="index" item="item" open="(" separator=",">
+       #{item.id} 
+    </foreach>
+  </update>
+  <update id="updateBatchByPrimaryKeySelective" parameterType="java.util.List">
+    update age_group_record
+    <trim prefix="set" suffixOverrides=",">
+      <trim prefix="user_id =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.userId != null ">
+            when  #{item.id} then #{item.userId}
+          </if>
+          <if test="item.userId == null ">
+            when  #{item.id} then age_group_record.user_id
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="lessThan_nineteen =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.lessthanNineteen != null ">
+            when  #{item.id} then #{item.lessthanNineteen}
+          </if>
+          <if test="item.lessthanNineteen == null ">
+            when  #{item.id} then age_group_record.lessThan_nineteen
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="twenty-twentyFour =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.twentyTwentyfour != null ">
+            when  #{item.id} then #{item.twentyTwentyfour}
+          </if>
+          <if test="item.twentyTwentyfour == null ">
+            when  #{item.id} then age_group_record.twenty-twentyFour
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="twentyFive-twentyNine =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.twentyfiveTwentynine != null ">
+            when  #{item.id} then #{item.twentyfiveTwentynine}
+          </if>
+          <if test="item.twentyfiveTwentynine == null ">
+            when  #{item.id} then age_group_record.twentyFive-twentyNine
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="thirty-thirtyFour =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.thirtyThirtyfour != null ">
+            when  #{item.id} then #{item.thirtyThirtyfour}
+          </if>
+          <if test="item.thirtyThirtyfour == null ">
+            when  #{item.id} then age_group_record.thirty-thirtyFour
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="thirtyFive-thirtyNine =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.thirtyfiveThirtynine != null ">
+            when  #{item.id} then #{item.thirtyfiveThirtynine}
+          </if>
+          <if test="item.thirtyfiveThirtynine == null ">
+            when  #{item.id} then age_group_record.thirtyFive-thirtyNine
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="forty-fortyFour =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.fortyFortyfour != null ">
+            when  #{item.id} then #{item.fortyFortyfour}
+          </if>
+          <if test="item.fortyFortyfour == null ">
+            when  #{item.id} then age_group_record.forty-fortyFour
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="fortyFive-fortyNine =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.fortyfiveFortynine != null ">
+            when  #{item.id} then #{item.fortyfiveFortynine}
+          </if>
+          <if test="item.fortyfiveFortynine == null ">
+            when  #{item.id} then age_group_record.fortyFive-fortyNine
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="fifty-fiftyFour =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.fiftyFiftyfour != null ">
+            when  #{item.id} then #{item.fiftyFiftyfour}
+          </if>
+          <if test="item.fiftyFiftyfour == null ">
+            when  #{item.id} then age_group_record.fifty-fiftyFour
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="greaterThan-fiftyFive =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.greaterthanFiftyfive != null ">
+            when  #{item.id} then #{item.greaterthanFiftyfive}
+          </if>
+          <if test="item.greaterthanFiftyfive == null ">
+            when  #{item.id} then age_group_record.greaterThan-fiftyFive
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="result_id =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.resultId != null ">
+            when  #{item.id} then #{item.resultId}
+          </if>
+          <if test="item.resultId == null ">
+            when  #{item.id} then age_group_record.result_id
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="create_time =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.createTime != null ">
+            when  #{item.id} then #{item.createTime}
+          </if>
+          <if test="item.createTime == null ">
+            when  #{item.id} then age_group_record.create_time
+          </if>
+        </foreach>
+      </trim>
+    </trim>
+    where id in 
+    <foreach close=")" collection="list" index="index" item="item" open="(" separator=",">
+       #{item.id} 
+    </foreach>
+  </update>
+</mapper>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.zkl.taishou.dao.user.PermissionDAO">
-  <resultMap id="BaseResultMap" type="com.zkl.taishou.common.entity.Permission">
+  <resultMap id="BaseResultMap" type="com.zkl.taishou.common.entity.user.Permission">
     <constructor>
       <idArg column="id" javaType="java.lang.Integer" jdbcType="INTEGER" />
       <arg column="permission" javaType="java.lang.String" jdbcType="VARCHAR" />
@@ -20,11 +20,11 @@
     delete from permission
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.zkl.taishou.common.entity.Permission">
+  <insert id="insert" parameterType="com.zkl.taishou.common.entity.user.Permission">
     insert into permission (id, permission)
     values (#{id,jdbcType=INTEGER}, #{permission,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.zkl.taishou.common.entity.Permission">
+  <insert id="insertSelective" parameterType="com.zkl.taishou.common.entity.user.Permission">
     insert into permission
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -43,7 +43,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.zkl.taishou.common.entity.Permission">
+  <update id="updateByPrimaryKeySelective" parameterType="com.zkl.taishou.common.entity.user.Permission">
     update permission
     <set>
       <if test="permission != null">
@@ -52,13 +52,13 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.zkl.taishou.common.entity.Permission">
+  <update id="updateByPrimaryKey" parameterType="com.zkl.taishou.common.entity.user.Permission">
     update permission
     set permission = #{permission,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
 
-  <select id="selectPermissionsByRoleId" resultType="com.zkl.taishou.common.entity.Permission">
+  <select id="selectPermissionsByRoleId" resultType="com.zkl.taishou.common.entity.user.Permission">
         select p.* from role_permission as rp
         inner join permission as p on rp.permission_id=p.id
         where rp.role_id=#{roleId}

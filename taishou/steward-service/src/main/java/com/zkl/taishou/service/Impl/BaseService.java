@@ -1,9 +1,11 @@
-package com.zkl.taishou.service;
+package com.zkl.taishou.service.Impl;
 
 import com.zkl.taishou.service.redis.RedisService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+
+import java.lang.reflect.Field;
 
 /**
  * @ClassName:
@@ -17,6 +19,7 @@ public class BaseService {
 
     @Autowired
     protected RedisService redisService;
+
 
     /**
      * 日志

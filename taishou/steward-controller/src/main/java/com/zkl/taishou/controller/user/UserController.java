@@ -1,7 +1,8 @@
 package com.zkl.taishou.controller.user;
 
 import com.zkl.taishou.common.PO.UserInfo;
-import com.zkl.taishou.common.entity.User;
+import com.zkl.taishou.common.VO.RegisterVO;
+import com.zkl.taishou.common.entity.user.User;
 import com.zkl.taishou.common.constants.ResultBean;
 import com.zkl.taishou.controller.BaseController;
 import com.zkl.taishou.service.UserService;
@@ -23,7 +24,6 @@ public class UserController extends BaseController {
     @Autowired
     private UserService userService;
 
-
     @ApiModelProperty(value = "登录",notes = "登录")
     @ApiImplicitParams({
             @ApiImplicitParam(name = "phone",paramType = "query",value = "用户手机号"),
@@ -35,10 +35,10 @@ public class UserController extends BaseController {
     }
 
     @ApiOperation(value = "用户注册",notes = "注册")
-    @ApiImplicitParam(name="form" ,value = "用户注册表单",dataType = "User",paramType = "body")
+    @ApiImplicitParam(name="registerVO" ,value = "用户注册表单",dataType = "RegisterVO",paramType = "body")
     @GetMapping("/register")
-    public ResultBean getUserRol(@Validated @RequestBody User user){
-        return userService.register(user);
+    public ResultBean getUserRol(@Validated @RequestBody RegisterVO registerVO){
+        return userService.register(registerVO);
     }
 
     @ApiModelProperty(value = "登出用户",notes = "用户退出登录")

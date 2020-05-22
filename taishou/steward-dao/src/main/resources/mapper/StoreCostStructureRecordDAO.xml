@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.zkl.taishou.dao.diagnose.StoreCostStructureRecordDAO">
-  <resultMap id="BaseResultMap" type="com.zkl.taishou.common.entity.StoreCostStructureRecord">
+  <resultMap id="BaseResultMap" type="com.zkl.taishou.common.entity.diagnose.StoreCostStructureRecord">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="user_id" jdbcType="INTEGER" property="userId" />
     <result column="purchase_cost" jdbcType="DOUBLE" property="purchaseCost" />
@@ -28,7 +28,7 @@
     delete from store_cost_structure_record
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.zkl.taishou.common.entity.StoreCostStructureRecord">
+  <insert id="insert" parameterType="com.zkl.taishou.common.entity.diagnose.StoreCostStructureRecord">
     insert into store_cost_structure_record (id, user_id, purchase_cost, 
       instrument_cost, wage_cost, `rent and utilities`, 
       marketing_cost, management_cost, other_cost, 
@@ -38,7 +38,7 @@
       #{marketingCost,jdbcType=DOUBLE}, #{managementCost,jdbcType=DOUBLE}, #{otherCost,jdbcType=DOUBLE}, 
       #{resultId,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP})
   </insert>
-  <insert id="insertSelective" parameterType="com.zkl.taishou.common.entity.StoreCostStructureRecord">
+  <insert id="insertSelective" parameterType="com.zkl.taishou.common.entity.diagnose.StoreCostStructureRecord">
     insert into store_cost_structure_record
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -111,7 +111,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.zkl.taishou.common.entity.StoreCostStructureRecord">
+  <update id="updateByPrimaryKeySelective" parameterType="com.zkl.taishou.common.entity.diagnose.StoreCostStructureRecord">
     update store_cost_structure_record
     <set>
       <if test="userId != null">
@@ -147,7 +147,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.zkl.taishou.common.entity.StoreCostStructureRecord">
+  <update id="updateByPrimaryKey" parameterType="com.zkl.taishou.common.entity.diagnose.StoreCostStructureRecord">
     update store_cost_structure_record
     set user_id = #{userId,jdbcType=INTEGER},
       purchase_cost = #{purchaseCost,jdbcType=DOUBLE},

@@ -1,4 +1,4 @@
-package com.zkl.taishou.common.entity;
+package com.zkl.taishou.common.entity.calculate;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -13,7 +13,7 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 public class CalculateRecord implements Serializable {
-    private final static long serialVersionUid = -1L;
+    private final static long serialVersionUID = -1L;
 
     private Long id;
 

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.zkl.taishou.dao.user.UserDAO">
-  <resultMap id="BaseResultMap" type="com.zkl.taishou.common.entity.User">
+  <resultMap id="BaseResultMap" type="com.zkl.taishou.common.entity.user.User">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="name" jdbcType="VARCHAR" property="name" />
     <result column="sex" jdbcType="INTEGER" property="sex" />
@@ -12,7 +12,7 @@
     <result column="password" jdbcType="VARCHAR" property="password" />
   </resultMap>
 
-  <resultMap id="roleUserMap" type="com.zkl.taishou.common.entity.User">
+  <resultMap id="roleUserMap" type="com.zkl.taishou.common.entity.user.User">
     <id column="uid" property="id"/>
     <result column="phone" property="phone"/>
     <result column="password" property="password"/>
@@ -21,7 +21,7 @@
     <result column="name" property="name"/>
     <result column="sex" property="sex"/>
     <result column="age" property="age"/>
-    <association property="role" javaType="com.zkl.taishou.common.entity.Role">
+    <association property="role" javaType="com.zkl.taishou.common.entity.user.Role">
       <id column="rid" property="id"/>
       <result column="role" property="role"/>
     </association>
@@ -39,7 +39,7 @@
     delete from user
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.zkl.taishou.common.entity.User">
+  <insert id="insert" parameterType="com.zkl.taishou.common.entity.user.User" useGeneratedKeys="true" keyProperty="id">
     insert into user (id, name, sex, 
       age, role_id, wx_unionid,
       phone, password)
@@ -47,7 +47,7 @@
       #{age,jdbcType=INTEGER}, #{role_id,jdbcType=INTEGER}, #{wxUnionid,jdbcType=VARCHAR},
       #{phone,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.zkl.taishou.common.entity.User">
+  <insert id="insertSelective" parameterType="com.zkl.taishou.common.entity.user.User" useGeneratedKeys="true" keyProperty="id">
     insert into user
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -102,7 +102,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.zkl.taishou.common.entity.User">
+  <update id="updateByPrimaryKeySelective" parameterType="com.zkl.taishou.common.entity.user.User">
     update user
     <set>
       <if test="name != null">
@@ -129,7 +129,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.zkl.taishou.common.entity.User">
+  <update id="updateByPrimaryKey" parameterType="com.zkl.taishou.common.entity.user.User">
     update user
     set name = #{name,jdbcType=VARCHAR},
       sex = #{sex,jdbcType=INTEGER},
@@ -147,7 +147,7 @@
       where phone=#{phone}
     </select>
 
-  <insert id="addUser" parameterType="com.zkl.taishou.common.entity.User">
+  <insert id="addUser" parameterType="com.zkl.taishou.common.entity.user.User">
         insert into users(register_id, password,role_id) value (#{user.registerId},#{user.password},#{user.role_idId})
     </insert>
 
@@ -155,7 +155,7 @@
         delete from users where id=#{id}
     </delete>
 
-  <update id="updateUserById" parameterType="com.zkl.taishou.common.entity.User">
+  <update id="updateUserById" parameterType="com.zkl.taishou.common.entity.user.User">
         update users set password=#{user.password},role_id_id=#{user.role_idId} where id=#{user.id}
     </update>
 

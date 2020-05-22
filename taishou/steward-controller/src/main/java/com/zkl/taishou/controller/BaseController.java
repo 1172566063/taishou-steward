@@ -2,7 +2,7 @@ package com.zkl.taishou.controller;
 
 import com.alibaba.fastjson.JSON;
 import com.zkl.taishou.common.constants.RedisKeyConstants;
-import com.zkl.taishou.common.entity.User;
+import com.zkl.taishou.common.entity.user.User;
 import com.zkl.taishou.common.constants.ResultBean;
 import com.zkl.taishou.common.constants.ResultConstants;
 import com.zkl.taishou.common.utils.ServletUtil;

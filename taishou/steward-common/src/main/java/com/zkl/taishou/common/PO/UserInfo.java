@@ -1,6 +1,6 @@
 package com.zkl.taishou.common.PO;
 
-import com.zkl.taishou.common.entity.User;
+import com.zkl.taishou.common.entity.user.User;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -21,7 +21,7 @@ import java.io.Serializable;
 @Accessors(chain = true)
 public class UserInfo implements Serializable {
 
-    private static final long serialVersionUid = 1L;
+    private static final long serialVersionUID = 1L;
 
     @ApiModelProperty("头像图片地址")
     private String headPortraitImg;

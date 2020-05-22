@@ -1,4 +1,4 @@
-package com.zkl.taishou.common.entity;
+package com.zkl.taishou.common.entity.user;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -13,7 +13,7 @@ import java.util.List;
 @Data
 @Accessors(chain = true)
 public class Role implements Serializable {
-    private static final long serialVersionUid = 1L;
+    private static final long serialVersionUID = 1L;
 
     private Integer id;
 

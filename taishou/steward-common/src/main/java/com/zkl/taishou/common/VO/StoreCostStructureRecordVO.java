@@ -1,6 +1,6 @@
 package com.zkl.taishou.common.VO;
 
-import com.zkl.taishou.common.entity.StoreCostStructureRecord;
+import com.zkl.taishou.common.entity.diagnose.StoreCostStructureRecord;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -19,9 +19,9 @@ import java.io.Serializable;
 @AllArgsConstructor
 @NoArgsConstructor
 @Accessors(chain = true)
-public class StoreCostStructureVO implements Serializable {
+public class StoreCostStructureRecordVO implements Serializable {
 
-    private static final long serialVersionUid = -1L;
+    private static final long serialVersionUID = -1L;
 
     private Integer userId;
 

@@ -1,14 +1,16 @@
 package com.zkl.taishou.service.Impl;
 
 import com.zkl.taishou.common.PO.UserInfo;
+import com.zkl.taishou.common.VO.RegisterVO;
 import com.zkl.taishou.common.constants.RedisKeyConstants;
-import com.zkl.taishou.common.entity.User;
+import com.zkl.taishou.common.entity.user.Store;
+import com.zkl.taishou.common.entity.user.User;
 import com.zkl.taishou.common.constants.ResultBean;
 import com.zkl.taishou.common.constants.ResultConstants;
 import com.zkl.taishou.common.utils.EncryptUtil;
 import com.zkl.taishou.dao.user.PermissionDAO;
+import com.zkl.taishou.dao.user.StoreDAO;
 import com.zkl.taishou.dao.user.UserDAO;
-import com.zkl.taishou.service.BaseService;
 import com.zkl.taishou.service.UserService;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.AuthenticationException;
@@ -26,6 +28,9 @@ public class UserServiceImpl extends BaseService implements UserService {
 
     @Autowired
     PermissionDAO permissionMapper;
+
+    @Autowired
+    StoreDAO storeDAO;
 
     @Override
     public User getUsers() {
@@ -78,16 +83,28 @@ public class UserServiceImpl extends BaseService implements UserService {
     }
 
     @Override
-    public ResultBean<UserInfo> register(User user) {
-        String account= user.getPhone();
-        String password = user.getPassword();
+    public ResultBean<UserInfo> register(RegisterVO registerVO) {
+        User user=new User();
+        Store store;
+        String account= registerVO.getPhone();
+        String password = registerVO.getPassword();
+        String storeName = registerVO.getStoreName();
         User userByRegisterId = getUserByRegisterId(account);
         if(userByRegisterId!=null){
             return new ResultBean(ResultConstants.ACCOUNT_REPETITION);
         }
+        //加盐加密
         user.setPassword(EncryptUtil.PawEncryption(account,password));
-        userMapper.insert(user);
+        user.setPhone(account);
+        //新增用户
+        userMapper.insertSelective(user);
 
+        //添加用户店铺信息
+        store=new Store(user.getId());
+        store.setName(storeName);
+        store.setUserId(user.getId());
+        storeDAO.insertSelective(store);
+        //执行登录操作
         return login(account,password);
     }
 }

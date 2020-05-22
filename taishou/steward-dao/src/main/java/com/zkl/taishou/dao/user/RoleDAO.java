@@ -1,6 +1,6 @@
 package com.zkl.taishou.dao.user;
 
-import com.zkl.taishou.common.entity.Role;
+import com.zkl.taishou.common.entity.user.Role;
 
 public interface RoleDAO {
 

@@ -1,0 +1,423 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zkl.taishou.dao.diagnose.CustomerSourceRecordDAO">
+  <resultMap id="BaseResultMap" type="com.zkl.taishou.common.entity.diagnose.CustomerSourceRecord">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="offline" jdbcType="INTEGER" property="offline" />
+    <result column="weChat" jdbcType="INTEGER" property="wechat" />
+    <result column="online" jdbcType="INTEGER" property="online" />
+    <result column="oneself" jdbcType="INTEGER" property="oneself" />
+    <result column="other_industries" jdbcType="INTEGER" property="otherIndustries" />
+    <result column="customers_recommend" jdbcType="INTEGER" property="customersRecommend" />
+    <result column="other" jdbcType="INTEGER" property="other" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="result_id" jdbcType="INTEGER" property="resultId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, user_id, `offline`, weChat, `online`, oneself, other_industries, customers_recommend, 
+    other, create_time, result_id
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from customer_source_record
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from customer_source_record
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.zkl.taishou.common.entity.diagnose.CustomerSourceRecord">
+    insert into customer_source_record (id, user_id, `offline`, 
+      weChat, `online`, oneself, 
+      other_industries, customers_recommend, other, 
+      create_time, result_id)
+    values (#{id,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, #{offline,jdbcType=INTEGER}, 
+      #{wechat,jdbcType=INTEGER}, #{online,jdbcType=INTEGER}, #{oneself,jdbcType=INTEGER}, 
+      #{otherIndustries,jdbcType=INTEGER}, #{customersRecommend,jdbcType=INTEGER}, #{other,jdbcType=INTEGER}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{resultId,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.zkl.taishou.common.entity.diagnose.CustomerSourceRecord">
+    insert into customer_source_record
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="offline != null">
+        `offline`,
+      </if>
+      <if test="wechat != null">
+        weChat,
+      </if>
+      <if test="online != null">
+        `online`,
+      </if>
+      <if test="oneself != null">
+        oneself,
+      </if>
+      <if test="otherIndustries != null">
+        other_industries,
+      </if>
+      <if test="customersRecommend != null">
+        customers_recommend,
+      </if>
+      <if test="other != null">
+        other,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="resultId != null">
+        result_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="offline != null">
+        #{offline,jdbcType=INTEGER},
+      </if>
+      <if test="wechat != null">
+        #{wechat,jdbcType=INTEGER},
+      </if>
+      <if test="online != null">
+        #{online,jdbcType=INTEGER},
+      </if>
+      <if test="oneself != null">
+        #{oneself,jdbcType=INTEGER},
+      </if>
+      <if test="otherIndustries != null">
+        #{otherIndustries,jdbcType=INTEGER},
+      </if>
+      <if test="customersRecommend != null">
+        #{customersRecommend,jdbcType=INTEGER},
+      </if>
+      <if test="other != null">
+        #{other,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="resultId != null">
+        #{resultId,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <insert id="insertBatch" parameterType="java.util.List">
+    insert into customer_source_record (id, user_id, `offline`, 
+      weChat, `online`, oneself, 
+      other_industries, customers_recommend, 
+      other, create_time, result_id
+      )
+    values 
+    <foreach collection="list" index="index" item="item" separator=",">
+      (#{item.id,jdbcType=INTEGER}, #{item.userId,jdbcType=INTEGER}, #{item.offline,jdbcType=INTEGER}, 
+        #{item.wechat,jdbcType=INTEGER}, #{item.online,jdbcType=INTEGER}, #{item.oneself,jdbcType=INTEGER}, 
+        #{item.otherIndustries,jdbcType=INTEGER}, #{item.customersRecommend,jdbcType=INTEGER}, 
+        #{item.other,jdbcType=INTEGER}, #{item.createTime,jdbcType=TIMESTAMP}, #{item.resultId,jdbcType=INTEGER}
+        )
+    </foreach>
+  </insert>
+  <insert id="insertBatchSelective" parameterType="java.util.List">
+    insert into customer_source_record
+    (id, user_id, `offline`, weChat, `online`, oneself, other_industries, customers_recommend, 
+      other, create_time, result_id)
+    values 
+    <foreach collection="list" index="index" item="item" separator=",">
+      <trim prefix="(" suffix=")" suffixOverrides=",">
+        <if test="item.id != null">
+          #{item.id,jdbcType=INTEGER},
+        </if>
+        <if test="item.id == null">
+          NULL,
+        </if>
+        <if test="item.userId != null">
+          #{item.userId,jdbcType=INTEGER},
+        </if>
+        <if test="item.userId == null">
+          NULL,
+        </if>
+        <if test="item.offline != null">
+          #{item.offline,jdbcType=INTEGER},
+        </if>
+        <if test="item.offline == null">
+          NULL,
+        </if>
+        <if test="item.wechat != null">
+          #{item.wechat,jdbcType=INTEGER},
+        </if>
+        <if test="item.wechat == null">
+          NULL,
+        </if>
+        <if test="item.online != null">
+          #{item.online,jdbcType=INTEGER},
+        </if>
+        <if test="item.online == null">
+          NULL,
+        </if>
+        <if test="item.oneself != null">
+          #{item.oneself,jdbcType=INTEGER},
+        </if>
+        <if test="item.oneself == null">
+          NULL,
+        </if>
+        <if test="item.otherIndustries != null">
+          #{item.otherIndustries,jdbcType=INTEGER},
+        </if>
+        <if test="item.otherIndustries == null">
+          NULL,
+        </if>
+        <if test="item.customersRecommend != null">
+          #{item.customersRecommend,jdbcType=INTEGER},
+        </if>
+        <if test="item.customersRecommend == null">
+          NULL,
+        </if>
+        <if test="item.other != null">
+          #{item.other,jdbcType=INTEGER},
+        </if>
+        <if test="item.other == null">
+          NULL,
+        </if>
+        <if test="item.createTime != null">
+          #{item.createTime,jdbcType=TIMESTAMP},
+        </if>
+        <if test="item.createTime == null">
+          NULL,
+        </if>
+        <if test="item.resultId != null">
+          #{item.resultId,jdbcType=INTEGER},
+        </if>
+        <if test="item.resultId == null">
+          NULL,
+        </if>
+      </trim>
+    </foreach>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zkl.taishou.common.entity.diagnose.CustomerSourceRecord">
+    update customer_source_record
+    <set>
+      <if test="userId != null">
+        user_id = #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="offline != null">
+        `offline` = #{offline,jdbcType=INTEGER},
+      </if>
+      <if test="wechat != null">
+        weChat = #{wechat,jdbcType=INTEGER},
+      </if>
+      <if test="online != null">
+        `online` = #{online,jdbcType=INTEGER},
+      </if>
+      <if test="oneself != null">
+        oneself = #{oneself,jdbcType=INTEGER},
+      </if>
+      <if test="otherIndustries != null">
+        other_industries = #{otherIndustries,jdbcType=INTEGER},
+      </if>
+      <if test="customersRecommend != null">
+        customers_recommend = #{customersRecommend,jdbcType=INTEGER},
+      </if>
+      <if test="other != null">
+        other = #{other,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="resultId != null">
+        result_id = #{resultId,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zkl.taishou.common.entity.diagnose.CustomerSourceRecord">
+    update customer_source_record
+    set user_id = #{userId,jdbcType=INTEGER},
+      `offline` = #{offline,jdbcType=INTEGER},
+      weChat = #{wechat,jdbcType=INTEGER},
+      `online` = #{online,jdbcType=INTEGER},
+      oneself = #{oneself,jdbcType=INTEGER},
+      other_industries = #{otherIndustries,jdbcType=INTEGER},
+      customers_recommend = #{customersRecommend,jdbcType=INTEGER},
+      other = #{other,jdbcType=INTEGER},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      result_id = #{resultId,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateBatchByPrimaryKey" parameterType="java.util.List">
+    update customer_source_record
+    <trim prefix="set" suffixOverrides=",">
+      <trim prefix="user_id =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.userId}
+        </foreach>
+      </trim>
+      <trim prefix="offline =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.offline}
+        </foreach>
+      </trim>
+      <trim prefix="weChat =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.wechat}
+        </foreach>
+      </trim>
+      <trim prefix="online =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.online}
+        </foreach>
+      </trim>
+      <trim prefix="oneself =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.oneself}
+        </foreach>
+      </trim>
+      <trim prefix="other_industries =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.otherIndustries}
+        </foreach>
+      </trim>
+      <trim prefix="customers_recommend =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.customersRecommend}
+        </foreach>
+      </trim>
+      <trim prefix="other =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.other}
+        </foreach>
+      </trim>
+      <trim prefix="create_time =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.createTime}
+        </foreach>
+      </trim>
+      <trim prefix="result_id =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.resultId}
+        </foreach>
+      </trim>
+    </trim>
+    where id in 
+    <foreach close=")" collection="list" index="index" item="item" open="(" separator=",">
+       #{item.id} 
+    </foreach>
+  </update>
+  <update id="updateBatchByPrimaryKeySelective" parameterType="java.util.List">
+    update customer_source_record
+    <trim prefix="set" suffixOverrides=",">
+      <trim prefix="user_id =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.userId != null ">
+            when  #{item.id} then #{item.userId}
+          </if>
+          <if test="item.userId == null ">
+            when  #{item.id} then customer_source_record.user_id
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="offline =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.offline != null ">
+            when  #{item.id} then #{item.offline}
+          </if>
+          <if test="item.offline == null ">
+            when  #{item.id} then customer_source_record.`offline`
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="weChat =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.wechat != null ">
+            when  #{item.id} then #{item.wechat}
+          </if>
+          <if test="item.wechat == null ">
+            when  #{item.id} then customer_source_record.weChat
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="online =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.online != null ">
+            when  #{item.id} then #{item.online}
+          </if>
+          <if test="item.online == null ">
+            when  #{item.id} then customer_source_record.`online`
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="oneself =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.oneself != null ">
+            when  #{item.id} then #{item.oneself}
+          </if>
+          <if test="item.oneself == null ">
+            when  #{item.id} then customer_source_record.oneself
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="other_industries =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.otherIndustries != null ">
+            when  #{item.id} then #{item.otherIndustries}
+          </if>
+          <if test="item.otherIndustries == null ">
+            when  #{item.id} then customer_source_record.other_industries
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="customers_recommend =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.customersRecommend != null ">
+            when  #{item.id} then #{item.customersRecommend}
+          </if>
+          <if test="item.customersRecommend == null ">
+            when  #{item.id} then customer_source_record.customers_recommend
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="other =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.other != null ">
+            when  #{item.id} then #{item.other}
+          </if>
+          <if test="item.other == null ">
+            when  #{item.id} then customer_source_record.other
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="create_time =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.createTime != null ">
+            when  #{item.id} then #{item.createTime}
+          </if>
+          <if test="item.createTime == null ">
+            when  #{item.id} then customer_source_record.create_time
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="result_id =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.resultId != null ">
+            when  #{item.id} then #{item.resultId}
+          </if>
+          <if test="item.resultId == null ">
+            when  #{item.id} then customer_source_record.result_id
+          </if>
+        </foreach>
+      </trim>
+    </trim>
+    where id in 
+    <foreach close=")" collection="list" index="index" item="item" open="(" separator=",">
+       #{item.id} 
+    </foreach>
+  </update>
+</mapper>

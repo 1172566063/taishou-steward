@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zkl.taishou.dao.diagnose.EffectiveRegularRecordDAO">
+  <resultMap id="BaseResultMap" type="com.zkl.taishou.common.entity.diagnose.EffectiveRegularRecord">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="one" jdbcType="INTEGER" property="one" />
+    <result column="two" jdbcType="INTEGER" property="two" />
+    <result column="three" jdbcType="INTEGER" property="three" />
+    <result column="six" jdbcType="INTEGER" property="six" />
+    <result column="twelve" jdbcType="INTEGER" property="twelve" />
+    <result column="exceed_twelve" jdbcType="INTEGER" property="exceedTwelve" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="result_id" jdbcType="INTEGER" property="resultId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, user_id, one, two, three, six, twelve, exceed_twelve, create_time, result_id
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from effective_regular_record
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from effective_regular_record
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.zkl.taishou.common.entity.diagnose.EffectiveRegularRecord">
+    insert into effective_regular_record (id, user_id, one, 
+      two, three, six, twelve, 
+      exceed_twelve, create_time, result_id
+      )
+    values (#{id,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, #{one,jdbcType=INTEGER}, 
+      #{two,jdbcType=INTEGER}, #{three,jdbcType=INTEGER}, #{six,jdbcType=INTEGER}, #{twelve,jdbcType=INTEGER}, 
+      #{exceedTwelve,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, #{resultId,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.zkl.taishou.common.entity.diagnose.EffectiveRegularRecord">
+    insert into effective_regular_record
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="one != null">
+        one,
+      </if>
+      <if test="two != null">
+        two,
+      </if>
+      <if test="three != null">
+        three,
+      </if>
+      <if test="six != null">
+        six,
+      </if>
+      <if test="twelve != null">
+        twelve,
+      </if>
+      <if test="exceedTwelve != null">
+        exceed_twelve,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="resultId != null">
+        result_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="one != null">
+        #{one,jdbcType=INTEGER},
+      </if>
+      <if test="two != null">
+        #{two,jdbcType=INTEGER},
+      </if>
+      <if test="three != null">
+        #{three,jdbcType=INTEGER},
+      </if>
+      <if test="six != null">
+        #{six,jdbcType=INTEGER},
+      </if>
+      <if test="twelve != null">
+        #{twelve,jdbcType=INTEGER},
+      </if>
+      <if test="exceedTwelve != null">
+        #{exceedTwelve,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="resultId != null">
+        #{resultId,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <insert id="insertBatch" parameterType="java.util.List">
+    insert into effective_regular_record (id, user_id, one, 
+      two, three, six, 
+      twelve, exceed_twelve, create_time, 
+      result_id)
+    values 
+    <foreach collection="list" index="index" item="item" separator=",">
+      (#{item.id,jdbcType=INTEGER}, #{item.userId,jdbcType=INTEGER}, #{item.one,jdbcType=INTEGER}, 
+        #{item.two,jdbcType=INTEGER}, #{item.three,jdbcType=INTEGER}, #{item.six,jdbcType=INTEGER}, 
+        #{item.twelve,jdbcType=INTEGER}, #{item.exceedTwelve,jdbcType=INTEGER}, #{item.createTime,jdbcType=TIMESTAMP}, 
+        #{item.resultId,jdbcType=INTEGER})
+    </foreach>
+  </insert>
+  <insert id="insertBatchSelective" parameterType="java.util.List">
+    insert into effective_regular_record
+    (id, user_id, one, two, three, six, twelve, exceed_twelve, create_time, result_id
+      )
+    values 
+    <foreach collection="list" index="index" item="item" separator=",">
+      <trim prefix="(" suffix=")" suffixOverrides=",">
+        <if test="item.id != null">
+          #{item.id,jdbcType=INTEGER},
+        </if>
+        <if test="item.id == null">
+          NULL,
+        </if>
+        <if test="item.userId != null">
+          #{item.userId,jdbcType=INTEGER},
+        </if>
+        <if test="item.userId == null">
+          NULL,
+        </if>
+        <if test="item.one != null">
+          #{item.one,jdbcType=INTEGER},
+        </if>
+        <if test="item.one == null">
+          NULL,
+        </if>
+        <if test="item.two != null">
+          #{item.two,jdbcType=INTEGER},
+        </if>
+        <if test="item.two == null">
+          NULL,
+        </if>
+        <if test="item.three != null">
+          #{item.three,jdbcType=INTEGER},
+        </if>
+        <if test="item.three == null">
+          NULL,
+        </if>
+        <if test="item.six != null">
+          #{item.six,jdbcType=INTEGER},
+        </if>
+        <if test="item.six == null">
+          NULL,
+        </if>
+        <if test="item.twelve != null">
+          #{item.twelve,jdbcType=INTEGER},
+        </if>
+        <if test="item.twelve == null">
+          NULL,
+        </if>
+        <if test="item.exceedTwelve != null">
+          #{item.exceedTwelve,jdbcType=INTEGER},
+        </if>
+        <if test="item.exceedTwelve == null">
+          NULL,
+        </if>
+        <if test="item.createTime != null">
+          #{item.createTime,jdbcType=TIMESTAMP},
+        </if>
+        <if test="item.createTime == null">
+          NULL,
+        </if>
+        <if test="item.resultId != null">
+          #{item.resultId,jdbcType=INTEGER},
+        </if>
+        <if test="item.resultId == null">
+          NULL,
+        </if>
+      </trim>
+    </foreach>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zkl.taishou.common.entity.diagnose.EffectiveRegularRecord">
+    update effective_regular_record
+    <set>
+      <if test="userId != null">
+        user_id = #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="one != null">
+        one = #{one,jdbcType=INTEGER},
+      </if>
+      <if test="two != null">
+        two = #{two,jdbcType=INTEGER},
+      </if>
+      <if test="three != null">
+        three = #{three,jdbcType=INTEGER},
+      </if>
+      <if test="six != null">
+        six = #{six,jdbcType=INTEGER},
+      </if>
+      <if test="twelve != null">
+        twelve = #{twelve,jdbcType=INTEGER},
+      </if>
+      <if test="exceedTwelve != null">
+        exceed_twelve = #{exceedTwelve,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="resultId != null">
+        result_id = #{resultId,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zkl.taishou.common.entity.diagnose.EffectiveRegularRecord">
+    update effective_regular_record
+    set user_id = #{userId,jdbcType=INTEGER},
+      one = #{one,jdbcType=INTEGER},
+      two = #{two,jdbcType=INTEGER},
+      three = #{three,jdbcType=INTEGER},
+      six = #{six,jdbcType=INTEGER},
+      twelve = #{twelve,jdbcType=INTEGER},
+      exceed_twelve = #{exceedTwelve,jdbcType=INTEGER},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      result_id = #{resultId,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateBatchByPrimaryKey" parameterType="java.util.List">
+    update effective_regular_record
+    <trim prefix="set" suffixOverrides=",">
+      <trim prefix="user_id =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.userId}
+        </foreach>
+      </trim>
+      <trim prefix="one =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.one}
+        </foreach>
+      </trim>
+      <trim prefix="two =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.two}
+        </foreach>
+      </trim>
+      <trim prefix="three =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.three}
+        </foreach>
+      </trim>
+      <trim prefix="six =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.six}
+        </foreach>
+      </trim>
+      <trim prefix="twelve =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.twelve}
+        </foreach>
+      </trim>
+      <trim prefix="exceed_twelve =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.exceedTwelve}
+        </foreach>
+      </trim>
+      <trim prefix="create_time =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.createTime}
+        </foreach>
+      </trim>
+      <trim prefix="result_id =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.resultId}
+        </foreach>
+      </trim>
+    </trim>
+    where id in 
+    <foreach close=")" collection="list" index="index" item="item" open="(" separator=",">
+       #{item.id} 
+    </foreach>
+  </update>
+  <update id="updateBatchByPrimaryKeySelective" parameterType="java.util.List">
+    update effective_regular_record
+    <trim prefix="set" suffixOverrides=",">
+      <trim prefix="user_id =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.userId != null ">
+            when  #{item.id} then #{item.userId}
+          </if>
+          <if test="item.userId == null ">
+            when  #{item.id} then effective_regular_record.user_id
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="one =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.one != null ">
+            when  #{item.id} then #{item.one}
+          </if>
+          <if test="item.one == null ">
+            when  #{item.id} then effective_regular_record.one
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="two =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.two != null ">
+            when  #{item.id} then #{item.two}
+          </if>
+          <if test="item.two == null ">
+            when  #{item.id} then effective_regular_record.two
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="three =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.three != null ">
+            when  #{item.id} then #{item.three}
+          </if>
+          <if test="item.three == null ">
+            when  #{item.id} then effective_regular_record.three
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="six =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.six != null ">
+            when  #{item.id} then #{item.six}
+          </if>
+          <if test="item.six == null ">
+            when  #{item.id} then effective_regular_record.six
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="twelve =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.twelve != null ">
+            when  #{item.id} then #{item.twelve}
+          </if>
+          <if test="item.twelve == null ">
+            when  #{item.id} then effective_regular_record.twelve
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="exceed_twelve =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.exceedTwelve != null ">
+            when  #{item.id} then #{item.exceedTwelve}
+          </if>
+          <if test="item.exceedTwelve == null ">
+            when  #{item.id} then effective_regular_record.exceed_twelve
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="create_time =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.createTime != null ">
+            when  #{item.id} then #{item.createTime}
+          </if>
+          <if test="item.createTime == null ">
+            when  #{item.id} then effective_regular_record.create_time
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="result_id =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.resultId != null ">
+            when  #{item.id} then #{item.resultId}
+          </if>
+          <if test="item.resultId == null ">
+            when  #{item.id} then effective_regular_record.result_id
+          </if>
+        </foreach>
+      </trim>
+    </trim>
+    where id in 
+    <foreach close=")" collection="list" index="index" item="item" open="(" separator=",">
+       #{item.id} 
+    </foreach>
+  </update>
+</mapper>

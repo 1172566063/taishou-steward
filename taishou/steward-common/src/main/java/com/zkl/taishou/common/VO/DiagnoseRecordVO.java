@@ -1,6 +1,6 @@
 package com.zkl.taishou.common.VO;
 
-import com.zkl.taishou.common.entity.DiagnoseRecord;
+import com.zkl.taishou.common.entity.diagnose.DiagnoseRecord;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -12,7 +12,7 @@ import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 
 /**
- * @ClassName:
+ * @ClassName: 环境诊断、业绩诊断
  * @Author ：lishixiang
  * @Date：2020/5/9-10:19
  * @Version:
@@ -21,8 +21,8 @@ import java.io.Serializable;
 @AllArgsConstructor
 @NoArgsConstructor
 @Accessors(chain = true)
-public class DiagnoseVO implements Serializable {
-    private static final long serialVersionUid = -1L;
+public class DiagnoseRecordVO implements Serializable {
+    private static final long serialVersionUID = -1L;
 
     @NotNull
     @Min(value = 0, message = "basicItem值不能能小于0")

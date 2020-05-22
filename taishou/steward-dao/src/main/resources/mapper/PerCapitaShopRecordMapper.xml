@@ -1,0 +1,665 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zkl.taishou.dao.diagnose.PerCapitaShopRecordDAO">
+  <resultMap id="BaseResultMap" type="com.zkl.taishou.common.entity.diagnose.PerCapitaShopRecord">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="month_big_customer" jdbcType="INTEGER" property="monthBigCustomer" />
+    <result column="month_A_customer" jdbcType="INTEGER" property="monthACustomer" />
+    <result column="month_B_customer" jdbcType="INTEGER" property="monthBCustomer" />
+    <result column="month_C_customer" jdbcType="INTEGER" property="monthCCustomer" />
+    <result column="month_D_customer" jdbcType="INTEGER" property="monthDCustomer" />
+    <result column="month_E_customer" jdbcType="INTEGER" property="monthECustomer" />
+    <result column="month_don_consume" jdbcType="INTEGER" property="monthDonConsume" />
+    <result column="year_big_customer" jdbcType="INTEGER" property="yearBigCustomer" />
+    <result column="year_A_customer" jdbcType="INTEGER" property="yearACustomer" />
+    <result column="year_B_customer" jdbcType="INTEGER" property="yearBCustomer" />
+    <result column="year_C_customer" jdbcType="INTEGER" property="yearCCustomer" />
+    <result column="year_D_customer" jdbcType="INTEGER" property="yearDCustomer" />
+    <result column="year_E_customer" jdbcType="INTEGER" property="yearECustomer" />
+    <result column="year_don_consume" jdbcType="INTEGER" property="yearDonConsume" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="result_id" jdbcType="INTEGER" property="resultId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, user_id, month_big_customer, month_A_customer, month_B_customer, month_C_customer, 
+    month_D_customer, month_E_customer, month_don_consume, year_big_customer, year_A_customer, 
+    year_B_customer, year_C_customer, year_D_customer, year_E_customer, year_don_consume, 
+    create_time, result_id
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from per_capita_shop_record
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from per_capita_shop_record
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.zkl.taishou.common.entity.diagnose.PerCapitaShopRecord">
+    insert into per_capita_shop_record (id, user_id, month_big_customer, 
+      month_A_customer, month_B_customer, month_C_customer, 
+      month_D_customer, month_E_customer, month_don_consume, 
+      year_big_customer, year_A_customer, year_B_customer, 
+      year_C_customer, year_D_customer, year_E_customer, 
+      year_don_consume, create_time, result_id
+      )
+    values (#{id,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, #{monthBigCustomer,jdbcType=INTEGER}, 
+      #{monthACustomer,jdbcType=INTEGER}, #{monthBCustomer,jdbcType=INTEGER}, #{monthCCustomer,jdbcType=INTEGER}, 
+      #{monthDCustomer,jdbcType=INTEGER}, #{monthECustomer,jdbcType=INTEGER}, #{monthDonConsume,jdbcType=INTEGER}, 
+      #{yearBigCustomer,jdbcType=INTEGER}, #{yearACustomer,jdbcType=INTEGER}, #{yearBCustomer,jdbcType=INTEGER}, 
+      #{yearCCustomer,jdbcType=INTEGER}, #{yearDCustomer,jdbcType=INTEGER}, #{yearECustomer,jdbcType=INTEGER}, 
+      #{yearDonConsume,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, #{resultId,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.zkl.taishou.common.entity.diagnose.PerCapitaShopRecord">
+    insert into per_capita_shop_record
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="monthBigCustomer != null">
+        month_big_customer,
+      </if>
+      <if test="monthACustomer != null">
+        month_A_customer,
+      </if>
+      <if test="monthBCustomer != null">
+        month_B_customer,
+      </if>
+      <if test="monthCCustomer != null">
+        month_C_customer,
+      </if>
+      <if test="monthDCustomer != null">
+        month_D_customer,
+      </if>
+      <if test="monthECustomer != null">
+        month_E_customer,
+      </if>
+      <if test="monthDonConsume != null">
+        month_don_consume,
+      </if>
+      <if test="yearBigCustomer != null">
+        year_big_customer,
+      </if>
+      <if test="yearACustomer != null">
+        year_A_customer,
+      </if>
+      <if test="yearBCustomer != null">
+        year_B_customer,
+      </if>
+      <if test="yearCCustomer != null">
+        year_C_customer,
+      </if>
+      <if test="yearDCustomer != null">
+        year_D_customer,
+      </if>
+      <if test="yearECustomer != null">
+        year_E_customer,
+      </if>
+      <if test="yearDonConsume != null">
+        year_don_consume,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="resultId != null">
+        result_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="monthBigCustomer != null">
+        #{monthBigCustomer,jdbcType=INTEGER},
+      </if>
+      <if test="monthACustomer != null">
+        #{monthACustomer,jdbcType=INTEGER},
+      </if>
+      <if test="monthBCustomer != null">
+        #{monthBCustomer,jdbcType=INTEGER},
+      </if>
+      <if test="monthCCustomer != null">
+        #{monthCCustomer,jdbcType=INTEGER},
+      </if>
+      <if test="monthDCustomer != null">
+        #{monthDCustomer,jdbcType=INTEGER},
+      </if>
+      <if test="monthECustomer != null">
+        #{monthECustomer,jdbcType=INTEGER},
+      </if>
+      <if test="monthDonConsume != null">
+        #{monthDonConsume,jdbcType=INTEGER},
+      </if>
+      <if test="yearBigCustomer != null">
+        #{yearBigCustomer,jdbcType=INTEGER},
+      </if>
+      <if test="yearACustomer != null">
+        #{yearACustomer,jdbcType=INTEGER},
+      </if>
+      <if test="yearBCustomer != null">
+        #{yearBCustomer,jdbcType=INTEGER},
+      </if>
+      <if test="yearCCustomer != null">
+        #{yearCCustomer,jdbcType=INTEGER},
+      </if>
+      <if test="yearDCustomer != null">
+        #{yearDCustomer,jdbcType=INTEGER},
+      </if>
+      <if test="yearECustomer != null">
+        #{yearECustomer,jdbcType=INTEGER},
+      </if>
+      <if test="yearDonConsume != null">
+        #{yearDonConsume,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="resultId != null">
+        #{resultId,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <insert id="insertBatch" parameterType="java.util.List">
+    insert into per_capita_shop_record (id, user_id, month_big_customer, 
+      month_A_customer, month_B_customer, 
+      month_C_customer, month_D_customer, 
+      month_E_customer, month_don_consume, 
+      year_big_customer, year_A_customer, 
+      year_B_customer, year_C_customer, 
+      year_D_customer, year_E_customer, 
+      year_don_consume, create_time, 
+      result_id)
+    values 
+    <foreach collection="list" index="index" item="item" separator=",">
+      (#{item.id,jdbcType=INTEGER}, #{item.userId,jdbcType=INTEGER}, #{item.monthBigCustomer,jdbcType=INTEGER}, 
+        #{item.monthACustomer,jdbcType=INTEGER}, #{item.monthBCustomer,jdbcType=INTEGER}, 
+        #{item.monthCCustomer,jdbcType=INTEGER}, #{item.monthDCustomer,jdbcType=INTEGER}, 
+        #{item.monthECustomer,jdbcType=INTEGER}, #{item.monthDonConsume,jdbcType=INTEGER}, 
+        #{item.yearBigCustomer,jdbcType=INTEGER}, #{item.yearACustomer,jdbcType=INTEGER}, 
+        #{item.yearBCustomer,jdbcType=INTEGER}, #{item.yearCCustomer,jdbcType=INTEGER}, 
+        #{item.yearDCustomer,jdbcType=INTEGER}, #{item.yearECustomer,jdbcType=INTEGER}, 
+        #{item.yearDonConsume,jdbcType=INTEGER}, #{item.createTime,jdbcType=TIMESTAMP}, 
+        #{item.resultId,jdbcType=INTEGER})
+    </foreach>
+  </insert>
+  <insert id="insertBatchSelective" parameterType="java.util.List">
+    insert into per_capita_shop_record
+    (id, user_id, month_big_customer, month_A_customer, month_B_customer, month_C_customer, 
+      month_D_customer, month_E_customer, month_don_consume, year_big_customer, year_A_customer, 
+      year_B_customer, year_C_customer, year_D_customer, year_E_customer, year_don_consume, 
+      create_time, result_id)
+    values 
+    <foreach collection="list" index="index" item="item" separator=",">
+      <trim prefix="(" suffix=")" suffixOverrides=",">
+        <if test="item.id != null">
+          #{item.id,jdbcType=INTEGER},
+        </if>
+        <if test="item.id == null">
+          NULL,
+        </if>
+        <if test="item.userId != null">
+          #{item.userId,jdbcType=INTEGER},
+        </if>
+        <if test="item.userId == null">
+          NULL,
+        </if>
+        <if test="item.monthBigCustomer != null">
+          #{item.monthBigCustomer,jdbcType=INTEGER},
+        </if>
+        <if test="item.monthBigCustomer == null">
+          NULL,
+        </if>
+        <if test="item.monthACustomer != null">
+          #{item.monthACustomer,jdbcType=INTEGER},
+        </if>
+        <if test="item.monthACustomer == null">
+          NULL,
+        </if>
+        <if test="item.monthBCustomer != null">
+          #{item.monthBCustomer,jdbcType=INTEGER},
+        </if>
+        <if test="item.monthBCustomer == null">
+          NULL,
+        </if>
+        <if test="item.monthCCustomer != null">
+          #{item.monthCCustomer,jdbcType=INTEGER},
+        </if>
+        <if test="item.monthCCustomer == null">
+          NULL,
+        </if>
+        <if test="item.monthDCustomer != null">
+          #{item.monthDCustomer,jdbcType=INTEGER},
+        </if>
+        <if test="item.monthDCustomer == null">
+          NULL,
+        </if>
+        <if test="item.monthECustomer != null">
+          #{item.monthECustomer,jdbcType=INTEGER},
+        </if>
+        <if test="item.monthECustomer == null">
+          NULL,
+        </if>
+        <if test="item.monthDonConsume != null">
+          #{item.monthDonConsume,jdbcType=INTEGER},
+        </if>
+        <if test="item.monthDonConsume == null">
+          NULL,
+        </if>
+        <if test="item.yearBigCustomer != null">
+          #{item.yearBigCustomer,jdbcType=INTEGER},
+        </if>
+        <if test="item.yearBigCustomer == null">
+          NULL,
+        </if>
+        <if test="item.yearACustomer != null">
+          #{item.yearACustomer,jdbcType=INTEGER},
+        </if>
+        <if test="item.yearACustomer == null">
+          NULL,
+        </if>
+        <if test="item.yearBCustomer != null">
+          #{item.yearBCustomer,jdbcType=INTEGER},
+        </if>
+        <if test="item.yearBCustomer == null">
+          NULL,
+        </if>
+        <if test="item.yearCCustomer != null">
+          #{item.yearCCustomer,jdbcType=INTEGER},
+        </if>
+        <if test="item.yearCCustomer == null">
+          NULL,
+        </if>
+        <if test="item.yearDCustomer != null">
+          #{item.yearDCustomer,jdbcType=INTEGER},
+        </if>
+        <if test="item.yearDCustomer == null">
+          NULL,
+        </if>
+        <if test="item.yearECustomer != null">
+          #{item.yearECustomer,jdbcType=INTEGER},
+        </if>
+        <if test="item.yearECustomer == null">
+          NULL,
+        </if>
+        <if test="item.yearDonConsume != null">
+          #{item.yearDonConsume,jdbcType=INTEGER},
+        </if>
+        <if test="item.yearDonConsume == null">
+          NULL,
+        </if>
+        <if test="item.createTime != null">
+          #{item.createTime,jdbcType=TIMESTAMP},
+        </if>
+        <if test="item.createTime == null">
+          NULL,
+        </if>
+        <if test="item.resultId != null">
+          #{item.resultId,jdbcType=INTEGER},
+        </if>
+        <if test="item.resultId == null">
+          NULL,
+        </if>
+      </trim>
+    </foreach>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zkl.taishou.common.entity.diagnose.PerCapitaShopRecord">
+    update per_capita_shop_record
+    <set>
+      <if test="userId != null">
+        user_id = #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="monthBigCustomer != null">
+        month_big_customer = #{monthBigCustomer,jdbcType=INTEGER},
+      </if>
+      <if test="monthACustomer != null">
+        month_A_customer = #{monthACustomer,jdbcType=INTEGER},
+      </if>
+      <if test="monthBCustomer != null">
+        month_B_customer = #{monthBCustomer,jdbcType=INTEGER},
+      </if>
+      <if test="monthCCustomer != null">
+        month_C_customer = #{monthCCustomer,jdbcType=INTEGER},
+      </if>
+      <if test="monthDCustomer != null">
+        month_D_customer = #{monthDCustomer,jdbcType=INTEGER},
+      </if>
+      <if test="monthECustomer != null">
+        month_E_customer = #{monthECustomer,jdbcType=INTEGER},
+      </if>
+      <if test="monthDonConsume != null">
+        month_don_consume = #{monthDonConsume,jdbcType=INTEGER},
+      </if>
+      <if test="yearBigCustomer != null">
+        year_big_customer = #{yearBigCustomer,jdbcType=INTEGER},
+      </if>
+      <if test="yearACustomer != null">
+        year_A_customer = #{yearACustomer,jdbcType=INTEGER},
+      </if>
+      <if test="yearBCustomer != null">
+        year_B_customer = #{yearBCustomer,jdbcType=INTEGER},
+      </if>
+      <if test="yearCCustomer != null">
+        year_C_customer = #{yearCCustomer,jdbcType=INTEGER},
+      </if>
+      <if test="yearDCustomer != null">
+        year_D_customer = #{yearDCustomer,jdbcType=INTEGER},
+      </if>
+      <if test="yearECustomer != null">
+        year_E_customer = #{yearECustomer,jdbcType=INTEGER},
+      </if>
+      <if test="yearDonConsume != null">
+        year_don_consume = #{yearDonConsume,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="resultId != null">
+        result_id = #{resultId,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zkl.taishou.common.entity.diagnose.PerCapitaShopRecord">
+    update per_capita_shop_record
+    set user_id = #{userId,jdbcType=INTEGER},
+      month_big_customer = #{monthBigCustomer,jdbcType=INTEGER},
+      month_A_customer = #{monthACustomer,jdbcType=INTEGER},
+      month_B_customer = #{monthBCustomer,jdbcType=INTEGER},
+      month_C_customer = #{monthCCustomer,jdbcType=INTEGER},
+      month_D_customer = #{monthDCustomer,jdbcType=INTEGER},
+      month_E_customer = #{monthECustomer,jdbcType=INTEGER},
+      month_don_consume = #{monthDonConsume,jdbcType=INTEGER},
+      year_big_customer = #{yearBigCustomer,jdbcType=INTEGER},
+      year_A_customer = #{yearACustomer,jdbcType=INTEGER},
+      year_B_customer = #{yearBCustomer,jdbcType=INTEGER},
+      year_C_customer = #{yearCCustomer,jdbcType=INTEGER},
+      year_D_customer = #{yearDCustomer,jdbcType=INTEGER},
+      year_E_customer = #{yearECustomer,jdbcType=INTEGER},
+      year_don_consume = #{yearDonConsume,jdbcType=INTEGER},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      result_id = #{resultId,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateBatchByPrimaryKey" parameterType="java.util.List">
+    update per_capita_shop_record
+    <trim prefix="set" suffixOverrides=",">
+      <trim prefix="user_id =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.userId}
+        </foreach>
+      </trim>
+      <trim prefix="month_big_customer =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.monthBigCustomer}
+        </foreach>
+      </trim>
+      <trim prefix="month_A_customer =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.monthACustomer}
+        </foreach>
+      </trim>
+      <trim prefix="month_B_customer =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.monthBCustomer}
+        </foreach>
+      </trim>
+      <trim prefix="month_C_customer =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.monthCCustomer}
+        </foreach>
+      </trim>
+      <trim prefix="month_D_customer =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.monthDCustomer}
+        </foreach>
+      </trim>
+      <trim prefix="month_E_customer =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.monthECustomer}
+        </foreach>
+      </trim>
+      <trim prefix="month_don_consume =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.monthDonConsume}
+        </foreach>
+      </trim>
+      <trim prefix="year_big_customer =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.yearBigCustomer}
+        </foreach>
+      </trim>
+      <trim prefix="year_A_customer =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.yearACustomer}
+        </foreach>
+      </trim>
+      <trim prefix="year_B_customer =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.yearBCustomer}
+        </foreach>
+      </trim>
+      <trim prefix="year_C_customer =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.yearCCustomer}
+        </foreach>
+      </trim>
+      <trim prefix="year_D_customer =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.yearDCustomer}
+        </foreach>
+      </trim>
+      <trim prefix="year_E_customer =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.yearECustomer}
+        </foreach>
+      </trim>
+      <trim prefix="year_don_consume =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.yearDonConsume}
+        </foreach>
+      </trim>
+      <trim prefix="create_time =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.createTime}
+        </foreach>
+      </trim>
+      <trim prefix="result_id =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.resultId}
+        </foreach>
+      </trim>
+    </trim>
+    where id in 
+    <foreach close=")" collection="list" index="index" item="item" open="(" separator=",">
+       #{item.id} 
+    </foreach>
+  </update>
+  <update id="updateBatchByPrimaryKeySelective" parameterType="java.util.List">
+    update per_capita_shop_record
+    <trim prefix="set" suffixOverrides=",">
+      <trim prefix="user_id =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.userId != null ">
+            when  #{item.id} then #{item.userId}
+          </if>
+          <if test="item.userId == null ">
+            when  #{item.id} then per_capita_shop_record.user_id
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="month_big_customer =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.monthBigCustomer != null ">
+            when  #{item.id} then #{item.monthBigCustomer}
+          </if>
+          <if test="item.monthBigCustomer == null ">
+            when  #{item.id} then per_capita_shop_record.month_big_customer
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="month_A_customer =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.monthACustomer != null ">
+            when  #{item.id} then #{item.monthACustomer}
+          </if>
+          <if test="item.monthACustomer == null ">
+            when  #{item.id} then per_capita_shop_record.month_A_customer
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="month_B_customer =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.monthBCustomer != null ">
+            when  #{item.id} then #{item.monthBCustomer}
+          </if>
+          <if test="item.monthBCustomer == null ">
+            when  #{item.id} then per_capita_shop_record.month_B_customer
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="month_C_customer =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.monthCCustomer != null ">
+            when  #{item.id} then #{item.monthCCustomer}
+          </if>
+          <if test="item.monthCCustomer == null ">
+            when  #{item.id} then per_capita_shop_record.month_C_customer
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="month_D_customer =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.monthDCustomer != null ">
+            when  #{item.id} then #{item.monthDCustomer}
+          </if>
+          <if test="item.monthDCustomer == null ">
+            when  #{item.id} then per_capita_shop_record.month_D_customer
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="month_E_customer =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.monthECustomer != null ">
+            when  #{item.id} then #{item.monthECustomer}
+          </if>
+          <if test="item.monthECustomer == null ">
+            when  #{item.id} then per_capita_shop_record.month_E_customer
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="month_don_consume =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.monthDonConsume != null ">
+            when  #{item.id} then #{item.monthDonConsume}
+          </if>
+          <if test="item.monthDonConsume == null ">
+            when  #{item.id} then per_capita_shop_record.month_don_consume
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="year_big_customer =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.yearBigCustomer != null ">
+            when  #{item.id} then #{item.yearBigCustomer}
+          </if>
+          <if test="item.yearBigCustomer == null ">
+            when  #{item.id} then per_capita_shop_record.year_big_customer
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="year_A_customer =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.yearACustomer != null ">
+            when  #{item.id} then #{item.yearACustomer}
+          </if>
+          <if test="item.yearACustomer == null ">
+            when  #{item.id} then per_capita_shop_record.year_A_customer
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="year_B_customer =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.yearBCustomer != null ">
+            when  #{item.id} then #{item.yearBCustomer}
+          </if>
+          <if test="item.yearBCustomer == null ">
+            when  #{item.id} then per_capita_shop_record.year_B_customer
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="year_C_customer =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.yearCCustomer != null ">
+            when  #{item.id} then #{item.yearCCustomer}
+          </if>
+          <if test="item.yearCCustomer == null ">
+            when  #{item.id} then per_capita_shop_record.year_C_customer
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="year_D_customer =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.yearDCustomer != null ">
+            when  #{item.id} then #{item.yearDCustomer}
+          </if>
+          <if test="item.yearDCustomer == null ">
+            when  #{item.id} then per_capita_shop_record.year_D_customer
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="year_E_customer =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.yearECustomer != null ">
+            when  #{item.id} then #{item.yearECustomer}
+          </if>
+          <if test="item.yearECustomer == null ">
+            when  #{item.id} then per_capita_shop_record.year_E_customer
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="year_don_consume =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.yearDonConsume != null ">
+            when  #{item.id} then #{item.yearDonConsume}
+          </if>
+          <if test="item.yearDonConsume == null ">
+            when  #{item.id} then per_capita_shop_record.year_don_consume
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="create_time =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.createTime != null ">
+            when  #{item.id} then #{item.createTime}
+          </if>
+          <if test="item.createTime == null ">
+            when  #{item.id} then per_capita_shop_record.create_time
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="result_id =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.resultId != null ">
+            when  #{item.id} then #{item.resultId}
+          </if>
+          <if test="item.resultId == null ">
+            when  #{item.id} then per_capita_shop_record.result_id
+          </if>
+        </foreach>
+      </trim>
+    </trim>
+    where id in 
+    <foreach close=")" collection="list" index="index" item="item" open="(" separator=",">
+       #{item.id} 
+    </foreach>
+  </update>
+</mapper>

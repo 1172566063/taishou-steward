@@ -1,6 +1,6 @@
 package com.zkl.taishou.dao.calculate;
 
-import com.zkl.taishou.common.entity.CalculateCardinal;
+import com.zkl.taishou.common.entity.calculate.CalculateCardinal;
 
 import java.util.List;
 

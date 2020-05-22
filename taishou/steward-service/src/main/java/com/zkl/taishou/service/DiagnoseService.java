@@ -1,9 +1,6 @@
 package com.zkl.taishou.service;
 
-import com.zkl.taishou.common.VO.DiagnoseVO;
-import com.zkl.taishou.common.VO.ProfitDiagnosisVO;
-import com.zkl.taishou.common.VO.StoreCostStructureVO;
-import com.zkl.taishou.common.entity.ProfitDiagnosisRecord;
+import com.zkl.taishou.common.VO.*;
 
 /**
  * @ClassName:
@@ -13,9 +10,31 @@ import com.zkl.taishou.common.entity.ProfitDiagnosisRecord;
  */
 public interface DiagnoseService{
 
-    void recordDiagnosis(DiagnoseVO diagnoseVO);
+    void recordDiagnosis(DiagnoseRecordVO diagnoseVO);
 
-    void recordStoreCostStructure(StoreCostStructureVO storeCostStructureVO);
+    void recordStoreCostStructure(StoreCostStructureRecordVO storeCostStructureVO);
 
-    void recordProfitDiagnosisRecord(ProfitDiagnosisVO profitDiagnosisVO);
+    void recordProfitDiagnosisRecord(ProfitDiagnosisRecordVO profitDiagnosisVO);
+
+    void recordYearCashFlow(YearCashFlowRecordVO yearCashFlowRecordVO);
+
+    void recordCashFlow(CashFlowRecordVO cashFlowRecordVO);
+
+    void recordActive(ActiveRecordVO activeRecordVO);
+
+    void recordConsumptionAbility(ConsumptionAbilityRecordVO consumptionAbilityRecordVO);
+
+    void recordAgeGroup(AgeGroupRecordVO ageGroupRecordVO);
+
+    void recordCustomerSource(CustomerSourceRecordVO customerSourceRecordVO);
+
+    void recordCustomersProfessional(CustomersProfessionalRecordVO customersProfessionalRecordVO);
+
+    void recordTraffic(TrafficRecordVO trafficRecordVO);
+
+    void recordPerCapitaShop(PerCapitaShopRecordVO perCapitaShopRecordVO);
+
+    void recordEffectiveRegular(EffectiveRegularRecordVO effectiveRegularRecordVO);
+
+    void recordMonthIncreaseCustomer(MonthIncreaseCustomerRecordVO monthIncreaseCustomerRecordVO);
 }

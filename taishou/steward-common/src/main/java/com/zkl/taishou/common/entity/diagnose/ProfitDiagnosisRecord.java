@@ -1,5 +1,5 @@
 /* https://github.com/orange1438 */
-package com.zkl.taishou.common.entity;
+package com.zkl.taishou.common.entity.diagnose;
 
 import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;

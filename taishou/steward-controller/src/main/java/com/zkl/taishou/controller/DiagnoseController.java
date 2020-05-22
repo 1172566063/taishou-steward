@@ -1,6 +1,6 @@
 package com.zkl.taishou.controller;
 
-import com.zkl.taishou.common.VO.DiagnoseVO;
+import com.zkl.taishou.common.VO.DiagnoseRecordVO;
 import com.zkl.taishou.common.constants.ResultBean;
 import com.zkl.taishou.service.DiagnoseService;
 import io.swagger.annotations.ApiImplicitParam;
@@ -34,7 +34,7 @@ public class DiagnoseController extends BaseController {
             @ApiImplicitParam(name="diagnoseVO",value = "测算系统第一步",paramType = "body",dataType = "DiagnoseVO"),
             @ApiImplicitParam(name="token",value = "用户token",paramType = "header")
     })
-    public ResultBean diagnose(@RequestBody @Validated DiagnoseVO diagnoseVO, BindingResult bindingResult){
+    public ResultBean diagnose(@RequestBody @Validated DiagnoseRecordVO diagnoseVO, BindingResult bindingResult){
         if(bindingResult.hasErrors()){
             return getParameterFailResult(bindingResult);
         }

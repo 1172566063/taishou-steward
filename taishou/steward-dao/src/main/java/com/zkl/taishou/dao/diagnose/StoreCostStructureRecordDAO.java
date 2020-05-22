@@ -1,6 +1,6 @@
 package com.zkl.taishou.dao.diagnose;
 
-import com.zkl.taishou.common.entity.StoreCostStructureRecord;
+import com.zkl.taishou.common.entity.diagnose.StoreCostStructureRecord;
 
 public interface StoreCostStructureRecordDAO {
     int deleteByPrimaryKey(Integer id);

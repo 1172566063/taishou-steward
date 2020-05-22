@@ -1,0 +1,423 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zkl.taishou.dao.diagnose.CustomersProfessionalRecordDAO">
+  <resultMap id="BaseResultMap" type="com.zkl.taishou.common.entity.diagnose.CustomersProfessionalRecord">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="civil_servants" jdbcType="INTEGER" property="civilServants" />
+    <result column="business_unit" jdbcType="INTEGER" property="businessUnit" />
+    <result column="business_owner" jdbcType="INTEGER" property="businessOwner" />
+    <result column="wcw" jdbcType="INTEGER" property="wcw" />
+    <result column="A_housewife" jdbcType="INTEGER" property="aHousewife" />
+    <result column="students" jdbcType="INTEGER" property="students" />
+    <result column="other" jdbcType="INTEGER" property="other" />
+    <result column="result_id" jdbcType="INTEGER" property="resultId" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, user_id, civil_servants, business_unit, business_owner, wcw, A_housewife, students, 
+    other, result_id, create_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from customers_professional_record
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from customers_professional_record
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.zkl.taishou.common.entity.diagnose.CustomersProfessionalRecord">
+    insert into customers_professional_record (id, user_id, civil_servants, 
+      business_unit, business_owner, wcw, 
+      A_housewife, students, other, 
+      result_id, create_time)
+    values (#{id,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, #{civilServants,jdbcType=INTEGER}, 
+      #{businessUnit,jdbcType=INTEGER}, #{businessOwner,jdbcType=INTEGER}, #{wcw,jdbcType=INTEGER}, 
+      #{aHousewife,jdbcType=INTEGER}, #{students,jdbcType=INTEGER}, #{other,jdbcType=INTEGER}, 
+      #{resultId,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.zkl.taishou.common.entity.diagnose.CustomersProfessionalRecord">
+    insert into customers_professional_record
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="civilServants != null">
+        civil_servants,
+      </if>
+      <if test="businessUnit != null">
+        business_unit,
+      </if>
+      <if test="businessOwner != null">
+        business_owner,
+      </if>
+      <if test="wcw != null">
+        wcw,
+      </if>
+      <if test="aHousewife != null">
+        A_housewife,
+      </if>
+      <if test="students != null">
+        students,
+      </if>
+      <if test="other != null">
+        other,
+      </if>
+      <if test="resultId != null">
+        result_id,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="civilServants != null">
+        #{civilServants,jdbcType=INTEGER},
+      </if>
+      <if test="businessUnit != null">
+        #{businessUnit,jdbcType=INTEGER},
+      </if>
+      <if test="businessOwner != null">
+        #{businessOwner,jdbcType=INTEGER},
+      </if>
+      <if test="wcw != null">
+        #{wcw,jdbcType=INTEGER},
+      </if>
+      <if test="aHousewife != null">
+        #{aHousewife,jdbcType=INTEGER},
+      </if>
+      <if test="students != null">
+        #{students,jdbcType=INTEGER},
+      </if>
+      <if test="other != null">
+        #{other,jdbcType=INTEGER},
+      </if>
+      <if test="resultId != null">
+        #{resultId,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <insert id="insertBatch" parameterType="java.util.List">
+    insert into customers_professional_record (id, user_id, civil_servants, 
+      business_unit, business_owner, 
+      wcw, A_housewife, students, 
+      other, result_id, create_time
+      )
+    values 
+    <foreach collection="list" index="index" item="item" separator=",">
+      (#{item.id,jdbcType=INTEGER}, #{item.userId,jdbcType=INTEGER}, #{item.civilServants,jdbcType=INTEGER}, 
+        #{item.businessUnit,jdbcType=INTEGER}, #{item.businessOwner,jdbcType=INTEGER}, 
+        #{item.wcw,jdbcType=INTEGER}, #{item.aHousewife,jdbcType=INTEGER}, #{item.students,jdbcType=INTEGER}, 
+        #{item.other,jdbcType=INTEGER}, #{item.resultId,jdbcType=INTEGER}, #{item.createTime,jdbcType=TIMESTAMP}
+        )
+    </foreach>
+  </insert>
+  <insert id="insertBatchSelective" parameterType="java.util.List">
+    insert into customers_professional_record
+    (id, user_id, civil_servants, business_unit, business_owner, wcw, A_housewife, students, 
+      other, result_id, create_time)
+    values 
+    <foreach collection="list" index="index" item="item" separator=",">
+      <trim prefix="(" suffix=")" suffixOverrides=",">
+        <if test="item.id != null">
+          #{item.id,jdbcType=INTEGER},
+        </if>
+        <if test="item.id == null">
+          NULL,
+        </if>
+        <if test="item.userId != null">
+          #{item.userId,jdbcType=INTEGER},
+        </if>
+        <if test="item.userId == null">
+          NULL,
+        </if>
+        <if test="item.civilServants != null">
+          #{item.civilServants,jdbcType=INTEGER},
+        </if>
+        <if test="item.civilServants == null">
+          NULL,
+        </if>
+        <if test="item.businessUnit != null">
+          #{item.businessUnit,jdbcType=INTEGER},
+        </if>
+        <if test="item.businessUnit == null">
+          NULL,
+        </if>
+        <if test="item.businessOwner != null">
+          #{item.businessOwner,jdbcType=INTEGER},
+        </if>
+        <if test="item.businessOwner == null">
+          NULL,
+        </if>
+        <if test="item.wcw != null">
+          #{item.wcw,jdbcType=INTEGER},
+        </if>
+        <if test="item.wcw == null">
+          NULL,
+        </if>
+        <if test="item.aHousewife != null">
+          #{item.aHousewife,jdbcType=INTEGER},
+        </if>
+        <if test="item.aHousewife == null">
+          NULL,
+        </if>
+        <if test="item.students != null">
+          #{item.students,jdbcType=INTEGER},
+        </if>
+        <if test="item.students == null">
+          NULL,
+        </if>
+        <if test="item.other != null">
+          #{item.other,jdbcType=INTEGER},
+        </if>
+        <if test="item.other == null">
+          NULL,
+        </if>
+        <if test="item.resultId != null">
+          #{item.resultId,jdbcType=INTEGER},
+        </if>
+        <if test="item.resultId == null">
+          NULL,
+        </if>
+        <if test="item.createTime != null">
+          #{item.createTime,jdbcType=TIMESTAMP},
+        </if>
+        <if test="item.createTime == null">
+          NULL,
+        </if>
+      </trim>
+    </foreach>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zkl.taishou.common.entity.diagnose.CustomersProfessionalRecord">
+    update customers_professional_record
+    <set>
+      <if test="userId != null">
+        user_id = #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="civilServants != null">
+        civil_servants = #{civilServants,jdbcType=INTEGER},
+      </if>
+      <if test="businessUnit != null">
+        business_unit = #{businessUnit,jdbcType=INTEGER},
+      </if>
+      <if test="businessOwner != null">
+        business_owner = #{businessOwner,jdbcType=INTEGER},
+      </if>
+      <if test="wcw != null">
+        wcw = #{wcw,jdbcType=INTEGER},
+      </if>
+      <if test="aHousewife != null">
+        A_housewife = #{aHousewife,jdbcType=INTEGER},
+      </if>
+      <if test="students != null">
+        students = #{students,jdbcType=INTEGER},
+      </if>
+      <if test="other != null">
+        other = #{other,jdbcType=INTEGER},
+      </if>
+      <if test="resultId != null">
+        result_id = #{resultId,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zkl.taishou.common.entity.diagnose.CustomersProfessionalRecord">
+    update customers_professional_record
+    set user_id = #{userId,jdbcType=INTEGER},
+      civil_servants = #{civilServants,jdbcType=INTEGER},
+      business_unit = #{businessUnit,jdbcType=INTEGER},
+      business_owner = #{businessOwner,jdbcType=INTEGER},
+      wcw = #{wcw,jdbcType=INTEGER},
+      A_housewife = #{aHousewife,jdbcType=INTEGER},
+      students = #{students,jdbcType=INTEGER},
+      other = #{other,jdbcType=INTEGER},
+      result_id = #{resultId,jdbcType=INTEGER},
+      create_time = #{createTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateBatchByPrimaryKey" parameterType="java.util.List">
+    update customers_professional_record
+    <trim prefix="set" suffixOverrides=",">
+      <trim prefix="user_id =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.userId}
+        </foreach>
+      </trim>
+      <trim prefix="civil_servants =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.civilServants}
+        </foreach>
+      </trim>
+      <trim prefix="business_unit =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.businessUnit}
+        </foreach>
+      </trim>
+      <trim prefix="business_owner =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.businessOwner}
+        </foreach>
+      </trim>
+      <trim prefix="wcw =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.wcw}
+        </foreach>
+      </trim>
+      <trim prefix="A_housewife =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.aHousewife}
+        </foreach>
+      </trim>
+      <trim prefix="students =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.students}
+        </foreach>
+      </trim>
+      <trim prefix="other =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.other}
+        </foreach>
+      </trim>
+      <trim prefix="result_id =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.resultId}
+        </foreach>
+      </trim>
+      <trim prefix="create_time =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.createTime}
+        </foreach>
+      </trim>
+    </trim>
+    where id in 
+    <foreach close=")" collection="list" index="index" item="item" open="(" separator=",">
+       #{item.id} 
+    </foreach>
+  </update>
+  <update id="updateBatchByPrimaryKeySelective" parameterType="java.util.List">
+    update customers_professional_record
+    <trim prefix="set" suffixOverrides=",">
+      <trim prefix="user_id =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.userId != null ">
+            when  #{item.id} then #{item.userId}
+          </if>
+          <if test="item.userId == null ">
+            when  #{item.id} then customers_professional_record.user_id
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="civil_servants =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.civilServants != null ">
+            when  #{item.id} then #{item.civilServants}
+          </if>
+          <if test="item.civilServants == null ">
+            when  #{item.id} then customers_professional_record.civil_servants
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="business_unit =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.businessUnit != null ">
+            when  #{item.id} then #{item.businessUnit}
+          </if>
+          <if test="item.businessUnit == null ">
+            when  #{item.id} then customers_professional_record.business_unit
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="business_owner =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.businessOwner != null ">
+            when  #{item.id} then #{item.businessOwner}
+          </if>
+          <if test="item.businessOwner == null ">
+            when  #{item.id} then customers_professional_record.business_owner
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="wcw =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.wcw != null ">
+            when  #{item.id} then #{item.wcw}
+          </if>
+          <if test="item.wcw == null ">
+            when  #{item.id} then customers_professional_record.wcw
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="A_housewife =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.aHousewife != null ">
+            when  #{item.id} then #{item.aHousewife}
+          </if>
+          <if test="item.aHousewife == null ">
+            when  #{item.id} then customers_professional_record.A_housewife
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="students =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.students != null ">
+            when  #{item.id} then #{item.students}
+          </if>
+          <if test="item.students == null ">
+            when  #{item.id} then customers_professional_record.students
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="other =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.other != null ">
+            when  #{item.id} then #{item.other}
+          </if>
+          <if test="item.other == null ">
+            when  #{item.id} then customers_professional_record.other
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="result_id =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.resultId != null ">
+            when  #{item.id} then #{item.resultId}
+          </if>
+          <if test="item.resultId == null ">
+            when  #{item.id} then customers_professional_record.result_id
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="create_time =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.createTime != null ">
+            when  #{item.id} then #{item.createTime}
+          </if>
+          <if test="item.createTime == null ">
+            when  #{item.id} then customers_professional_record.create_time
+          </if>
+        </foreach>
+      </trim>
+    </trim>
+    where id in 
+    <foreach close=")" collection="list" index="index" item="item" open="(" separator=",">
+       #{item.id} 
+    </foreach>
+  </update>
+</mapper>

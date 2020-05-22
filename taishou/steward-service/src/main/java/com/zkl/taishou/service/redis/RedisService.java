@@ -1,7 +1,7 @@
 package com.zkl.taishou.service.redis;
 
 
-import com.zkl.taishou.common.entity.User;
+import com.zkl.taishou.common.entity.user.User;
 import org.springframework.stereotype.Service;
 
 /**

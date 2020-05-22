@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zkl.taishou.dao.diagnose.CashFlowRecordDAO">
+  <resultMap id="BaseResultMap" type="com.zkl.taishou.common.entity.diagnose.CashFlowRecord">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="money_january" jdbcType="DOUBLE" property="moneyJanuary" />
+    <result column="money_february" jdbcType="DOUBLE" property="moneyFebruary" />
+    <result column="money_march" jdbcType="DOUBLE" property="moneyMarch" />
+    <result column="money_april" jdbcType="DOUBLE" property="moneyApril" />
+    <result column="money_may" jdbcType="DOUBLE" property="moneyMay" />
+    <result column="money_june" jdbcType="DOUBLE" property="moneyJune" />
+    <result column="money_july" jdbcType="DOUBLE" property="moneyJuly" />
+    <result column="money_august" jdbcType="DOUBLE" property="moneyAugust" />
+    <result column="money_september" jdbcType="DOUBLE" property="moneySeptember" />
+    <result column="money_october" jdbcType="DOUBLE" property="moneyOctober" />
+    <result column="money_november" jdbcType="DOUBLE" property="moneyNovember" />
+    <result column="money_december" jdbcType="DOUBLE" property="moneyDecember" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="result_id" jdbcType="INTEGER" property="resultId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, user_id, money_january, money_february, money_march, money_april, money_may,
+    money_june, money_july, money_august, money_september, money_october, money_november,
+    money_december, create_time, result_id
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from cash_flow_record
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from cash_flow_record
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.zkl.taishou.common.entity.diagnose.CashFlowRecord">
+    insert into cash_flow_record (id, user_id, money_january,
+      money_february, money_march, money_april,
+      money_may, money_june, money_july,
+      money_august, money_september, money_october,
+      money_november, money_december, create_time,
+      result_id)
+    values (#{id,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, #{moneyJanuary,jdbcType=DOUBLE},
+      #{moneyFebruary,jdbcType=DOUBLE}, #{moneyMarch,jdbcType=DOUBLE}, #{moneyApril,jdbcType=DOUBLE},
+      #{moneyMay,jdbcType=DOUBLE}, #{moneyJune,jdbcType=DOUBLE}, #{moneyJuly,jdbcType=DOUBLE},
+      #{moneyAugust,jdbcType=DOUBLE}, #{moneySeptember,jdbcType=DOUBLE}, #{moneyOctober,jdbcType=DOUBLE},
+      #{moneyNovember,jdbcType=DOUBLE}, #{moneyDecember,jdbcType=DOUBLE}, #{createTime,jdbcType=TIMESTAMP},
+      #{resultId,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.zkl.taishou.common.entity.diagnose.CashFlowRecord">
+    insert into cash_flow_record
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="moneyJanuary != null">
+        money_january,
+      </if>
+      <if test="moneyFebruary != null">
+        money_february,
+      </if>
+      <if test="moneyMarch != null">
+        money_march,
+      </if>
+      <if test="moneyApril != null">
+        money_april,
+      </if>
+      <if test="moneyMay != null">
+        money_may,
+      </if>
+      <if test="moneyJune != null">
+        money_june,
+      </if>
+      <if test="moneyJuly != null">
+        money_july,
+      </if>
+      <if test="moneyAugust != null">
+        money_august,
+      </if>
+      <if test="moneySeptember != null">
+        money_september,
+      </if>
+      <if test="moneyOctober != null">
+        money_october,
+      </if>
+      <if test="moneyNovember != null">
+        money_november,
+      </if>
+      <if test="moneyDecember != null">
+        money_december,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="resultId != null">
+        result_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="moneyJanuary != null">
+        #{moneyJanuary,jdbcType=DOUBLE},
+      </if>
+      <if test="moneyFebruary != null">
+        #{moneyFebruary,jdbcType=DOUBLE},
+      </if>
+      <if test="moneyMarch != null">
+        #{moneyMarch,jdbcType=DOUBLE},
+      </if>
+      <if test="moneyApril != null">
+        #{moneyApril,jdbcType=DOUBLE},
+      </if>
+      <if test="moneyMay != null">
+        #{moneyMay,jdbcType=DOUBLE},
+      </if>
+      <if test="moneyJune != null">
+        #{moneyJune,jdbcType=DOUBLE},
+      </if>
+      <if test="moneyJuly != null">
+        #{moneyJuly,jdbcType=DOUBLE},
+      </if>
+      <if test="moneyAugust != null">
+        #{moneyAugust,jdbcType=DOUBLE},
+      </if>
+      <if test="moneySeptember != null">
+        #{moneySeptember,jdbcType=DOUBLE},
+      </if>
+      <if test="moneyOctober != null">
+        #{moneyOctober,jdbcType=DOUBLE},
+      </if>
+      <if test="moneyNovember != null">
+        #{moneyNovember,jdbcType=DOUBLE},
+      </if>
+      <if test="moneyDecember != null">
+        #{moneyDecember,jdbcType=DOUBLE},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="resultId != null">
+        #{resultId,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+
+
+  <update id="updateByPrimaryKeySelective" parameterType="com.zkl.taishou.common.entity.diagnose.CashFlowRecord">
+    update cash_flow_record
+    <set>
+      <if test="userId != null">
+        user_id = #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="moneyJanuary != null">
+        money_january = #{moneyJanuary,jdbcType=DOUBLE},
+      </if>
+      <if test="moneyFebruary != null">
+        money_february = #{moneyFebruary,jdbcType=DOUBLE},
+      </if>
+      <if test="moneyMarch != null">
+        money_march = #{moneyMarch,jdbcType=DOUBLE},
+      </if>
+      <if test="moneyApril != null">
+        money_april = #{moneyApril,jdbcType=DOUBLE},
+      </if>
+      <if test="moneyMay != null">
+        money_may = #{moneyMay,jdbcType=DOUBLE},
+      </if>
+      <if test="moneyJune != null">
+        money_june = #{moneyJune,jdbcType=DOUBLE},
+      </if>
+      <if test="moneyJuly != null">
+        money_july = #{moneyJuly,jdbcType=DOUBLE},
+      </if>
+      <if test="moneyAugust != null">
+        money_august = #{moneyAugust,jdbcType=DOUBLE},
+      </if>
+      <if test="moneySeptember != null">
+        money_september = #{moneySeptember,jdbcType=DOUBLE},
+      </if>
+      <if test="moneyOctober != null">
+        money_october = #{moneyOctober,jdbcType=DOUBLE},
+      </if>
+      <if test="moneyNovember != null">
+        money_november = #{moneyNovember,jdbcType=DOUBLE},
+      </if>
+      <if test="moneyDecember != null">
+        money_december = #{moneyDecember,jdbcType=DOUBLE},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="resultId != null">
+        result_id = #{resultId,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zkl.taishou.common.entity.diagnose.CashFlowRecord">
+    update cash_flow_record
+    set user_id = #{userId,jdbcType=INTEGER},
+      money_january = #{moneyJanuary,jdbcType=DOUBLE},
+      money_february = #{moneyFebruary,jdbcType=DOUBLE},
+      money_march = #{moneyMarch,jdbcType=DOUBLE},
+      money_april = #{moneyApril,jdbcType=DOUBLE},
+      money_may = #{moneyMay,jdbcType=DOUBLE},
+      money_june = #{moneyJune,jdbcType=DOUBLE},
+      money_july = #{moneyJuly,jdbcType=DOUBLE},
+      money_august = #{moneyAugust,jdbcType=DOUBLE},
+      money_september = #{moneySeptember,jdbcType=DOUBLE},
+      money_october = #{moneyOctober,jdbcType=DOUBLE},
+      money_november = #{moneyNovember,jdbcType=DOUBLE},
+      money_december = #{moneyDecember,jdbcType=DOUBLE},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      result_id = #{resultId,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

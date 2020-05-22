@@ -1,7 +1,7 @@
 /* https://github.com/orange1438 */
 package com.zkl.taishou.dao.diagnose;
 
-import com.zkl.taishou.common.entity.ProfitDiagnosisRecord;
+import com.zkl.taishou.common.entity.diagnose.ProfitDiagnosisRecord;
 
 /**
  * 本文件由 https://github.com/orange1438/mybatis-generator-core-chinese-annotation1.3.5-chinese-annotation 自动生成

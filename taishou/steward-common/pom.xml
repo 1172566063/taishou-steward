@@ -12,7 +12,10 @@
     <artifactId>steward-common</artifactId>
 
     <dependencies>
-
+        <dependency>
+            <groupId>io.github.orange1438</groupId>
+            <artifactId>mybatis-generator-core</artifactId>
+        </dependency>
         <dependency>
             <groupId>com.itextpdf</groupId>
             <artifactId>itextpdf</artifactId>

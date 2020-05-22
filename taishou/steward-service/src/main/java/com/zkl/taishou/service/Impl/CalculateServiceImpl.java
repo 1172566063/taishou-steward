@@ -3,8 +3,8 @@ package com.zkl.taishou.service.Impl;
 import com.zkl.taishou.common.PO.CalculateResultPO;
 import com.zkl.taishou.common.VO.CalculateStepOneVO;
 import com.zkl.taishou.common.constants.*;
-import com.zkl.taishou.common.entity.CalculateCardinal;
-import com.zkl.taishou.common.entity.CalculateRecord;
+import com.zkl.taishou.common.entity.calculate.CalculateCardinal;
+import com.zkl.taishou.common.entity.calculate.CalculateRecord;
 import com.zkl.taishou.common.utils.CommonUtils;
 import com.zkl.taishou.dao.calculate.CalculateCardinalDAO;
 import com.zkl.taishou.dao.calculate.CalculateRecordDAO;
@@ -335,7 +335,7 @@ public class CalculateServiceImpl implements CalculateService {
             for(Field field:declaredFields){
                 String name = field.getName();
                 //过滤
-                if(name.equals("serialVersionUid")){
+                if(name.equals("serialVersionUID")){
                     continue;
                 }
                 //通过属性名称获取字段对象

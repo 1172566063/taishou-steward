@@ -1,6 +1,6 @@
 package com.zkl.taishou.dao.calculate;
 
-import com.zkl.taishou.common.entity.CalculateRecord;
+import com.zkl.taishou.common.entity.calculate.CalculateRecord;
 
 public interface CalculateRecordDAO {
 

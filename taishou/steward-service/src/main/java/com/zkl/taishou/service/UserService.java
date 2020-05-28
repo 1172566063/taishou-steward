@@ -20,4 +20,6 @@ public interface UserService {
     ResultBean<UserInfo> login(String phone, String password);
 
     ResultBean<UserInfo> register(RegisterVO registerVO);
+
+    boolean examineRepetition(String phone);
 }

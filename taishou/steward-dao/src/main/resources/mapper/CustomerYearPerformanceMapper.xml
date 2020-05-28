@@ -1,0 +1,464 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zkl.taishou.dao.diagnose.theCustomerConsumption.CustomerYearPerformanceDAO">
+  <resultMap id="BaseResultMap" type="com.zkl.taishou.common.entity.diagnose.CustomerYearPerformance">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="result_id" jdbcType="INTEGER" property="resultId" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="number_of_big_projects" jdbcType="INTEGER" property="numberOfBigProjects" />
+    <result column="number_of_regular_transactions" jdbcType="INTEGER" property="numberOfRegularTransactions" />
+    <result column="number_of_product_transactions" jdbcType="INTEGER" property="numberOfProductTransactions" />
+    <result column="number_of_card_transactions" jdbcType="INTEGER" property="numberOfCardTransactions" />
+    <result column="big_consumption_amount" jdbcType="DOUBLE" property="bigConsumptionAmount" />
+    <result column="regular_consumption_amount" jdbcType="DOUBLE" property="regularConsumptionAmount" />
+    <result column="product_consumption_amount" jdbcType="DOUBLE" property="productConsumptionAmount" />
+    <result column="card_consumption_amount" jdbcType="DOUBLE" property="cardConsumptionAmount" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, user_id, result_id, create_time, number_of_big_projects, number_of_regular_transactions, 
+    number_of_product_transactions, number_of_card_transactions, big_consumption_amount, 
+    regular_consumption_amount, product_consumption_amount, card_consumption_amount
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from customer_year_performance
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from customer_year_performance
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.zkl.taishou.common.entity.diagnose.CustomerYearPerformance">
+    insert into customer_year_performance (id, user_id, result_id, 
+      create_time, number_of_big_projects, number_of_regular_transactions, 
+      number_of_product_transactions, number_of_card_transactions, 
+      big_consumption_amount, regular_consumption_amount, 
+      product_consumption_amount, card_consumption_amount
+      )
+    values (#{id,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, #{resultId,jdbcType=INTEGER}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{numberOfBigProjects,jdbcType=INTEGER}, #{numberOfRegularTransactions,jdbcType=INTEGER}, 
+      #{numberOfProductTransactions,jdbcType=INTEGER}, #{numberOfCardTransactions,jdbcType=INTEGER}, 
+      #{bigConsumptionAmount,jdbcType=DOUBLE}, #{regularConsumptionAmount,jdbcType=DOUBLE}, 
+      #{productConsumptionAmount,jdbcType=DOUBLE}, #{cardConsumptionAmount,jdbcType=DOUBLE}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.zkl.taishou.common.entity.diagnose.CustomerYearPerformance">
+    insert into customer_year_performance
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="resultId != null">
+        result_id,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="numberOfBigProjects != null">
+        number_of_big_projects,
+      </if>
+      <if test="numberOfRegularTransactions != null">
+        number_of_regular_transactions,
+      </if>
+      <if test="numberOfProductTransactions != null">
+        number_of_product_transactions,
+      </if>
+      <if test="numberOfCardTransactions != null">
+        number_of_card_transactions,
+      </if>
+      <if test="bigConsumptionAmount != null">
+        big_consumption_amount,
+      </if>
+      <if test="regularConsumptionAmount != null">
+        regular_consumption_amount,
+      </if>
+      <if test="productConsumptionAmount != null">
+        product_consumption_amount,
+      </if>
+      <if test="cardConsumptionAmount != null">
+        card_consumption_amount,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="resultId != null">
+        #{resultId,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="numberOfBigProjects != null">
+        #{numberOfBigProjects,jdbcType=INTEGER},
+      </if>
+      <if test="numberOfRegularTransactions != null">
+        #{numberOfRegularTransactions,jdbcType=INTEGER},
+      </if>
+      <if test="numberOfProductTransactions != null">
+        #{numberOfProductTransactions,jdbcType=INTEGER},
+      </if>
+      <if test="numberOfCardTransactions != null">
+        #{numberOfCardTransactions,jdbcType=INTEGER},
+      </if>
+      <if test="bigConsumptionAmount != null">
+        #{bigConsumptionAmount,jdbcType=DOUBLE},
+      </if>
+      <if test="regularConsumptionAmount != null">
+        #{regularConsumptionAmount,jdbcType=DOUBLE},
+      </if>
+      <if test="productConsumptionAmount != null">
+        #{productConsumptionAmount,jdbcType=DOUBLE},
+      </if>
+      <if test="cardConsumptionAmount != null">
+        #{cardConsumptionAmount,jdbcType=DOUBLE},
+      </if>
+    </trim>
+  </insert>
+  <insert id="insertBatch" parameterType="java.util.List">
+    insert into customer_year_performance (id, user_id, result_id, 
+      create_time, number_of_big_projects, 
+      number_of_regular_transactions, number_of_product_transactions, 
+      number_of_card_transactions, big_consumption_amount, 
+      regular_consumption_amount, product_consumption_amount, 
+      card_consumption_amount)
+    values 
+    <foreach collection="list" index="index" item="item" separator=",">
+      (#{item.id,jdbcType=INTEGER}, #{item.userId,jdbcType=INTEGER}, #{item.resultId,jdbcType=INTEGER}, 
+        #{item.createTime,jdbcType=TIMESTAMP}, #{item.numberOfBigProjects,jdbcType=INTEGER}, 
+        #{item.numberOfRegularTransactions,jdbcType=INTEGER}, #{item.numberOfProductTransactions,jdbcType=INTEGER}, 
+        #{item.numberOfCardTransactions,jdbcType=INTEGER}, #{item.bigConsumptionAmount,jdbcType=DOUBLE}, 
+        #{item.regularConsumptionAmount,jdbcType=DOUBLE}, #{item.productConsumptionAmount,jdbcType=DOUBLE}, 
+        #{item.cardConsumptionAmount,jdbcType=DOUBLE})
+    </foreach>
+  </insert>
+  <insert id="insertBatchSelective" parameterType="java.util.List">
+    insert into customer_year_performance
+    (id, user_id, result_id, create_time, number_of_big_projects, number_of_regular_transactions, 
+      number_of_product_transactions, number_of_card_transactions, big_consumption_amount, 
+      regular_consumption_amount, product_consumption_amount, card_consumption_amount
+      )
+    values 
+    <foreach collection="list" index="index" item="item" separator=",">
+      <trim prefix="(" suffix=")" suffixOverrides=",">
+        <if test="item.id != null">
+          #{item.id,jdbcType=INTEGER},
+        </if>
+        <if test="item.id == null">
+          NULL,
+        </if>
+        <if test="item.userId != null">
+          #{item.userId,jdbcType=INTEGER},
+        </if>
+        <if test="item.userId == null">
+          NULL,
+        </if>
+        <if test="item.resultId != null">
+          #{item.resultId,jdbcType=INTEGER},
+        </if>
+        <if test="item.resultId == null">
+          NULL,
+        </if>
+        <if test="item.createTime != null">
+          #{item.createTime,jdbcType=TIMESTAMP},
+        </if>
+        <if test="item.createTime == null">
+          NULL,
+        </if>
+        <if test="item.numberOfBigProjects != null">
+          #{item.numberOfBigProjects,jdbcType=INTEGER},
+        </if>
+        <if test="item.numberOfBigProjects == null">
+          NULL,
+        </if>
+        <if test="item.numberOfRegularTransactions != null">
+          #{item.numberOfRegularTransactions,jdbcType=INTEGER},
+        </if>
+        <if test="item.numberOfRegularTransactions == null">
+          NULL,
+        </if>
+        <if test="item.numberOfProductTransactions != null">
+          #{item.numberOfProductTransactions,jdbcType=INTEGER},
+        </if>
+        <if test="item.numberOfProductTransactions == null">
+          NULL,
+        </if>
+        <if test="item.numberOfCardTransactions != null">
+          #{item.numberOfCardTransactions,jdbcType=INTEGER},
+        </if>
+        <if test="item.numberOfCardTransactions == null">
+          NULL,
+        </if>
+        <if test="item.bigConsumptionAmount != null">
+          #{item.bigConsumptionAmount,jdbcType=DOUBLE},
+        </if>
+        <if test="item.bigConsumptionAmount == null">
+          NULL,
+        </if>
+        <if test="item.regularConsumptionAmount != null">
+          #{item.regularConsumptionAmount,jdbcType=DOUBLE},
+        </if>
+        <if test="item.regularConsumptionAmount == null">
+          NULL,
+        </if>
+        <if test="item.productConsumptionAmount != null">
+          #{item.productConsumptionAmount,jdbcType=DOUBLE},
+        </if>
+        <if test="item.productConsumptionAmount == null">
+          NULL,
+        </if>
+        <if test="item.cardConsumptionAmount != null">
+          #{item.cardConsumptionAmount,jdbcType=DOUBLE},
+        </if>
+        <if test="item.cardConsumptionAmount == null">
+          NULL,
+        </if>
+      </trim>
+    </foreach>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zkl.taishou.common.entity.diagnose.CustomerYearPerformance">
+    update customer_year_performance
+    <set>
+      <if test="userId != null">
+        user_id = #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="resultId != null">
+        result_id = #{resultId,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="numberOfBigProjects != null">
+        number_of_big_projects = #{numberOfBigProjects,jdbcType=INTEGER},
+      </if>
+      <if test="numberOfRegularTransactions != null">
+        number_of_regular_transactions = #{numberOfRegularTransactions,jdbcType=INTEGER},
+      </if>
+      <if test="numberOfProductTransactions != null">
+        number_of_product_transactions = #{numberOfProductTransactions,jdbcType=INTEGER},
+      </if>
+      <if test="numberOfCardTransactions != null">
+        number_of_card_transactions = #{numberOfCardTransactions,jdbcType=INTEGER},
+      </if>
+      <if test="bigConsumptionAmount != null">
+        big_consumption_amount = #{bigConsumptionAmount,jdbcType=DOUBLE},
+      </if>
+      <if test="regularConsumptionAmount != null">
+        regular_consumption_amount = #{regularConsumptionAmount,jdbcType=DOUBLE},
+      </if>
+      <if test="productConsumptionAmount != null">
+        product_consumption_amount = #{productConsumptionAmount,jdbcType=DOUBLE},
+      </if>
+      <if test="cardConsumptionAmount != null">
+        card_consumption_amount = #{cardConsumptionAmount,jdbcType=DOUBLE},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zkl.taishou.common.entity.diagnose.CustomerYearPerformance">
+    update customer_year_performance
+    set user_id = #{userId,jdbcType=INTEGER},
+      result_id = #{resultId,jdbcType=INTEGER},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      number_of_big_projects = #{numberOfBigProjects,jdbcType=INTEGER},
+      number_of_regular_transactions = #{numberOfRegularTransactions,jdbcType=INTEGER},
+      number_of_product_transactions = #{numberOfProductTransactions,jdbcType=INTEGER},
+      number_of_card_transactions = #{numberOfCardTransactions,jdbcType=INTEGER},
+      big_consumption_amount = #{bigConsumptionAmount,jdbcType=DOUBLE},
+      regular_consumption_amount = #{regularConsumptionAmount,jdbcType=DOUBLE},
+      product_consumption_amount = #{productConsumptionAmount,jdbcType=DOUBLE},
+      card_consumption_amount = #{cardConsumptionAmount,jdbcType=DOUBLE}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateBatchByPrimaryKey" parameterType="java.util.List">
+    update customer_year_performance
+    <trim prefix="set" suffixOverrides=",">
+      <trim prefix="user_id =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.userId}
+        </foreach>
+      </trim>
+      <trim prefix="result_id =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.resultId}
+        </foreach>
+      </trim>
+      <trim prefix="create_time =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.createTime}
+        </foreach>
+      </trim>
+      <trim prefix="number_of_big_projects =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.numberOfBigProjects}
+        </foreach>
+      </trim>
+      <trim prefix="number_of_regular_transactions =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.numberOfRegularTransactions}
+        </foreach>
+      </trim>
+      <trim prefix="number_of_product_transactions =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.numberOfProductTransactions}
+        </foreach>
+      </trim>
+      <trim prefix="number_of_card_transactions =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.numberOfCardTransactions}
+        </foreach>
+      </trim>
+      <trim prefix="big_consumption_amount =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.bigConsumptionAmount}
+        </foreach>
+      </trim>
+      <trim prefix="regular_consumption_amount =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.regularConsumptionAmount}
+        </foreach>
+      </trim>
+      <trim prefix="product_consumption_amount =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.productConsumptionAmount}
+        </foreach>
+      </trim>
+      <trim prefix="card_consumption_amount =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.cardConsumptionAmount}
+        </foreach>
+      </trim>
+    </trim>
+    where id in 
+    <foreach close=")" collection="list" index="index" item="item" open="(" separator=",">
+       #{item.id} 
+    </foreach>
+  </update>
+  <update id="updateBatchByPrimaryKeySelective" parameterType="java.util.List">
+    update customer_year_performance
+    <trim prefix="set" suffixOverrides=",">
+      <trim prefix="user_id =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.userId != null ">
+            when  #{item.id} then #{item.userId}
+          </if>
+          <if test="item.userId == null ">
+            when  #{item.id} then customer_year_performance.user_id
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="result_id =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.resultId != null ">
+            when  #{item.id} then #{item.resultId}
+          </if>
+          <if test="item.resultId == null ">
+            when  #{item.id} then customer_year_performance.result_id
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="create_time =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.createTime != null ">
+            when  #{item.id} then #{item.createTime}
+          </if>
+          <if test="item.createTime == null ">
+            when  #{item.id} then customer_year_performance.create_time
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="number_of_big_projects =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.numberOfBigProjects != null ">
+            when  #{item.id} then #{item.numberOfBigProjects}
+          </if>
+          <if test="item.numberOfBigProjects == null ">
+            when  #{item.id} then customer_year_performance.number_of_big_projects
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="number_of_regular_transactions =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.numberOfRegularTransactions != null ">
+            when  #{item.id} then #{item.numberOfRegularTransactions}
+          </if>
+          <if test="item.numberOfRegularTransactions == null ">
+            when  #{item.id} then customer_year_performance.number_of_regular_transactions
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="number_of_product_transactions =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.numberOfProductTransactions != null ">
+            when  #{item.id} then #{item.numberOfProductTransactions}
+          </if>
+          <if test="item.numberOfProductTransactions == null ">
+            when  #{item.id} then customer_year_performance.number_of_product_transactions
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="number_of_card_transactions =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.numberOfCardTransactions != null ">
+            when  #{item.id} then #{item.numberOfCardTransactions}
+          </if>
+          <if test="item.numberOfCardTransactions == null ">
+            when  #{item.id} then customer_year_performance.number_of_card_transactions
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="big_consumption_amount =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.bigConsumptionAmount != null ">
+            when  #{item.id} then #{item.bigConsumptionAmount}
+          </if>
+          <if test="item.bigConsumptionAmount == null ">
+            when  #{item.id} then customer_year_performance.big_consumption_amount
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="regular_consumption_amount =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.regularConsumptionAmount != null ">
+            when  #{item.id} then #{item.regularConsumptionAmount}
+          </if>
+          <if test="item.regularConsumptionAmount == null ">
+            when  #{item.id} then customer_year_performance.regular_consumption_amount
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="product_consumption_amount =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.productConsumptionAmount != null ">
+            when  #{item.id} then #{item.productConsumptionAmount}
+          </if>
+          <if test="item.productConsumptionAmount == null ">
+            when  #{item.id} then customer_year_performance.product_consumption_amount
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="card_consumption_amount =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.cardConsumptionAmount != null ">
+            when  #{item.id} then #{item.cardConsumptionAmount}
+          </if>
+          <if test="item.cardConsumptionAmount == null ">
+            when  #{item.id} then customer_year_performance.card_consumption_amount
+          </if>
+        </foreach>
+      </trim>
+    </trim>
+    where id in 
+    <foreach close=")" collection="list" index="index" item="item" open="(" separator=",">
+       #{item.id} 
+    </foreach>
+  </update>
+</mapper>

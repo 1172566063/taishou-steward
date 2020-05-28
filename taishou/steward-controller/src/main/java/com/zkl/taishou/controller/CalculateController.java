@@ -1,5 +1,6 @@
 package com.zkl.taishou.controller;
 
+import com.zkl.taishou.common.PO.CalculateResultPO;
 import com.zkl.taishou.common.constants.ResultBean;
 import com.zkl.taishou.common.VO.CalculateStepOneVO;
 import com.zkl.taishou.service.CalculateService;
@@ -33,7 +34,7 @@ public class CalculateController extends BaseController {
             @ApiImplicitParam(name="calculateStepOne",value = "测算系统第一步",paramType = "body",dataType = "CalculateStepOne"),
             @ApiImplicitParam(name="token",value = "用户token",paramType = "header")
     })
-    public ResultBean<CalculateStepOneVO> calculate(@Validated @RequestBody CalculateStepOneVO calculateStepOne, BindingResult bindingResult){
+    public ResultBean<CalculateResultPO> calculate(@Validated @RequestBody CalculateStepOneVO calculateStepOne, BindingResult bindingResult){
         if(bindingResult.hasErrors()){
             return getParameterFailResult(bindingResult);
         }

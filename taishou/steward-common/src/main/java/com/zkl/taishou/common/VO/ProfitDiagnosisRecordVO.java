@@ -2,6 +2,7 @@
 package com.zkl.taishou.common.VO;
 
 import com.zkl.taishou.common.entity.diagnose.ProfitDiagnosisRecord;
+import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -15,10 +16,9 @@ import java.io.Serializable;
  * @author orange1438 code generator
  * date:2020-05-19 18:05:17
  */
-@AllArgsConstructor
-@NoArgsConstructor
 @Data
 @Accessors(chain = true)
+@ApiModel("ProfitDiagnosisRecordVO")
 public class ProfitDiagnosisRecordVO implements Serializable {
     /** 
      * 串行版本ID

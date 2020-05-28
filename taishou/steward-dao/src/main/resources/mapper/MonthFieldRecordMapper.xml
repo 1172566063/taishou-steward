@@ -1,0 +1,1007 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zkl.taishou.dao.diagnose.theCustomerConsumption.MonthFieldRecordDAO">
+  <resultMap id="BaseResultMap" type="com.zkl.taishou.common.entity.diagnose.MonthFieldRecord">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="number_field_january" jdbcType="INTEGER" property="numberFieldJanuary" />
+    <result column="number_field_february" jdbcType="INTEGER" property="numberFieldFebruary" />
+    <result column="number_field_march" jdbcType="INTEGER" property="numberFieldMarch" />
+    <result column="number_field_april" jdbcType="INTEGER" property="numberFieldApril" />
+    <result column="number_field_may" jdbcType="INTEGER" property="numberFieldMay" />
+    <result column="number_field_june" jdbcType="INTEGER" property="numberFieldJune" />
+    <result column="number_field_july" jdbcType="INTEGER" property="numberFieldJuly" />
+    <result column="number_field_august" jdbcType="INTEGER" property="numberFieldAugust" />
+    <result column="number_field_september" jdbcType="INTEGER" property="numberFieldSeptember" />
+    <result column="number_field_october" jdbcType="INTEGER" property="numberFieldOctober" />
+    <result column="number_field_november" jdbcType="INTEGER" property="numberFieldNovember" />
+    <result column="number_field_december" jdbcType="INTEGER" property="numberFieldDecember" />
+    <result column="money_field_january" jdbcType="DOUBLE" property="moneyFieldJanuary" />
+    <result column="money_field_february" jdbcType="DOUBLE" property="moneyFieldFebruary" />
+    <result column="money_field_march" jdbcType="DOUBLE" property="moneyFieldMarch" />
+    <result column="money_field_april" jdbcType="DOUBLE" property="moneyFieldApril" />
+    <result column="money_field_may" jdbcType="DOUBLE" property="moneyFieldMay" />
+    <result column="money_field_june" jdbcType="DOUBLE" property="moneyFieldJune" />
+    <result column="money_field_july" jdbcType="DOUBLE" property="moneyFieldJuly" />
+    <result column="money_field_august" jdbcType="DOUBLE" property="moneyFieldAugust" />
+    <result column="money_field_september" jdbcType="DOUBLE" property="moneyFieldSeptember" />
+    <result column="money_field_october" jdbcType="DOUBLE" property="moneyFieldOctober" />
+    <result column="money_field_november" jdbcType="DOUBLE" property="moneyFieldNovember" />
+    <result column="money_field_december" jdbcType="DOUBLE" property="moneyFieldDecember" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="result_id" jdbcType="INTEGER" property="resultId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, user_id, number_field_january, number_field_february, number_field_march, number_field_april, 
+    number_field_may, number_field_june, number_field_july, number_field_august, number_field_september, 
+    number_field_october, number_field_november, number_field_december, money_field_january, 
+    money_field_february, money_field_march, money_field_april, money_field_may, money_field_june, 
+    money_field_july, money_field_august, money_field_september, money_field_october, 
+    money_field_november, money_field_december, create_time, result_id
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from month_field_record
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from month_field_record
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.zkl.taishou.common.entity.diagnose.MonthFieldRecord">
+    insert into month_field_record (id, user_id, number_field_january, 
+      number_field_february, number_field_march, 
+      number_field_april, number_field_may, number_field_june, 
+      number_field_july, number_field_august, number_field_september, 
+      number_field_october, number_field_november, 
+      number_field_december, money_field_january, 
+      money_field_february, money_field_march, money_field_april, 
+      money_field_may, money_field_june, money_field_july, 
+      money_field_august, money_field_september, money_field_october, 
+      money_field_november, money_field_december, create_time, 
+      result_id)
+    values (#{id,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, #{numberFieldJanuary,jdbcType=INTEGER}, 
+      #{numberFieldFebruary,jdbcType=INTEGER}, #{numberFieldMarch,jdbcType=INTEGER}, 
+      #{numberFieldApril,jdbcType=INTEGER}, #{numberFieldMay,jdbcType=INTEGER}, #{numberFieldJune,jdbcType=INTEGER}, 
+      #{numberFieldJuly,jdbcType=INTEGER}, #{numberFieldAugust,jdbcType=INTEGER}, #{numberFieldSeptember,jdbcType=INTEGER}, 
+      #{numberFieldOctober,jdbcType=INTEGER}, #{numberFieldNovember,jdbcType=INTEGER}, 
+      #{numberFieldDecember,jdbcType=INTEGER}, #{moneyFieldJanuary,jdbcType=DOUBLE}, 
+      #{moneyFieldFebruary,jdbcType=DOUBLE}, #{moneyFieldMarch,jdbcType=DOUBLE}, #{moneyFieldApril,jdbcType=DOUBLE}, 
+      #{moneyFieldMay,jdbcType=DOUBLE}, #{moneyFieldJune,jdbcType=DOUBLE}, #{moneyFieldJuly,jdbcType=DOUBLE}, 
+      #{moneyFieldAugust,jdbcType=DOUBLE}, #{moneyFieldSeptember,jdbcType=DOUBLE}, #{moneyFieldOctober,jdbcType=DOUBLE}, 
+      #{moneyFieldNovember,jdbcType=DOUBLE}, #{moneyFieldDecember,jdbcType=DOUBLE}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{resultId,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.zkl.taishou.common.entity.diagnose.MonthFieldRecord">
+    insert into month_field_record
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="numberFieldJanuary != null">
+        number_field_january,
+      </if>
+      <if test="numberFieldFebruary != null">
+        number_field_february,
+      </if>
+      <if test="numberFieldMarch != null">
+        number_field_march,
+      </if>
+      <if test="numberFieldApril != null">
+        number_field_april,
+      </if>
+      <if test="numberFieldMay != null">
+        number_field_may,
+      </if>
+      <if test="numberFieldJune != null">
+        number_field_june,
+      </if>
+      <if test="numberFieldJuly != null">
+        number_field_july,
+      </if>
+      <if test="numberFieldAugust != null">
+        number_field_august,
+      </if>
+      <if test="numberFieldSeptember != null">
+        number_field_september,
+      </if>
+      <if test="numberFieldOctober != null">
+        number_field_october,
+      </if>
+      <if test="numberFieldNovember != null">
+        number_field_november,
+      </if>
+      <if test="numberFieldDecember != null">
+        number_field_december,
+      </if>
+      <if test="moneyFieldJanuary != null">
+        money_field_january,
+      </if>
+      <if test="moneyFieldFebruary != null">
+        money_field_february,
+      </if>
+      <if test="moneyFieldMarch != null">
+        money_field_march,
+      </if>
+      <if test="moneyFieldApril != null">
+        money_field_april,
+      </if>
+      <if test="moneyFieldMay != null">
+        money_field_may,
+      </if>
+      <if test="moneyFieldJune != null">
+        money_field_june,
+      </if>
+      <if test="moneyFieldJuly != null">
+        money_field_july,
+      </if>
+      <if test="moneyFieldAugust != null">
+        money_field_august,
+      </if>
+      <if test="moneyFieldSeptember != null">
+        money_field_september,
+      </if>
+      <if test="moneyFieldOctober != null">
+        money_field_october,
+      </if>
+      <if test="moneyFieldNovember != null">
+        money_field_november,
+      </if>
+      <if test="moneyFieldDecember != null">
+        money_field_december,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="resultId != null">
+        result_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="numberFieldJanuary != null">
+        #{numberFieldJanuary,jdbcType=INTEGER},
+      </if>
+      <if test="numberFieldFebruary != null">
+        #{numberFieldFebruary,jdbcType=INTEGER},
+      </if>
+      <if test="numberFieldMarch != null">
+        #{numberFieldMarch,jdbcType=INTEGER},
+      </if>
+      <if test="numberFieldApril != null">
+        #{numberFieldApril,jdbcType=INTEGER},
+      </if>
+      <if test="numberFieldMay != null">
+        #{numberFieldMay,jdbcType=INTEGER},
+      </if>
+      <if test="numberFieldJune != null">
+        #{numberFieldJune,jdbcType=INTEGER},
+      </if>
+      <if test="numberFieldJuly != null">
+        #{numberFieldJuly,jdbcType=INTEGER},
+      </if>
+      <if test="numberFieldAugust != null">
+        #{numberFieldAugust,jdbcType=INTEGER},
+      </if>
+      <if test="numberFieldSeptember != null">
+        #{numberFieldSeptember,jdbcType=INTEGER},
+      </if>
+      <if test="numberFieldOctober != null">
+        #{numberFieldOctober,jdbcType=INTEGER},
+      </if>
+      <if test="numberFieldNovember != null">
+        #{numberFieldNovember,jdbcType=INTEGER},
+      </if>
+      <if test="numberFieldDecember != null">
+        #{numberFieldDecember,jdbcType=INTEGER},
+      </if>
+      <if test="moneyFieldJanuary != null">
+        #{moneyFieldJanuary,jdbcType=DOUBLE},
+      </if>
+      <if test="moneyFieldFebruary != null">
+        #{moneyFieldFebruary,jdbcType=DOUBLE},
+      </if>
+      <if test="moneyFieldMarch != null">
+        #{moneyFieldMarch,jdbcType=DOUBLE},
+      </if>
+      <if test="moneyFieldApril != null">
+        #{moneyFieldApril,jdbcType=DOUBLE},
+      </if>
+      <if test="moneyFieldMay != null">
+        #{moneyFieldMay,jdbcType=DOUBLE},
+      </if>
+      <if test="moneyFieldJune != null">
+        #{moneyFieldJune,jdbcType=DOUBLE},
+      </if>
+      <if test="moneyFieldJuly != null">
+        #{moneyFieldJuly,jdbcType=DOUBLE},
+      </if>
+      <if test="moneyFieldAugust != null">
+        #{moneyFieldAugust,jdbcType=DOUBLE},
+      </if>
+      <if test="moneyFieldSeptember != null">
+        #{moneyFieldSeptember,jdbcType=DOUBLE},
+      </if>
+      <if test="moneyFieldOctober != null">
+        #{moneyFieldOctober,jdbcType=DOUBLE},
+      </if>
+      <if test="moneyFieldNovember != null">
+        #{moneyFieldNovember,jdbcType=DOUBLE},
+      </if>
+      <if test="moneyFieldDecember != null">
+        #{moneyFieldDecember,jdbcType=DOUBLE},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="resultId != null">
+        #{resultId,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <insert id="insertBatch" parameterType="java.util.List">
+    insert into month_field_record (id, user_id, number_field_january, 
+      number_field_february, number_field_march, 
+      number_field_april, number_field_may, 
+      number_field_june, number_field_july, 
+      number_field_august, number_field_september, 
+      number_field_october, number_field_november, 
+      number_field_december, money_field_january, 
+      money_field_february, money_field_march, 
+      money_field_april, money_field_may, 
+      money_field_june, money_field_july, 
+      money_field_august, money_field_september, 
+      money_field_october, money_field_november, 
+      money_field_december, create_time, 
+      result_id)
+    values 
+    <foreach collection="list" index="index" item="item" separator=",">
+      (#{item.id,jdbcType=INTEGER}, #{item.userId,jdbcType=INTEGER}, #{item.numberFieldJanuary,jdbcType=INTEGER}, 
+        #{item.numberFieldFebruary,jdbcType=INTEGER}, #{item.numberFieldMarch,jdbcType=INTEGER}, 
+        #{item.numberFieldApril,jdbcType=INTEGER}, #{item.numberFieldMay,jdbcType=INTEGER}, 
+        #{item.numberFieldJune,jdbcType=INTEGER}, #{item.numberFieldJuly,jdbcType=INTEGER}, 
+        #{item.numberFieldAugust,jdbcType=INTEGER}, #{item.numberFieldSeptember,jdbcType=INTEGER}, 
+        #{item.numberFieldOctober,jdbcType=INTEGER}, #{item.numberFieldNovember,jdbcType=INTEGER}, 
+        #{item.numberFieldDecember,jdbcType=INTEGER}, #{item.moneyFieldJanuary,jdbcType=DOUBLE}, 
+        #{item.moneyFieldFebruary,jdbcType=DOUBLE}, #{item.moneyFieldMarch,jdbcType=DOUBLE}, 
+        #{item.moneyFieldApril,jdbcType=DOUBLE}, #{item.moneyFieldMay,jdbcType=DOUBLE}, 
+        #{item.moneyFieldJune,jdbcType=DOUBLE}, #{item.moneyFieldJuly,jdbcType=DOUBLE}, 
+        #{item.moneyFieldAugust,jdbcType=DOUBLE}, #{item.moneyFieldSeptember,jdbcType=DOUBLE}, 
+        #{item.moneyFieldOctober,jdbcType=DOUBLE}, #{item.moneyFieldNovember,jdbcType=DOUBLE}, 
+        #{item.moneyFieldDecember,jdbcType=DOUBLE}, #{item.createTime,jdbcType=TIMESTAMP}, 
+        #{item.resultId,jdbcType=INTEGER})
+    </foreach>
+  </insert>
+  <insert id="insertBatchSelective" parameterType="java.util.List">
+    insert into month_field_record
+    (id, user_id, number_field_january, number_field_february, number_field_march, number_field_april, 
+      number_field_may, number_field_june, number_field_july, number_field_august, number_field_september, 
+      number_field_october, number_field_november, number_field_december, money_field_january, 
+      money_field_february, money_field_march, money_field_april, money_field_may, money_field_june, 
+      money_field_july, money_field_august, money_field_september, money_field_october, 
+      money_field_november, money_field_december, create_time, result_id)
+    values 
+    <foreach collection="list" index="index" item="item" separator=",">
+      <trim prefix="(" suffix=")" suffixOverrides=",">
+        <if test="item.id != null">
+          #{item.id,jdbcType=INTEGER},
+        </if>
+        <if test="item.id == null">
+          NULL,
+        </if>
+        <if test="item.userId != null">
+          #{item.userId,jdbcType=INTEGER},
+        </if>
+        <if test="item.userId == null">
+          NULL,
+        </if>
+        <if test="item.numberFieldJanuary != null">
+          #{item.numberFieldJanuary,jdbcType=INTEGER},
+        </if>
+        <if test="item.numberFieldJanuary == null">
+          NULL,
+        </if>
+        <if test="item.numberFieldFebruary != null">
+          #{item.numberFieldFebruary,jdbcType=INTEGER},
+        </if>
+        <if test="item.numberFieldFebruary == null">
+          NULL,
+        </if>
+        <if test="item.numberFieldMarch != null">
+          #{item.numberFieldMarch,jdbcType=INTEGER},
+        </if>
+        <if test="item.numberFieldMarch == null">
+          NULL,
+        </if>
+        <if test="item.numberFieldApril != null">
+          #{item.numberFieldApril,jdbcType=INTEGER},
+        </if>
+        <if test="item.numberFieldApril == null">
+          NULL,
+        </if>
+        <if test="item.numberFieldMay != null">
+          #{item.numberFieldMay,jdbcType=INTEGER},
+        </if>
+        <if test="item.numberFieldMay == null">
+          NULL,
+        </if>
+        <if test="item.numberFieldJune != null">
+          #{item.numberFieldJune,jdbcType=INTEGER},
+        </if>
+        <if test="item.numberFieldJune == null">
+          NULL,
+        </if>
+        <if test="item.numberFieldJuly != null">
+          #{item.numberFieldJuly,jdbcType=INTEGER},
+        </if>
+        <if test="item.numberFieldJuly == null">
+          NULL,
+        </if>
+        <if test="item.numberFieldAugust != null">
+          #{item.numberFieldAugust,jdbcType=INTEGER},
+        </if>
+        <if test="item.numberFieldAugust == null">
+          NULL,
+        </if>
+        <if test="item.numberFieldSeptember != null">
+          #{item.numberFieldSeptember,jdbcType=INTEGER},
+        </if>
+        <if test="item.numberFieldSeptember == null">
+          NULL,
+        </if>
+        <if test="item.numberFieldOctober != null">
+          #{item.numberFieldOctober,jdbcType=INTEGER},
+        </if>
+        <if test="item.numberFieldOctober == null">
+          NULL,
+        </if>
+        <if test="item.numberFieldNovember != null">
+          #{item.numberFieldNovember,jdbcType=INTEGER},
+        </if>
+        <if test="item.numberFieldNovember == null">
+          NULL,
+        </if>
+        <if test="item.numberFieldDecember != null">
+          #{item.numberFieldDecember,jdbcType=INTEGER},
+        </if>
+        <if test="item.numberFieldDecember == null">
+          NULL,
+        </if>
+        <if test="item.moneyFieldJanuary != null">
+          #{item.moneyFieldJanuary,jdbcType=DOUBLE},
+        </if>
+        <if test="item.moneyFieldJanuary == null">
+          NULL,
+        </if>
+        <if test="item.moneyFieldFebruary != null">
+          #{item.moneyFieldFebruary,jdbcType=DOUBLE},
+        </if>
+        <if test="item.moneyFieldFebruary == null">
+          NULL,
+        </if>
+        <if test="item.moneyFieldMarch != null">
+          #{item.moneyFieldMarch,jdbcType=DOUBLE},
+        </if>
+        <if test="item.moneyFieldMarch == null">
+          NULL,
+        </if>
+        <if test="item.moneyFieldApril != null">
+          #{item.moneyFieldApril,jdbcType=DOUBLE},
+        </if>
+        <if test="item.moneyFieldApril == null">
+          NULL,
+        </if>
+        <if test="item.moneyFieldMay != null">
+          #{item.moneyFieldMay,jdbcType=DOUBLE},
+        </if>
+        <if test="item.moneyFieldMay == null">
+          NULL,
+        </if>
+        <if test="item.moneyFieldJune != null">
+          #{item.moneyFieldJune,jdbcType=DOUBLE},
+        </if>
+        <if test="item.moneyFieldJune == null">
+          NULL,
+        </if>
+        <if test="item.moneyFieldJuly != null">
+          #{item.moneyFieldJuly,jdbcType=DOUBLE},
+        </if>
+        <if test="item.moneyFieldJuly == null">
+          NULL,
+        </if>
+        <if test="item.moneyFieldAugust != null">
+          #{item.moneyFieldAugust,jdbcType=DOUBLE},
+        </if>
+        <if test="item.moneyFieldAugust == null">
+          NULL,
+        </if>
+        <if test="item.moneyFieldSeptember != null">
+          #{item.moneyFieldSeptember,jdbcType=DOUBLE},
+        </if>
+        <if test="item.moneyFieldSeptember == null">
+          NULL,
+        </if>
+        <if test="item.moneyFieldOctober != null">
+          #{item.moneyFieldOctober,jdbcType=DOUBLE},
+        </if>
+        <if test="item.moneyFieldOctober == null">
+          NULL,
+        </if>
+        <if test="item.moneyFieldNovember != null">
+          #{item.moneyFieldNovember,jdbcType=DOUBLE},
+        </if>
+        <if test="item.moneyFieldNovember == null">
+          NULL,
+        </if>
+        <if test="item.moneyFieldDecember != null">
+          #{item.moneyFieldDecember,jdbcType=DOUBLE},
+        </if>
+        <if test="item.moneyFieldDecember == null">
+          NULL,
+        </if>
+        <if test="item.createTime != null">
+          #{item.createTime,jdbcType=TIMESTAMP},
+        </if>
+        <if test="item.createTime == null">
+          NULL,
+        </if>
+        <if test="item.resultId != null">
+          #{item.resultId,jdbcType=INTEGER},
+        </if>
+        <if test="item.resultId == null">
+          NULL,
+        </if>
+      </trim>
+    </foreach>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zkl.taishou.common.entity.diagnose.MonthFieldRecord">
+    update month_field_record
+    <set>
+      <if test="userId != null">
+        user_id = #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="numberFieldJanuary != null">
+        number_field_january = #{numberFieldJanuary,jdbcType=INTEGER},
+      </if>
+      <if test="numberFieldFebruary != null">
+        number_field_february = #{numberFieldFebruary,jdbcType=INTEGER},
+      </if>
+      <if test="numberFieldMarch != null">
+        number_field_march = #{numberFieldMarch,jdbcType=INTEGER},
+      </if>
+      <if test="numberFieldApril != null">
+        number_field_april = #{numberFieldApril,jdbcType=INTEGER},
+      </if>
+      <if test="numberFieldMay != null">
+        number_field_may = #{numberFieldMay,jdbcType=INTEGER},
+      </if>
+      <if test="numberFieldJune != null">
+        number_field_june = #{numberFieldJune,jdbcType=INTEGER},
+      </if>
+      <if test="numberFieldJuly != null">
+        number_field_july = #{numberFieldJuly,jdbcType=INTEGER},
+      </if>
+      <if test="numberFieldAugust != null">
+        number_field_august = #{numberFieldAugust,jdbcType=INTEGER},
+      </if>
+      <if test="numberFieldSeptember != null">
+        number_field_september = #{numberFieldSeptember,jdbcType=INTEGER},
+      </if>
+      <if test="numberFieldOctober != null">
+        number_field_october = #{numberFieldOctober,jdbcType=INTEGER},
+      </if>
+      <if test="numberFieldNovember != null">
+        number_field_november = #{numberFieldNovember,jdbcType=INTEGER},
+      </if>
+      <if test="numberFieldDecember != null">
+        number_field_december = #{numberFieldDecember,jdbcType=INTEGER},
+      </if>
+      <if test="moneyFieldJanuary != null">
+        money_field_january = #{moneyFieldJanuary,jdbcType=DOUBLE},
+      </if>
+      <if test="moneyFieldFebruary != null">
+        money_field_february = #{moneyFieldFebruary,jdbcType=DOUBLE},
+      </if>
+      <if test="moneyFieldMarch != null">
+        money_field_march = #{moneyFieldMarch,jdbcType=DOUBLE},
+      </if>
+      <if test="moneyFieldApril != null">
+        money_field_april = #{moneyFieldApril,jdbcType=DOUBLE},
+      </if>
+      <if test="moneyFieldMay != null">
+        money_field_may = #{moneyFieldMay,jdbcType=DOUBLE},
+      </if>
+      <if test="moneyFieldJune != null">
+        money_field_june = #{moneyFieldJune,jdbcType=DOUBLE},
+      </if>
+      <if test="moneyFieldJuly != null">
+        money_field_july = #{moneyFieldJuly,jdbcType=DOUBLE},
+      </if>
+      <if test="moneyFieldAugust != null">
+        money_field_august = #{moneyFieldAugust,jdbcType=DOUBLE},
+      </if>
+      <if test="moneyFieldSeptember != null">
+        money_field_september = #{moneyFieldSeptember,jdbcType=DOUBLE},
+      </if>
+      <if test="moneyFieldOctober != null">
+        money_field_october = #{moneyFieldOctober,jdbcType=DOUBLE},
+      </if>
+      <if test="moneyFieldNovember != null">
+        money_field_november = #{moneyFieldNovember,jdbcType=DOUBLE},
+      </if>
+      <if test="moneyFieldDecember != null">
+        money_field_december = #{moneyFieldDecember,jdbcType=DOUBLE},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="resultId != null">
+        result_id = #{resultId,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zkl.taishou.common.entity.diagnose.MonthFieldRecord">
+    update month_field_record
+    set user_id = #{userId,jdbcType=INTEGER},
+      number_field_january = #{numberFieldJanuary,jdbcType=INTEGER},
+      number_field_february = #{numberFieldFebruary,jdbcType=INTEGER},
+      number_field_march = #{numberFieldMarch,jdbcType=INTEGER},
+      number_field_april = #{numberFieldApril,jdbcType=INTEGER},
+      number_field_may = #{numberFieldMay,jdbcType=INTEGER},
+      number_field_june = #{numberFieldJune,jdbcType=INTEGER},
+      number_field_july = #{numberFieldJuly,jdbcType=INTEGER},
+      number_field_august = #{numberFieldAugust,jdbcType=INTEGER},
+      number_field_september = #{numberFieldSeptember,jdbcType=INTEGER},
+      number_field_october = #{numberFieldOctober,jdbcType=INTEGER},
+      number_field_november = #{numberFieldNovember,jdbcType=INTEGER},
+      number_field_december = #{numberFieldDecember,jdbcType=INTEGER},
+      money_field_january = #{moneyFieldJanuary,jdbcType=DOUBLE},
+      money_field_february = #{moneyFieldFebruary,jdbcType=DOUBLE},
+      money_field_march = #{moneyFieldMarch,jdbcType=DOUBLE},
+      money_field_april = #{moneyFieldApril,jdbcType=DOUBLE},
+      money_field_may = #{moneyFieldMay,jdbcType=DOUBLE},
+      money_field_june = #{moneyFieldJune,jdbcType=DOUBLE},
+      money_field_july = #{moneyFieldJuly,jdbcType=DOUBLE},
+      money_field_august = #{moneyFieldAugust,jdbcType=DOUBLE},
+      money_field_september = #{moneyFieldSeptember,jdbcType=DOUBLE},
+      money_field_october = #{moneyFieldOctober,jdbcType=DOUBLE},
+      money_field_november = #{moneyFieldNovember,jdbcType=DOUBLE},
+      money_field_december = #{moneyFieldDecember,jdbcType=DOUBLE},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      result_id = #{resultId,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateBatchByPrimaryKey" parameterType="java.util.List">
+    update month_field_record
+    <trim prefix="set" suffixOverrides=",">
+      <trim prefix="user_id =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.userId}
+        </foreach>
+      </trim>
+      <trim prefix="number_field_january =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.numberFieldJanuary}
+        </foreach>
+      </trim>
+      <trim prefix="number_field_february =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.numberFieldFebruary}
+        </foreach>
+      </trim>
+      <trim prefix="number_field_march =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.numberFieldMarch}
+        </foreach>
+      </trim>
+      <trim prefix="number_field_april =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.numberFieldApril}
+        </foreach>
+      </trim>
+      <trim prefix="number_field_may =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.numberFieldMay}
+        </foreach>
+      </trim>
+      <trim prefix="number_field_june =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.numberFieldJune}
+        </foreach>
+      </trim>
+      <trim prefix="number_field_july =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.numberFieldJuly}
+        </foreach>
+      </trim>
+      <trim prefix="number_field_august =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.numberFieldAugust}
+        </foreach>
+      </trim>
+      <trim prefix="number_field_september =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.numberFieldSeptember}
+        </foreach>
+      </trim>
+      <trim prefix="number_field_october =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.numberFieldOctober}
+        </foreach>
+      </trim>
+      <trim prefix="number_field_november =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.numberFieldNovember}
+        </foreach>
+      </trim>
+      <trim prefix="number_field_december =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.numberFieldDecember}
+        </foreach>
+      </trim>
+      <trim prefix="money_field_january =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.moneyFieldJanuary}
+        </foreach>
+      </trim>
+      <trim prefix="money_field_february =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.moneyFieldFebruary}
+        </foreach>
+      </trim>
+      <trim prefix="money_field_march =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.moneyFieldMarch}
+        </foreach>
+      </trim>
+      <trim prefix="money_field_april =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.moneyFieldApril}
+        </foreach>
+      </trim>
+      <trim prefix="money_field_may =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.moneyFieldMay}
+        </foreach>
+      </trim>
+      <trim prefix="money_field_june =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.moneyFieldJune}
+        </foreach>
+      </trim>
+      <trim prefix="money_field_july =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.moneyFieldJuly}
+        </foreach>
+      </trim>
+      <trim prefix="money_field_august =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.moneyFieldAugust}
+        </foreach>
+      </trim>
+      <trim prefix="money_field_september =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.moneyFieldSeptember}
+        </foreach>
+      </trim>
+      <trim prefix="money_field_october =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.moneyFieldOctober}
+        </foreach>
+      </trim>
+      <trim prefix="money_field_november =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.moneyFieldNovember}
+        </foreach>
+      </trim>
+      <trim prefix="money_field_december =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.moneyFieldDecember}
+        </foreach>
+      </trim>
+      <trim prefix="create_time =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.createTime}
+        </foreach>
+      </trim>
+      <trim prefix="result_id =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.resultId}
+        </foreach>
+      </trim>
+    </trim>
+    where id in 
+    <foreach close=")" collection="list" index="index" item="item" open="(" separator=",">
+       #{item.id} 
+    </foreach>
+  </update>
+  <update id="updateBatchByPrimaryKeySelective" parameterType="java.util.List">
+    update month_field_record
+    <trim prefix="set" suffixOverrides=",">
+      <trim prefix="user_id =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.userId != null ">
+            when  #{item.id} then #{item.userId}
+          </if>
+          <if test="item.userId == null ">
+            when  #{item.id} then month_field_record.user_id
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="number_field_january =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.numberFieldJanuary != null ">
+            when  #{item.id} then #{item.numberFieldJanuary}
+          </if>
+          <if test="item.numberFieldJanuary == null ">
+            when  #{item.id} then month_field_record.number_field_january
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="number_field_february =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.numberFieldFebruary != null ">
+            when  #{item.id} then #{item.numberFieldFebruary}
+          </if>
+          <if test="item.numberFieldFebruary == null ">
+            when  #{item.id} then month_field_record.number_field_february
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="number_field_march =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.numberFieldMarch != null ">
+            when  #{item.id} then #{item.numberFieldMarch}
+          </if>
+          <if test="item.numberFieldMarch == null ">
+            when  #{item.id} then month_field_record.number_field_march
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="number_field_april =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.numberFieldApril != null ">
+            when  #{item.id} then #{item.numberFieldApril}
+          </if>
+          <if test="item.numberFieldApril == null ">
+            when  #{item.id} then month_field_record.number_field_april
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="number_field_may =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.numberFieldMay != null ">
+            when  #{item.id} then #{item.numberFieldMay}
+          </if>
+          <if test="item.numberFieldMay == null ">
+            when  #{item.id} then month_field_record.number_field_may
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="number_field_june =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.numberFieldJune != null ">
+            when  #{item.id} then #{item.numberFieldJune}
+          </if>
+          <if test="item.numberFieldJune == null ">
+            when  #{item.id} then month_field_record.number_field_june
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="number_field_july =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.numberFieldJuly != null ">
+            when  #{item.id} then #{item.numberFieldJuly}
+          </if>
+          <if test="item.numberFieldJuly == null ">
+            when  #{item.id} then month_field_record.number_field_july
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="number_field_august =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.numberFieldAugust != null ">
+            when  #{item.id} then #{item.numberFieldAugust}
+          </if>
+          <if test="item.numberFieldAugust == null ">
+            when  #{item.id} then month_field_record.number_field_august
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="number_field_september =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.numberFieldSeptember != null ">
+            when  #{item.id} then #{item.numberFieldSeptember}
+          </if>
+          <if test="item.numberFieldSeptember == null ">
+            when  #{item.id} then month_field_record.number_field_september
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="number_field_october =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.numberFieldOctober != null ">
+            when  #{item.id} then #{item.numberFieldOctober}
+          </if>
+          <if test="item.numberFieldOctober == null ">
+            when  #{item.id} then month_field_record.number_field_october
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="number_field_november =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.numberFieldNovember != null ">
+            when  #{item.id} then #{item.numberFieldNovember}
+          </if>
+          <if test="item.numberFieldNovember == null ">
+            when  #{item.id} then month_field_record.number_field_november
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="number_field_december =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.numberFieldDecember != null ">
+            when  #{item.id} then #{item.numberFieldDecember}
+          </if>
+          <if test="item.numberFieldDecember == null ">
+            when  #{item.id} then month_field_record.number_field_december
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="money_field_january =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.moneyFieldJanuary != null ">
+            when  #{item.id} then #{item.moneyFieldJanuary}
+          </if>
+          <if test="item.moneyFieldJanuary == null ">
+            when  #{item.id} then month_field_record.money_field_january
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="money_field_february =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.moneyFieldFebruary != null ">
+            when  #{item.id} then #{item.moneyFieldFebruary}
+          </if>
+          <if test="item.moneyFieldFebruary == null ">
+            when  #{item.id} then month_field_record.money_field_february
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="money_field_march =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.moneyFieldMarch != null ">
+            when  #{item.id} then #{item.moneyFieldMarch}
+          </if>
+          <if test="item.moneyFieldMarch == null ">
+            when  #{item.id} then month_field_record.money_field_march
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="money_field_april =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.moneyFieldApril != null ">
+            when  #{item.id} then #{item.moneyFieldApril}
+          </if>
+          <if test="item.moneyFieldApril == null ">
+            when  #{item.id} then month_field_record.money_field_april
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="money_field_may =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.moneyFieldMay != null ">
+            when  #{item.id} then #{item.moneyFieldMay}
+          </if>
+          <if test="item.moneyFieldMay == null ">
+            when  #{item.id} then month_field_record.money_field_may
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="money_field_june =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.moneyFieldJune != null ">
+            when  #{item.id} then #{item.moneyFieldJune}
+          </if>
+          <if test="item.moneyFieldJune == null ">
+            when  #{item.id} then month_field_record.money_field_june
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="money_field_july =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.moneyFieldJuly != null ">
+            when  #{item.id} then #{item.moneyFieldJuly}
+          </if>
+          <if test="item.moneyFieldJuly == null ">
+            when  #{item.id} then month_field_record.money_field_july
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="money_field_august =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.moneyFieldAugust != null ">
+            when  #{item.id} then #{item.moneyFieldAugust}
+          </if>
+          <if test="item.moneyFieldAugust == null ">
+            when  #{item.id} then month_field_record.money_field_august
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="money_field_september =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.moneyFieldSeptember != null ">
+            when  #{item.id} then #{item.moneyFieldSeptember}
+          </if>
+          <if test="item.moneyFieldSeptember == null ">
+            when  #{item.id} then month_field_record.money_field_september
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="money_field_october =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.moneyFieldOctober != null ">
+            when  #{item.id} then #{item.moneyFieldOctober}
+          </if>
+          <if test="item.moneyFieldOctober == null ">
+            when  #{item.id} then month_field_record.money_field_october
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="money_field_november =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.moneyFieldNovember != null ">
+            when  #{item.id} then #{item.moneyFieldNovember}
+          </if>
+          <if test="item.moneyFieldNovember == null ">
+            when  #{item.id} then month_field_record.money_field_november
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="money_field_december =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.moneyFieldDecember != null ">
+            when  #{item.id} then #{item.moneyFieldDecember}
+          </if>
+          <if test="item.moneyFieldDecember == null ">
+            when  #{item.id} then month_field_record.money_field_december
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="create_time =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.createTime != null ">
+            when  #{item.id} then #{item.createTime}
+          </if>
+          <if test="item.createTime == null ">
+            when  #{item.id} then month_field_record.create_time
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="result_id =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.resultId != null ">
+            when  #{item.id} then #{item.resultId}
+          </if>
+          <if test="item.resultId == null ">
+            when  #{item.id} then month_field_record.result_id
+          </if>
+        </foreach>
+      </trim>
+    </trim>
+    where id in 
+    <foreach close=")" collection="list" index="index" item="item" open="(" separator=",">
+       #{item.id} 
+    </foreach>
+  </update>
+</mapper>

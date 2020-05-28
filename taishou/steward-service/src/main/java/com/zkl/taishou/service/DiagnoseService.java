@@ -22,8 +22,6 @@ public interface DiagnoseService{
 
     void recordActive(ActiveRecordVO activeRecordVO);
 
-    void recordConsumptionAbility(ConsumptionAbilityRecordVO consumptionAbilityRecordVO);
-
     void recordAgeGroup(AgeGroupRecordVO ageGroupRecordVO);
 
     void recordCustomerSource(CustomerSourceRecordVO customerSourceRecordVO);

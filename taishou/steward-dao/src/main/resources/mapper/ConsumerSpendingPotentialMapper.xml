@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zkl.taishou.dao.diagnose.theCustomerConsumption.ConsumerSpendingPotentialDAO">
+  <resultMap id="BaseResultMap" type="com.zkl.taishou.common.entity.diagnose.ConsumerSpendingPotential">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="result_id" jdbcType="INTEGER" property="resultId" />
+    <result column="big_customer_high_consumption" jdbcType="DOUBLE" property="bigCustomerHighConsumption" />
+    <result column="A_customer_high_consumption" jdbcType="DOUBLE" property="aCustomerHighConsumption" />
+    <result column="B_customer_high_consumption" jdbcType="DOUBLE" property="bCustomerHighConsumption" />
+    <result column="C_customer_high_consumption" jdbcType="DOUBLE" property="cCustomerHighConsumption" />
+    <result column="D_customer_high_consumption" jdbcType="DOUBLE" property="dCustomerHighConsumption" />
+    <result column="E_customer_high_consumption" jdbcType="DOUBLE" property="eCustomerHighConsumption" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, user_id, create_time, result_id, big_customer_high_consumption, A_customer_high_consumption, 
+    B_customer_high_consumption, C_customer_high_consumption, D_customer_high_consumption, 
+    E_customer_high_consumption
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from consumer_spending_potential
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from consumer_spending_potential
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.zkl.taishou.common.entity.diagnose.ConsumerSpendingPotential">
+    insert into consumer_spending_potential (id, user_id, create_time, 
+      result_id, big_customer_high_consumption, A_customer_high_consumption, 
+      B_customer_high_consumption, C_customer_high_consumption, 
+      D_customer_high_consumption, E_customer_high_consumption
+      )
+    values (#{id,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{resultId,jdbcType=INTEGER}, #{bigCustomerHighConsumption,jdbcType=DOUBLE}, #{aCustomerHighConsumption,jdbcType=DOUBLE}, 
+      #{bCustomerHighConsumption,jdbcType=DOUBLE}, #{cCustomerHighConsumption,jdbcType=DOUBLE}, 
+      #{dCustomerHighConsumption,jdbcType=DOUBLE}, #{eCustomerHighConsumption,jdbcType=DOUBLE}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.zkl.taishou.common.entity.diagnose.ConsumerSpendingPotential">
+    insert into consumer_spending_potential
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="resultId != null">
+        result_id,
+      </if>
+      <if test="bigCustomerHighConsumption != null">
+        big_customer_high_consumption,
+      </if>
+      <if test="aCustomerHighConsumption != null">
+        A_customer_high_consumption,
+      </if>
+      <if test="bCustomerHighConsumption != null">
+        B_customer_high_consumption,
+      </if>
+      <if test="cCustomerHighConsumption != null">
+        C_customer_high_consumption,
+      </if>
+      <if test="dCustomerHighConsumption != null">
+        D_customer_high_consumption,
+      </if>
+      <if test="eCustomerHighConsumption != null">
+        E_customer_high_consumption,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="resultId != null">
+        #{resultId,jdbcType=INTEGER},
+      </if>
+      <if test="bigCustomerHighConsumption != null">
+        #{bigCustomerHighConsumption,jdbcType=DOUBLE},
+      </if>
+      <if test="aCustomerHighConsumption != null">
+        #{aCustomerHighConsumption,jdbcType=DOUBLE},
+      </if>
+      <if test="bCustomerHighConsumption != null">
+        #{bCustomerHighConsumption,jdbcType=DOUBLE},
+      </if>
+      <if test="cCustomerHighConsumption != null">
+        #{cCustomerHighConsumption,jdbcType=DOUBLE},
+      </if>
+      <if test="dCustomerHighConsumption != null">
+        #{dCustomerHighConsumption,jdbcType=DOUBLE},
+      </if>
+      <if test="eCustomerHighConsumption != null">
+        #{eCustomerHighConsumption,jdbcType=DOUBLE},
+      </if>
+    </trim>
+  </insert>
+  <insert id="insertBatch" parameterType="java.util.List">
+    insert into consumer_spending_potential (id, user_id, create_time, 
+      result_id, big_customer_high_consumption, 
+      A_customer_high_consumption, B_customer_high_consumption, 
+      C_customer_high_consumption, D_customer_high_consumption, 
+      E_customer_high_consumption)
+    values 
+    <foreach collection="list" index="index" item="item" separator=",">
+      (#{item.id,jdbcType=INTEGER}, #{item.userId,jdbcType=INTEGER}, #{item.createTime,jdbcType=TIMESTAMP}, 
+        #{item.resultId,jdbcType=INTEGER}, #{item.bigCustomerHighConsumption,jdbcType=DOUBLE}, 
+        #{item.aCustomerHighConsumption,jdbcType=DOUBLE}, #{item.bCustomerHighConsumption,jdbcType=DOUBLE}, 
+        #{item.cCustomerHighConsumption,jdbcType=DOUBLE}, #{item.dCustomerHighConsumption,jdbcType=DOUBLE}, 
+        #{item.eCustomerHighConsumption,jdbcType=DOUBLE})
+    </foreach>
+  </insert>
+  <insert id="insertBatchSelective" parameterType="java.util.List">
+    insert into consumer_spending_potential
+    (id, user_id, create_time, result_id, big_customer_high_consumption, A_customer_high_consumption, 
+      B_customer_high_consumption, C_customer_high_consumption, D_customer_high_consumption, 
+      E_customer_high_consumption)
+    values 
+    <foreach collection="list" index="index" item="item" separator=",">
+      <trim prefix="(" suffix=")" suffixOverrides=",">
+        <if test="item.id != null">
+          #{item.id,jdbcType=INTEGER},
+        </if>
+        <if test="item.id == null">
+          NULL,
+        </if>
+        <if test="item.userId != null">
+          #{item.userId,jdbcType=INTEGER},
+        </if>
+        <if test="item.userId == null">
+          NULL,
+        </if>
+        <if test="item.createTime != null">
+          #{item.createTime,jdbcType=TIMESTAMP},
+        </if>
+        <if test="item.createTime == null">
+          NULL,
+        </if>
+        <if test="item.resultId != null">
+          #{item.resultId,jdbcType=INTEGER},
+        </if>
+        <if test="item.resultId == null">
+          NULL,
+        </if>
+        <if test="item.bigCustomerHighConsumption != null">
+          #{item.bigCustomerHighConsumption,jdbcType=DOUBLE},
+        </if>
+        <if test="item.bigCustomerHighConsumption == null">
+          NULL,
+        </if>
+        <if test="item.aCustomerHighConsumption != null">
+          #{item.aCustomerHighConsumption,jdbcType=DOUBLE},
+        </if>
+        <if test="item.aCustomerHighConsumption == null">
+          NULL,
+        </if>
+        <if test="item.bCustomerHighConsumption != null">
+          #{item.bCustomerHighConsumption,jdbcType=DOUBLE},
+        </if>
+        <if test="item.bCustomerHighConsumption == null">
+          NULL,
+        </if>
+        <if test="item.cCustomerHighConsumption != null">
+          #{item.cCustomerHighConsumption,jdbcType=DOUBLE},
+        </if>
+        <if test="item.cCustomerHighConsumption == null">
+          NULL,
+        </if>
+        <if test="item.dCustomerHighConsumption != null">
+          #{item.dCustomerHighConsumption,jdbcType=DOUBLE},
+        </if>
+        <if test="item.dCustomerHighConsumption == null">
+          NULL,
+        </if>
+        <if test="item.eCustomerHighConsumption != null">
+          #{item.eCustomerHighConsumption,jdbcType=DOUBLE},
+        </if>
+        <if test="item.eCustomerHighConsumption == null">
+          NULL,
+        </if>
+      </trim>
+    </foreach>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zkl.taishou.common.entity.diagnose.ConsumerSpendingPotential">
+    update consumer_spending_potential
+    <set>
+      <if test="userId != null">
+        user_id = #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="resultId != null">
+        result_id = #{resultId,jdbcType=INTEGER},
+      </if>
+      <if test="bigCustomerHighConsumption != null">
+        big_customer_high_consumption = #{bigCustomerHighConsumption,jdbcType=DOUBLE},
+      </if>
+      <if test="aCustomerHighConsumption != null">
+        A_customer_high_consumption = #{aCustomerHighConsumption,jdbcType=DOUBLE},
+      </if>
+      <if test="bCustomerHighConsumption != null">
+        B_customer_high_consumption = #{bCustomerHighConsumption,jdbcType=DOUBLE},
+      </if>
+      <if test="cCustomerHighConsumption != null">
+        C_customer_high_consumption = #{cCustomerHighConsumption,jdbcType=DOUBLE},
+      </if>
+      <if test="dCustomerHighConsumption != null">
+        D_customer_high_consumption = #{dCustomerHighConsumption,jdbcType=DOUBLE},
+      </if>
+      <if test="eCustomerHighConsumption != null">
+        E_customer_high_consumption = #{eCustomerHighConsumption,jdbcType=DOUBLE},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zkl.taishou.common.entity.diagnose.ConsumerSpendingPotential">
+    update consumer_spending_potential
+    set user_id = #{userId,jdbcType=INTEGER},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      result_id = #{resultId,jdbcType=INTEGER},
+      big_customer_high_consumption = #{bigCustomerHighConsumption,jdbcType=DOUBLE},
+      A_customer_high_consumption = #{aCustomerHighConsumption,jdbcType=DOUBLE},
+      B_customer_high_consumption = #{bCustomerHighConsumption,jdbcType=DOUBLE},
+      C_customer_high_consumption = #{cCustomerHighConsumption,jdbcType=DOUBLE},
+      D_customer_high_consumption = #{dCustomerHighConsumption,jdbcType=DOUBLE},
+      E_customer_high_consumption = #{eCustomerHighConsumption,jdbcType=DOUBLE}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateBatchByPrimaryKey" parameterType="java.util.List">
+    update consumer_spending_potential
+    <trim prefix="set" suffixOverrides=",">
+      <trim prefix="user_id =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.userId}
+        </foreach>
+      </trim>
+      <trim prefix="create_time =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.createTime}
+        </foreach>
+      </trim>
+      <trim prefix="result_id =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.resultId}
+        </foreach>
+      </trim>
+      <trim prefix="big_customer_high_consumption =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.bigCustomerHighConsumption}
+        </foreach>
+      </trim>
+      <trim prefix="A_customer_high_consumption =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.aCustomerHighConsumption}
+        </foreach>
+      </trim>
+      <trim prefix="B_customer_high_consumption =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.bCustomerHighConsumption}
+        </foreach>
+      </trim>
+      <trim prefix="C_customer_high_consumption =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.cCustomerHighConsumption}
+        </foreach>
+      </trim>
+      <trim prefix="D_customer_high_consumption =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.dCustomerHighConsumption}
+        </foreach>
+      </trim>
+      <trim prefix="E_customer_high_consumption =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.eCustomerHighConsumption}
+        </foreach>
+      </trim>
+    </trim>
+    where id in 
+    <foreach close=")" collection="list" index="index" item="item" open="(" separator=",">
+       #{item.id} 
+    </foreach>
+  </update>
+  <update id="updateBatchByPrimaryKeySelective" parameterType="java.util.List">
+    update consumer_spending_potential
+    <trim prefix="set" suffixOverrides=",">
+      <trim prefix="user_id =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.userId != null ">
+            when  #{item.id} then #{item.userId}
+          </if>
+          <if test="item.userId == null ">
+            when  #{item.id} then consumer_spending_potential.user_id
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="create_time =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.createTime != null ">
+            when  #{item.id} then #{item.createTime}
+          </if>
+          <if test="item.createTime == null ">
+            when  #{item.id} then consumer_spending_potential.create_time
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="result_id =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.resultId != null ">
+            when  #{item.id} then #{item.resultId}
+          </if>
+          <if test="item.resultId == null ">
+            when  #{item.id} then consumer_spending_potential.result_id
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="big_customer_high_consumption =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.bigCustomerHighConsumption != null ">
+            when  #{item.id} then #{item.bigCustomerHighConsumption}
+          </if>
+          <if test="item.bigCustomerHighConsumption == null ">
+            when  #{item.id} then consumer_spending_potential.big_customer_high_consumption
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="A_customer_high_consumption =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.aCustomerHighConsumption != null ">
+            when  #{item.id} then #{item.aCustomerHighConsumption}
+          </if>
+          <if test="item.aCustomerHighConsumption == null ">
+            when  #{item.id} then consumer_spending_potential.A_customer_high_consumption
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="B_customer_high_consumption =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.bCustomerHighConsumption != null ">
+            when  #{item.id} then #{item.bCustomerHighConsumption}
+          </if>
+          <if test="item.bCustomerHighConsumption == null ">
+            when  #{item.id} then consumer_spending_potential.B_customer_high_consumption
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="C_customer_high_consumption =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.cCustomerHighConsumption != null ">
+            when  #{item.id} then #{item.cCustomerHighConsumption}
+          </if>
+          <if test="item.cCustomerHighConsumption == null ">
+            when  #{item.id} then consumer_spending_potential.C_customer_high_consumption
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="D_customer_high_consumption =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.dCustomerHighConsumption != null ">
+            when  #{item.id} then #{item.dCustomerHighConsumption}
+          </if>
+          <if test="item.dCustomerHighConsumption == null ">
+            when  #{item.id} then consumer_spending_potential.D_customer_high_consumption
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="E_customer_high_consumption =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.eCustomerHighConsumption != null ">
+            when  #{item.id} then #{item.eCustomerHighConsumption}
+          </if>
+          <if test="item.eCustomerHighConsumption == null ">
+            when  #{item.id} then consumer_spending_potential.E_customer_high_consumption
+          </if>
+        </foreach>
+      </trim>
+    </trim>
+    where id in 
+    <foreach close=")" collection="list" index="index" item="item" open="(" separator=",">
+       #{item.id} 
+    </foreach>
+  </update>
+</mapper>

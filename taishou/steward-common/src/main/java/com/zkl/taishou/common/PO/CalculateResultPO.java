@@ -1,6 +1,7 @@
 package com.zkl.taishou.common.PO;
 
 import com.zkl.taishou.common.constants.CalculateType;
+import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -22,11 +23,11 @@ import java.util.concurrent.ConcurrentHashMap;
 public class CalculateResultPO implements Serializable {
 
     private static final long serialVersionUID = 1L;
-
+    @ApiModelProperty(value = "测算结果类型")
     private Long resultType;
-
+    @ApiModelProperty(value = "测算结果类型名称")
     private String resultName;
-
+    @ApiModelProperty(value = "结果map")
     private Map<String,Double> map;
 
     public CalculateResultPO(CalculateType calculateType){

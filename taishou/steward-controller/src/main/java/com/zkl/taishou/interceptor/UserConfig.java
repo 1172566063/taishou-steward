@@ -32,6 +32,7 @@ public class UserConfig implements HandlerInterceptor {
             }
         }
         ResultBean resultBean=new ResultBean(ResultConstants.NOT_LOGIN);
+        response.setCharacterEncoding("UTF-8");
         response.getWriter().write(JSON.toJSONString(resultBean));
         return false;
     }

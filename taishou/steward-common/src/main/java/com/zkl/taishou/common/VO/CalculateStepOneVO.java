@@ -1,5 +1,7 @@
 package com.zkl.taishou.common.VO;
 
+import com.alibaba.fastjson.annotation.JSONField;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.zkl.taishou.common.entity.calculate.CalculateRecord;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -38,11 +40,13 @@ public class CalculateStepOneVO implements Serializable {
     @Min(value = 0)
     private Long staffNum;//员工数
 
-    @ApiModelProperty(value = "预估客户数",required = true,example = "0")
+    @ApiModelProperty(value = "单店在册客户数",required = true,example = "0")
     @Min(value = 0)
     private Long clientNum;//预估/月客户数
 
+    @JsonIgnore
     private Long userId;//用户id
+
 
     public CalculateRecord toCalculateRecord(){
         return new CalculateRecord()

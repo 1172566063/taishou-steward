@@ -4,6 +4,7 @@ import com.zkl.taishou.common.VO.*;
 import com.zkl.taishou.common.entity.diagnose.*;
 import com.zkl.taishou.common.utils.EntityTransform;
 import com.zkl.taishou.dao.diagnose.*;
+import com.zkl.taishou.dao.diagnose.theCustomerConsumption.ConsumptionAbilityRecordDAO;
 import com.zkl.taishou.service.DiagnoseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -29,8 +30,7 @@ public class DiagnoseServiceImpl  extends BaseService implements DiagnoseService
     private YearCashflowRecordDAO yearCashflowRecordDAO;
     @Autowired
     private ActiveRecordDAO activeRecordDAO;
-    @Autowired
-    private ConsumptionAbilityRecordDAO consumptionAbilityRecordDAO;
+
     @Autowired
     private AgeGroupRecordDAO ageGroupRecordDAO;
     @Autowired
@@ -129,19 +129,7 @@ public class DiagnoseServiceImpl  extends BaseService implements DiagnoseService
         activeRecordDAO.insertSelective(activeRecord);
     }
 
-    /**
-     * 功能描述：顾客消费能力诊断
-     * 
-     * @Param：
-     * @Return: 
-     * @Author: LisShiXiang
-     * @Date：2020/5/22 16:06
-     */
-    @Override
-    public void recordConsumptionAbility(ConsumptionAbilityRecordVO consumptionAbilityRecordVO) {
-        ConsumptionAbilityRecord consumptionAbilityRecord = consumptionAbilityRecordVO.toConsumptionAbilityRecord();
-        consumptionAbilityRecordDAO.insertSelective(consumptionAbilityRecord);
-    }
+
 
     /**
      * 功能描述：各科年龄结构诊断

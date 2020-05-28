@@ -2,6 +2,7 @@
 package com.zkl.taishou.common.VO;
 
 import com.zkl.taishou.common.entity.diagnose.ConsumptionAbilityRecord;
+import io.swagger.annotations.ApiModel;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -16,9 +17,8 @@ import java.util.Date;
  * date:2020-05-22 15:28:57
  */
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
 @Accessors(chain = true)
+@ApiModel("ConsumptionAbilityRecordVO")
 public class ConsumptionAbilityRecordVO implements Serializable {
     /**
      * 串行版本ID

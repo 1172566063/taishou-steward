@@ -2,6 +2,7 @@
 package com.zkl.taishou.common.VO;
 
 import com.zkl.taishou.common.entity.diagnose.CashFlowRecord;
+import io.swagger.annotations.ApiModel;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -17,9 +18,8 @@ import java.util.Date;
  */
 
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
 @Accessors(chain = true)
+@ApiModel("CashFlowRecordVO")
 public class CashFlowRecordVO implements Serializable {
     /** 
      * 串行版本ID

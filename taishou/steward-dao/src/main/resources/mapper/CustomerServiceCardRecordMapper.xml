@@ -1,0 +1,597 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zkl.taishou.dao.diagnose.theCustomerConsumption.CustomerServiceCardRecordDAO">
+  <resultMap id="BaseResultMap" type="com.zkl.taishou.common.entity.diagnose.CustomerServiceCardRecord">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="big_purchase_card_num" jdbcType="INTEGER" property="bigPurchaseCardNum" />
+    <result column="A_purchase_card_num" jdbcType="INTEGER" property="aPurchaseCardNum" />
+    <result column="B_purchase_card_num" jdbcType="INTEGER" property="bPurchaseCardNum" />
+    <result column="C_purchase_card_num" jdbcType="INTEGER" property="cPurchaseCardNum" />
+    <result column="D_purchase_card_num" jdbcType="INTEGER" property="dPurchaseCardNum" />
+    <result column="E_purchase_card_num" jdbcType="INTEGER" property="ePurchaseCardNum" />
+    <result column="big_purchase_card_limit" jdbcType="DOUBLE" property="bigPurchaseCardLimit" />
+    <result column="A_purchase_card_limit" jdbcType="DOUBLE" property="aPurchaseCardLimit" />
+    <result column="B_purchase_card_limit" jdbcType="DOUBLE" property="bPurchaseCardLimit" />
+    <result column="C_purchase_card_limit" jdbcType="DOUBLE" property="cPurchaseCardLimit" />
+    <result column="D_purchase_card_limit" jdbcType="DOUBLE" property="dPurchaseCardLimit" />
+    <result column="E_purchase_card_limit" jdbcType="DOUBLE" property="ePurchaseCardLimit" />
+    <result column="result_id" jdbcType="INTEGER" property="resultId" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, user_id, big_purchase_card_num, A_purchase_card_num, B_purchase_card_num, C_purchase_card_num, 
+    D_purchase_card_num, E_purchase_card_num, big_purchase_card_limit, A_purchase_card_limit, 
+    B_purchase_card_limit, C_purchase_card_limit, D_purchase_card_limit, E_purchase_card_limit, 
+    result_id, create_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from customer_service_card_record
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from customer_service_card_record
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.zkl.taishou.common.entity.diagnose.CustomerServiceCardRecord">
+    insert into customer_service_card_record (id, user_id, big_purchase_card_num, 
+      A_purchase_card_num, B_purchase_card_num, C_purchase_card_num, 
+      D_purchase_card_num, E_purchase_card_num, big_purchase_card_limit, 
+      A_purchase_card_limit, B_purchase_card_limit, C_purchase_card_limit, 
+      D_purchase_card_limit, E_purchase_card_limit, result_id, 
+      create_time)
+    values (#{id,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, #{bigPurchaseCardNum,jdbcType=INTEGER}, 
+      #{aPurchaseCardNum,jdbcType=INTEGER}, #{bPurchaseCardNum,jdbcType=INTEGER}, #{cPurchaseCardNum,jdbcType=INTEGER}, 
+      #{dPurchaseCardNum,jdbcType=INTEGER}, #{ePurchaseCardNum,jdbcType=INTEGER}, #{bigPurchaseCardLimit,jdbcType=DOUBLE}, 
+      #{aPurchaseCardLimit,jdbcType=DOUBLE}, #{bPurchaseCardLimit,jdbcType=DOUBLE}, #{cPurchaseCardLimit,jdbcType=DOUBLE}, 
+      #{dPurchaseCardLimit,jdbcType=DOUBLE}, #{ePurchaseCardLimit,jdbcType=DOUBLE}, #{resultId,jdbcType=INTEGER}, 
+      #{createTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.zkl.taishou.common.entity.diagnose.CustomerServiceCardRecord">
+    insert into customer_service_card_record
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="bigPurchaseCardNum != null">
+        big_purchase_card_num,
+      </if>
+      <if test="aPurchaseCardNum != null">
+        A_purchase_card_num,
+      </if>
+      <if test="bPurchaseCardNum != null">
+        B_purchase_card_num,
+      </if>
+      <if test="cPurchaseCardNum != null">
+        C_purchase_card_num,
+      </if>
+      <if test="dPurchaseCardNum != null">
+        D_purchase_card_num,
+      </if>
+      <if test="ePurchaseCardNum != null">
+        E_purchase_card_num,
+      </if>
+      <if test="bigPurchaseCardLimit != null">
+        big_purchase_card_limit,
+      </if>
+      <if test="aPurchaseCardLimit != null">
+        A_purchase_card_limit,
+      </if>
+      <if test="bPurchaseCardLimit != null">
+        B_purchase_card_limit,
+      </if>
+      <if test="cPurchaseCardLimit != null">
+        C_purchase_card_limit,
+      </if>
+      <if test="dPurchaseCardLimit != null">
+        D_purchase_card_limit,
+      </if>
+      <if test="ePurchaseCardLimit != null">
+        E_purchase_card_limit,
+      </if>
+      <if test="resultId != null">
+        result_id,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="bigPurchaseCardNum != null">
+        #{bigPurchaseCardNum,jdbcType=INTEGER},
+      </if>
+      <if test="aPurchaseCardNum != null">
+        #{aPurchaseCardNum,jdbcType=INTEGER},
+      </if>
+      <if test="bPurchaseCardNum != null">
+        #{bPurchaseCardNum,jdbcType=INTEGER},
+      </if>
+      <if test="cPurchaseCardNum != null">
+        #{cPurchaseCardNum,jdbcType=INTEGER},
+      </if>
+      <if test="dPurchaseCardNum != null">
+        #{dPurchaseCardNum,jdbcType=INTEGER},
+      </if>
+      <if test="ePurchaseCardNum != null">
+        #{ePurchaseCardNum,jdbcType=INTEGER},
+      </if>
+      <if test="bigPurchaseCardLimit != null">
+        #{bigPurchaseCardLimit,jdbcType=DOUBLE},
+      </if>
+      <if test="aPurchaseCardLimit != null">
+        #{aPurchaseCardLimit,jdbcType=DOUBLE},
+      </if>
+      <if test="bPurchaseCardLimit != null">
+        #{bPurchaseCardLimit,jdbcType=DOUBLE},
+      </if>
+      <if test="cPurchaseCardLimit != null">
+        #{cPurchaseCardLimit,jdbcType=DOUBLE},
+      </if>
+      <if test="dPurchaseCardLimit != null">
+        #{dPurchaseCardLimit,jdbcType=DOUBLE},
+      </if>
+      <if test="ePurchaseCardLimit != null">
+        #{ePurchaseCardLimit,jdbcType=DOUBLE},
+      </if>
+      <if test="resultId != null">
+        #{resultId,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <insert id="insertBatch" parameterType="java.util.List">
+    insert into customer_service_card_record (id, user_id, big_purchase_card_num, 
+      A_purchase_card_num, B_purchase_card_num, 
+      C_purchase_card_num, D_purchase_card_num, 
+      E_purchase_card_num, big_purchase_card_limit, 
+      A_purchase_card_limit, B_purchase_card_limit, 
+      C_purchase_card_limit, D_purchase_card_limit, 
+      E_purchase_card_limit, result_id, 
+      create_time)
+    values 
+    <foreach collection="list" index="index" item="item" separator=",">
+      (#{item.id,jdbcType=INTEGER}, #{item.userId,jdbcType=INTEGER}, #{item.bigPurchaseCardNum,jdbcType=INTEGER}, 
+        #{item.aPurchaseCardNum,jdbcType=INTEGER}, #{item.bPurchaseCardNum,jdbcType=INTEGER}, 
+        #{item.cPurchaseCardNum,jdbcType=INTEGER}, #{item.dPurchaseCardNum,jdbcType=INTEGER}, 
+        #{item.ePurchaseCardNum,jdbcType=INTEGER}, #{item.bigPurchaseCardLimit,jdbcType=DOUBLE}, 
+        #{item.aPurchaseCardLimit,jdbcType=DOUBLE}, #{item.bPurchaseCardLimit,jdbcType=DOUBLE}, 
+        #{item.cPurchaseCardLimit,jdbcType=DOUBLE}, #{item.dPurchaseCardLimit,jdbcType=DOUBLE}, 
+        #{item.ePurchaseCardLimit,jdbcType=DOUBLE}, #{item.resultId,jdbcType=INTEGER}, 
+        #{item.createTime,jdbcType=TIMESTAMP})
+    </foreach>
+  </insert>
+  <insert id="insertBatchSelective" parameterType="java.util.List">
+    insert into customer_service_card_record
+    (id, user_id, big_purchase_card_num, A_purchase_card_num, B_purchase_card_num, C_purchase_card_num, 
+      D_purchase_card_num, E_purchase_card_num, big_purchase_card_limit, A_purchase_card_limit, 
+      B_purchase_card_limit, C_purchase_card_limit, D_purchase_card_limit, E_purchase_card_limit, 
+      result_id, create_time)
+    values 
+    <foreach collection="list" index="index" item="item" separator=",">
+      <trim prefix="(" suffix=")" suffixOverrides=",">
+        <if test="item.id != null">
+          #{item.id,jdbcType=INTEGER},
+        </if>
+        <if test="item.id == null">
+          NULL,
+        </if>
+        <if test="item.userId != null">
+          #{item.userId,jdbcType=INTEGER},
+        </if>
+        <if test="item.userId == null">
+          NULL,
+        </if>
+        <if test="item.bigPurchaseCardNum != null">
+          #{item.bigPurchaseCardNum,jdbcType=INTEGER},
+        </if>
+        <if test="item.bigPurchaseCardNum == null">
+          NULL,
+        </if>
+        <if test="item.aPurchaseCardNum != null">
+          #{item.aPurchaseCardNum,jdbcType=INTEGER},
+        </if>
+        <if test="item.aPurchaseCardNum == null">
+          NULL,
+        </if>
+        <if test="item.bPurchaseCardNum != null">
+          #{item.bPurchaseCardNum,jdbcType=INTEGER},
+        </if>
+        <if test="item.bPurchaseCardNum == null">
+          NULL,
+        </if>
+        <if test="item.cPurchaseCardNum != null">
+          #{item.cPurchaseCardNum,jdbcType=INTEGER},
+        </if>
+        <if test="item.cPurchaseCardNum == null">
+          NULL,
+        </if>
+        <if test="item.dPurchaseCardNum != null">
+          #{item.dPurchaseCardNum,jdbcType=INTEGER},
+        </if>
+        <if test="item.dPurchaseCardNum == null">
+          NULL,
+        </if>
+        <if test="item.ePurchaseCardNum != null">
+          #{item.ePurchaseCardNum,jdbcType=INTEGER},
+        </if>
+        <if test="item.ePurchaseCardNum == null">
+          NULL,
+        </if>
+        <if test="item.bigPurchaseCardLimit != null">
+          #{item.bigPurchaseCardLimit,jdbcType=DOUBLE},
+        </if>
+        <if test="item.bigPurchaseCardLimit == null">
+          NULL,
+        </if>
+        <if test="item.aPurchaseCardLimit != null">
+          #{item.aPurchaseCardLimit,jdbcType=DOUBLE},
+        </if>
+        <if test="item.aPurchaseCardLimit == null">
+          NULL,
+        </if>
+        <if test="item.bPurchaseCardLimit != null">
+          #{item.bPurchaseCardLimit,jdbcType=DOUBLE},
+        </if>
+        <if test="item.bPurchaseCardLimit == null">
+          NULL,
+        </if>
+        <if test="item.cPurchaseCardLimit != null">
+          #{item.cPurchaseCardLimit,jdbcType=DOUBLE},
+        </if>
+        <if test="item.cPurchaseCardLimit == null">
+          NULL,
+        </if>
+        <if test="item.dPurchaseCardLimit != null">
+          #{item.dPurchaseCardLimit,jdbcType=DOUBLE},
+        </if>
+        <if test="item.dPurchaseCardLimit == null">
+          NULL,
+        </if>
+        <if test="item.ePurchaseCardLimit != null">
+          #{item.ePurchaseCardLimit,jdbcType=DOUBLE},
+        </if>
+        <if test="item.ePurchaseCardLimit == null">
+          NULL,
+        </if>
+        <if test="item.resultId != null">
+          #{item.resultId,jdbcType=INTEGER},
+        </if>
+        <if test="item.resultId == null">
+          NULL,
+        </if>
+        <if test="item.createTime != null">
+          #{item.createTime,jdbcType=TIMESTAMP},
+        </if>
+        <if test="item.createTime == null">
+          NULL,
+        </if>
+      </trim>
+    </foreach>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zkl.taishou.common.entity.diagnose.CustomerServiceCardRecord">
+    update customer_service_card_record
+    <set>
+      <if test="userId != null">
+        user_id = #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="bigPurchaseCardNum != null">
+        big_purchase_card_num = #{bigPurchaseCardNum,jdbcType=INTEGER},
+      </if>
+      <if test="aPurchaseCardNum != null">
+        A_purchase_card_num = #{aPurchaseCardNum,jdbcType=INTEGER},
+      </if>
+      <if test="bPurchaseCardNum != null">
+        B_purchase_card_num = #{bPurchaseCardNum,jdbcType=INTEGER},
+      </if>
+      <if test="cPurchaseCardNum != null">
+        C_purchase_card_num = #{cPurchaseCardNum,jdbcType=INTEGER},
+      </if>
+      <if test="dPurchaseCardNum != null">
+        D_purchase_card_num = #{dPurchaseCardNum,jdbcType=INTEGER},
+      </if>
+      <if test="ePurchaseCardNum != null">
+        E_purchase_card_num = #{ePurchaseCardNum,jdbcType=INTEGER},
+      </if>
+      <if test="bigPurchaseCardLimit != null">
+        big_purchase_card_limit = #{bigPurchaseCardLimit,jdbcType=DOUBLE},
+      </if>
+      <if test="aPurchaseCardLimit != null">
+        A_purchase_card_limit = #{aPurchaseCardLimit,jdbcType=DOUBLE},
+      </if>
+      <if test="bPurchaseCardLimit != null">
+        B_purchase_card_limit = #{bPurchaseCardLimit,jdbcType=DOUBLE},
+      </if>
+      <if test="cPurchaseCardLimit != null">
+        C_purchase_card_limit = #{cPurchaseCardLimit,jdbcType=DOUBLE},
+      </if>
+      <if test="dPurchaseCardLimit != null">
+        D_purchase_card_limit = #{dPurchaseCardLimit,jdbcType=DOUBLE},
+      </if>
+      <if test="ePurchaseCardLimit != null">
+        E_purchase_card_limit = #{ePurchaseCardLimit,jdbcType=DOUBLE},
+      </if>
+      <if test="resultId != null">
+        result_id = #{resultId,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zkl.taishou.common.entity.diagnose.CustomerServiceCardRecord">
+    update customer_service_card_record
+    set user_id = #{userId,jdbcType=INTEGER},
+      big_purchase_card_num = #{bigPurchaseCardNum,jdbcType=INTEGER},
+      A_purchase_card_num = #{aPurchaseCardNum,jdbcType=INTEGER},
+      B_purchase_card_num = #{bPurchaseCardNum,jdbcType=INTEGER},
+      C_purchase_card_num = #{cPurchaseCardNum,jdbcType=INTEGER},
+      D_purchase_card_num = #{dPurchaseCardNum,jdbcType=INTEGER},
+      E_purchase_card_num = #{ePurchaseCardNum,jdbcType=INTEGER},
+      big_purchase_card_limit = #{bigPurchaseCardLimit,jdbcType=DOUBLE},
+      A_purchase_card_limit = #{aPurchaseCardLimit,jdbcType=DOUBLE},
+      B_purchase_card_limit = #{bPurchaseCardLimit,jdbcType=DOUBLE},
+      C_purchase_card_limit = #{cPurchaseCardLimit,jdbcType=DOUBLE},
+      D_purchase_card_limit = #{dPurchaseCardLimit,jdbcType=DOUBLE},
+      E_purchase_card_limit = #{ePurchaseCardLimit,jdbcType=DOUBLE},
+      result_id = #{resultId,jdbcType=INTEGER},
+      create_time = #{createTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateBatchByPrimaryKey" parameterType="java.util.List">
+    update customer_service_card_record
+    <trim prefix="set" suffixOverrides=",">
+      <trim prefix="user_id =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.userId}
+        </foreach>
+      </trim>
+      <trim prefix="big_purchase_card_num =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.bigPurchaseCardNum}
+        </foreach>
+      </trim>
+      <trim prefix="A_purchase_card_num =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.aPurchaseCardNum}
+        </foreach>
+      </trim>
+      <trim prefix="B_purchase_card_num =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.bPurchaseCardNum}
+        </foreach>
+      </trim>
+      <trim prefix="C_purchase_card_num =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.cPurchaseCardNum}
+        </foreach>
+      </trim>
+      <trim prefix="D_purchase_card_num =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.dPurchaseCardNum}
+        </foreach>
+      </trim>
+      <trim prefix="E_purchase_card_num =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.ePurchaseCardNum}
+        </foreach>
+      </trim>
+      <trim prefix="big_purchase_card_limit =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.bigPurchaseCardLimit}
+        </foreach>
+      </trim>
+      <trim prefix="A_purchase_card_limit =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.aPurchaseCardLimit}
+        </foreach>
+      </trim>
+      <trim prefix="B_purchase_card_limit =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.bPurchaseCardLimit}
+        </foreach>
+      </trim>
+      <trim prefix="C_purchase_card_limit =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.cPurchaseCardLimit}
+        </foreach>
+      </trim>
+      <trim prefix="D_purchase_card_limit =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.dPurchaseCardLimit}
+        </foreach>
+      </trim>
+      <trim prefix="E_purchase_card_limit =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.ePurchaseCardLimit}
+        </foreach>
+      </trim>
+      <trim prefix="result_id =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.resultId}
+        </foreach>
+      </trim>
+      <trim prefix="create_time =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.createTime}
+        </foreach>
+      </trim>
+    </trim>
+    where id in 
+    <foreach close=")" collection="list" index="index" item="item" open="(" separator=",">
+       #{item.id} 
+    </foreach>
+  </update>
+  <update id="updateBatchByPrimaryKeySelective" parameterType="java.util.List">
+    update customer_service_card_record
+    <trim prefix="set" suffixOverrides=",">
+      <trim prefix="user_id =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.userId != null ">
+            when  #{item.id} then #{item.userId}
+          </if>
+          <if test="item.userId == null ">
+            when  #{item.id} then customer_service_card_record.user_id
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="big_purchase_card_num =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.bigPurchaseCardNum != null ">
+            when  #{item.id} then #{item.bigPurchaseCardNum}
+          </if>
+          <if test="item.bigPurchaseCardNum == null ">
+            when  #{item.id} then customer_service_card_record.big_purchase_card_num
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="A_purchase_card_num =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.aPurchaseCardNum != null ">
+            when  #{item.id} then #{item.aPurchaseCardNum}
+          </if>
+          <if test="item.aPurchaseCardNum == null ">
+            when  #{item.id} then customer_service_card_record.A_purchase_card_num
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="B_purchase_card_num =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.bPurchaseCardNum != null ">
+            when  #{item.id} then #{item.bPurchaseCardNum}
+          </if>
+          <if test="item.bPurchaseCardNum == null ">
+            when  #{item.id} then customer_service_card_record.B_purchase_card_num
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="C_purchase_card_num =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.cPurchaseCardNum != null ">
+            when  #{item.id} then #{item.cPurchaseCardNum}
+          </if>
+          <if test="item.cPurchaseCardNum == null ">
+            when  #{item.id} then customer_service_card_record.C_purchase_card_num
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="D_purchase_card_num =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.dPurchaseCardNum != null ">
+            when  #{item.id} then #{item.dPurchaseCardNum}
+          </if>
+          <if test="item.dPurchaseCardNum == null ">
+            when  #{item.id} then customer_service_card_record.D_purchase_card_num
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="E_purchase_card_num =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.ePurchaseCardNum != null ">
+            when  #{item.id} then #{item.ePurchaseCardNum}
+          </if>
+          <if test="item.ePurchaseCardNum == null ">
+            when  #{item.id} then customer_service_card_record.E_purchase_card_num
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="big_purchase_card_limit =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.bigPurchaseCardLimit != null ">
+            when  #{item.id} then #{item.bigPurchaseCardLimit}
+          </if>
+          <if test="item.bigPurchaseCardLimit == null ">
+            when  #{item.id} then customer_service_card_record.big_purchase_card_limit
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="A_purchase_card_limit =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.aPurchaseCardLimit != null ">
+            when  #{item.id} then #{item.aPurchaseCardLimit}
+          </if>
+          <if test="item.aPurchaseCardLimit == null ">
+            when  #{item.id} then customer_service_card_record.A_purchase_card_limit
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="B_purchase_card_limit =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.bPurchaseCardLimit != null ">
+            when  #{item.id} then #{item.bPurchaseCardLimit}
+          </if>
+          <if test="item.bPurchaseCardLimit == null ">
+            when  #{item.id} then customer_service_card_record.B_purchase_card_limit
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="C_purchase_card_limit =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.cPurchaseCardLimit != null ">
+            when  #{item.id} then #{item.cPurchaseCardLimit}
+          </if>
+          <if test="item.cPurchaseCardLimit == null ">
+            when  #{item.id} then customer_service_card_record.C_purchase_card_limit
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="D_purchase_card_limit =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.dPurchaseCardLimit != null ">
+            when  #{item.id} then #{item.dPurchaseCardLimit}
+          </if>
+          <if test="item.dPurchaseCardLimit == null ">
+            when  #{item.id} then customer_service_card_record.D_purchase_card_limit
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="E_purchase_card_limit =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.ePurchaseCardLimit != null ">
+            when  #{item.id} then #{item.ePurchaseCardLimit}
+          </if>
+          <if test="item.ePurchaseCardLimit == null ">
+            when  #{item.id} then customer_service_card_record.E_purchase_card_limit
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="result_id =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.resultId != null ">
+            when  #{item.id} then #{item.resultId}
+          </if>
+          <if test="item.resultId == null ">
+            when  #{item.id} then customer_service_card_record.result_id
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="create_time =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.createTime != null ">
+            when  #{item.id} then #{item.createTime}
+          </if>
+          <if test="item.createTime == null ">
+            when  #{item.id} then customer_service_card_record.create_time
+          </if>
+        </foreach>
+      </trim>
+    </trim>
+    where id in 
+    <foreach close=")" collection="list" index="index" item="item" open="(" separator=",">
+       #{item.id} 
+    </foreach>
+  </update>
+</mapper>

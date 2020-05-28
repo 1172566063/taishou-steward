@@ -1,0 +1,1011 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zkl.taishou.dao.diagnose.theCustomerConsumption.ConsumerYearSpendingRecordDAO">
+  <resultMap id="BaseResultMap" type="com.zkl.taishou.common.entity.diagnose.ConsumerYearSpendingRecord">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="result_id" jdbcType="INTEGER" property="resultId" />
+    <result column="basics_big_year_consume" jdbcType="DOUBLE" property="basicsBigYearConsume" />
+    <result column="basics_A_year_consume" jdbcType="DOUBLE" property="basicsAYearConsume" />
+    <result column="basics_B_year_consume" jdbcType="DOUBLE" property="basicsBYearConsume" />
+    <result column="basics_C_year_consume" jdbcType="DOUBLE" property="basicsCYearConsume" />
+    <result column="basics_D_year_consume" jdbcType="DOUBLE" property="basicsDYearConsume" />
+    <result column="basics_E_year_consume" jdbcType="DOUBLE" property="basicsEYearConsume" />
+    <result column="feature_big_year_consume" jdbcType="DOUBLE" property="featureBigYearConsume" />
+    <result column="feature_A_year_consume" jdbcType="DOUBLE" property="featureAYearConsume" />
+    <result column="feature_B_year_consume" jdbcType="DOUBLE" property="featureBYearConsume" />
+    <result column="feature_C_year_consume" jdbcType="DOUBLE" property="featureCYearConsume" />
+    <result column="feature_D_year_consume" jdbcType="DOUBLE" property="featureDYearConsume" />
+    <result column="feature_E_year_consume" jdbcType="DOUBLE" property="featureEYearConsume" />
+    <result column="mian_big_year_consume" jdbcType="DOUBLE" property="mianBigYearConsume" />
+    <result column="mian_A_year_consume" jdbcType="DOUBLE" property="mianAYearConsume" />
+    <result column="mian_B_year_consume" jdbcType="DOUBLE" property="mianBYearConsume" />
+    <result column="mian_C_year_consume" jdbcType="DOUBLE" property="mianCYearConsume" />
+    <result column="mian_D_year_consume" jdbcType="DOUBLE" property="mianDYearConsume" />
+    <result column="mian_E_year_consume" jdbcType="DOUBLE" property="mianEYearConsume" />
+    <result column="furniture_big_year_consume" jdbcType="DOUBLE" property="furnitureBigYearConsume" />
+    <result column="furniture_A_year_consume" jdbcType="DOUBLE" property="furnitureAYearConsume" />
+    <result column="furniture_B_year_consume" jdbcType="DOUBLE" property="furnitureBYearConsume" />
+    <result column="furniture_C_year_consume" jdbcType="DOUBLE" property="furnitureCYearConsume" />
+    <result column="furniture_D_year_consume" jdbcType="DOUBLE" property="furnitureDYearConsume" />
+    <result column="furniture_E_year_consume" jdbcType="DOUBLE" property="furnitureEYearConsume" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, user_id, create_time, result_id, basics_big_year_consume, basics_A_year_consume, 
+    basics_B_year_consume, basics_C_year_consume, basics_D_year_consume, basics_E_year_consume, 
+    feature_big_year_consume, feature_A_year_consume, feature_B_year_consume, feature_C_year_consume, 
+    feature_D_year_consume, feature_E_year_consume, mian_big_year_consume, mian_A_year_consume, 
+    mian_B_year_consume, mian_C_year_consume, mian_D_year_consume, mian_E_year_consume, 
+    furniture_big_year_consume, furniture_A_year_consume, furniture_B_year_consume, furniture_C_year_consume, 
+    furniture_D_year_consume, furniture_E_year_consume
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from consumer_year_spending_record
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from consumer_year_spending_record
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.zkl.taishou.common.entity.diagnose.ConsumerYearSpendingRecord">
+    insert into consumer_year_spending_record (id, user_id, create_time, 
+      result_id, basics_big_year_consume, basics_A_year_consume, 
+      basics_B_year_consume, basics_C_year_consume, basics_D_year_consume, 
+      basics_E_year_consume, feature_big_year_consume, 
+      feature_A_year_consume, feature_B_year_consume, 
+      feature_C_year_consume, feature_D_year_consume, 
+      feature_E_year_consume, mian_big_year_consume, 
+      mian_A_year_consume, mian_B_year_consume, mian_C_year_consume, 
+      mian_D_year_consume, mian_E_year_consume, furniture_big_year_consume, 
+      furniture_A_year_consume, furniture_B_year_consume, 
+      furniture_C_year_consume, furniture_D_year_consume, 
+      furniture_E_year_consume)
+    values (#{id,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{resultId,jdbcType=INTEGER}, #{basicsBigYearConsume,jdbcType=DOUBLE}, #{basicsAYearConsume,jdbcType=DOUBLE}, 
+      #{basicsBYearConsume,jdbcType=DOUBLE}, #{basicsCYearConsume,jdbcType=DOUBLE}, #{basicsDYearConsume,jdbcType=DOUBLE}, 
+      #{basicsEYearConsume,jdbcType=DOUBLE}, #{featureBigYearConsume,jdbcType=DOUBLE}, 
+      #{featureAYearConsume,jdbcType=DOUBLE}, #{featureBYearConsume,jdbcType=DOUBLE}, 
+      #{featureCYearConsume,jdbcType=DOUBLE}, #{featureDYearConsume,jdbcType=DOUBLE}, 
+      #{featureEYearConsume,jdbcType=DOUBLE}, #{mianBigYearConsume,jdbcType=DOUBLE}, 
+      #{mianAYearConsume,jdbcType=DOUBLE}, #{mianBYearConsume,jdbcType=DOUBLE}, #{mianCYearConsume,jdbcType=DOUBLE}, 
+      #{mianDYearConsume,jdbcType=DOUBLE}, #{mianEYearConsume,jdbcType=DOUBLE}, #{furnitureBigYearConsume,jdbcType=DOUBLE}, 
+      #{furnitureAYearConsume,jdbcType=DOUBLE}, #{furnitureBYearConsume,jdbcType=DOUBLE}, 
+      #{furnitureCYearConsume,jdbcType=DOUBLE}, #{furnitureDYearConsume,jdbcType=DOUBLE}, 
+      #{furnitureEYearConsume,jdbcType=DOUBLE})
+  </insert>
+  <insert id="insertSelective" parameterType="com.zkl.taishou.common.entity.diagnose.ConsumerYearSpendingRecord">
+    insert into consumer_year_spending_record
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="resultId != null">
+        result_id,
+      </if>
+      <if test="basicsBigYearConsume != null">
+        basics_big_year_consume,
+      </if>
+      <if test="basicsAYearConsume != null">
+        basics_A_year_consume,
+      </if>
+      <if test="basicsBYearConsume != null">
+        basics_B_year_consume,
+      </if>
+      <if test="basicsCYearConsume != null">
+        basics_C_year_consume,
+      </if>
+      <if test="basicsDYearConsume != null">
+        basics_D_year_consume,
+      </if>
+      <if test="basicsEYearConsume != null">
+        basics_E_year_consume,
+      </if>
+      <if test="featureBigYearConsume != null">
+        feature_big_year_consume,
+      </if>
+      <if test="featureAYearConsume != null">
+        feature_A_year_consume,
+      </if>
+      <if test="featureBYearConsume != null">
+        feature_B_year_consume,
+      </if>
+      <if test="featureCYearConsume != null">
+        feature_C_year_consume,
+      </if>
+      <if test="featureDYearConsume != null">
+        feature_D_year_consume,
+      </if>
+      <if test="featureEYearConsume != null">
+        feature_E_year_consume,
+      </if>
+      <if test="mianBigYearConsume != null">
+        mian_big_year_consume,
+      </if>
+      <if test="mianAYearConsume != null">
+        mian_A_year_consume,
+      </if>
+      <if test="mianBYearConsume != null">
+        mian_B_year_consume,
+      </if>
+      <if test="mianCYearConsume != null">
+        mian_C_year_consume,
+      </if>
+      <if test="mianDYearConsume != null">
+        mian_D_year_consume,
+      </if>
+      <if test="mianEYearConsume != null">
+        mian_E_year_consume,
+      </if>
+      <if test="furnitureBigYearConsume != null">
+        furniture_big_year_consume,
+      </if>
+      <if test="furnitureAYearConsume != null">
+        furniture_A_year_consume,
+      </if>
+      <if test="furnitureBYearConsume != null">
+        furniture_B_year_consume,
+      </if>
+      <if test="furnitureCYearConsume != null">
+        furniture_C_year_consume,
+      </if>
+      <if test="furnitureDYearConsume != null">
+        furniture_D_year_consume,
+      </if>
+      <if test="furnitureEYearConsume != null">
+        furniture_E_year_consume,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="resultId != null">
+        #{resultId,jdbcType=INTEGER},
+      </if>
+      <if test="basicsBigYearConsume != null">
+        #{basicsBigYearConsume,jdbcType=DOUBLE},
+      </if>
+      <if test="basicsAYearConsume != null">
+        #{basicsAYearConsume,jdbcType=DOUBLE},
+      </if>
+      <if test="basicsBYearConsume != null">
+        #{basicsBYearConsume,jdbcType=DOUBLE},
+      </if>
+      <if test="basicsCYearConsume != null">
+        #{basicsCYearConsume,jdbcType=DOUBLE},
+      </if>
+      <if test="basicsDYearConsume != null">
+        #{basicsDYearConsume,jdbcType=DOUBLE},
+      </if>
+      <if test="basicsEYearConsume != null">
+        #{basicsEYearConsume,jdbcType=DOUBLE},
+      </if>
+      <if test="featureBigYearConsume != null">
+        #{featureBigYearConsume,jdbcType=DOUBLE},
+      </if>
+      <if test="featureAYearConsume != null">
+        #{featureAYearConsume,jdbcType=DOUBLE},
+      </if>
+      <if test="featureBYearConsume != null">
+        #{featureBYearConsume,jdbcType=DOUBLE},
+      </if>
+      <if test="featureCYearConsume != null">
+        #{featureCYearConsume,jdbcType=DOUBLE},
+      </if>
+      <if test="featureDYearConsume != null">
+        #{featureDYearConsume,jdbcType=DOUBLE},
+      </if>
+      <if test="featureEYearConsume != null">
+        #{featureEYearConsume,jdbcType=DOUBLE},
+      </if>
+      <if test="mianBigYearConsume != null">
+        #{mianBigYearConsume,jdbcType=DOUBLE},
+      </if>
+      <if test="mianAYearConsume != null">
+        #{mianAYearConsume,jdbcType=DOUBLE},
+      </if>
+      <if test="mianBYearConsume != null">
+        #{mianBYearConsume,jdbcType=DOUBLE},
+      </if>
+      <if test="mianCYearConsume != null">
+        #{mianCYearConsume,jdbcType=DOUBLE},
+      </if>
+      <if test="mianDYearConsume != null">
+        #{mianDYearConsume,jdbcType=DOUBLE},
+      </if>
+      <if test="mianEYearConsume != null">
+        #{mianEYearConsume,jdbcType=DOUBLE},
+      </if>
+      <if test="furnitureBigYearConsume != null">
+        #{furnitureBigYearConsume,jdbcType=DOUBLE},
+      </if>
+      <if test="furnitureAYearConsume != null">
+        #{furnitureAYearConsume,jdbcType=DOUBLE},
+      </if>
+      <if test="furnitureBYearConsume != null">
+        #{furnitureBYearConsume,jdbcType=DOUBLE},
+      </if>
+      <if test="furnitureCYearConsume != null">
+        #{furnitureCYearConsume,jdbcType=DOUBLE},
+      </if>
+      <if test="furnitureDYearConsume != null">
+        #{furnitureDYearConsume,jdbcType=DOUBLE},
+      </if>
+      <if test="furnitureEYearConsume != null">
+        #{furnitureEYearConsume,jdbcType=DOUBLE},
+      </if>
+    </trim>
+  </insert>
+  <insert id="insertBatch" parameterType="java.util.List">
+    insert into consumer_year_spending_record (id, user_id, create_time, 
+      result_id, basics_big_year_consume, 
+      basics_A_year_consume, basics_B_year_consume, 
+      basics_C_year_consume, basics_D_year_consume, 
+      basics_E_year_consume, feature_big_year_consume, 
+      feature_A_year_consume, feature_B_year_consume, 
+      feature_C_year_consume, feature_D_year_consume, 
+      feature_E_year_consume, mian_big_year_consume, 
+      mian_A_year_consume, mian_B_year_consume, 
+      mian_C_year_consume, mian_D_year_consume, 
+      mian_E_year_consume, furniture_big_year_consume, 
+      furniture_A_year_consume, furniture_B_year_consume, 
+      furniture_C_year_consume, furniture_D_year_consume, 
+      furniture_E_year_consume)
+    values 
+    <foreach collection="list" index="index" item="item" separator=",">
+      (#{item.id,jdbcType=INTEGER}, #{item.userId,jdbcType=INTEGER}, #{item.createTime,jdbcType=TIMESTAMP}, 
+        #{item.resultId,jdbcType=INTEGER}, #{item.basicsBigYearConsume,jdbcType=DOUBLE}, 
+        #{item.basicsAYearConsume,jdbcType=DOUBLE}, #{item.basicsBYearConsume,jdbcType=DOUBLE}, 
+        #{item.basicsCYearConsume,jdbcType=DOUBLE}, #{item.basicsDYearConsume,jdbcType=DOUBLE}, 
+        #{item.basicsEYearConsume,jdbcType=DOUBLE}, #{item.featureBigYearConsume,jdbcType=DOUBLE}, 
+        #{item.featureAYearConsume,jdbcType=DOUBLE}, #{item.featureBYearConsume,jdbcType=DOUBLE}, 
+        #{item.featureCYearConsume,jdbcType=DOUBLE}, #{item.featureDYearConsume,jdbcType=DOUBLE}, 
+        #{item.featureEYearConsume,jdbcType=DOUBLE}, #{item.mianBigYearConsume,jdbcType=DOUBLE}, 
+        #{item.mianAYearConsume,jdbcType=DOUBLE}, #{item.mianBYearConsume,jdbcType=DOUBLE}, 
+        #{item.mianCYearConsume,jdbcType=DOUBLE}, #{item.mianDYearConsume,jdbcType=DOUBLE}, 
+        #{item.mianEYearConsume,jdbcType=DOUBLE}, #{item.furnitureBigYearConsume,jdbcType=DOUBLE}, 
+        #{item.furnitureAYearConsume,jdbcType=DOUBLE}, #{item.furnitureBYearConsume,jdbcType=DOUBLE}, 
+        #{item.furnitureCYearConsume,jdbcType=DOUBLE}, #{item.furnitureDYearConsume,jdbcType=DOUBLE}, 
+        #{item.furnitureEYearConsume,jdbcType=DOUBLE})
+    </foreach>
+  </insert>
+  <insert id="insertBatchSelective" parameterType="java.util.List">
+    insert into consumer_year_spending_record
+    (id, user_id, create_time, result_id, basics_big_year_consume, basics_A_year_consume, 
+      basics_B_year_consume, basics_C_year_consume, basics_D_year_consume, basics_E_year_consume, 
+      feature_big_year_consume, feature_A_year_consume, feature_B_year_consume, feature_C_year_consume, 
+      feature_D_year_consume, feature_E_year_consume, mian_big_year_consume, mian_A_year_consume, 
+      mian_B_year_consume, mian_C_year_consume, mian_D_year_consume, mian_E_year_consume, 
+      furniture_big_year_consume, furniture_A_year_consume, furniture_B_year_consume, 
+      furniture_C_year_consume, furniture_D_year_consume, furniture_E_year_consume)
+    values 
+    <foreach collection="list" index="index" item="item" separator=",">
+      <trim prefix="(" suffix=")" suffixOverrides=",">
+        <if test="item.id != null">
+          #{item.id,jdbcType=INTEGER},
+        </if>
+        <if test="item.id == null">
+          NULL,
+        </if>
+        <if test="item.userId != null">
+          #{item.userId,jdbcType=INTEGER},
+        </if>
+        <if test="item.userId == null">
+          NULL,
+        </if>
+        <if test="item.createTime != null">
+          #{item.createTime,jdbcType=TIMESTAMP},
+        </if>
+        <if test="item.createTime == null">
+          NULL,
+        </if>
+        <if test="item.resultId != null">
+          #{item.resultId,jdbcType=INTEGER},
+        </if>
+        <if test="item.resultId == null">
+          NULL,
+        </if>
+        <if test="item.basicsBigYearConsume != null">
+          #{item.basicsBigYearConsume,jdbcType=DOUBLE},
+        </if>
+        <if test="item.basicsBigYearConsume == null">
+          NULL,
+        </if>
+        <if test="item.basicsAYearConsume != null">
+          #{item.basicsAYearConsume,jdbcType=DOUBLE},
+        </if>
+        <if test="item.basicsAYearConsume == null">
+          NULL,
+        </if>
+        <if test="item.basicsBYearConsume != null">
+          #{item.basicsBYearConsume,jdbcType=DOUBLE},
+        </if>
+        <if test="item.basicsBYearConsume == null">
+          NULL,
+        </if>
+        <if test="item.basicsCYearConsume != null">
+          #{item.basicsCYearConsume,jdbcType=DOUBLE},
+        </if>
+        <if test="item.basicsCYearConsume == null">
+          NULL,
+        </if>
+        <if test="item.basicsDYearConsume != null">
+          #{item.basicsDYearConsume,jdbcType=DOUBLE},
+        </if>
+        <if test="item.basicsDYearConsume == null">
+          NULL,
+        </if>
+        <if test="item.basicsEYearConsume != null">
+          #{item.basicsEYearConsume,jdbcType=DOUBLE},
+        </if>
+        <if test="item.basicsEYearConsume == null">
+          NULL,
+        </if>
+        <if test="item.featureBigYearConsume != null">
+          #{item.featureBigYearConsume,jdbcType=DOUBLE},
+        </if>
+        <if test="item.featureBigYearConsume == null">
+          NULL,
+        </if>
+        <if test="item.featureAYearConsume != null">
+          #{item.featureAYearConsume,jdbcType=DOUBLE},
+        </if>
+        <if test="item.featureAYearConsume == null">
+          NULL,
+        </if>
+        <if test="item.featureBYearConsume != null">
+          #{item.featureBYearConsume,jdbcType=DOUBLE},
+        </if>
+        <if test="item.featureBYearConsume == null">
+          NULL,
+        </if>
+        <if test="item.featureCYearConsume != null">
+          #{item.featureCYearConsume,jdbcType=DOUBLE},
+        </if>
+        <if test="item.featureCYearConsume == null">
+          NULL,
+        </if>
+        <if test="item.featureDYearConsume != null">
+          #{item.featureDYearConsume,jdbcType=DOUBLE},
+        </if>
+        <if test="item.featureDYearConsume == null">
+          NULL,
+        </if>
+        <if test="item.featureEYearConsume != null">
+          #{item.featureEYearConsume,jdbcType=DOUBLE},
+        </if>
+        <if test="item.featureEYearConsume == null">
+          NULL,
+        </if>
+        <if test="item.mianBigYearConsume != null">
+          #{item.mianBigYearConsume,jdbcType=DOUBLE},
+        </if>
+        <if test="item.mianBigYearConsume == null">
+          NULL,
+        </if>
+        <if test="item.mianAYearConsume != null">
+          #{item.mianAYearConsume,jdbcType=DOUBLE},
+        </if>
+        <if test="item.mianAYearConsume == null">
+          NULL,
+        </if>
+        <if test="item.mianBYearConsume != null">
+          #{item.mianBYearConsume,jdbcType=DOUBLE},
+        </if>
+        <if test="item.mianBYearConsume == null">
+          NULL,
+        </if>
+        <if test="item.mianCYearConsume != null">
+          #{item.mianCYearConsume,jdbcType=DOUBLE},
+        </if>
+        <if test="item.mianCYearConsume == null">
+          NULL,
+        </if>
+        <if test="item.mianDYearConsume != null">
+          #{item.mianDYearConsume,jdbcType=DOUBLE},
+        </if>
+        <if test="item.mianDYearConsume == null">
+          NULL,
+        </if>
+        <if test="item.mianEYearConsume != null">
+          #{item.mianEYearConsume,jdbcType=DOUBLE},
+        </if>
+        <if test="item.mianEYearConsume == null">
+          NULL,
+        </if>
+        <if test="item.furnitureBigYearConsume != null">
+          #{item.furnitureBigYearConsume,jdbcType=DOUBLE},
+        </if>
+        <if test="item.furnitureBigYearConsume == null">
+          NULL,
+        </if>
+        <if test="item.furnitureAYearConsume != null">
+          #{item.furnitureAYearConsume,jdbcType=DOUBLE},
+        </if>
+        <if test="item.furnitureAYearConsume == null">
+          NULL,
+        </if>
+        <if test="item.furnitureBYearConsume != null">
+          #{item.furnitureBYearConsume,jdbcType=DOUBLE},
+        </if>
+        <if test="item.furnitureBYearConsume == null">
+          NULL,
+        </if>
+        <if test="item.furnitureCYearConsume != null">
+          #{item.furnitureCYearConsume,jdbcType=DOUBLE},
+        </if>
+        <if test="item.furnitureCYearConsume == null">
+          NULL,
+        </if>
+        <if test="item.furnitureDYearConsume != null">
+          #{item.furnitureDYearConsume,jdbcType=DOUBLE},
+        </if>
+        <if test="item.furnitureDYearConsume == null">
+          NULL,
+        </if>
+        <if test="item.furnitureEYearConsume != null">
+          #{item.furnitureEYearConsume,jdbcType=DOUBLE},
+        </if>
+        <if test="item.furnitureEYearConsume == null">
+          NULL,
+        </if>
+      </trim>
+    </foreach>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zkl.taishou.common.entity.diagnose.ConsumerYearSpendingRecord">
+    update consumer_year_spending_record
+    <set>
+      <if test="userId != null">
+        user_id = #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="resultId != null">
+        result_id = #{resultId,jdbcType=INTEGER},
+      </if>
+      <if test="basicsBigYearConsume != null">
+        basics_big_year_consume = #{basicsBigYearConsume,jdbcType=DOUBLE},
+      </if>
+      <if test="basicsAYearConsume != null">
+        basics_A_year_consume = #{basicsAYearConsume,jdbcType=DOUBLE},
+      </if>
+      <if test="basicsBYearConsume != null">
+        basics_B_year_consume = #{basicsBYearConsume,jdbcType=DOUBLE},
+      </if>
+      <if test="basicsCYearConsume != null">
+        basics_C_year_consume = #{basicsCYearConsume,jdbcType=DOUBLE},
+      </if>
+      <if test="basicsDYearConsume != null">
+        basics_D_year_consume = #{basicsDYearConsume,jdbcType=DOUBLE},
+      </if>
+      <if test="basicsEYearConsume != null">
+        basics_E_year_consume = #{basicsEYearConsume,jdbcType=DOUBLE},
+      </if>
+      <if test="featureBigYearConsume != null">
+        feature_big_year_consume = #{featureBigYearConsume,jdbcType=DOUBLE},
+      </if>
+      <if test="featureAYearConsume != null">
+        feature_A_year_consume = #{featureAYearConsume,jdbcType=DOUBLE},
+      </if>
+      <if test="featureBYearConsume != null">
+        feature_B_year_consume = #{featureBYearConsume,jdbcType=DOUBLE},
+      </if>
+      <if test="featureCYearConsume != null">
+        feature_C_year_consume = #{featureCYearConsume,jdbcType=DOUBLE},
+      </if>
+      <if test="featureDYearConsume != null">
+        feature_D_year_consume = #{featureDYearConsume,jdbcType=DOUBLE},
+      </if>
+      <if test="featureEYearConsume != null">
+        feature_E_year_consume = #{featureEYearConsume,jdbcType=DOUBLE},
+      </if>
+      <if test="mianBigYearConsume != null">
+        mian_big_year_consume = #{mianBigYearConsume,jdbcType=DOUBLE},
+      </if>
+      <if test="mianAYearConsume != null">
+        mian_A_year_consume = #{mianAYearConsume,jdbcType=DOUBLE},
+      </if>
+      <if test="mianBYearConsume != null">
+        mian_B_year_consume = #{mianBYearConsume,jdbcType=DOUBLE},
+      </if>
+      <if test="mianCYearConsume != null">
+        mian_C_year_consume = #{mianCYearConsume,jdbcType=DOUBLE},
+      </if>
+      <if test="mianDYearConsume != null">
+        mian_D_year_consume = #{mianDYearConsume,jdbcType=DOUBLE},
+      </if>
+      <if test="mianEYearConsume != null">
+        mian_E_year_consume = #{mianEYearConsume,jdbcType=DOUBLE},
+      </if>
+      <if test="furnitureBigYearConsume != null">
+        furniture_big_year_consume = #{furnitureBigYearConsume,jdbcType=DOUBLE},
+      </if>
+      <if test="furnitureAYearConsume != null">
+        furniture_A_year_consume = #{furnitureAYearConsume,jdbcType=DOUBLE},
+      </if>
+      <if test="furnitureBYearConsume != null">
+        furniture_B_year_consume = #{furnitureBYearConsume,jdbcType=DOUBLE},
+      </if>
+      <if test="furnitureCYearConsume != null">
+        furniture_C_year_consume = #{furnitureCYearConsume,jdbcType=DOUBLE},
+      </if>
+      <if test="furnitureDYearConsume != null">
+        furniture_D_year_consume = #{furnitureDYearConsume,jdbcType=DOUBLE},
+      </if>
+      <if test="furnitureEYearConsume != null">
+        furniture_E_year_consume = #{furnitureEYearConsume,jdbcType=DOUBLE},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zkl.taishou.common.entity.diagnose.ConsumerYearSpendingRecord">
+    update consumer_year_spending_record
+    set user_id = #{userId,jdbcType=INTEGER},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      result_id = #{resultId,jdbcType=INTEGER},
+      basics_big_year_consume = #{basicsBigYearConsume,jdbcType=DOUBLE},
+      basics_A_year_consume = #{basicsAYearConsume,jdbcType=DOUBLE},
+      basics_B_year_consume = #{basicsBYearConsume,jdbcType=DOUBLE},
+      basics_C_year_consume = #{basicsCYearConsume,jdbcType=DOUBLE},
+      basics_D_year_consume = #{basicsDYearConsume,jdbcType=DOUBLE},
+      basics_E_year_consume = #{basicsEYearConsume,jdbcType=DOUBLE},
+      feature_big_year_consume = #{featureBigYearConsume,jdbcType=DOUBLE},
+      feature_A_year_consume = #{featureAYearConsume,jdbcType=DOUBLE},
+      feature_B_year_consume = #{featureBYearConsume,jdbcType=DOUBLE},
+      feature_C_year_consume = #{featureCYearConsume,jdbcType=DOUBLE},
+      feature_D_year_consume = #{featureDYearConsume,jdbcType=DOUBLE},
+      feature_E_year_consume = #{featureEYearConsume,jdbcType=DOUBLE},
+      mian_big_year_consume = #{mianBigYearConsume,jdbcType=DOUBLE},
+      mian_A_year_consume = #{mianAYearConsume,jdbcType=DOUBLE},
+      mian_B_year_consume = #{mianBYearConsume,jdbcType=DOUBLE},
+      mian_C_year_consume = #{mianCYearConsume,jdbcType=DOUBLE},
+      mian_D_year_consume = #{mianDYearConsume,jdbcType=DOUBLE},
+      mian_E_year_consume = #{mianEYearConsume,jdbcType=DOUBLE},
+      furniture_big_year_consume = #{furnitureBigYearConsume,jdbcType=DOUBLE},
+      furniture_A_year_consume = #{furnitureAYearConsume,jdbcType=DOUBLE},
+      furniture_B_year_consume = #{furnitureBYearConsume,jdbcType=DOUBLE},
+      furniture_C_year_consume = #{furnitureCYearConsume,jdbcType=DOUBLE},
+      furniture_D_year_consume = #{furnitureDYearConsume,jdbcType=DOUBLE},
+      furniture_E_year_consume = #{furnitureEYearConsume,jdbcType=DOUBLE}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateBatchByPrimaryKey" parameterType="java.util.List">
+    update consumer_year_spending_record
+    <trim prefix="set" suffixOverrides=",">
+      <trim prefix="user_id =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.userId}
+        </foreach>
+      </trim>
+      <trim prefix="create_time =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.createTime}
+        </foreach>
+      </trim>
+      <trim prefix="result_id =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.resultId}
+        </foreach>
+      </trim>
+      <trim prefix="basics_big_year_consume =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.basicsBigYearConsume}
+        </foreach>
+      </trim>
+      <trim prefix="basics_A_year_consume =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.basicsAYearConsume}
+        </foreach>
+      </trim>
+      <trim prefix="basics_B_year_consume =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.basicsBYearConsume}
+        </foreach>
+      </trim>
+      <trim prefix="basics_C_year_consume =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.basicsCYearConsume}
+        </foreach>
+      </trim>
+      <trim prefix="basics_D_year_consume =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.basicsDYearConsume}
+        </foreach>
+      </trim>
+      <trim prefix="basics_E_year_consume =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.basicsEYearConsume}
+        </foreach>
+      </trim>
+      <trim prefix="feature_big_year_consume =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.featureBigYearConsume}
+        </foreach>
+      </trim>
+      <trim prefix="feature_A_year_consume =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.featureAYearConsume}
+        </foreach>
+      </trim>
+      <trim prefix="feature_B_year_consume =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.featureBYearConsume}
+        </foreach>
+      </trim>
+      <trim prefix="feature_C_year_consume =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.featureCYearConsume}
+        </foreach>
+      </trim>
+      <trim prefix="feature_D_year_consume =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.featureDYearConsume}
+        </foreach>
+      </trim>
+      <trim prefix="feature_E_year_consume =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.featureEYearConsume}
+        </foreach>
+      </trim>
+      <trim prefix="mian_big_year_consume =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.mianBigYearConsume}
+        </foreach>
+      </trim>
+      <trim prefix="mian_A_year_consume =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.mianAYearConsume}
+        </foreach>
+      </trim>
+      <trim prefix="mian_B_year_consume =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.mianBYearConsume}
+        </foreach>
+      </trim>
+      <trim prefix="mian_C_year_consume =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.mianCYearConsume}
+        </foreach>
+      </trim>
+      <trim prefix="mian_D_year_consume =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.mianDYearConsume}
+        </foreach>
+      </trim>
+      <trim prefix="mian_E_year_consume =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.mianEYearConsume}
+        </foreach>
+      </trim>
+      <trim prefix="furniture_big_year_consume =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.furnitureBigYearConsume}
+        </foreach>
+      </trim>
+      <trim prefix="furniture_A_year_consume =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.furnitureAYearConsume}
+        </foreach>
+      </trim>
+      <trim prefix="furniture_B_year_consume =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.furnitureBYearConsume}
+        </foreach>
+      </trim>
+      <trim prefix="furniture_C_year_consume =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.furnitureCYearConsume}
+        </foreach>
+      </trim>
+      <trim prefix="furniture_D_year_consume =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.furnitureDYearConsume}
+        </foreach>
+      </trim>
+      <trim prefix="furniture_E_year_consume =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.furnitureEYearConsume}
+        </foreach>
+      </trim>
+    </trim>
+    where id in 
+    <foreach close=")" collection="list" index="index" item="item" open="(" separator=",">
+       #{item.id} 
+    </foreach>
+  </update>
+  <update id="updateBatchByPrimaryKeySelective" parameterType="java.util.List">
+    update consumer_year_spending_record
+    <trim prefix="set" suffixOverrides=",">
+      <trim prefix="user_id =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.userId != null ">
+            when  #{item.id} then #{item.userId}
+          </if>
+          <if test="item.userId == null ">
+            when  #{item.id} then consumer_year_spending_record.user_id
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="create_time =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.createTime != null ">
+            when  #{item.id} then #{item.createTime}
+          </if>
+          <if test="item.createTime == null ">
+            when  #{item.id} then consumer_year_spending_record.create_time
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="result_id =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.resultId != null ">
+            when  #{item.id} then #{item.resultId}
+          </if>
+          <if test="item.resultId == null ">
+            when  #{item.id} then consumer_year_spending_record.result_id
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="basics_big_year_consume =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.basicsBigYearConsume != null ">
+            when  #{item.id} then #{item.basicsBigYearConsume}
+          </if>
+          <if test="item.basicsBigYearConsume == null ">
+            when  #{item.id} then consumer_year_spending_record.basics_big_year_consume
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="basics_A_year_consume =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.basicsAYearConsume != null ">
+            when  #{item.id} then #{item.basicsAYearConsume}
+          </if>
+          <if test="item.basicsAYearConsume == null ">
+            when  #{item.id} then consumer_year_spending_record.basics_A_year_consume
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="basics_B_year_consume =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.basicsBYearConsume != null ">
+            when  #{item.id} then #{item.basicsBYearConsume}
+          </if>
+          <if test="item.basicsBYearConsume == null ">
+            when  #{item.id} then consumer_year_spending_record.basics_B_year_consume
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="basics_C_year_consume =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.basicsCYearConsume != null ">
+            when  #{item.id} then #{item.basicsCYearConsume}
+          </if>
+          <if test="item.basicsCYearConsume == null ">
+            when  #{item.id} then consumer_year_spending_record.basics_C_year_consume
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="basics_D_year_consume =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.basicsDYearConsume != null ">
+            when  #{item.id} then #{item.basicsDYearConsume}
+          </if>
+          <if test="item.basicsDYearConsume == null ">
+            when  #{item.id} then consumer_year_spending_record.basics_D_year_consume
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="basics_E_year_consume =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.basicsEYearConsume != null ">
+            when  #{item.id} then #{item.basicsEYearConsume}
+          </if>
+          <if test="item.basicsEYearConsume == null ">
+            when  #{item.id} then consumer_year_spending_record.basics_E_year_consume
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="feature_big_year_consume =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.featureBigYearConsume != null ">
+            when  #{item.id} then #{item.featureBigYearConsume}
+          </if>
+          <if test="item.featureBigYearConsume == null ">
+            when  #{item.id} then consumer_year_spending_record.feature_big_year_consume
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="feature_A_year_consume =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.featureAYearConsume != null ">
+            when  #{item.id} then #{item.featureAYearConsume}
+          </if>
+          <if test="item.featureAYearConsume == null ">
+            when  #{item.id} then consumer_year_spending_record.feature_A_year_consume
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="feature_B_year_consume =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.featureBYearConsume != null ">
+            when  #{item.id} then #{item.featureBYearConsume}
+          </if>
+          <if test="item.featureBYearConsume == null ">
+            when  #{item.id} then consumer_year_spending_record.feature_B_year_consume
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="feature_C_year_consume =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.featureCYearConsume != null ">
+            when  #{item.id} then #{item.featureCYearConsume}
+          </if>
+          <if test="item.featureCYearConsume == null ">
+            when  #{item.id} then consumer_year_spending_record.feature_C_year_consume
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="feature_D_year_consume =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.featureDYearConsume != null ">
+            when  #{item.id} then #{item.featureDYearConsume}
+          </if>
+          <if test="item.featureDYearConsume == null ">
+            when  #{item.id} then consumer_year_spending_record.feature_D_year_consume
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="feature_E_year_consume =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.featureEYearConsume != null ">
+            when  #{item.id} then #{item.featureEYearConsume}
+          </if>
+          <if test="item.featureEYearConsume == null ">
+            when  #{item.id} then consumer_year_spending_record.feature_E_year_consume
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="mian_big_year_consume =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.mianBigYearConsume != null ">
+            when  #{item.id} then #{item.mianBigYearConsume}
+          </if>
+          <if test="item.mianBigYearConsume == null ">
+            when  #{item.id} then consumer_year_spending_record.mian_big_year_consume
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="mian_A_year_consume =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.mianAYearConsume != null ">
+            when  #{item.id} then #{item.mianAYearConsume}
+          </if>
+          <if test="item.mianAYearConsume == null ">
+            when  #{item.id} then consumer_year_spending_record.mian_A_year_consume
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="mian_B_year_consume =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.mianBYearConsume != null ">
+            when  #{item.id} then #{item.mianBYearConsume}
+          </if>
+          <if test="item.mianBYearConsume == null ">
+            when  #{item.id} then consumer_year_spending_record.mian_B_year_consume
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="mian_C_year_consume =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.mianCYearConsume != null ">
+            when  #{item.id} then #{item.mianCYearConsume}
+          </if>
+          <if test="item.mianCYearConsume == null ">
+            when  #{item.id} then consumer_year_spending_record.mian_C_year_consume
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="mian_D_year_consume =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.mianDYearConsume != null ">
+            when  #{item.id} then #{item.mianDYearConsume}
+          </if>
+          <if test="item.mianDYearConsume == null ">
+            when  #{item.id} then consumer_year_spending_record.mian_D_year_consume
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="mian_E_year_consume =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.mianEYearConsume != null ">
+            when  #{item.id} then #{item.mianEYearConsume}
+          </if>
+          <if test="item.mianEYearConsume == null ">
+            when  #{item.id} then consumer_year_spending_record.mian_E_year_consume
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="furniture_big_year_consume =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.furnitureBigYearConsume != null ">
+            when  #{item.id} then #{item.furnitureBigYearConsume}
+          </if>
+          <if test="item.furnitureBigYearConsume == null ">
+            when  #{item.id} then consumer_year_spending_record.furniture_big_year_consume
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="furniture_A_year_consume =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.furnitureAYearConsume != null ">
+            when  #{item.id} then #{item.furnitureAYearConsume}
+          </if>
+          <if test="item.furnitureAYearConsume == null ">
+            when  #{item.id} then consumer_year_spending_record.furniture_A_year_consume
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="furniture_B_year_consume =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.furnitureBYearConsume != null ">
+            when  #{item.id} then #{item.furnitureBYearConsume}
+          </if>
+          <if test="item.furnitureBYearConsume == null ">
+            when  #{item.id} then consumer_year_spending_record.furniture_B_year_consume
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="furniture_C_year_consume =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.furnitureCYearConsume != null ">
+            when  #{item.id} then #{item.furnitureCYearConsume}
+          </if>
+          <if test="item.furnitureCYearConsume == null ">
+            when  #{item.id} then consumer_year_spending_record.furniture_C_year_consume
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="furniture_D_year_consume =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.furnitureDYearConsume != null ">
+            when  #{item.id} then #{item.furnitureDYearConsume}
+          </if>
+          <if test="item.furnitureDYearConsume == null ">
+            when  #{item.id} then consumer_year_spending_record.furniture_D_year_consume
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="furniture_E_year_consume =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.furnitureEYearConsume != null ">
+            when  #{item.id} then #{item.furnitureEYearConsume}
+          </if>
+          <if test="item.furnitureEYearConsume == null ">
+            when  #{item.id} then consumer_year_spending_record.furniture_E_year_consume
+          </if>
+        </foreach>
+      </trim>
+    </trim>
+    where id in 
+    <foreach close=")" collection="list" index="index" item="item" open="(" separator=",">
+       #{item.id} 
+    </foreach>
+  </update>
+</mapper>

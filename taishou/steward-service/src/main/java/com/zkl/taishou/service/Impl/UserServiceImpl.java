@@ -89,8 +89,7 @@ public class UserServiceImpl extends BaseService implements UserService {
         String account= registerVO.getPhone();
         String password = registerVO.getPassword();
         String storeName = registerVO.getStoreName();
-        User userByRegisterId = getUserByRegisterId(account);
-        if(userByRegisterId!=null){
+        if(!examineRepetition(account)){
             return new ResultBean(ResultConstants.ACCOUNT_REPETITION);
         }
         //加盐加密
@@ -106,5 +105,10 @@ public class UserServiceImpl extends BaseService implements UserService {
         storeDAO.insertSelective(store);
         //执行登录操作
         return login(account,password);
+    }
+
+    @Override
+    public boolean examineRepetition(String phone) {
+        return userMapper.getUserByRegisterId(phone)==null;
     }
 }

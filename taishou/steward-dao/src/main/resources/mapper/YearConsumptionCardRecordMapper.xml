@@ -1,0 +1,599 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zkl.taishou.dao.diagnose.theCustomerConsumption.YearConsumptionCardRecordDAO">
+  <resultMap id="BaseResultMap" type="com.zkl.taishou.common.entity.diagnose.YearConsumptionCardRecord">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="year_big_customer" jdbcType="INTEGER" property="yearBigCustomer" />
+    <result column="year_A_customer" jdbcType="INTEGER" property="yearACustomer" />
+    <result column="year_B_customer" jdbcType="INTEGER" property="yearBCustomer" />
+    <result column="year_C_customer" jdbcType="INTEGER" property="yearCCustomer" />
+    <result column="year_D_customer" jdbcType="INTEGER" property="yearDCustomer" />
+    <result column="year_E_customer" jdbcType="INTEGER" property="yearECustomer" />
+    <result column="big_customer_consumption_card" jdbcType="INTEGER" property="bigCustomerConsumptionCard" />
+    <result column="A_customer_consumption_card" jdbcType="INTEGER" property="aCustomerConsumptionCard" />
+    <result column="B_customer_consumption_card" jdbcType="INTEGER" property="bCustomerConsumptionCard" />
+    <result column="C_customer_consumption_card" jdbcType="INTEGER" property="cCustomerConsumptionCard" />
+    <result column="D_customer_consumption_card" jdbcType="INTEGER" property="dCustomerConsumptionCard" />
+    <result column="E_customer_consumption_card" jdbcType="INTEGER" property="eCustomerConsumptionCard" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="result_id" jdbcType="INTEGER" property="resultId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, user_id, year_big_customer, year_A_customer, year_B_customer, year_C_customer, 
+    year_D_customer, year_E_customer, big_customer_consumption_card, A_customer_consumption_card, 
+    B_customer_consumption_card, C_customer_consumption_card, D_customer_consumption_card, 
+    E_customer_consumption_card, create_time, result_id
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from year_consumption_card_record
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from year_consumption_card_record
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.zkl.taishou.common.entity.diagnose.YearConsumptionCardRecord">
+    insert into year_consumption_card_record (id, user_id, year_big_customer, 
+      year_A_customer, year_B_customer, year_C_customer, 
+      year_D_customer, year_E_customer, big_customer_consumption_card, 
+      A_customer_consumption_card, B_customer_consumption_card, 
+      C_customer_consumption_card, D_customer_consumption_card, 
+      E_customer_consumption_card, create_time, 
+      result_id)
+    values (#{id,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, #{yearBigCustomer,jdbcType=INTEGER}, 
+      #{yearACustomer,jdbcType=INTEGER}, #{yearBCustomer,jdbcType=INTEGER}, #{yearCCustomer,jdbcType=INTEGER}, 
+      #{yearDCustomer,jdbcType=INTEGER}, #{yearECustomer,jdbcType=INTEGER}, #{bigCustomerConsumptionCard,jdbcType=INTEGER}, 
+      #{aCustomerConsumptionCard,jdbcType=INTEGER}, #{bCustomerConsumptionCard,jdbcType=INTEGER}, 
+      #{cCustomerConsumptionCard,jdbcType=INTEGER}, #{dCustomerConsumptionCard,jdbcType=INTEGER}, 
+      #{eCustomerConsumptionCard,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{resultId,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.zkl.taishou.common.entity.diagnose.YearConsumptionCardRecord">
+    insert into year_consumption_card_record
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="yearBigCustomer != null">
+        year_big_customer,
+      </if>
+      <if test="yearACustomer != null">
+        year_A_customer,
+      </if>
+      <if test="yearBCustomer != null">
+        year_B_customer,
+      </if>
+      <if test="yearCCustomer != null">
+        year_C_customer,
+      </if>
+      <if test="yearDCustomer != null">
+        year_D_customer,
+      </if>
+      <if test="yearECustomer != null">
+        year_E_customer,
+      </if>
+      <if test="bigCustomerConsumptionCard != null">
+        big_customer_consumption_card,
+      </if>
+      <if test="aCustomerConsumptionCard != null">
+        A_customer_consumption_card,
+      </if>
+      <if test="bCustomerConsumptionCard != null">
+        B_customer_consumption_card,
+      </if>
+      <if test="cCustomerConsumptionCard != null">
+        C_customer_consumption_card,
+      </if>
+      <if test="dCustomerConsumptionCard != null">
+        D_customer_consumption_card,
+      </if>
+      <if test="eCustomerConsumptionCard != null">
+        E_customer_consumption_card,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="resultId != null">
+        result_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="yearBigCustomer != null">
+        #{yearBigCustomer,jdbcType=INTEGER},
+      </if>
+      <if test="yearACustomer != null">
+        #{yearACustomer,jdbcType=INTEGER},
+      </if>
+      <if test="yearBCustomer != null">
+        #{yearBCustomer,jdbcType=INTEGER},
+      </if>
+      <if test="yearCCustomer != null">
+        #{yearCCustomer,jdbcType=INTEGER},
+      </if>
+      <if test="yearDCustomer != null">
+        #{yearDCustomer,jdbcType=INTEGER},
+      </if>
+      <if test="yearECustomer != null">
+        #{yearECustomer,jdbcType=INTEGER},
+      </if>
+      <if test="bigCustomerConsumptionCard != null">
+        #{bigCustomerConsumptionCard,jdbcType=INTEGER},
+      </if>
+      <if test="aCustomerConsumptionCard != null">
+        #{aCustomerConsumptionCard,jdbcType=INTEGER},
+      </if>
+      <if test="bCustomerConsumptionCard != null">
+        #{bCustomerConsumptionCard,jdbcType=INTEGER},
+      </if>
+      <if test="cCustomerConsumptionCard != null">
+        #{cCustomerConsumptionCard,jdbcType=INTEGER},
+      </if>
+      <if test="dCustomerConsumptionCard != null">
+        #{dCustomerConsumptionCard,jdbcType=INTEGER},
+      </if>
+      <if test="eCustomerConsumptionCard != null">
+        #{eCustomerConsumptionCard,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="resultId != null">
+        #{resultId,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <insert id="insertBatch" parameterType="java.util.List">
+    insert into year_consumption_card_record (id, user_id, year_big_customer, 
+      year_A_customer, year_B_customer, 
+      year_C_customer, year_D_customer, 
+      year_E_customer, big_customer_consumption_card, 
+      A_customer_consumption_card, B_customer_consumption_card, 
+      C_customer_consumption_card, D_customer_consumption_card, 
+      E_customer_consumption_card, create_time, 
+      result_id)
+    values 
+    <foreach collection="list" index="index" item="item" separator=",">
+      (#{item.id,jdbcType=INTEGER}, #{item.userId,jdbcType=INTEGER}, #{item.yearBigCustomer,jdbcType=INTEGER}, 
+        #{item.yearACustomer,jdbcType=INTEGER}, #{item.yearBCustomer,jdbcType=INTEGER}, 
+        #{item.yearCCustomer,jdbcType=INTEGER}, #{item.yearDCustomer,jdbcType=INTEGER}, 
+        #{item.yearECustomer,jdbcType=INTEGER}, #{item.bigCustomerConsumptionCard,jdbcType=INTEGER}, 
+        #{item.aCustomerConsumptionCard,jdbcType=INTEGER}, #{item.bCustomerConsumptionCard,jdbcType=INTEGER}, 
+        #{item.cCustomerConsumptionCard,jdbcType=INTEGER}, #{item.dCustomerConsumptionCard,jdbcType=INTEGER}, 
+        #{item.eCustomerConsumptionCard,jdbcType=INTEGER}, #{item.createTime,jdbcType=TIMESTAMP}, 
+        #{item.resultId,jdbcType=INTEGER})
+    </foreach>
+  </insert>
+  <insert id="insertBatchSelective" parameterType="java.util.List">
+    insert into year_consumption_card_record
+    (id, user_id, year_big_customer, year_A_customer, year_B_customer, year_C_customer, 
+      year_D_customer, year_E_customer, big_customer_consumption_card, A_customer_consumption_card, 
+      B_customer_consumption_card, C_customer_consumption_card, D_customer_consumption_card, 
+      E_customer_consumption_card, create_time, result_id)
+    values 
+    <foreach collection="list" index="index" item="item" separator=",">
+      <trim prefix="(" suffix=")" suffixOverrides=",">
+        <if test="item.id != null">
+          #{item.id,jdbcType=INTEGER},
+        </if>
+        <if test="item.id == null">
+          NULL,
+        </if>
+        <if test="item.userId != null">
+          #{item.userId,jdbcType=INTEGER},
+        </if>
+        <if test="item.userId == null">
+          NULL,
+        </if>
+        <if test="item.yearBigCustomer != null">
+          #{item.yearBigCustomer,jdbcType=INTEGER},
+        </if>
+        <if test="item.yearBigCustomer == null">
+          NULL,
+        </if>
+        <if test="item.yearACustomer != null">
+          #{item.yearACustomer,jdbcType=INTEGER},
+        </if>
+        <if test="item.yearACustomer == null">
+          NULL,
+        </if>
+        <if test="item.yearBCustomer != null">
+          #{item.yearBCustomer,jdbcType=INTEGER},
+        </if>
+        <if test="item.yearBCustomer == null">
+          NULL,
+        </if>
+        <if test="item.yearCCustomer != null">
+          #{item.yearCCustomer,jdbcType=INTEGER},
+        </if>
+        <if test="item.yearCCustomer == null">
+          NULL,
+        </if>
+        <if test="item.yearDCustomer != null">
+          #{item.yearDCustomer,jdbcType=INTEGER},
+        </if>
+        <if test="item.yearDCustomer == null">
+          NULL,
+        </if>
+        <if test="item.yearECustomer != null">
+          #{item.yearECustomer,jdbcType=INTEGER},
+        </if>
+        <if test="item.yearECustomer == null">
+          NULL,
+        </if>
+        <if test="item.bigCustomerConsumptionCard != null">
+          #{item.bigCustomerConsumptionCard,jdbcType=INTEGER},
+        </if>
+        <if test="item.bigCustomerConsumptionCard == null">
+          NULL,
+        </if>
+        <if test="item.aCustomerConsumptionCard != null">
+          #{item.aCustomerConsumptionCard,jdbcType=INTEGER},
+        </if>
+        <if test="item.aCustomerConsumptionCard == null">
+          NULL,
+        </if>
+        <if test="item.bCustomerConsumptionCard != null">
+          #{item.bCustomerConsumptionCard,jdbcType=INTEGER},
+        </if>
+        <if test="item.bCustomerConsumptionCard == null">
+          NULL,
+        </if>
+        <if test="item.cCustomerConsumptionCard != null">
+          #{item.cCustomerConsumptionCard,jdbcType=INTEGER},
+        </if>
+        <if test="item.cCustomerConsumptionCard == null">
+          NULL,
+        </if>
+        <if test="item.dCustomerConsumptionCard != null">
+          #{item.dCustomerConsumptionCard,jdbcType=INTEGER},
+        </if>
+        <if test="item.dCustomerConsumptionCard == null">
+          NULL,
+        </if>
+        <if test="item.eCustomerConsumptionCard != null">
+          #{item.eCustomerConsumptionCard,jdbcType=INTEGER},
+        </if>
+        <if test="item.eCustomerConsumptionCard == null">
+          NULL,
+        </if>
+        <if test="item.createTime != null">
+          #{item.createTime,jdbcType=TIMESTAMP},
+        </if>
+        <if test="item.createTime == null">
+          NULL,
+        </if>
+        <if test="item.resultId != null">
+          #{item.resultId,jdbcType=INTEGER},
+        </if>
+        <if test="item.resultId == null">
+          NULL,
+        </if>
+      </trim>
+    </foreach>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zkl.taishou.common.entity.diagnose.YearConsumptionCardRecord">
+    update year_consumption_card_record
+    <set>
+      <if test="userId != null">
+        user_id = #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="yearBigCustomer != null">
+        year_big_customer = #{yearBigCustomer,jdbcType=INTEGER},
+      </if>
+      <if test="yearACustomer != null">
+        year_A_customer = #{yearACustomer,jdbcType=INTEGER},
+      </if>
+      <if test="yearBCustomer != null">
+        year_B_customer = #{yearBCustomer,jdbcType=INTEGER},
+      </if>
+      <if test="yearCCustomer != null">
+        year_C_customer = #{yearCCustomer,jdbcType=INTEGER},
+      </if>
+      <if test="yearDCustomer != null">
+        year_D_customer = #{yearDCustomer,jdbcType=INTEGER},
+      </if>
+      <if test="yearECustomer != null">
+        year_E_customer = #{yearECustomer,jdbcType=INTEGER},
+      </if>
+      <if test="bigCustomerConsumptionCard != null">
+        big_customer_consumption_card = #{bigCustomerConsumptionCard,jdbcType=INTEGER},
+      </if>
+      <if test="aCustomerConsumptionCard != null">
+        A_customer_consumption_card = #{aCustomerConsumptionCard,jdbcType=INTEGER},
+      </if>
+      <if test="bCustomerConsumptionCard != null">
+        B_customer_consumption_card = #{bCustomerConsumptionCard,jdbcType=INTEGER},
+      </if>
+      <if test="cCustomerConsumptionCard != null">
+        C_customer_consumption_card = #{cCustomerConsumptionCard,jdbcType=INTEGER},
+      </if>
+      <if test="dCustomerConsumptionCard != null">
+        D_customer_consumption_card = #{dCustomerConsumptionCard,jdbcType=INTEGER},
+      </if>
+      <if test="eCustomerConsumptionCard != null">
+        E_customer_consumption_card = #{eCustomerConsumptionCard,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="resultId != null">
+        result_id = #{resultId,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zkl.taishou.common.entity.diagnose.YearConsumptionCardRecord">
+    update year_consumption_card_record
+    set user_id = #{userId,jdbcType=INTEGER},
+      year_big_customer = #{yearBigCustomer,jdbcType=INTEGER},
+      year_A_customer = #{yearACustomer,jdbcType=INTEGER},
+      year_B_customer = #{yearBCustomer,jdbcType=INTEGER},
+      year_C_customer = #{yearCCustomer,jdbcType=INTEGER},
+      year_D_customer = #{yearDCustomer,jdbcType=INTEGER},
+      year_E_customer = #{yearECustomer,jdbcType=INTEGER},
+      big_customer_consumption_card = #{bigCustomerConsumptionCard,jdbcType=INTEGER},
+      A_customer_consumption_card = #{aCustomerConsumptionCard,jdbcType=INTEGER},
+      B_customer_consumption_card = #{bCustomerConsumptionCard,jdbcType=INTEGER},
+      C_customer_consumption_card = #{cCustomerConsumptionCard,jdbcType=INTEGER},
+      D_customer_consumption_card = #{dCustomerConsumptionCard,jdbcType=INTEGER},
+      E_customer_consumption_card = #{eCustomerConsumptionCard,jdbcType=INTEGER},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      result_id = #{resultId,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateBatchByPrimaryKey" parameterType="java.util.List">
+    update year_consumption_card_record
+    <trim prefix="set" suffixOverrides=",">
+      <trim prefix="user_id =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.userId}
+        </foreach>
+      </trim>
+      <trim prefix="year_big_customer =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.yearBigCustomer}
+        </foreach>
+      </trim>
+      <trim prefix="year_A_customer =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.yearACustomer}
+        </foreach>
+      </trim>
+      <trim prefix="year_B_customer =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.yearBCustomer}
+        </foreach>
+      </trim>
+      <trim prefix="year_C_customer =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.yearCCustomer}
+        </foreach>
+      </trim>
+      <trim prefix="year_D_customer =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.yearDCustomer}
+        </foreach>
+      </trim>
+      <trim prefix="year_E_customer =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.yearECustomer}
+        </foreach>
+      </trim>
+      <trim prefix="big_customer_consumption_card =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.bigCustomerConsumptionCard}
+        </foreach>
+      </trim>
+      <trim prefix="A_customer_consumption_card =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.aCustomerConsumptionCard}
+        </foreach>
+      </trim>
+      <trim prefix="B_customer_consumption_card =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.bCustomerConsumptionCard}
+        </foreach>
+      </trim>
+      <trim prefix="C_customer_consumption_card =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.cCustomerConsumptionCard}
+        </foreach>
+      </trim>
+      <trim prefix="D_customer_consumption_card =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.dCustomerConsumptionCard}
+        </foreach>
+      </trim>
+      <trim prefix="E_customer_consumption_card =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.eCustomerConsumptionCard}
+        </foreach>
+      </trim>
+      <trim prefix="create_time =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.createTime}
+        </foreach>
+      </trim>
+      <trim prefix="result_id =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.resultId}
+        </foreach>
+      </trim>
+    </trim>
+    where id in 
+    <foreach close=")" collection="list" index="index" item="item" open="(" separator=",">
+       #{item.id} 
+    </foreach>
+  </update>
+  <update id="updateBatchByPrimaryKeySelective" parameterType="java.util.List">
+    update year_consumption_card_record
+    <trim prefix="set" suffixOverrides=",">
+      <trim prefix="user_id =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.userId != null ">
+            when  #{item.id} then #{item.userId}
+          </if>
+          <if test="item.userId == null ">
+            when  #{item.id} then year_consumption_card_record.user_id
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="year_big_customer =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.yearBigCustomer != null ">
+            when  #{item.id} then #{item.yearBigCustomer}
+          </if>
+          <if test="item.yearBigCustomer == null ">
+            when  #{item.id} then year_consumption_card_record.year_big_customer
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="year_A_customer =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.yearACustomer != null ">
+            when  #{item.id} then #{item.yearACustomer}
+          </if>
+          <if test="item.yearACustomer == null ">
+            when  #{item.id} then year_consumption_card_record.year_A_customer
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="year_B_customer =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.yearBCustomer != null ">
+            when  #{item.id} then #{item.yearBCustomer}
+          </if>
+          <if test="item.yearBCustomer == null ">
+            when  #{item.id} then year_consumption_card_record.year_B_customer
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="year_C_customer =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.yearCCustomer != null ">
+            when  #{item.id} then #{item.yearCCustomer}
+          </if>
+          <if test="item.yearCCustomer == null ">
+            when  #{item.id} then year_consumption_card_record.year_C_customer
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="year_D_customer =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.yearDCustomer != null ">
+            when  #{item.id} then #{item.yearDCustomer}
+          </if>
+          <if test="item.yearDCustomer == null ">
+            when  #{item.id} then year_consumption_card_record.year_D_customer
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="year_E_customer =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.yearECustomer != null ">
+            when  #{item.id} then #{item.yearECustomer}
+          </if>
+          <if test="item.yearECustomer == null ">
+            when  #{item.id} then year_consumption_card_record.year_E_customer
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="big_customer_consumption_card =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.bigCustomerConsumptionCard != null ">
+            when  #{item.id} then #{item.bigCustomerConsumptionCard}
+          </if>
+          <if test="item.bigCustomerConsumptionCard == null ">
+            when  #{item.id} then year_consumption_card_record.big_customer_consumption_card
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="A_customer_consumption_card =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.aCustomerConsumptionCard != null ">
+            when  #{item.id} then #{item.aCustomerConsumptionCard}
+          </if>
+          <if test="item.aCustomerConsumptionCard == null ">
+            when  #{item.id} then year_consumption_card_record.A_customer_consumption_card
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="B_customer_consumption_card =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.bCustomerConsumptionCard != null ">
+            when  #{item.id} then #{item.bCustomerConsumptionCard}
+          </if>
+          <if test="item.bCustomerConsumptionCard == null ">
+            when  #{item.id} then year_consumption_card_record.B_customer_consumption_card
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="C_customer_consumption_card =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.cCustomerConsumptionCard != null ">
+            when  #{item.id} then #{item.cCustomerConsumptionCard}
+          </if>
+          <if test="item.cCustomerConsumptionCard == null ">
+            when  #{item.id} then year_consumption_card_record.C_customer_consumption_card
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="D_customer_consumption_card =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.dCustomerConsumptionCard != null ">
+            when  #{item.id} then #{item.dCustomerConsumptionCard}
+          </if>
+          <if test="item.dCustomerConsumptionCard == null ">
+            when  #{item.id} then year_consumption_card_record.D_customer_consumption_card
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="E_customer_consumption_card =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.eCustomerConsumptionCard != null ">
+            when  #{item.id} then #{item.eCustomerConsumptionCard}
+          </if>
+          <if test="item.eCustomerConsumptionCard == null ">
+            when  #{item.id} then year_consumption_card_record.E_customer_consumption_card
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="create_time =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.createTime != null ">
+            when  #{item.id} then #{item.createTime}
+          </if>
+          <if test="item.createTime == null ">
+            when  #{item.id} then year_consumption_card_record.create_time
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="result_id =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.resultId != null ">
+            when  #{item.id} then #{item.resultId}
+          </if>
+          <if test="item.resultId == null ">
+            when  #{item.id} then year_consumption_card_record.result_id
+          </if>
+        </foreach>
+      </trim>
+    </trim>
+    where id in 
+    <foreach close=")" collection="list" index="index" item="item" open="(" separator=",">
+       #{item.id} 
+    </foreach>
+  </update>
+</mapper>

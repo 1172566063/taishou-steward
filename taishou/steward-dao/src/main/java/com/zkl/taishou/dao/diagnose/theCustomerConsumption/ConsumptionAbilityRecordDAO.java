@@ -1,5 +1,5 @@
 /* https://github.com/orange1438 */
-package com.zkl.taishou.dao.diagnose;
+package com.zkl.taishou.dao.diagnose.theCustomerConsumption;
 
 import com.zkl.taishou.common.entity.diagnose.ConsumptionAbilityRecord;
 

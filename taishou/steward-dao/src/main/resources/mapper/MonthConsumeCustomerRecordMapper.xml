@@ -1,0 +1,589 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zkl.taishou.dao.diagnose.theCustomerConsumption.MonthConsumeCustomerRecordDAO">
+  <resultMap id="BaseResultMap" type="com.zkl.taishou.common.entity.diagnose.MonthConsumeCustomerRecord">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="january" jdbcType="DOUBLE" property="january" />
+    <result column="february" jdbcType="DOUBLE" property="february" />
+    <result column="march" jdbcType="DOUBLE" property="march" />
+    <result column="april" jdbcType="DOUBLE" property="april" />
+    <result column="may" jdbcType="DOUBLE" property="may" />
+    <result column="june" jdbcType="DOUBLE" property="june" />
+    <result column="july" jdbcType="DOUBLE" property="july" />
+    <result column="august" jdbcType="DOUBLE" property="august" />
+    <result column="september" jdbcType="DOUBLE" property="september" />
+    <result column="october" jdbcType="DOUBLE" property="october" />
+    <result column="november" jdbcType="DOUBLE" property="november" />
+    <result column="december" jdbcType="DOUBLE" property="december" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="result_id" jdbcType="INTEGER" property="resultId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, user_id, january, february, march, april, may, june, july, august, september, 
+    october, november, december, create_time, result_id
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from month_consume_customer_record
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from month_consume_customer_record
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.zkl.taishou.common.entity.diagnose.MonthConsumeCustomerRecord">
+    insert into month_consume_customer_record (id, user_id, january, 
+      february, march, april, 
+      may, june, july, august, 
+      september, october, november, 
+      december, create_time, result_id
+      )
+    values (#{id,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, #{january,jdbcType=DOUBLE}, 
+      #{february,jdbcType=DOUBLE}, #{march,jdbcType=DOUBLE}, #{april,jdbcType=DOUBLE}, 
+      #{may,jdbcType=DOUBLE}, #{june,jdbcType=DOUBLE}, #{july,jdbcType=DOUBLE}, #{august,jdbcType=DOUBLE}, 
+      #{september,jdbcType=DOUBLE}, #{october,jdbcType=DOUBLE}, #{november,jdbcType=DOUBLE}, 
+      #{december,jdbcType=DOUBLE}, #{createTime,jdbcType=TIMESTAMP}, #{resultId,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.zkl.taishou.common.entity.diagnose.MonthConsumeCustomerRecord">
+    insert into month_consume_customer_record
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="january != null">
+        january,
+      </if>
+      <if test="february != null">
+        february,
+      </if>
+      <if test="march != null">
+        march,
+      </if>
+      <if test="april != null">
+        april,
+      </if>
+      <if test="may != null">
+        may,
+      </if>
+      <if test="june != null">
+        june,
+      </if>
+      <if test="july != null">
+        july,
+      </if>
+      <if test="august != null">
+        august,
+      </if>
+      <if test="september != null">
+        september,
+      </if>
+      <if test="october != null">
+        october,
+      </if>
+      <if test="november != null">
+        november,
+      </if>
+      <if test="december != null">
+        december,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="resultId != null">
+        result_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="january != null">
+        #{january,jdbcType=DOUBLE},
+      </if>
+      <if test="february != null">
+        #{february,jdbcType=DOUBLE},
+      </if>
+      <if test="march != null">
+        #{march,jdbcType=DOUBLE},
+      </if>
+      <if test="april != null">
+        #{april,jdbcType=DOUBLE},
+      </if>
+      <if test="may != null">
+        #{may,jdbcType=DOUBLE},
+      </if>
+      <if test="june != null">
+        #{june,jdbcType=DOUBLE},
+      </if>
+      <if test="july != null">
+        #{july,jdbcType=DOUBLE},
+      </if>
+      <if test="august != null">
+        #{august,jdbcType=DOUBLE},
+      </if>
+      <if test="september != null">
+        #{september,jdbcType=DOUBLE},
+      </if>
+      <if test="october != null">
+        #{october,jdbcType=DOUBLE},
+      </if>
+      <if test="november != null">
+        #{november,jdbcType=DOUBLE},
+      </if>
+      <if test="december != null">
+        #{december,jdbcType=DOUBLE},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="resultId != null">
+        #{resultId,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <insert id="insertBatch" parameterType="java.util.List">
+    insert into month_consume_customer_record (id, user_id, january, 
+      february, march, april, 
+      may, june, july, 
+      august, september, october, 
+      november, december, create_time, 
+      result_id)
+    values 
+    <foreach collection="list" index="index" item="item" separator=",">
+      (#{item.id,jdbcType=INTEGER}, #{item.userId,jdbcType=INTEGER}, #{item.january,jdbcType=DOUBLE}, 
+        #{item.february,jdbcType=DOUBLE}, #{item.march,jdbcType=DOUBLE}, #{item.april,jdbcType=DOUBLE}, 
+        #{item.may,jdbcType=DOUBLE}, #{item.june,jdbcType=DOUBLE}, #{item.july,jdbcType=DOUBLE}, 
+        #{item.august,jdbcType=DOUBLE}, #{item.september,jdbcType=DOUBLE}, #{item.october,jdbcType=DOUBLE}, 
+        #{item.november,jdbcType=DOUBLE}, #{item.december,jdbcType=DOUBLE}, #{item.createTime,jdbcType=TIMESTAMP}, 
+        #{item.resultId,jdbcType=INTEGER})
+    </foreach>
+  </insert>
+  <insert id="insertBatchSelective" parameterType="java.util.List">
+    insert into month_consume_customer_record
+    (id, user_id, january, february, march, april, may, june, july, august, september, 
+      october, november, december, create_time, result_id)
+    values 
+    <foreach collection="list" index="index" item="item" separator=",">
+      <trim prefix="(" suffix=")" suffixOverrides=",">
+        <if test="item.id != null">
+          #{item.id,jdbcType=INTEGER},
+        </if>
+        <if test="item.id == null">
+          NULL,
+        </if>
+        <if test="item.userId != null">
+          #{item.userId,jdbcType=INTEGER},
+        </if>
+        <if test="item.userId == null">
+          NULL,
+        </if>
+        <if test="item.january != null">
+          #{item.january,jdbcType=DOUBLE},
+        </if>
+        <if test="item.january == null">
+          NULL,
+        </if>
+        <if test="item.february != null">
+          #{item.february,jdbcType=DOUBLE},
+        </if>
+        <if test="item.february == null">
+          NULL,
+        </if>
+        <if test="item.march != null">
+          #{item.march,jdbcType=DOUBLE},
+        </if>
+        <if test="item.march == null">
+          NULL,
+        </if>
+        <if test="item.april != null">
+          #{item.april,jdbcType=DOUBLE},
+        </if>
+        <if test="item.april == null">
+          NULL,
+        </if>
+        <if test="item.may != null">
+          #{item.may,jdbcType=DOUBLE},
+        </if>
+        <if test="item.may == null">
+          NULL,
+        </if>
+        <if test="item.june != null">
+          #{item.june,jdbcType=DOUBLE},
+        </if>
+        <if test="item.june == null">
+          NULL,
+        </if>
+        <if test="item.july != null">
+          #{item.july,jdbcType=DOUBLE},
+        </if>
+        <if test="item.july == null">
+          NULL,
+        </if>
+        <if test="item.august != null">
+          #{item.august,jdbcType=DOUBLE},
+        </if>
+        <if test="item.august == null">
+          NULL,
+        </if>
+        <if test="item.september != null">
+          #{item.september,jdbcType=DOUBLE},
+        </if>
+        <if test="item.september == null">
+          NULL,
+        </if>
+        <if test="item.october != null">
+          #{item.october,jdbcType=DOUBLE},
+        </if>
+        <if test="item.october == null">
+          NULL,
+        </if>
+        <if test="item.november != null">
+          #{item.november,jdbcType=DOUBLE},
+        </if>
+        <if test="item.november == null">
+          NULL,
+        </if>
+        <if test="item.december != null">
+          #{item.december,jdbcType=DOUBLE},
+        </if>
+        <if test="item.december == null">
+          NULL,
+        </if>
+        <if test="item.createTime != null">
+          #{item.createTime,jdbcType=TIMESTAMP},
+        </if>
+        <if test="item.createTime == null">
+          NULL,
+        </if>
+        <if test="item.resultId != null">
+          #{item.resultId,jdbcType=INTEGER},
+        </if>
+        <if test="item.resultId == null">
+          NULL,
+        </if>
+      </trim>
+    </foreach>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zkl.taishou.common.entity.diagnose.MonthConsumeCustomerRecord">
+    update month_consume_customer_record
+    <set>
+      <if test="userId != null">
+        user_id = #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="january != null">
+        january = #{january,jdbcType=DOUBLE},
+      </if>
+      <if test="february != null">
+        february = #{february,jdbcType=DOUBLE},
+      </if>
+      <if test="march != null">
+        march = #{march,jdbcType=DOUBLE},
+      </if>
+      <if test="april != null">
+        april = #{april,jdbcType=DOUBLE},
+      </if>
+      <if test="may != null">
+        may = #{may,jdbcType=DOUBLE},
+      </if>
+      <if test="june != null">
+        june = #{june,jdbcType=DOUBLE},
+      </if>
+      <if test="july != null">
+        july = #{july,jdbcType=DOUBLE},
+      </if>
+      <if test="august != null">
+        august = #{august,jdbcType=DOUBLE},
+      </if>
+      <if test="september != null">
+        september = #{september,jdbcType=DOUBLE},
+      </if>
+      <if test="october != null">
+        october = #{october,jdbcType=DOUBLE},
+      </if>
+      <if test="november != null">
+        november = #{november,jdbcType=DOUBLE},
+      </if>
+      <if test="december != null">
+        december = #{december,jdbcType=DOUBLE},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="resultId != null">
+        result_id = #{resultId,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zkl.taishou.common.entity.diagnose.MonthConsumeCustomerRecord">
+    update month_consume_customer_record
+    set user_id = #{userId,jdbcType=INTEGER},
+      january = #{january,jdbcType=DOUBLE},
+      february = #{february,jdbcType=DOUBLE},
+      march = #{march,jdbcType=DOUBLE},
+      april = #{april,jdbcType=DOUBLE},
+      may = #{may,jdbcType=DOUBLE},
+      june = #{june,jdbcType=DOUBLE},
+      july = #{july,jdbcType=DOUBLE},
+      august = #{august,jdbcType=DOUBLE},
+      september = #{september,jdbcType=DOUBLE},
+      october = #{october,jdbcType=DOUBLE},
+      november = #{november,jdbcType=DOUBLE},
+      december = #{december,jdbcType=DOUBLE},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      result_id = #{resultId,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateBatchByPrimaryKey" parameterType="java.util.List">
+    update month_consume_customer_record
+    <trim prefix="set" suffixOverrides=",">
+      <trim prefix="user_id =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.userId}
+        </foreach>
+      </trim>
+      <trim prefix="january =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.january}
+        </foreach>
+      </trim>
+      <trim prefix="february =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.february}
+        </foreach>
+      </trim>
+      <trim prefix="march =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.march}
+        </foreach>
+      </trim>
+      <trim prefix="april =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.april}
+        </foreach>
+      </trim>
+      <trim prefix="may =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.may}
+        </foreach>
+      </trim>
+      <trim prefix="june =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.june}
+        </foreach>
+      </trim>
+      <trim prefix="july =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.july}
+        </foreach>
+      </trim>
+      <trim prefix="august =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.august}
+        </foreach>
+      </trim>
+      <trim prefix="september =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.september}
+        </foreach>
+      </trim>
+      <trim prefix="october =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.october}
+        </foreach>
+      </trim>
+      <trim prefix="november =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.november}
+        </foreach>
+      </trim>
+      <trim prefix="december =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.december}
+        </foreach>
+      </trim>
+      <trim prefix="create_time =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.createTime}
+        </foreach>
+      </trim>
+      <trim prefix="result_id =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.resultId}
+        </foreach>
+      </trim>
+    </trim>
+    where id in 
+    <foreach close=")" collection="list" index="index" item="item" open="(" separator=",">
+       #{item.id} 
+    </foreach>
+  </update>
+  <update id="updateBatchByPrimaryKeySelective" parameterType="java.util.List">
+    update month_consume_customer_record
+    <trim prefix="set" suffixOverrides=",">
+      <trim prefix="user_id =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.userId != null ">
+            when  #{item.id} then #{item.userId}
+          </if>
+          <if test="item.userId == null ">
+            when  #{item.id} then month_consume_customer_record.user_id
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="january =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.january != null ">
+            when  #{item.id} then #{item.january}
+          </if>
+          <if test="item.january == null ">
+            when  #{item.id} then month_consume_customer_record.january
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="february =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.february != null ">
+            when  #{item.id} then #{item.february}
+          </if>
+          <if test="item.february == null ">
+            when  #{item.id} then month_consume_customer_record.february
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="march =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.march != null ">
+            when  #{item.id} then #{item.march}
+          </if>
+          <if test="item.march == null ">
+            when  #{item.id} then month_consume_customer_record.march
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="april =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.april != null ">
+            when  #{item.id} then #{item.april}
+          </if>
+          <if test="item.april == null ">
+            when  #{item.id} then month_consume_customer_record.april
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="may =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.may != null ">
+            when  #{item.id} then #{item.may}
+          </if>
+          <if test="item.may == null ">
+            when  #{item.id} then month_consume_customer_record.may
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="june =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.june != null ">
+            when  #{item.id} then #{item.june}
+          </if>
+          <if test="item.june == null ">
+            when  #{item.id} then month_consume_customer_record.june
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="july =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.july != null ">
+            when  #{item.id} then #{item.july}
+          </if>
+          <if test="item.july == null ">
+            when  #{item.id} then month_consume_customer_record.july
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="august =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.august != null ">
+            when  #{item.id} then #{item.august}
+          </if>
+          <if test="item.august == null ">
+            when  #{item.id} then month_consume_customer_record.august
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="september =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.september != null ">
+            when  #{item.id} then #{item.september}
+          </if>
+          <if test="item.september == null ">
+            when  #{item.id} then month_consume_customer_record.september
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="october =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.october != null ">
+            when  #{item.id} then #{item.october}
+          </if>
+          <if test="item.october == null ">
+            when  #{item.id} then month_consume_customer_record.october
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="november =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.november != null ">
+            when  #{item.id} then #{item.november}
+          </if>
+          <if test="item.november == null ">
+            when  #{item.id} then month_consume_customer_record.november
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="december =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.december != null ">
+            when  #{item.id} then #{item.december}
+          </if>
+          <if test="item.december == null ">
+            when  #{item.id} then month_consume_customer_record.december
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="create_time =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.createTime != null ">
+            when  #{item.id} then #{item.createTime}
+          </if>
+          <if test="item.createTime == null ">
+            when  #{item.id} then month_consume_customer_record.create_time
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="result_id =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.resultId != null ">
+            when  #{item.id} then #{item.resultId}
+          </if>
+          <if test="item.resultId == null ">
+            when  #{item.id} then month_consume_customer_record.result_id
+          </if>
+        </foreach>
+      </trim>
+    </trim>
+    where id in 
+    <foreach close=")" collection="list" index="index" item="item" open="(" separator=",">
+       #{item.id} 
+    </foreach>
+  </update>
+</mapper>

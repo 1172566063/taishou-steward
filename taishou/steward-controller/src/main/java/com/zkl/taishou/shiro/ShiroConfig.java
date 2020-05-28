@@ -63,14 +63,15 @@ public class ShiroConfig {
         map.put("/swagger-resources/**",  "anon");
         map.put( "/webjars/**", "anon");
         map.put("/v2/**", "anon");
+        map.put("/user/register","anon");
         //对所有用户认证
         map.put("/**", "authc");
         //登录
         shiroFilterFactoryBean.setLoginUrl("/user/login");
         //首页
-        shiroFilterFactoryBean.setSuccessUrl("/index");
+        //shiroFilterFactoryBean.setSuccessUrl("/index");
         //错误页面，认证不通过跳转
-        shiroFilterFactoryBean.setUnauthorizedUrl("/error");
+        //shiroFilterFactoryBean.setUnauthorizedUrl("/error");
         shiroFilterFactoryBean.setFilterChainDefinitionMap(map);
         return shiroFilterFactoryBean;
     }

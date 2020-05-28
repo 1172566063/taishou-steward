@@ -1,12 +1,13 @@
 
 import com.alibaba.fastjson.JSON;
 import com.zkl.taishou.common.VO.CalculateStepOneVO;
+import com.zkl.taishou.common.entity.calculate.CalculateRecord;
 import com.zkl.taishou.common.utils.CommonUtils;
+import com.zkl.taishou.common.utils.EntityTransform;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
-import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.Hashtable;
 import java.util.Map;
@@ -23,56 +24,24 @@ import java.util.concurrent.*;
 public class Springboot {
 
 
-    @Test
-    public static void main3(String[] args) {
-        /*Double obj=2.54;
-        double eps = 1e-10;  // 精度范围
-        System.out.println( obj-obj%1+1);*/
-        Map<String,Double> map= new Hashtable<>();
-        map.put("asdfs",3.56);
-        map.put("bsdfs",7.15);
-        map.put("csdfs",2.00);
-        map.forEach((K,V)->{
-            if(!CommonUtils.isIntegerForDouble(V)){
-                V=V-V%1+1;
-                map.put(K,V);
-            }
-
-        });
-
-        System.out.println(JSON.toJSONString(map));
-    }
 
 
     @Test
-    public static void main2(String[] args) {
+    public static void main(String[] args) {
         CalculateStepOneVO calculateStepOne=new CalculateStepOneVO();
-        calculateStepOne.setUserId(new Long(1));
+        //calculateStepOne.setUserId(new Long(1));
         calculateStepOne.setArea(new Long(20));
         calculateStepOne.setBedNum(new Long(30));
         calculateStepOne.setClientNum(new Long(40));
         calculateStepOne.setRoomNum(new Long(50));
         calculateStepOne.setStaffNum(new Long(60));
-        Integer yearAnnualTurnover=35000;
-        Map map = new ConcurrentHashMap();
-        Class calculateStepOneClass = calculateStepOne.getClass();
-        Field[] declaredFields = calculateStepOneClass.getDeclaredFields();
-        try {
-            for(Field field:declaredFields){
-                String name = field.getName();
-                if(name.equals("serialVersionUid")||name.equals("userId")){
-                    continue;
-                }
-                Field declaredField = calculateStepOneClass.getDeclaredField(name);
-                declaredField.setAccessible(true);
-                Object aDouble = declaredField.get(calculateStepOne);
-
-                map.put(field.getName()+"Contribution",yearAnnualTurnover/Long.valueOf(String.valueOf(aDouble)));
-            }
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-        System.out.println(JSON.toJSONString(map));
+//        EntityTransform<CalculateStepOneVO, CalculateRecord> voToEntity=new EntityTransform<>(calculateStepOne,new CalculateRecord());
+//        EntityTransform<CalculateStepOneVO, CalculateRecord> voToEntity2=new EntityTransform(calculateStepOne,new CalculateRecord());
+//        CalculateRecord calculateRecord = voToEntity.toEntity();
+//        CalculateRecord calculateRecord2 = voToEntity2.toEntity();
+        CalculateRecord calculateRecord = EntityTransform.Build(calculateStepOne, new CalculateRecord()).toEntity();
+        System.out.println(JSON.toJSONString(calculateRecord));
+        //System.out.println(JSON.toJSONString(calculateRecord2));
     }
 
 

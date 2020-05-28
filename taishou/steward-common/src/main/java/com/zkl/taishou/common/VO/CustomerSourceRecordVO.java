@@ -1,6 +1,7 @@
 /* https://github.com/orange1438 */
 package com.zkl.taishou.common.VO;
 
+import io.swagger.annotations.ApiModel;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -15,9 +16,8 @@ import java.util.Date;
  * date:2020-05-22 17:56:37
  */
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
 @Accessors(chain = true)
+@ApiModel("CustomerSourceRecordVO")
 public class CustomerSourceRecordVO implements Serializable {
     /**
      * 串行版本ID

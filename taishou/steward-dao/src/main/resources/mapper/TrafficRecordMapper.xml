@@ -27,7 +27,7 @@
     where id = #{id,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="com.zkl.taishou.common.entity.diagnose.TrafficRecord">
-    insert into traffic_record (id, user_id, toShop_customer_count, 
+    insert into traffic_record (id, user_id, toShop_customer_count,
       toShop_count, nursing_count, employees_labor_count, 
       beds_use_count, result_id, create_rime
       )
@@ -98,7 +98,7 @@
     </trim>
   </insert>
   <insert id="insertBatch" parameterType="java.util.List">
-    insert into traffic_record (id, user_id, toShop_customer_count, 
+    insert into traffic_record (id, user_id, toShop_customer_count,
       toShop_count, nursing_count, employees_labor_count, 
       beds_use_count, result_id, create_rime
       )

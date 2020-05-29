@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/steward-common/steward-common.iml" filepath="$PROJECT_DIR$/steward-common/steward-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/steward-controller/steward-controller.iml" filepath="$PROJECT_DIR$/steward-controller/steward-controller.iml" />
+      <module fileurl="file://$PROJECT_DIR$/steward-dao/steward-dao.iml" filepath="$PROJECT_DIR$/steward-dao/steward-dao.iml" />
+      <module fileurl="file://$PROJECT_DIR$/steward-service/steward-service.iml" filepath="$PROJECT_DIR$/steward-service/steward-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/taishou.iml" filepath="$PROJECT_DIR$/taishou.iml" />
+    </modules>
+  </component>
+</project>

@@ -1,7 +1,12 @@
-com\zkl\taishou\service\shiro\MyShiroRealm.class
-com\zkl\taishou\service\user\UserService.class
-com\zkl\taishou\service\shiro\ShiroConfig.class
-com\zkl\taishou\service\BaseService.class
+com\zkl\taishou\service\CalculateService.class
+com\zkl\taishou\service\Impl\CalculateServiceImpl$CalculateDataThread.class
+com\zkl\taishou\service\Impl\CalculateServiceImpl$CustomerShareSwellThread.class
+com\zkl\taishou\service\Impl\UserServiceImpl.class
+com\zkl\taishou\service\Impl\BaseService.class
+com\zkl\taishou\service\Impl\CalculateServiceImpl.class
 com\zkl\taishou\service\redis\Impl\RedisServiceImpl.class
-com\zkl\taishou\service\user\Impl\UserServiceImpl.class
+com\zkl\taishou\service\Impl\DiagnoseServiceImpl.class
+com\zkl\taishou\service\DiagnoseService.class
+com\zkl\taishou\service\Impl\CalculateServiceImpl$CalculateContributionThread.class
 com\zkl\taishou\service\redis\RedisService.class
+com\zkl\taishou\service\UserService.class

@@ -94,4 +94,12 @@ public interface RedisService {
      */
     public void setPastDueTime(String key, int time);
 
+
+    /**
+     * 添加消息
+     * @param queueKey
+     * @param param
+     */
+    public void addMessage(String queueKey ,String param);
+
 }

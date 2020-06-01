@@ -160,9 +160,9 @@ public class CalculateServiceImpl implements CalculateService {
         Map<String, Double> map = projectProportion.getMap();
         CalculateResultPO calculateResultPO = new CalculateResultPO(CalculateType.FOUNDATION_PROJECT_CONTRIBUTION);
         Map<String, Double> resultMap = calculateResultPO.getMap();
-        Double general = map.get(CalculateRule.GENERAL_PROJECT_PROPORTION.getName());
-        Double furniture = map.get(CalculateRule.FURNITURE_PROJECT_PROPORTION.getName());
-        Double other = map.get(CalculateRule.OTHER_PROJECT_PROPORTION.getName());
+        Double general = map.get(CalculateRule.GENERAL_PROJECT_PROPORTION.getValue());
+        Double furniture = map.get(CalculateRule.FURNITURE_PROJECT_PROPORTION.getValue());
+        Double other = map.get(CalculateRule.OTHER_PROJECT_PROPORTION.getValue());
         Double sum = general + furniture + other;
         resultMap.put("areaOutPut", sum / calculateStepOneVO.getArea() / CommonalityProperty.month);
         resultMap.put("roomOutPut", sum / calculateStepOneVO.getRoomNum() / CommonalityProperty.month);
@@ -192,22 +192,22 @@ public class CalculateServiceImpl implements CalculateService {
             Double value = data.getValue();
             switch (K) {
                 case "big_customers_consume":
-                    resultMap.put(CalculateRule.BIG_AVERAGE_CUSTOMER.getName(), value / customersNumberMap.get(CalculateRule.BIG_CUSTOMERS_NUMBER.getName()));
+                    resultMap.put(CalculateRule.BIG_AVERAGE_CUSTOMER.getValue(), value / customersNumberMap.get(CalculateRule.BIG_CUSTOMERS_NUMBER.getValue()));
                     break;
                 case "A_customers_consume":
-                    resultMap.put(CalculateRule.A_AVERAGE_CUSTOMER.getName(), value / customersNumberMap.get(CalculateRule.A_CUSTOMERS_NUMBER.getName()));
+                    resultMap.put(CalculateRule.A_AVERAGE_CUSTOMER.getValue(), value / customersNumberMap.get(CalculateRule.A_CUSTOMERS_NUMBER.getValue()));
                     break;
                 case "B_customers_consume":
-                    resultMap.put(CalculateRule.B_AVERAGE_CUSTOMER.getName(), value / customersNumberMap.get(CalculateRule.B_CUSTOMERS_NUMBER.getName()));
+                    resultMap.put(CalculateRule.B_AVERAGE_CUSTOMER.getValue(), value / customersNumberMap.get(CalculateRule.B_CUSTOMERS_NUMBER.getValue()));
                     break;
                 case "C_customers_consume":
-                    resultMap.put(CalculateRule.C_AVERAGE_CUSTOMER.getName(), value / customersNumberMap.get(CalculateRule.C_CUSTOMERS_NUMBER.getName()));
+                    resultMap.put(CalculateRule.C_AVERAGE_CUSTOMER.getValue(), value / customersNumberMap.get(CalculateRule.C_CUSTOMERS_NUMBER.getValue()));
                     break;
                 case "D_customers_consume":
-                    resultMap.put(CalculateRule.D_AVERAGE_CUSTOMER.getName(), value / customersNumberMap.get(CalculateRule.D_CUSTOMERS_NUMBER.getName()));
+                    resultMap.put(CalculateRule.D_AVERAGE_CUSTOMER.getValue(), value / customersNumberMap.get(CalculateRule.D_CUSTOMERS_NUMBER.getValue()));
                     break;
                 case "E_customers_consume":
-                    resultMap.put(CalculateRule.E_AVERAGE_CUSTOMER.getName(), value / customersNumberMap.get(CalculateRule.E_CUSTOMERS_NUMBER.getName()));
+                    resultMap.put(CalculateRule.E_AVERAGE_CUSTOMER.getValue(), value / customersNumberMap.get(CalculateRule.E_CUSTOMERS_NUMBER.getValue()));
                     break;
             }
             calculateResultPO.setMap(resultMap);
@@ -232,22 +232,22 @@ public class CalculateServiceImpl implements CalculateService {
         for (CalculateCardinal calculateCardinal : collect) {
             switch (calculateCardinal.getName()) {
                 case "big_customers_consume":
-                    value = customersConsumeMap.get(CalculateRule.BIG_CUSTOMERS_NUMBER.getName());
+                    value = customersConsumeMap.get(CalculateRule.BIG_CUSTOMERS_NUMBER.getValue());
                     break;
                 case "A_customers_consume":
-                    value = customersConsumeMap.get(CalculateRule.A_CUSTOMERS_NUMBER.getName());
+                    value = customersConsumeMap.get(CalculateRule.A_CUSTOMERS_NUMBER.getValue());
                     break;
                 case "B_customers_consume":
-                    value = customersConsumeMap.get(CalculateRule.B_CUSTOMERS_NUMBER.getName());
+                    value = customersConsumeMap.get(CalculateRule.B_CUSTOMERS_NUMBER.getValue());
                     break;
                 case "C_customers_consume":
-                    value = customersConsumeMap.get(CalculateRule.C_CUSTOMERS_NUMBER.getName());
+                    value = customersConsumeMap.get(CalculateRule.C_CUSTOMERS_NUMBER.getValue());
                     break;
                 case "D_customers_consume":
-                    value = customersConsumeMap.get(CalculateRule.D_CUSTOMERS_NUMBER.getName());
+                    value = customersConsumeMap.get(CalculateRule.D_CUSTOMERS_NUMBER.getValue());
                     break;
                 case "E_customers_consume":
-                    value = customersConsumeMap.get(CalculateRule.E_CUSTOMERS_NUMBER.getName());
+                    value = customersConsumeMap.get(CalculateRule.E_CUSTOMERS_NUMBER.getValue());
                     break;
                 default:
                     value = 0.0;

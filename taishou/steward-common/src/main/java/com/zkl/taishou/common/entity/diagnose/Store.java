@@ -1,37 +1,30 @@
 /* https://github.com/orange1438 */
-package com.zkl.taishou.common.entity.user;
+package com.zkl.taishou.common.entity.diagnose;
 
-import com.zkl.taishou.common.entity.diagnose.Staff;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 
 import java.io.Serializable;
-import java.util.List;
 
 /** 
  * @author orange1438 code generator
- * date:2020-05-22 19:44:11
+ * date:2020-05-29 14:25:05
  */
-@AllArgsConstructor
 @Data
+@AllArgsConstructor
 @NoArgsConstructor
 @Accessors(chain = true)
 public class Store implements Serializable {
-
-    public Store(Long userId){
-        this.userId=userId;
-    }
-
     /** 
      * 串行版本ID
     */
-    private static final long serialVersionUID = -7901716313693208596L;
+    private static final long serialVersionUID = 3581742250840495709L;
 
     /** 
      */ 
-    private Long id;
+    private Integer id;
 
     /** 
      * 店铺名称
@@ -46,7 +39,7 @@ public class Store implements Serializable {
     /** 
      * 所属用户
      */ 
-    private Long userId;
+    private Integer userId;
 
     /** 
      * 是否逻辑删除 Y删除  默认：N

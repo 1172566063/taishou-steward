@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zkl.taishou.dao.user.UserOperationRecordDAO">
+  <resultMap id="BaseResultMap" type="com.zkl.taishou.common.entity.user.UserOperationRecord">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="user_phone" jdbcType="VARCHAR" property="userPhone" />
+    <result column="operation" jdbcType="VARCHAR" property="operation" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, user_phone, `operation`, create_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from user_operation_record
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from user_operation_record
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.zkl.taishou.common.entity.user.UserOperationRecord">
+    insert into user_operation_record (id, user_phone, `operation`, 
+      create_time)
+    values (#{id,jdbcType=INTEGER}, #{userPhone,jdbcType=VARCHAR}, #{operation,jdbcType=VARCHAR}, 
+      #{createTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.zkl.taishou.common.entity.user.UserOperationRecord">
+    insert into user_operation_record
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="userPhone != null">
+        user_phone,
+      </if>
+      <if test="operation != null">
+        `operation`,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="userPhone != null">
+        #{userPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="operation != null">
+        #{operation,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <insert id="insertBatch" parameterType="java.util.List">
+    insert into user_operation_record (id, user_phone, `operation`, 
+      create_time)
+    values 
+    <foreach collection="list" index="index" item="item" separator=",">
+      (#{item.id,jdbcType=INTEGER}, #{item.userPhone,jdbcType=VARCHAR}, #{item.operation,jdbcType=VARCHAR}, 
+        #{item.createTime,jdbcType=TIMESTAMP})
+    </foreach>
+  </insert>
+  <insert id="insertBatchSelective" parameterType="java.util.List">
+    insert into user_operation_record
+    (id, user_phone, `operation`, create_time)
+    values 
+    <foreach collection="list" index="index" item="item" separator=",">
+      <trim prefix="(" suffix=")" suffixOverrides=",">
+        <if test="item.id != null">
+          #{item.id,jdbcType=INTEGER},
+        </if>
+        <if test="item.id == null">
+          NULL,
+        </if>
+        <if test="item.userPhone != null">
+          #{item.userPhone,jdbcType=VARCHAR},
+        </if>
+        <if test="item.userPhone == null">
+          NULL,
+        </if>
+        <if test="item.operation != null">
+          #{item.operation,jdbcType=VARCHAR},
+        </if>
+        <if test="item.operation == null">
+          NULL,
+        </if>
+        <if test="item.createTime != null">
+          #{item.createTime,jdbcType=TIMESTAMP},
+        </if>
+        <if test="item.createTime == null">
+          NULL,
+        </if>
+      </trim>
+    </foreach>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zkl.taishou.common.entity.user.UserOperationRecord">
+    update user_operation_record
+    <set>
+      <if test="userPhone != null">
+        user_phone = #{userPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="operation != null">
+        `operation` = #{operation,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zkl.taishou.common.entity.user.UserOperationRecord">
+    update user_operation_record
+    set user_phone = #{userPhone,jdbcType=VARCHAR},
+      `operation` = #{operation,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateBatchByPrimaryKey" parameterType="java.util.List">
+    update user_operation_record
+    <trim prefix="set" suffixOverrides=",">
+      <trim prefix="user_phone =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.userPhone}
+        </foreach>
+      </trim>
+      <trim prefix="operation =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.operation}
+        </foreach>
+      </trim>
+      <trim prefix="create_time =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.createTime}
+        </foreach>
+      </trim>
+    </trim>
+    where id in 
+    <foreach close=")" collection="list" index="index" item="item" open="(" separator=",">
+       #{item.id} 
+    </foreach>
+  </update>
+  <update id="updateBatchByPrimaryKeySelective" parameterType="java.util.List">
+    update user_operation_record
+    <trim prefix="set" suffixOverrides=",">
+      <trim prefix="user_phone =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.userPhone != null ">
+            when  #{item.id} then #{item.userPhone}
+          </if>
+          <if test="item.userPhone == null ">
+            when  #{item.id} then user_operation_record.user_phone
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="operation =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.operation != null ">
+            when  #{item.id} then #{item.operation}
+          </if>
+          <if test="item.operation == null ">
+            when  #{item.id} then user_operation_record.`operation`
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="create_time =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.createTime != null ">
+            when  #{item.id} then #{item.createTime}
+          </if>
+          <if test="item.createTime == null ">
+            when  #{item.id} then user_operation_record.create_time
+          </if>
+        </foreach>
+      </trim>
+    </trim>
+    where id in 
+    <foreach close=")" collection="list" index="index" item="item" open="(" separator=",">
+       #{item.id} 
+    </foreach>
+  </update>
+</mapper>

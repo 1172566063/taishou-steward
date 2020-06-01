@@ -13,9 +13,13 @@ public class EntityTransform<V,E> {
     private V v;
     private E e;
 
-    public EntityTransform(V v,E e){
+    public EntityTransform(V v,Class<E> eClass){
         this.v=v;
-        this.e=e;
+        try {
+            this.e=eClass.newInstance();
+        }catch (Exception e){
+            this.e=null;
+        }
     }
 
     public E toEntity(){
@@ -36,14 +40,15 @@ public class EntityTransform<V,E> {
                 declaredField.setAccessible(true);
                 declaredField.set(e,value);
             }
-        }catch (Exception eex){
+        }catch (Exception ex){
+            ex.printStackTrace();
             return null;
         }
         return e;
     }
 
-    public static <V,E> EntityTransform<V,E> Build(V v,E e){
-        return new EntityTransform<>(v,e);
+    public static <V,E> EntityTransform<V,E> Build(V v,Class<E> eClass){
+        return new EntityTransform<>(v,eClass);
     }
 
 }

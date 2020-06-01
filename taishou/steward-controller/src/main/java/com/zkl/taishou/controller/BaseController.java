@@ -36,9 +36,9 @@ public class BaseController {
     protected void LogoutUser(){
         HttpServletRequest request = ServletUtil.getRequest();
         String token = request.getHeader("token");
-        String userJson = redisService.get(RedisKeyConstants.LOGIN_USER + "toke");
+        String userJson = redisService.get(RedisKeyConstants.LOGIN_USER + token);
         User user = copyTo(userJson, User.class);
-        redisService.remove(RedisKeyConstants.LOGIN_USER + "toke");
+        redisService.remove(RedisKeyConstants.LOGIN_USER + token);
         redisService.remove(RedisKeyConstants.LOGIN_USER + user.getPhone());
     }
 
@@ -47,8 +47,7 @@ public class BaseController {
      * 未登录返回null
      */
     protected User getCurrUser() {
-        HttpServletRequest request = ServletUtil.getRequest();
-        String token = request.getHeader("token");
+        String token = getToken();
         if (StringUtils.isBlank(token)) {
             return null;
         }
@@ -60,6 +59,12 @@ public class BaseController {
         User currUser = JSON.parseObject(currUserJson, User.class);
 
         return currUser;
+    }
+
+    protected String getToken(){
+        HttpServletRequest request = ServletUtil.getRequest();
+        String token = request.getHeader("token");
+        return token;
     }
 
     /**

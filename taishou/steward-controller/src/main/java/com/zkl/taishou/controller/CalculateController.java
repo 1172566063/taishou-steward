@@ -4,6 +4,7 @@ import com.zkl.taishou.common.PO.CalculateResultPO;
 import com.zkl.taishou.common.constants.ResultBean;
 import com.zkl.taishou.common.VO.CalculateStepOneVO;
 import com.zkl.taishou.service.CalculateService;
+import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
@@ -21,6 +22,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @Date：2020/5/9-9:53
  * @Version:
  */
+@Api("测算")
 @RestController
 @RequestMapping("/calculate")
 public class CalculateController extends BaseController {

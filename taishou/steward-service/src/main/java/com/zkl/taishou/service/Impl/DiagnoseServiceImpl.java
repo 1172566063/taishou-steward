@@ -10,7 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
- * @ClassName:
+ * @ClassName: V1
+ *
  * @Author ：lishixiang
  * @Date：2020/5/19-14:58
  * @Version:
@@ -30,7 +31,6 @@ public class DiagnoseServiceImpl  extends BaseService implements DiagnoseService
     private YearCashflowRecordDAO yearCashflowRecordDAO;
     @Autowired
     private ActiveRecordDAO activeRecordDAO;
-
     @Autowired
     private AgeGroupRecordDAO ageGroupRecordDAO;
     @Autowired
@@ -141,7 +141,7 @@ public class DiagnoseServiceImpl  extends BaseService implements DiagnoseService
      */
     @Override
     public void recordAgeGroup(AgeGroupRecordVO ageGroupRecordVO) {
-        AgeGroupRecord ageGroupRecord=EntityTransform.Build(ageGroupRecordVO, new AgeGroupRecord()).toEntity();
+        AgeGroupRecord ageGroupRecord=EntityTransform.Build(ageGroupRecordVO, AgeGroupRecord.class).toEntity();
         ageGroupRecordDAO.insertSelective(ageGroupRecord);
     }
 
@@ -155,7 +155,7 @@ public class DiagnoseServiceImpl  extends BaseService implements DiagnoseService
      */
     @Override
     public void recordCustomerSource(CustomerSourceRecordVO customerSourceRecordVO) {
-        CustomerSourceRecord customerSourceRecord = EntityTransform.Build(customerSourceRecordVO, new CustomerSourceRecord()).toEntity();
+        CustomerSourceRecord customerSourceRecord = EntityTransform.Build(customerSourceRecordVO,CustomerSourceRecord.class).toEntity();
         customerSourceRecordDAO.insertSelective(customerSourceRecord);
     }
 
@@ -169,7 +169,7 @@ public class DiagnoseServiceImpl  extends BaseService implements DiagnoseService
      */
     @Override
     public void recordCustomersProfessional(CustomersProfessionalRecordVO customersProfessionalRecordVO) {
-        CustomersProfessionalRecord customersProfessionalRecord = EntityTransform.Build(customersProfessionalRecordVO, new CustomersProfessionalRecord()).toEntity();
+        CustomersProfessionalRecord customersProfessionalRecord = EntityTransform.Build(customersProfessionalRecordVO,CustomersProfessionalRecord.class).toEntity();
         customersProfessionalRecordDAO.insertSelective(customersProfessionalRecord);
     }
 
@@ -183,7 +183,7 @@ public class DiagnoseServiceImpl  extends BaseService implements DiagnoseService
      */
     @Override
     public void recordTraffic(TrafficRecordVO trafficRecordVO) {
-        TrafficRecord trafficRecord = EntityTransform.Build(trafficRecordVO, new TrafficRecord()).toEntity();
+        TrafficRecord trafficRecord = EntityTransform.Build(trafficRecordVO, TrafficRecord.class).toEntity();
         trafficRecordDAO.insertSelective(trafficRecord);
     }
 
@@ -197,7 +197,7 @@ public class DiagnoseServiceImpl  extends BaseService implements DiagnoseService
      */
     @Override
     public void recordPerCapitaShop(PerCapitaShopRecordVO perCapitaShopRecordVO) {
-        PerCapitaShopRecord perCapitaShopRecord = EntityTransform.Build(perCapitaShopRecordVO, new PerCapitaShopRecord()).toEntity();
+        PerCapitaShopRecord perCapitaShopRecord = EntityTransform.Build(perCapitaShopRecordVO,PerCapitaShopRecord.class).toEntity();
         perCapitaShopRecordDAO.insertSelective(perCapitaShopRecord);
     }
 
@@ -211,7 +211,7 @@ public class DiagnoseServiceImpl  extends BaseService implements DiagnoseService
      */
     @Override
     public void recordEffectiveRegular(EffectiveRegularRecordVO effectiveRegularRecordVO) {
-        EffectiveRegularRecord effectiveRegularRecord = EntityTransform.Build(effectiveRegularRecordVO, new EffectiveRegularRecord()).toEntity();
+        EffectiveRegularRecord effectiveRegularRecord = EntityTransform.Build(effectiveRegularRecordVO,EffectiveRegularRecord.class).toEntity();
         effectiveRegularRecordDAO.insertSelective(effectiveRegularRecord);
     }
 
@@ -225,7 +225,7 @@ public class DiagnoseServiceImpl  extends BaseService implements DiagnoseService
      */
     @Override
     public void recordMonthIncreaseCustomer(MonthIncreaseCustomerRecordVO monthIncreaseCustomerRecordVO) {
-        MonthIncreaseCustomerRecord monthIncreaseCustomerRecord = EntityTransform.Build(monthIncreaseCustomerRecordVO, new MonthIncreaseCustomerRecord()).toEntity();
+        MonthIncreaseCustomerRecord monthIncreaseCustomerRecord = EntityTransform.Build(monthIncreaseCustomerRecordVO,MonthIncreaseCustomerRecord.class).toEntity();
         monthIncreaseCustomerRecordDAO.insertSelective(monthIncreaseCustomerRecord);
     }
 }

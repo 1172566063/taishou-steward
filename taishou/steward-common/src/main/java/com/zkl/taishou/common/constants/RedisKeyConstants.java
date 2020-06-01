@@ -8,29 +8,24 @@ package com.zkl.taishou.common.constants;
 public interface RedisKeyConstants {
 
     /**
-     * 登陆key
+     * 员工指标诊断 添加员工
      */
-    String LOGIN_KEY = "app_login_";
+    String STAFF_INDEX = "STAFF_KEY";
 
     /**
-     * 用户信息
+     * 用户信息 登陆key
      */
     String LOGIN_USER="app_user_";
-
-    /**
-     * 短信key
-     */
-    String SMS_REGISTER_KEY = "app_sms_register_";
-
-    /**
-     * 重置密码短信key
-     */
-    String RESET_PWD_SMS_KEY = "app_reset_pwd_";
 
     /**
      * 一分钟
      */
     Integer ONE_MINUTE= 60;
+
+    /**
+     * 半小时
+     */
+    Integer THIRTY_MINUTE= 1800;
 
     /**
      * 一小时
@@ -47,39 +42,9 @@ public interface RedisKeyConstants {
      */
     Integer ONE_WEEK= 604800;
 
-    /**
-     * 视频历史
-     */
-    String VIDEO_KEY="EQUIPMENT_";
 
     /**
-     * 记录被点赞用户
+     * 记录用户操做队列绑定键
      */
-    String LIKE_USER_KEY="LIKE_USER_";
-
-    /**
-     * 用户别名key
-     */
-    String USER_KEY="USER_CID_";
-
-    /**
-     * 用户别名key
-     */
-    String SELL_ORDER_KEY="SELL_ORDER_";
-
-    /**
-     * H5存储openid
-     */
-    String  WEB_WC_OPENID="USER_WC_OPENID_";
-
-    /**
-     * 用户关注
-     */
-    String COLLECT="USER_COLLECT_";
-
-    /**
-     * 用户关注
-     */
-    String ATTENTION="USER_ATTENTION_";
-
+    String USER_OPERATION ="userOperation";
 }

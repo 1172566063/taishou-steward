@@ -39,7 +39,7 @@ public class Springboot {
 //        EntityTransform<CalculateStepOneVO, CalculateRecord> voToEntity2=new EntityTransform(calculateStepOne,new CalculateRecord());
 //        CalculateRecord calculateRecord = voToEntity.toEntity();
 //        CalculateRecord calculateRecord2 = voToEntity2.toEntity();
-        CalculateRecord calculateRecord = EntityTransform.Build(calculateStepOne, new CalculateRecord()).toEntity();
+        CalculateRecord calculateRecord = EntityTransform.Build(calculateStepOne, CalculateRecord.class).toEntity();
         System.out.println(JSON.toJSONString(calculateRecord));
         //System.out.println(JSON.toJSONString(calculateRecord2));
     }

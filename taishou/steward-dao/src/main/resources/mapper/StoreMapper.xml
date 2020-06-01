@@ -216,4 +216,12 @@
        #{item.id} 
     </foreach>
   </update>
+
+  <select id="selectStoreByUserId" resultMap="BaseResultMap">
+    select <include refid="Base_Column_List"/>
+    from store
+    where user_id = #{userId}
+    and del = "N"
+    limit 0,1
+  </select>
 </mapper>

@@ -108,4 +108,9 @@ public class RedisServiceImpl implements RedisService {
             stringRedisTemplate.expire(key,time, TimeUnit.SECONDS);
         }
     }
+
+    @Override
+    public void addMessage(String queueKey, String param) {
+        redisTemplate.convertAndSend(queueKey,param);
+    }
 }

@@ -1,14 +1,14 @@
 /* https://github.com/orange1438 */
 package com.zkl.taishou.dao.user;
 
-import com.zkl.taishou.common.entity.user.Store;
+import com.zkl.taishou.common.entity.user.UserOperationRecord;
 
 /**
  * 本文件由 https://github.com/orange1438/mybatis-generator-core-chinese-annotation1.3.5-chinese-annotation 自动生成
  * @author orange1438 code generator
- * date:2020-05-22 19:44:11
+ * date:2020-05-31 16:40:02
  */
-public interface StoreDAO {
+public interface UserOperationRecordDAO {
     /** 
      * 根据ID删除
      * @param id 主键ID
@@ -21,40 +21,33 @@ public interface StoreDAO {
      * @param record 插入字段对象(必须含ID）
      * @return 返回添加成功的数量
      */
-    int insert(Store record);
+    int insert(UserOperationRecord record);
 
     /** 
      * 添加对象对应字段
      * @param record 插入字段对象(必须含ID）
      * @return 返回添加成功的数量
      */
-    int insertSelective(Store record);
+    int insertSelective(UserOperationRecord record);
 
     /** 
      * 根据ID查询
      * @param id 主键ID
      * @return 返回查询的结果
      */
-    Store selectByPrimaryKey(Integer id);
+    UserOperationRecord selectByPrimaryKey(Integer id);
 
     /** 
      * 根据ID修改对应字段
      * @param record 修改字段对象(必须含ID）
      * @return 返回更新成功的数量
      */
-    int updateByPrimaryKeySelective(Store record);
+    int updateByPrimaryKeySelective(UserOperationRecord record);
 
     /** 
      * 根据ID修改所有字段(必须含ID）
      * @param record 修改字段对象(必须含ID）
      * @return 返回更新成功的数量
      */
-    int updateByPrimaryKey(Store record);
-
-    /**
-     * 根据用户id查找店铺信息
-     * @param userId
-     * @return
-     */
-    Store selectStoreByUserId(Long userId);
+    int updateByPrimaryKey(UserOperationRecord record);
 }

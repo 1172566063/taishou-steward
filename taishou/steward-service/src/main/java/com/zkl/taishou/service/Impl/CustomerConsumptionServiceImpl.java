@@ -71,7 +71,7 @@ public class CustomerConsumptionServiceImpl extends BaseService implements Custo
      */
     @Override
     public void recordConsumerSpendingPotential(ConsumerSpendingPotentialVO consumerSpendingPotentialVO) {
-        ConsumerSpendingPotential consumerSpendingPotential = EntityTransform.Build(consumerSpendingPotentialVO, new ConsumerSpendingPotential()).toEntity();
+        ConsumerSpendingPotential consumerSpendingPotential = EntityTransform.Build(consumerSpendingPotentialVO, ConsumerSpendingPotential.class).toEntity();
         consumerSpendingPotentialDAO.insertSelective(consumerSpendingPotential);
     }
 
@@ -85,7 +85,7 @@ public class CustomerConsumptionServiceImpl extends BaseService implements Custo
      */
     @Override
     public void recordConsumerYearSpending(ConsumerYearSpendingRecordVO consumerYearSpendingRecordVO) {
-        ConsumerYearSpendingRecord consumerYearSpendingRecord = EntityTransform.Build(consumerYearSpendingRecordVO, new ConsumerYearSpendingRecord()).toEntity();
+        ConsumerYearSpendingRecord consumerYearSpendingRecord = EntityTransform.Build(consumerYearSpendingRecordVO, ConsumerYearSpendingRecord.class).toEntity();
         consumerYearSpendingRecordDAO.insertSelective(consumerYearSpendingRecord);
     }
 
@@ -100,7 +100,7 @@ public class CustomerConsumptionServiceImpl extends BaseService implements Custo
      */
     @Override
     public void recordCustomerServiceCard(CustomerServiceCardRecordVO customerServiceCardRecordVO) {
-        CustomerServiceCardRecord customerServiceCardRecord = EntityTransform.Build(customerServiceCardRecordVO, new CustomerServiceCardRecord()).toEntity();
+        CustomerServiceCardRecord customerServiceCardRecord = EntityTransform.Build(customerServiceCardRecordVO, CustomerServiceCardRecord.class).toEntity();
         customerServiceCardRecordDAO.insertSelective(customerServiceCardRecord);
     }
 
@@ -114,7 +114,7 @@ public class CustomerConsumptionServiceImpl extends BaseService implements Custo
      */
     @Override
     public void recordYearConsumptionCard(YearConsumptionCardRecordVO yearConsumptionCardRecordVO) {
-        YearConsumptionCardRecord yearConsumptionCardRecord = EntityTransform.Build(yearConsumptionCardRecordVO, new YearConsumptionCardRecord()).toEntity();
+        YearConsumptionCardRecord yearConsumptionCardRecord = EntityTransform.Build(yearConsumptionCardRecordVO, YearConsumptionCardRecord.class).toEntity();
         yearConsumptionCardRecordDAO.insertSelective(yearConsumptionCardRecord);
     }
 
@@ -128,7 +128,7 @@ public class CustomerConsumptionServiceImpl extends BaseService implements Custo
      */
     @Override
     public void recordCustomerCardBalanceRecord(CustomerCardBalanceRecordVO customerCardBalanceRecordVO) {
-        CustomerCardBalanceRecord customerCardBalanceRecord = EntityTransform.Build(customerCardBalanceRecordVO, new CustomerCardBalanceRecord()).toEntity();
+        CustomerCardBalanceRecord customerCardBalanceRecord = EntityTransform.Build(customerCardBalanceRecordVO,CustomerCardBalanceRecord.class).toEntity();
         customerCardBalanceRecordDAO.insertSelective(customerCardBalanceRecord);
     }
 
@@ -142,7 +142,7 @@ public class CustomerConsumptionServiceImpl extends BaseService implements Custo
      */
     @Override
     public void recordCustomerYearPerformance(CustomerYearPerformanceVO customerYearPerformanceVO) {
-        CustomerYearPerformance customerServiceCardRecord=EntityTransform.Build(customerYearPerformanceVO, new CustomerYearPerformance()).toEntity();
+        CustomerYearPerformance customerServiceCardRecord=EntityTransform.Build(customerYearPerformanceVO,CustomerYearPerformance.class).toEntity();
         customerYearPerformanceDAO.insertSelective(customerServiceCardRecord);
     }
 
@@ -157,13 +157,13 @@ public class CustomerConsumptionServiceImpl extends BaseService implements Custo
      */
     @Override
     public void recordMonthConsumeCustomerRecord(MonthConsumeCustomerRecordVO monthConsumeCustomerRecordVO) {
-        MonthConsumeCustomerRecord monthConsumeCustomerRecord = EntityTransform.Build(monthConsumeCustomerRecordVO, new MonthConsumeCustomerRecord()).toEntity();
+        MonthConsumeCustomerRecord monthConsumeCustomerRecord = EntityTransform.Build(monthConsumeCustomerRecordVO,MonthConsumeCustomerRecord.class).toEntity();
         monthConsumeCustomerRecordDAO.insertSelective(monthConsumeCustomerRecord);
     }
 
 
     /**
-     * 功能描述：顾客每月实操客数诊断记录表
+     * 功能描述：顾客每月实操客数诊断记录
      *
      * @Param：
      * @Return:
@@ -172,8 +172,7 @@ public class CustomerConsumptionServiceImpl extends BaseService implements Custo
      */
     @Override
     public void recordMonthField(MonthFieldRecordVO monthFieldRecordVO) {
-        MonthFieldRecord monthFieldRecord = EntityTransform.Build(monthFieldRecordVO, new MonthFieldRecord()).toEntity();
+        MonthFieldRecord monthFieldRecord = EntityTransform.Build(monthFieldRecordVO,MonthFieldRecord.class).toEntity();
         monthFieldRecordDAO.insertSelective(monthFieldRecord);
-
     }
 }

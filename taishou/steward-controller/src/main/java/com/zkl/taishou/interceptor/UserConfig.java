@@ -14,6 +14,12 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+/**
+ * @ClassName: 用户登陆信息与token存储
+ * @Author ：lishixiang
+ * @Date：2020/5/8-21:38
+ * @Version:
+ */
 @Component
 public class UserConfig implements HandlerInterceptor {
 
@@ -24,10 +30,10 @@ public class UserConfig implements HandlerInterceptor {
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object o) throws Exception {
         String token = request.getHeader("token");
         if (StringUtils.isNotBlank(token)) {
-            String userId=redisService.get(RedisKeyConstants.LOGIN_USER+token);
-            if(StringUtils.isNotBlank(userId)){
+            String userPhone=redisService.get(RedisKeyConstants.LOGIN_USER+token);
+            if(StringUtils.isNotBlank(userPhone)){
                 redisService.setPastDueTime(RedisKeyConstants.LOGIN_USER+token, RedisKeyConstants.ONE_WEEK);
-                redisService.setPastDueTime(RedisKeyConstants.LOGIN_USER+userId,RedisKeyConstants.ONE_WEEK);
+                redisService.setPastDueTime(RedisKeyConstants.LOGIN_USER+userPhone,RedisKeyConstants.ONE_WEEK);
                 return true;
             }
         }

@@ -6,7 +6,12 @@ import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
-//登录拦截器
+/**
+ * @ClassName: 登录拦截器
+ * @Author ：lishixiang
+ * @Date：2020/5/8-21:38
+ * @Version:
+ */
 @SpringBootConfiguration
 public class LoginInterceptor extends WebMvcConfigurerAdapter {
 

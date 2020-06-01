@@ -1,5 +1,6 @@
 package com.zkl.taishou.service.Impl;
 
+import com.alibaba.fastjson.JSON;
 import com.zkl.taishou.service.redis.RedisService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -55,5 +56,17 @@ public class BaseService {
     protected void loggerWarning(Class T, String errorMessage) {
         LOGGER = LoggerFactory.getLogger(T);
         LOGGER.warn("*************loggerWarn:" + errorMessage);
+    }
+
+    /**
+     * 实体复制
+     *
+     * @param obejct
+     * @param clazz
+     * @return
+     * @author
+     */
+    protected static <T> T copyTo(Object obejct, Class<T> clazz) {
+        return JSON.parseObject(JSON.toJSONString(obejct), clazz);
     }
 }

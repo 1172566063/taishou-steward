@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zkl.taishou.dao.diagnose.EmployeeIndicatorsResultDAO">
+  <resultMap id="BaseResultMap" type="com.zkl.taishou.common.entity.diagnose.EmployeeIndicatorsResult">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="group_id" jdbcType="INTEGER" property="groupId" />
+    <result column="result_id" jdbcType="INTEGER" property="resultId" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, group_id, result_id, create_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from employee_indicators_result
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from employee_indicators_result
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.zkl.taishou.common.entity.diagnose.EmployeeIndicatorsResult">
+    insert into employee_indicators_result (id, group_id, result_id, 
+      create_time)
+    values (#{id,jdbcType=INTEGER}, #{groupId,jdbcType=INTEGER}, #{resultId,jdbcType=INTEGER}, 
+      #{createTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.zkl.taishou.common.entity.diagnose.EmployeeIndicatorsResult">
+    insert into employee_indicators_result
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="groupId != null">
+        group_id,
+      </if>
+      <if test="resultId != null">
+        result_id,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="groupId != null">
+        #{groupId,jdbcType=INTEGER},
+      </if>
+      <if test="resultId != null">
+        #{resultId,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <insert id="insertBatch" parameterType="java.util.List">
+    insert into employee_indicators_result (id, group_id, result_id, 
+      create_time)
+    values 
+    <foreach collection="list" index="index" item="item" separator=",">
+      (#{item.id,jdbcType=INTEGER}, #{item.groupId,jdbcType=INTEGER}, #{item.resultId,jdbcType=INTEGER}, 
+        #{item.createTime,jdbcType=TIMESTAMP})
+    </foreach>
+  </insert>
+  <insert id="insertBatchSelective" parameterType="java.util.List">
+    insert into employee_indicators_result
+    (id, group_id, result_id, create_time)
+    values 
+    <foreach collection="list" index="index" item="item" separator=",">
+      <trim prefix="(" suffix=")" suffixOverrides=",">
+        <if test="item.id != null">
+          #{item.id,jdbcType=INTEGER},
+        </if>
+        <if test="item.id == null">
+          NULL,
+        </if>
+        <if test="item.groupId != null">
+          #{item.groupId,jdbcType=INTEGER},
+        </if>
+        <if test="item.groupId == null">
+          NULL,
+        </if>
+        <if test="item.resultId != null">
+          #{item.resultId,jdbcType=INTEGER},
+        </if>
+        <if test="item.resultId == null">
+          NULL,
+        </if>
+        <if test="item.createTime != null">
+          #{item.createTime,jdbcType=TIMESTAMP},
+        </if>
+        <if test="item.createTime == null">
+          NULL,
+        </if>
+      </trim>
+    </foreach>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zkl.taishou.common.entity.diagnose.EmployeeIndicatorsResult">
+    update employee_indicators_result
+    <set>
+      <if test="groupId != null">
+        group_id = #{groupId,jdbcType=INTEGER},
+      </if>
+      <if test="resultId != null">
+        result_id = #{resultId,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zkl.taishou.common.entity.diagnose.EmployeeIndicatorsResult">
+    update employee_indicators_result
+    set group_id = #{groupId,jdbcType=INTEGER},
+      result_id = #{resultId,jdbcType=INTEGER},
+      create_time = #{createTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateBatchByPrimaryKey" parameterType="java.util.List">
+    update employee_indicators_result
+    <trim prefix="set" suffixOverrides=",">
+      <trim prefix="group_id =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.groupId}
+        </foreach>
+      </trim>
+      <trim prefix="result_id =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.resultId}
+        </foreach>
+      </trim>
+      <trim prefix="create_time =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.createTime}
+        </foreach>
+      </trim>
+    </trim>
+    where id in 
+    <foreach close=")" collection="list" index="index" item="item" open="(" separator=",">
+       #{item.id} 
+    </foreach>
+  </update>
+  <update id="updateBatchByPrimaryKeySelective" parameterType="java.util.List">
+    update employee_indicators_result
+    <trim prefix="set" suffixOverrides=",">
+      <trim prefix="group_id =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.groupId != null ">
+            when  #{item.id} then #{item.groupId}
+          </if>
+          <if test="item.groupId == null ">
+            when  #{item.id} then employee_indicators_result.group_id
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="result_id =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.resultId != null ">
+            when  #{item.id} then #{item.resultId}
+          </if>
+          <if test="item.resultId == null ">
+            when  #{item.id} then employee_indicators_result.result_id
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="create_time =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.createTime != null ">
+            when  #{item.id} then #{item.createTime}
+          </if>
+          <if test="item.createTime == null ">
+            when  #{item.id} then employee_indicators_result.create_time
+          </if>
+        </foreach>
+      </trim>
+    </trim>
+    where id in 
+    <foreach close=")" collection="list" index="index" item="item" open="(" separator=",">
+       #{item.id} 
+    </foreach>
+  </update>
+</mapper>

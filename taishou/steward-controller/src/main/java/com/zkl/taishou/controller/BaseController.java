@@ -1,6 +1,7 @@
 package com.zkl.taishou.controller;
 
 import com.alibaba.fastjson.JSON;
+import com.zkl.taishou.common.PO.CalculateResultPO;
 import com.zkl.taishou.common.constants.RedisKeyConstants;
 import com.zkl.taishou.common.entity.user.User;
 import com.zkl.taishou.common.constants.ResultBean;
@@ -9,14 +10,32 @@ import com.zkl.taishou.common.utils.ServletUtil;
 import com.zkl.taishou.service.redis.RedisService;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jms.core.JmsMessagingTemplate;
 import org.springframework.validation.BindingResult;
-
+import javax.jms.Destination;
+import javax.jms.Topic;
 import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
 public class BaseController {
 
     @Autowired
     RedisService redisService;
+
+    @Autowired
+    private JmsMessagingTemplate jmsMessagingTemplate;
+
+    /*@Autowired
+    protected Queue queue;*/
+
+    @Autowired
+    protected Topic topic;
+
+
+    // 发送消息，destination是发送到的队列，message是待发送的消息
+    protected List<CalculateResultPO> sendMessage(Destination destination, Object message){
+        return jmsMessagingTemplate.convertSendAndReceive(destination, message, List.class);
+    }
 
     /**
      * 获取当前登录用户信息

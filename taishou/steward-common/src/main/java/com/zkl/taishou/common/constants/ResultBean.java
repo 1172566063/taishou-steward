@@ -3,13 +3,16 @@ package com.zkl.taishou.common.constants;
 
 import io.swagger.annotations.ApiModelProperty;
 
+import java.io.Serializable;
+
 /**
  * 数据返回接口封装类
  *
  * @author TanXin
  */
-public class ResultBean<T> {
+public class ResultBean<T> implements Serializable {
 
+    private static final long serialVersionUID = 13546213L;
     /**
      * 返回code
      */
@@ -33,9 +36,9 @@ public class ResultBean<T> {
     }
 
     public ResultBean(T date) {
-        this.retCode=ResultConstants.SUCCESS.getRetCode();
-        this.retMsg=ResultConstants.SUCCESS.getRetMsg();
-        this.data=date;
+        this.retCode = ResultConstants.SUCCESS.getRetCode();
+        this.retMsg = ResultConstants.SUCCESS.getRetMsg();
+        this.data = date;
     }
 
     public ResultBean(ResultConstants constants) {
@@ -50,9 +53,13 @@ public class ResultBean<T> {
         this.retMsg = retMsg;
     }
 
-    public Integer getRetCode() {return retCode; }
+    public Integer getRetCode() {
+        return retCode;
+    }
 
-    public void setRetCode(Integer retCode) { this.retCode = retCode; }
+    public void setRetCode(Integer retCode) {
+        this.retCode = retCode;
+    }
 
     public String getRetMsg() {
         return retMsg;

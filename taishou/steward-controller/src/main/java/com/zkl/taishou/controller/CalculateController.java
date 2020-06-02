@@ -16,6 +16,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 /**
  * @ClassName: 测算系统
  * @Author ：lishixiang
@@ -36,24 +38,14 @@ public class CalculateController extends BaseController {
             @ApiImplicitParam(name="calculateStepOne",value = "测算系统第一步",paramType = "body",dataType = "CalculateStepOne"),
             @ApiImplicitParam(name="token",value = "用户token",paramType = "header")
     })
-    public ResultBean<CalculateResultPO> calculate(@Validated @RequestBody CalculateStepOneVO calculateStepOne, BindingResult bindingResult){
+    public ResultBean<List<CalculateResultPO>> calculate(@Validated @RequestBody CalculateStepOneVO calculateStepOne, BindingResult bindingResult){
         if(bindingResult.hasErrors()){
             return getParameterFailResult(bindingResult);
         }
         calculateStepOne.setUserId(getCurrLoginUser().getId());
-       return calculateService.calculate(calculateStepOne);
+        List<CalculateResultPO> calculateResultPO = sendMessage(this.topic, calculateStepOne);
+        return new ResultBean<>(calculateResultPO);
     }
 
-
-    /*@PostMapping("/record")
-    @ApiOperation(value = "记录",notes = "添加测算记录")
-    @ApiImplicitParam(name = "from",value = "测算数据表单",paramType = "CalculateStepOne")
-    public ResultBean record(@Validated @RequestBody CalculateStepOne calculateStepOne,BindingResult bindingResult){
-        if(bindingResult.hasErrors()){
-            return getParameterFailResult(bindingResult);
-        }
-
-        return new ResultBean();
-    }*/
 
 }

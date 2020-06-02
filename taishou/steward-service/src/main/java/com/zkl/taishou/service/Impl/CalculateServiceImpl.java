@@ -10,9 +10,12 @@ import com.zkl.taishou.dao.calculate.CalculateCardinalDAO;
 import com.zkl.taishou.dao.calculate.CalculateRecordDAO;
 import com.zkl.taishou.service.CalculateService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jms.annotation.JmsListener;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import java.lang.reflect.Field;
+import java.math.BigDecimal;
 import java.util.*;
 import java.util.concurrent.*;
 import java.util.stream.Collectors;
@@ -24,6 +27,7 @@ import java.util.stream.Collectors;
  * @Version:
  */
 @Service
+@Component
 public class CalculateServiceImpl implements CalculateService {
 
 
@@ -50,8 +54,8 @@ public class CalculateServiceImpl implements CalculateService {
      * @Author: LisShiXiang
      * @Date：2020/5/25 13:16
      */
-    @Override
-    public ResultBean calculate(CalculateStepOneVO calculateStepOne) {
+    @JmsListener(destination = "${spring.activemq.topic-name}", containerFactory = "topicListener")
+    public List<CalculateResultPO> calculate(CalculateStepOneVO calculateStepOne) {
         //保存测算记录
         recordResult(calculateStepOne);
 
@@ -107,7 +111,7 @@ public class CalculateServiceImpl implements CalculateService {
             }
 
         }
-        return new ResultBean<>(calculateResults);
+        return calculateResults;
     }
 
     /**

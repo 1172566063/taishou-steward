@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -23,6 +24,7 @@ import java.util.concurrent.ConcurrentHashMap;
 public class CalculateResultPO implements Serializable {
 
     private static final long serialVersionUID = 1L;
+
     @ApiModelProperty(value = "测算结果类型")
     private Long resultType;
     @ApiModelProperty(value = "测算结果类型名称")

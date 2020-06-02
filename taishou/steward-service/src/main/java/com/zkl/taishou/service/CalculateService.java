@@ -10,7 +10,7 @@ import com.zkl.taishou.common.VO.CalculateStepOneVO;
  */
 public interface CalculateService {
 
-    ResultBean calculate(CalculateStepOneVO calculateStepOne);
+    //ResultBean calculate(CalculateStepOneVO calculateStepOne);
 
     void recordResult(CalculateStepOneVO calculateStepOne);
 

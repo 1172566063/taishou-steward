@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.taishou.console.dao.CalculateCardinalDAO">
+  <resultMap id="BaseResultMap" type="com.taishou.console.common.entity.CalculateCardinal">
+    <id column="name" jdbcType="VARCHAR" property="name" />
+    <result column="value" jdbcType="DOUBLE" property="value" />
+    <result column="type" jdbcType="INTEGER" property="type" />
+    <result column="explain" jdbcType="VARCHAR" property="explain" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    `name`, `value`, `type`, `explain`
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from calculate_cardinal
+    where `name` = #{name,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from calculate_cardinal
+    where `name` = #{name,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.taishou.console.common.entity.CalculateCardinal">
+    insert into calculate_cardinal (`name`, `value`, `type`, 
+      `explain`)
+    values (#{name,jdbcType=VARCHAR}, #{value,jdbcType=DOUBLE}, #{type,jdbcType=INTEGER}, 
+      #{explain,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.taishou.console.common.entity.CalculateCardinal">
+    insert into calculate_cardinal
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="name != null">
+        `name`,
+      </if>
+      <if test="value != null">
+        `value`,
+      </if>
+      <if test="type != null">
+        `type`,
+      </if>
+      <if test="explain != null">
+        `explain`,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="value != null">
+        #{value,jdbcType=DOUBLE},
+      </if>
+      <if test="type != null">
+        #{type,jdbcType=INTEGER},
+      </if>
+      <if test="explain != null">
+        #{explain,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <insert id="insertBatch" parameterType="java.util.List">
+    insert into calculate_cardinal (`name`, `value`, `type`, 
+      `explain`)
+    values 
+    <foreach collection="list" index="index" item="item" separator=",">
+      (#{item.name,jdbcType=VARCHAR}, #{item.value,jdbcType=DOUBLE}, #{item.type,jdbcType=INTEGER}, 
+        #{item.explain,jdbcType=VARCHAR})
+    </foreach>
+  </insert>
+  <insert id="insertBatchSelective" parameterType="java.util.List">
+    insert into calculate_cardinal
+    (`name`, `value`, `type`, `explain`)
+    values 
+    <foreach collection="list" index="index" item="item" separator=",">
+      <trim prefix="(" suffix=")" suffixOverrides=",">
+        <if test="item.name != null">
+          #{item.name,jdbcType=VARCHAR},
+        </if>
+        <if test="item.name == null">
+          NULL,
+        </if>
+        <if test="item.value != null">
+          #{item.value,jdbcType=DOUBLE},
+        </if>
+        <if test="item.value == null">
+          NULL,
+        </if>
+        <if test="item.type != null">
+          #{item.type,jdbcType=INTEGER},
+        </if>
+        <if test="item.type == null">
+          NULL,
+        </if>
+        <if test="item.explain != null">
+          #{item.explain,jdbcType=VARCHAR},
+        </if>
+        <if test="item.explain == null">
+          NULL,
+        </if>
+      </trim>
+    </foreach>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.taishou.console.common.entity.CalculateCardinal">
+    update calculate_cardinal
+    <set>
+      <if test="value != null">
+        `value` = #{value,jdbcType=DOUBLE},
+      </if>
+      <if test="type != null">
+        `type` = #{type,jdbcType=INTEGER},
+      </if>
+      <if test="explain != null">
+        `explain` = #{explain,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where `name` = #{name,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.taishou.console.common.entity.CalculateCardinal">
+    update calculate_cardinal
+    set `value` = #{value,jdbcType=DOUBLE},
+      `type` = #{type,jdbcType=INTEGER},
+      `explain` = #{explain,jdbcType=VARCHAR}
+    where `name` = #{name,jdbcType=VARCHAR}
+  </update>
+  <update id="updateBatchByPrimaryKey" parameterType="java.util.List">
+    update calculate_cardinal
+    <trim prefix="set" suffixOverrides=",">
+      <trim prefix="value =case name" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.name} then #{item.value}
+        </foreach>
+      </trim>
+      <trim prefix="type =case name" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.name} then #{item.type}
+        </foreach>
+      </trim>
+      <trim prefix="explain =case name" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.name} then #{item.explain}
+        </foreach>
+      </trim>
+    </trim>
+    where `name` in 
+    <foreach close=")" collection="list" index="index" item="item" open="(" separator=",">
+       #{item.name} 
+    </foreach>
+  </update>
+  <update id="updateBatchByPrimaryKeySelective" parameterType="java.util.List">
+    update calculate_cardinal
+    <trim prefix="set" suffixOverrides=",">
+      <trim prefix="value =case name" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.value != null ">
+            when  #{item.name} then #{item.value}
+          </if>
+          <if test="item.value == null ">
+            when  #{item.name} then calculate_cardinal.`value`
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="type =case name" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.type != null ">
+            when  #{item.name} then #{item.type}
+          </if>
+          <if test="item.type == null ">
+            when  #{item.name} then calculate_cardinal.`type`
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="explain =case name" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.explain != null ">
+            when  #{item.name} then #{item.explain}
+          </if>
+          <if test="item.explain == null ">
+            when  #{item.name} then calculate_cardinal.`explain`
+          </if>
+        </foreach>
+      </trim>
+    </trim>
+    where `name` in 
+    <foreach close=")" collection="list" index="index" item="item" open="(" separator=",">
+       #{item.name} 
+    </foreach>
+  </update>
+</mapper>

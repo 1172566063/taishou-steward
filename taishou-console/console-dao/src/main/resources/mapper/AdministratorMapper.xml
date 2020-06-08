@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.taishou.console.dao.AdministratorDAO">
+  <resultMap id="BaseResultMap" type="com.taishou.console.common.entity.Administrator">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="root" jdbcType="VARCHAR" property="root" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="role_id" jdbcType="INTEGER" property="roleId" />
+    <result column="del" jdbcType="VARCHAR" property="del" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, create_time, `name`, root, `password`, role_id, del
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from administrator
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from administrator
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.taishou.console.common.entity.Administrator">
+    insert into administrator (id, create_time, `name`, 
+      root, `password`, role_id, 
+      del)
+    values (#{id,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, #{name,jdbcType=VARCHAR}, 
+      #{root,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, #{roleId,jdbcType=INTEGER}, 
+      #{del,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.taishou.console.common.entity.Administrator">
+    insert into administrator
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="name != null">
+        `name`,
+      </if>
+      <if test="root != null">
+        root,
+      </if>
+      <if test="password != null">
+        `password`,
+      </if>
+      <if test="roleId != null">
+        role_id,
+      </if>
+      <if test="del != null">
+        del,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="root != null">
+        #{root,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="roleId != null">
+        #{roleId,jdbcType=INTEGER},
+      </if>
+      <if test="del != null">
+        #{del,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <insert id="insertBatch" parameterType="java.util.List">
+    insert into administrator (id, create_time, `name`, 
+      root, `password`, role_id, 
+      del)
+    values 
+    <foreach collection="list" index="index" item="item" separator=",">
+      (#{item.id,jdbcType=INTEGER}, #{item.createTime,jdbcType=TIMESTAMP}, #{item.name,jdbcType=VARCHAR}, 
+        #{item.root,jdbcType=VARCHAR}, #{item.password,jdbcType=VARCHAR}, #{item.roleId,jdbcType=INTEGER}, 
+        #{item.del,jdbcType=VARCHAR})
+    </foreach>
+  </insert>
+  <insert id="insertBatchSelective" parameterType="java.util.List">
+    insert into administrator
+    (id, create_time, `name`, root, `password`, role_id, del)
+    values 
+    <foreach collection="list" index="index" item="item" separator=",">
+      <trim prefix="(" suffix=")" suffixOverrides=",">
+        <if test="item.id != null">
+          #{item.id,jdbcType=INTEGER},
+        </if>
+        <if test="item.id == null">
+          NULL,
+        </if>
+        <if test="item.createTime != null">
+          #{item.createTime,jdbcType=TIMESTAMP},
+        </if>
+        <if test="item.createTime == null">
+          NULL,
+        </if>
+        <if test="item.name != null">
+          #{item.name,jdbcType=VARCHAR},
+        </if>
+        <if test="item.name == null">
+          NULL,
+        </if>
+        <if test="item.root != null">
+          #{item.root,jdbcType=VARCHAR},
+        </if>
+        <if test="item.root == null">
+          NULL,
+        </if>
+        <if test="item.password != null">
+          #{item.password,jdbcType=VARCHAR},
+        </if>
+        <if test="item.password == null">
+          NULL,
+        </if>
+        <if test="item.roleId != null">
+          #{item.roleId,jdbcType=INTEGER},
+        </if>
+        <if test="item.roleId == null">
+          NULL,
+        </if>
+        <if test="item.del != null">
+          #{item.del,jdbcType=VARCHAR},
+        </if>
+        <if test="item.del == null">
+          NULL,
+        </if>
+      </trim>
+    </foreach>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.taishou.console.common.entity.Administrator">
+    update administrator
+    <set>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="name != null">
+        `name` = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="root != null">
+        root = #{root,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        `password` = #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="roleId != null">
+        role_id = #{roleId,jdbcType=INTEGER},
+      </if>
+      <if test="del != null">
+        del = #{del,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.taishou.console.common.entity.Administrator">
+    update administrator
+    set create_time = #{createTime,jdbcType=TIMESTAMP},
+      `name` = #{name,jdbcType=VARCHAR},
+      root = #{root,jdbcType=VARCHAR},
+      `password` = #{password,jdbcType=VARCHAR},
+      role_id = #{roleId,jdbcType=INTEGER},
+      del = #{del,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateBatchByPrimaryKey" parameterType="java.util.List">
+    update administrator
+    <trim prefix="set" suffixOverrides=",">
+      <trim prefix="create_time =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.createTime}
+        </foreach>
+      </trim>
+      <trim prefix="name =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.name}
+        </foreach>
+      </trim>
+      <trim prefix="root =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.root}
+        </foreach>
+      </trim>
+      <trim prefix="password =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.password}
+        </foreach>
+      </trim>
+      <trim prefix="role_id =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.roleId}
+        </foreach>
+      </trim>
+      <trim prefix="del =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          when  #{item.id} then #{item.del}
+        </foreach>
+      </trim>
+    </trim>
+    where id in 
+    <foreach close=")" collection="list" index="index" item="item" open="(" separator=",">
+       #{item.id} 
+    </foreach>
+  </update>
+  <update id="updateBatchByPrimaryKeySelective" parameterType="java.util.List">
+    update administrator
+    <trim prefix="set" suffixOverrides=",">
+      <trim prefix="create_time =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.createTime != null ">
+            when  #{item.id} then #{item.createTime}
+          </if>
+          <if test="item.createTime == null ">
+            when  #{item.id} then administrator.create_time
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="name =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.name != null ">
+            when  #{item.id} then #{item.name}
+          </if>
+          <if test="item.name == null ">
+            when  #{item.id} then administrator.`name`
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="root =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.root != null ">
+            when  #{item.id} then #{item.root}
+          </if>
+          <if test="item.root == null ">
+            when  #{item.id} then administrator.root
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="password =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.password != null ">
+            when  #{item.id} then #{item.password}
+          </if>
+          <if test="item.password == null ">
+            when  #{item.id} then administrator.`password`
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="role_id =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.roleId != null ">
+            when  #{item.id} then #{item.roleId}
+          </if>
+          <if test="item.roleId == null ">
+            when  #{item.id} then administrator.role_id
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="del =case id" suffix="end,">
+        <foreach collection="list" index="index" item="item" separator=" ">
+          <if test="item.del != null ">
+            when  #{item.id} then #{item.del}
+          </if>
+          <if test="item.del == null ">
+            when  #{item.id} then administrator.del
+          </if>
+        </foreach>
+      </trim>
+    </trim>
+    where id in 
+    <foreach close=")" collection="list" index="index" item="item" open="(" separator=",">
+       #{item.id} 
+    </foreach>
+  </update>
+  <select id="selectUserByRoot" resultMap="BaseResultMap">
+    select <include refid="Base_Column_List"/>
+    from administrator
+    where root=#{root}
+    and del="N"
+    limit 0,1;
+  </select>
+</mapper>

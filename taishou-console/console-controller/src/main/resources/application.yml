@@ -1,0 +1,55 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: taishou-steward
+  datasource:
+    #type: com.alibaba.druid.pool.DruidDataSource            # 当前数据源操作类型
+    driver-class-name: com.mysql.jdbc.Driver    # mysql驱动包
+    url: jdbc:mysql://localhost:3306/taishou_steward
+    username: root
+    password: 123456
+    initialSize: 5
+    dbcp2:
+      min-idle: 5                                           # 数据库连接池的最小维持连接数
+      initial-size: 5                                       # 初始化连接数
+      max-total: 5                                          # 最大连接数
+      max-wait-millis: 200
+
+  redis:
+    database: 0
+    host: 47.115.37.140
+    port: 6379
+    password: 123456
+
+  activemq:
+    broker-url: tcp://47.115.37.140:61617
+    user: admin
+    password: admin
+    close-timeout: 15   # 在考虑结束之前等待的时间
+    in-memory: true      # 默认代理URL是否应该在内存中。如果指定了显式代理，则忽略此值。
+    non-blocking-redelivery: false  # 是否在回滚回滚消息之前停止消息传递。这意味着当启用此命令时，消息顺序不会被保留。
+    send-timeout: 0     # 等待消息发送响应的时间。设置为0等待永远。
+    topic-name: uploading.picture
+    packages:
+      trust-all: true
+  pool:
+    enabled: true
+    max-connections: 10   #连接池最大连接数
+    idle-timeout: 30000   #空闲的连接过期时间，默认为30秒
+
+mybatis:
+  mapperLocations: classpath:mapper/*.xml
+
+log.level: info
+log.mybatis.level: debug
+
+
+pagehelper:
+  helperDialect: mysql
+  reasonable: false
+  supportMethodsArguments: true
+  params: count=countSql
+
+

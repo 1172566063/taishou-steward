@@ -1,4 +1,4 @@
-package com.zkl.taishou.service.redis.Impl;
+package com.zkl.taishou.service.Impl;
 
 
 import com.alibaba.fastjson.JSON;
@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;
-import com.zkl.taishou.service.redis.RedisService;
+import com.zkl.taishou.service.RedisService;
 import java.util.Random;
 import java.util.UUID;
 import java.util.concurrent.TimeUnit;

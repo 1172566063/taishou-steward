@@ -1,4 +1,4 @@
-package com.zkl.taishou.service.redis;
+package com.zkl.taishou.service;
 
 
 import com.zkl.taishou.common.entity.user.User;

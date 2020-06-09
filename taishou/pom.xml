@@ -25,16 +25,27 @@
         <mysql.version>5.1.46</mysql.version>
         <fastjson.version>1.2.34</fastjson.version>
         <swagger.version>2.1.1</swagger.version>
+        <commons.lang3>3.8.1</commons.lang3>
+        <boot.starter>1.3.0</boot.starter>
+        <github.pagehelper>5.1.0</github.pagehelper>
+        <boot.autoconfigure>1.1.1</boot.autoconfigure>
+        <github.orange1438>1.3.5</github.orange1438>
+        <apache.shiro>1.3.2</apache.shiro>
+        <commons.codec>1.10</commons.codec>
+        <boot.dependencies>1.5.9.RELEASE</boot.dependencies>
+        <druid>1.0.31</druid>
+        <logback.core>1.2.3</logback.core>
+        <starter.aop>2.3.0.RELEASE</starter.aop>
+        <starter.activemq>1.5.0.RELEASE</starter.activemq>
+        <activemq.pool>5.15.0</activemq.pool>
     </properties>
     <dependencies>
         <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
-            <version>3.8.1</version>
+            <version>${commons.lang3}</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/io.github.itfinally/mybatis-generator -->
-
 
         <dependency>
             <groupId>com.alibaba</groupId>
@@ -44,7 +55,7 @@
         <dependency>
             <groupId>org.mybatis.spring.boot</groupId>
             <artifactId>mybatis-spring-boot-starter</artifactId>
-            <version>1.3.0</version>
+            <version>${boot.starter}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -77,14 +88,14 @@
         <dependency>
             <groupId>com.github.pagehelper</groupId>
             <artifactId>pagehelper</artifactId>
-            <version>5.1.0</version>
+            <version>${github.pagehelper}</version>
         </dependency>
         <!-- springboot对mybatis的整合支持还是比较苛刻的，版本不兼容问题比较严重，pageHelper分页插件也是一样，不是最新的版本就没有问题，有时需要降低版本进行支持，这里的版本是调试通过可以用的版本，其他应该还有可以匹配的版本，但是没有去测试 -->
         <!-- spring boot pagehelper autoconfigure依赖 版本有兼容性问题 第一种方式依赖的包-->
         <dependency>
             <groupId>com.github.pagehelper</groupId>
             <artifactId>pagehelper-spring-boot-autoconfigure</artifactId>
-            <version>1.1.1</version>
+            <version>${boot.autoconfigure}</version>
         </dependency>
     </dependencies>
 
@@ -93,7 +104,7 @@
             <dependency>
                 <groupId>io.github.orange1438</groupId>
                 <artifactId>mybatis-generator-core</artifactId>
-                <version>1.3.5</version>
+                <version>${github.orange1438}</version>
             </dependency>
             <dependency>
                 <groupId>com.zkl.taishou</groupId>
@@ -120,19 +131,19 @@
             <dependency>
                 <groupId>org.apache.shiro</groupId>
                 <artifactId>shiro-spring</artifactId>
-                <version>1.3.2</version>
+                <version>${apache.shiro}</version>
             </dependency>
 
             <!-- https://mvnrepository.com/artifact/commons-codec/commons-codec -->
             <dependency>
                 <groupId>commons-codec</groupId>
                 <artifactId>commons-codec</artifactId>
-                <version>1.10</version>
+                <version>${commons.codec}</version>
             </dependency>
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-dependencies</artifactId>
-                <version>1.5.9.RELEASE</version>
+                <version>${boot.dependencies}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -145,13 +156,13 @@
             <dependency>
                 <groupId>com.alibaba</groupId>
                 <artifactId>druid</artifactId>
-                <version>1.0.31</version>
+                <version>${druid}</version>
             </dependency>
 
             <dependency>
                 <groupId>ch.qos.logback</groupId>
                 <artifactId>logback-core</artifactId>
-                <version>1.2.3</version>
+                <version>${logback.core}</version>
             </dependency>
             <dependency>
                 <groupId>log4j</groupId>
@@ -161,19 +172,19 @@
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-aop</artifactId>
-                <version>2.3.0.RELEASE</version>
+                <version>${starter.aop}</version>
             </dependency>
 
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-activemq</artifactId>
-                <version>1.5.0.RELEASE</version>
+                <version>${starter.activemq}</version>
             </dependency>
             <!--消息队列连接池-->
             <dependency>
                 <groupId>org.apache.activemq</groupId>
                 <artifactId>activemq-pool</artifactId>
-                <version>5.15.0</version>
+                <version>${activemq.pool}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

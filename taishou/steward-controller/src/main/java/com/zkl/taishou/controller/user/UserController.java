@@ -1,9 +1,8 @@
 package com.zkl.taishou.controller.user;
 
-import com.zkl.taishou.common.PO.UserInfo;
+import com.zkl.taishou.common.PO.UserInfoPO;
 import com.zkl.taishou.common.VO.RegisterVO;
 import com.zkl.taishou.common.VO.StaffVO;
-import com.zkl.taishou.common.entity.user.User;
 import com.zkl.taishou.common.constants.ResultBean;
 import com.zkl.taishou.controller.BaseController;
 import com.zkl.taishou.service.StaffDiagnoseService;
@@ -39,7 +38,7 @@ public class UserController extends BaseController {
             @ApiImplicitParam(name = "password",paramType = "query", value = "用户密码"),
     })
     @PostMapping("/login")
-    public ResultBean<UserInfo> login(String phone, String password){
+    public ResultBean<UserInfoPO> login(String phone, String password){
         return userService.login(phone,password);
     }
 

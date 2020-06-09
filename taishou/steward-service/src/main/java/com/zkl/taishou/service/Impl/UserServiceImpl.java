@@ -1,6 +1,6 @@
 package com.zkl.taishou.service.Impl;
 
-import com.zkl.taishou.common.PO.UserInfo;
+import com.zkl.taishou.common.PO.UserInfoPO;
 import com.zkl.taishou.common.VO.RegisterVO;
 import com.zkl.taishou.common.constants.RedisKeyConstants;
 import com.zkl.taishou.common.entity.user.Store;
@@ -60,7 +60,7 @@ public class UserServiceImpl extends BaseService implements UserService {
     }
 
     @Override
-    public ResultBean<UserInfo> login(String phone, String password) {
+    public ResultBean<UserInfoPO> login(String phone, String password) {
         Subject subject = SecurityUtils.getSubject();
         UsernamePasswordToken usernamePasswordToken = new UsernamePasswordToken(phone, password);
         String token=null;
@@ -77,13 +77,13 @@ public class UserServiceImpl extends BaseService implements UserService {
             e.printStackTrace();
             return new ResultBean(ResultConstants.PERMISSION_DENIED);
         }
-        UserInfo userInfo=new UserInfo(user);
+        UserInfoPO userInfo=new UserInfoPO(user);
         userInfo.setToken(token);
         return new ResultBean(userInfo);
     }
 
     @Override
-    public ResultBean<UserInfo> register(RegisterVO registerVO) {
+    public ResultBean<UserInfoPO> register(RegisterVO registerVO) {
         User user=new User();
         Store store;
         String account= registerVO.getPhone();
@@ -95,6 +95,7 @@ public class UserServiceImpl extends BaseService implements UserService {
         //加盐加密
         user.setPassword(EncryptUtil.PawEncryption(account,password));
         user.setPhone(account);
+        user.setName(storeName);
         //新增用户
         userMapper.insertSelective(user);
 

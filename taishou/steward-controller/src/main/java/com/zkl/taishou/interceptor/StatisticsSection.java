@@ -2,14 +2,13 @@ package com.zkl.taishou.interceptor;
 
 import com.alibaba.fastjson.JSONObject;
 import com.zkl.taishou.common.constants.RedisKeyConstants;
-import com.zkl.taishou.service.redis.RedisService;
+import com.zkl.taishou.service.RedisService;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.After;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 

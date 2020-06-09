@@ -19,7 +19,7 @@ import java.io.Serializable;
 @AllArgsConstructor
 @NoArgsConstructor
 @Accessors(chain = true)
-public class UserInfo implements Serializable {
+public class UserInfoPO implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -32,7 +32,7 @@ public class UserInfo implements Serializable {
     @ApiModelProperty("生成的token")
     private String token;
 
-    public UserInfo(User user){
+    public UserInfoPO(User user){
         this.headPortraitImg=user.getHeadPortraitImg();
         this.name=user.getName();
     }

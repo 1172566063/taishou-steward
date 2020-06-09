@@ -35,11 +35,6 @@ public class ActiveMQConfig {
     @Value("${spring.activemq.queue-name}")
     private String queueName;
 
-    /*@Bean(name = "queue")
-    public Queue queue() {
-        return new ActiveMQQueue(queueName);
-    }*/
-
     @Value("${spring.activemq.topic-name}")
     private String topicName;
 
@@ -49,7 +44,7 @@ public class ActiveMQConfig {
         return new ActiveMQTopic(topicName);
     }
 
-    @Bean
+    @Bean(name = "connectionFactory")
     public ConnectionFactory connectionFactory(){
         ActiveMQConnectionFactory activeMQConnectionFactory = new ActiveMQConnectionFactory(username, password, brokerUrl);
         activeMQConnectionFactory.setTrustAllPackages(true);

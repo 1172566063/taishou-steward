@@ -7,11 +7,13 @@ import com.zkl.taishou.common.entity.user.User;
 import com.zkl.taishou.common.constants.ResultBean;
 import com.zkl.taishou.common.constants.ResultConstants;
 import com.zkl.taishou.common.utils.ServletUtil;
-import com.zkl.taishou.service.redis.RedisService;
+import com.zkl.taishou.service.RedisService;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jms.core.JmsMessagingTemplate;
 import org.springframework.validation.BindingResult;
+
+import javax.jms.ConnectionFactory;
 import javax.jms.Destination;
 import javax.jms.Topic;
 import javax.servlet.http.HttpServletRequest;
@@ -30,6 +32,11 @@ public class BaseController {
 
     @Autowired
     protected Topic topic;
+
+    @Autowired
+    protected ConnectionFactory connectionFactory;
+
+
 
 
     // 发送消息，destination是发送到的队列，message是待发送的消息

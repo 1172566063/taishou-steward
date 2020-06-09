@@ -7,6 +7,7 @@ import com.zkl.taishou.common.constants.RedisKeyConstants;
 import com.zkl.taishou.common.entity.user.User;
 import com.zkl.taishou.common.entity.user.UserOperationRecord;
 import com.zkl.taishou.dao.user.UserOperationRecordDAO;
+import com.zkl.taishou.service.RedisService;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 

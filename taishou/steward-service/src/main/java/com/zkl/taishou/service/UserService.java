@@ -1,6 +1,6 @@
 package com.zkl.taishou.service;
 
-import com.zkl.taishou.common.PO.UserInfo;
+import com.zkl.taishou.common.PO.UserInfoPO;
 import com.zkl.taishou.common.VO.RegisterVO;
 import com.zkl.taishou.common.entity.user.User;
 import com.zkl.taishou.common.constants.ResultBean;
@@ -17,9 +17,9 @@ public interface UserService {
 
     boolean removeUserById(Integer id);
 
-    ResultBean<UserInfo> login(String phone, String password);
+    ResultBean<UserInfoPO> login(String phone, String password);
 
-    ResultBean<UserInfo> register(RegisterVO registerVO);
+    ResultBean<UserInfoPO> register(RegisterVO registerVO);
 
     boolean examineRepetition(String phone);
 }

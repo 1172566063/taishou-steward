@@ -23,7 +23,7 @@
         <log4j.version>1.2.17</log4j.version>
         <lombok.version>1.16.18</lombok.version>
         <mysql.version>5.1.46</mysql.version>
-        <fastjson.version>1.2.34</fastjson.version>
+        <fastjson.version>1.2.83</fastjson.version>
         <swagger.version>2.1.1</swagger.version>
         <commons.lang3>3.8.1</commons.lang3>
         <boot.starter>1.3.0</boot.starter>
